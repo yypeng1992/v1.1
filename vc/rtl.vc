@@ -1,0 +1,13 @@
+$WORK_PATH/rtl/define.v
+$WORK_PATH/rtl/led/led_key.v
+$WORK_PATH/rtl/led/led_top.v
+$WORK_PATH/rtl/led/led_key_old.v
+$WORK_PATH/rtl/led/debounce.v
+$WORK_PATH/rtl/i2c/i2c.v
+$WORK_PATH/rtl/i2c/i2c_top.v
+$WORK_PATH/rtl/i2c/eepram.v
+$WORK_PATH/rtl/sort/sort_define.v
+$WORK_PATH/rtl/sort/quick_sort.v
+$WORK_PATH/rtl/sort/quick_sort2.v
+$WORK_PATH/rtl/sort/quick_sort3.v
+$WORK_PATH/rtl/sort/quick_sort_top.v
