@@ -11,3 +11,12 @@ $WORK_PATH/rtl/sort/quick_sort.v
 $WORK_PATH/rtl/sort/quick_sort2.v
 $WORK_PATH/rtl/sort/quick_sort3.v
 $WORK_PATH/rtl/sort/quick_sort_top.v
+$WORK_PATH/rtl/cpu/ex.v
+$WORK_PATH/rtl/cpu/id.v
+$WORK_PATH/rtl/cpu/inst_rom.v
+$WORK_PATH/rtl/cpu/mem.v
+$WORK_PATH/rtl/cpu/openmips_min_sopc.v
+$WORK_PATH/rtl/cpu/openmips.v
+$WORK_PATH/rtl/cpu/pc_reg.v
+$WORK_PATH/rtl/cpu/pc.v
+$WORK_PATH/rtl/cpu/regfile.v
