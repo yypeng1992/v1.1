@@ -22,10 +22,15 @@ wire [4:0]  id_ex_waddr;
 
 wire        ex_we;
 wire  [4:0] ex_waddr;
-wire  [31:0]ex_data;
+wire  [31:0]ex_wdata;
+
 wire        mem_we;
-wire[4:0]   mem_addr;
-wire[31:0]  mem_data;
+wire[4:0]   mem_waddr;
+wire[31:0]  mem_wdata;
+
+wire       wb_we;
+wire[4:0]  wb_waddr;
+wire[31:0] wb_wdata;
 
 assign addr = pc;
 pc_reg pc_reg0(
@@ -39,7 +44,7 @@ id id0(
  .clk         (clk               ),
  .reset_n     (reset_n           ),
  .pc_i        (pc                ),
- .data_i      (inst              ),
+ .inst_i      (inst              ),
  .reg1_data_i (reg_id_reg1_data  ),
  .reg2_data_i (reg_id_reg2_data  ),
  .alusel_o    (alusel            ),
@@ -51,7 +56,13 @@ id id0(
  .reg1_read_o (id_reg_re1        ),
  .reg1_addr_o (id_reg_reg1_addr  ),
  .reg2_read_o (id_reg_re2        ),
- .reg2_addr_o (id_reg_reg2_addr  )
+ .reg2_addr_o (id_reg_reg2_addr  ),
+ .ex_we       (ex_we             ),
+ .ex_waddr    (ex_waddr          ),
+ .ex_wdata     (ex_wdata           ),
+ .mem_we      (mem_we            ),
+ .mem_waddr   (mem_waddr          ),
+ .mem_wdata   (mem_wdata          )
 );
 
 regfile regfile0(
@@ -63,9 +74,9 @@ regfile regfile0(
  .re2         (id_reg_re2        ),
  .reg1_data   (reg_id_reg1_data  ),
  .reg2_data   (reg_id_reg2_data  ),
- .we          (mem_we            ),
- .waddr       (mem_addr          ),
- .wdata       (mem_data          )
+ .wb_we       (wb_we             ),
+ .wb_waddr    (wb_waddr           ),
+ .wb_wdata    (wb_wdata           )
 );
 
 ex ex0( 
@@ -79,17 +90,30 @@ ex ex0(
  .id_waddr    (id_ex_waddr      ),
  .ex_we       (ex_we            ),
  .ex_waddr    (ex_waddr         ),
- .ex_data     (ex_data          )
+ .ex_wdata    (ex_wdata          )
 );
 
 mem mem0(
  .clk         (clk              ),
  .reset_n     (reset_n          ),
  .ex_we       (ex_we            ),
- .ex_addr     (ex_waddr         ),
- .ex_data     (ex_data          ),
+ .ex_waddr     (ex_waddr         ),
+ .ex_wdata     (ex_wdata          ),
  .mem_we      (mem_we           ),
- .mem_addr    (mem_addr         ),
- .mem_data    (mem_data         )
+ .mem_waddr    (mem_waddr         ),
+ .mem_wdata    (mem_wdata         )
 );
+
+wb wb0(
+ .clk         (clk              ),
+ .reset_n     (reset_n          ),
+ .mem_we      (mem_we           ),
+ .mem_waddr   (mem_waddr        ),
+ .mem_wdata   (mem_wdata        ),
+ .wb_we       (wb_we            ),
+ .wb_waddr    (wb_waddr         ),
+ .wb_wdata    (wb_wdata         )
+);
+
+
 endmodule

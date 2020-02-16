@@ -1,4 +1,4 @@
-module regfile(clk,reset_n,reg1_addr,reg2_addr,re1,re2,reg1_data,reg2_data,we,waddr,wdata);
+module regfile(clk,reset_n,reg1_addr,reg2_addr,re1,re2,reg1_data,reg2_data,wb_we,wb_waddr,wb_wdata);
 input           clk;
 input           reset_n;
 input      [4:0]reg1_addr;
@@ -9,43 +9,46 @@ input           re2;
 output reg [31:0]reg1_data;
 output reg [31:0]reg2_data;
 
-input            we;
-input      [4:0] waddr;
-input      [31:0]wdata;
+/////////////////////////
+//data from wb
+/////////////////////////
+input            wb_we;
+input      [4:0] wb_waddr;
+input      [31:0]wb_wdata;
 
-reg [4:0]regs [31:0];
+reg [31:0]regs [0:31];
 
 /////////////////////////
 //read1
 /////////////////////////
-always @ (posedge clk or posedge reset_n) begin
+always @ (*) begin
 	if(!reset_n) begin
-		reg1_data[31:0] <= {32{1'b0}};
+		reg1_data[31:0] = {32{1'b0}};
 	end else if(reg1_addr[4:0]==5'd0)begin
-		reg1_data[31:0] <= {32{1'b0}};
-	end else if((reg1_addr[4:0]==waddr[4:0]) && (we) && (re1))begin
-		reg1_data[31:0] <= wdata[31:0];
+		reg1_data[31:0] = {32{1'b0}};
+	end else if((reg1_addr[4:0]==wb_waddr[4:0]) && (wb_we) && (re1))begin
+		reg1_data[31:0] = wb_wdata[31:0];
 	end else if(re1) begin
-		reg1_data[31:0] <= regs[reg1_addr[4:0]];
+		reg1_data[31:0] = regs[reg1_addr];
 	end else begin
-		reg1_data[31:0] <= {32{1'b0}};
+		reg1_data[31:0] = {32{1'b0}};
 	end 
 end
 
 /////////////////////////
 //read2
 /////////////////////////
-always @ (posedge clk or posedge reset_n) begin
+always @ (*) begin
 	if(!reset_n) begin
-		reg2_data[31:0] <= {32{1'b0}};
+		reg2_data[31:0] = {32{1'b0}};
 	end else if(reg2_addr[4:0]==5'd0)begin
-		reg2_data[31:0] <= {32{1'b0}};
-	end else if((reg2_addr[4:0]==waddr[4:0]) && (we) && (re2))begin
-		reg2_data[31:0] <= wdata[31:0];
+		reg2_data[31:0] = {32{1'b0}};
+	end else if((reg2_addr[4:0]==wb_waddr[4:0]) && (wb_we) && (re2))begin
+		reg2_data[31:0] = wb_wdata[31:0];
 	end else if(re2) begin
-		reg2_data[31:0] <= regs[reg2_addr[4:0]];
+		reg2_data[31:0] = regs[reg2_addr];
 	end else begin
-		reg2_data[31:0] <= {32{1'b0}};
+		reg2_data[31:0] = {32{1'b0}};
 	end 
 end
 
@@ -54,8 +57,8 @@ end
 /////////////////////////
 always @ (posedge clk or posedge reset_n) begin
 	if(reset_n) begin
-		 if((we) && (waddr != 0)) begin
-			regs[waddr] <= wdata[31:0];
+		 if((wb_we) && (wb_waddr != 0)) begin
+			regs[wb_waddr] <= wb_wdata[31:0];
 		end
 	end
 end
