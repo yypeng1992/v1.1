@@ -9,7 +9,9 @@
 >`sudo apt-get install emdebian-archive-keyring`
 
 3. 在 terminal 中运行： 
->`sudo apt-get install linux-libc-dev-mips-cross libc6-mips-cross libc6-dev-mips-cross binutils-mips-linux-gnu gcc-mips-linux-gnu g++-mips-linux-gnu`
+>`sudo apt-get install linux-libc-dev-mips-cross libc6-mips-cross \`
+>`libc6-dev-mips-cross binutils-mips-linux-gnu gcc-mips-linux-gnu \`
+>`g++-mips-linux-gnu`
 
 4. 在 terminal 中运行以下命令，输出若为 **mips-linux-gnu**，则说明安装成功。
 > `mips-linux-gnu-gcc -dumpmachine`
