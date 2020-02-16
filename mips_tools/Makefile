@@ -8,27 +8,25 @@ OBJCOPY = $(CROSS_COMPILE)objcopy
 OBJDUMP = $(CROSS_COMPILE)objdump
 
 SCRIPT  = ram.ld
-OBJECTS = inst_rom.o
+OBJECT  = inst_rom
 
 export CROSS_COMPILE
 
 # ****************************
 # Rules
 # ****************************
-all: inst_rom.data
-
-bin: inst_rom.bin
+all: $(OBJECT).data
 
 %.o: %.S
 	$(CC) -mips32 $< -o $@
 
-inst_rom.om: $(SCRIPT) $(OBJECTS)
-	$(LD) -T $(SCRIPT) $(OBJECTS) -o $@
+%.om: $(SCRIPT) %.o
+	$(LD) -T $(SCRIPT) $(OBJECT).o -o $@
 
-inst_rom.bin: inst_rom.om
+%.bin: %.om
 	$(OBJCOPY) -O binary $< $@ --only-section=.text
 
-inst_rom.data: inst_rom.bin
+%.data: %.bin
 	./Bin2Mem.pl -bin $< -mem $@
 
 clean:
