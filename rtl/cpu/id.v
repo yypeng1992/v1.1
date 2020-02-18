@@ -55,139 +55,139 @@ reg [31:0] imm;
 
 always @ (posedge clk or negedge reset_n) begin
 	if(!reset_n) begin
-		alusel_o[2:0]     <= {3{1'b0}};
-		aluop_o [7:0]     <= {8{1'b0}};
-		wreg_o            <= 1'b0;
-		waddr_o           <= {5{1'b0}};
-		reg1_read_o       <= 1'b0;
-		reg1_addr_o[4:0]  <= {5{1'b0}};  
-		reg2_read_o       <= 1'b0;
-		reg2_addr_o[4:0]  <= {5{1'b0}};
-		imm               <= {32{1'b0}};
+		alusel_o[2:0]     <= #`RD  {3{1'b0}};
+		aluop_o [7:0]     <= #`RD  {8{1'b0}};
+		wreg_o            <= #`RD  1'b0;
+		waddr_o           <= #`RD  {5{1'b0}};
+		reg1_read_o       <= #`RD  1'b0;
+		reg1_addr_o[4:0]  <= #`RD  {5{1'b0}};  
+		reg2_read_o       <= #`RD  1'b0;
+		reg2_addr_o[4:0]  <= #`RD  {5{1'b0}};
+		imm               <= #`RD  {32{1'b0}};
 	end else if(pc_i !=0) begin
-		reg1_addr_o[4:0]  <= inst_i[25:21];
-		reg2_addr_o[4:0]  <= inst_i[20:16];
-		case(inst_i[31:26])
+		reg1_addr_o[4:0]  <= #`RD  inst_i[25:21];
+		reg2_addr_o[4:0]  <= #`RD  inst_i[20:16];
+		case(inst_i[31:26]) //TODO 查看分支是否完全
 			////////////////////////////////////////
 			/////ori
 			////////////////////////////////////////
 			6'b001101:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b001;
-				aluop_o [7:0]     <= 8'b00001101;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
-				imm[31:0]         <= {16'd0,inst_i[15:0]};
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b001;
+				aluop_o [7:0]     <= #`RD  8'b00001101;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
+				imm[31:0]         <= #`RD  {16'd0,inst_i[15:0]};
 			end
 			////////////////////////////////////////
 			/////andi
 			////////////////////////////////////////
 			6'b001100:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b001;
-				aluop_o [7:0]     <= 8'b00001100;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
-				imm[31:0]         <= {16'd0,inst_i[15:0]};
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b001;
+				aluop_o [7:0]     <= #`RD  8'b00001100;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
+				imm[31:0]         <= #`RD  {16'd0,inst_i[15:0]};
 			end
 			////////////////////////////////////////
 			/////xori
 			////////////////////////////////////////
 			6'b001110:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b001;
-				aluop_o [7:0]     <= 8'b00001110;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
-				imm[31:0]         <= {16'd0,inst_i[15:0]};
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b001;
+				aluop_o [7:0]     <= #`RD  8'b00001110;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
+				imm[31:0]         <= #`RD  {16'd0,inst_i[15:0]};
 			end
 			////////////////////////////////////////
 			/////lui
 			////////////////////////////////////////
 			6'b001111:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b001;
-				aluop_o [7:0]     <= 8'b00001111;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
-				imm[31:0]         <= {16'd0,inst_i[15:0]};
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b001;
+				aluop_o [7:0]     <= #`RD  8'b00001111;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
+				imm[31:0]         <= #`RD  {16'd0,inst_i[15:0]};
 			end
 			////////////////////////////////////////
 			/////pref
 			////////////////////////////////////////
 			6'b110011:begin
-                       		alusel_o[2:0]     <= 3'b000;
-				aluop_o [7:0]     <= 8'b00110011;
-                       	 	wreg_o            <= 1'b0;
-                        	reg1_read_o       <= 1'b0;
-                        	reg2_read_o       <= 1'b0;
+                       		alusel_o[2:0]     <= #`RD  3'b000;
+				aluop_o [7:0]     <= #`RD  8'b00110011;
+                       	 	wreg_o            <= #`RD  1'b0;
+                        	reg1_read_o       <= #`RD  1'b0;
+                        	reg2_read_o       <= #`RD  1'b0;
 			end
 			////////////////////////////////////////
 			/////addi
 			////////////////////////////////////////
 			6'b001000:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b100;
-				aluop_o [7:0]     <= 8'b00001000;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b100;
+				aluop_o [7:0]     <= #`RD  8'b00001000;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
 				if(inst_i[15]==1)begin
-					imm[31:0]         <= {16'hffff,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'hffff,inst_i[15:0]};
 				end else begin
-					imm[31:0]         <= {16'h0,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'h0,inst_i[15:0]};
 				end
 			end
 			////////////////////////////////////////
 			/////addiu
 			////////////////////////////////////////
 			6'b001001:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b100;
-				aluop_o [7:0]     <= 8'b00001001;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b100;
+				aluop_o [7:0]     <= #`RD  8'b00001001;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
 				if(inst_i[15]==1)begin
-					imm[31:0]         <= {16'hffff,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'hffff,inst_i[15:0]};
 				end else begin
-					imm[31:0]         <= {16'h0,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'h0,inst_i[15:0]};
 				end
 			end
 			////////////////////////////////////////
 			/////slti
 			////////////////////////////////////////
 			6'b001010:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b100;
-				aluop_o [7:0]     <= 8'b00001010;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b100;
+				aluop_o [7:0]     <= #`RD  8'b00001010;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
 				if(inst_i[15]==1)begin
-					imm[31:0]         <= {16'hffff,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'hffff,inst_i[15:0]};
 				end else begin
-					imm[31:0]         <= {16'h0,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'h0,inst_i[15:0]};
 				end
 			end
 			////////////////////////////////////////
 			/////sltiu
 			////////////////////////////////////////
 			6'b001011:begin
-        		        waddr_o           <= inst_i[20:16];
-                       		alusel_o[2:0]     <= 3'b100;
-				aluop_o [7:0]     <= 8'b00001011;
-                       	 	wreg_o            <= 1'b1;
-                        	reg1_read_o       <= 1'b1;
-                        	reg2_read_o       <= 1'b0;
+        		        waddr_o           <= #`RD  inst_i[20:16];
+                       		alusel_o[2:0]     <= #`RD  3'b100;
+				aluop_o [7:0]     <= #`RD  8'b00001011;
+                       	 	wreg_o            <= #`RD  1'b1;
+                        	reg1_read_o       <= #`RD  1'b1;
+                        	reg2_read_o       <= #`RD  1'b0;
 				if(inst_i[15]==1)begin
-					imm[31:0]         <<= {16'hffff,inst_i[15:0]};
+					imm[31:0]         <<= #`RD  {16'hffff,inst_i[15:0]};
 				end else begin
-					imm[31:0]         <= {16'h0,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'h0,inst_i[15:0]};
 				end
 			end
 		
@@ -200,279 +200,279 @@ always @ (posedge clk or negedge reset_n) begin
 					/////and
 					////////////////////////////////////////
 					6'b100100:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b001;
-						aluop_o [7:0]     <= 8'b00100100;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b001;
+						aluop_o [7:0]     <= #`RD  8'b00100100;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					////////////////////////////////////////
 					/////or
 					////////////////////////////////////////
 					6'b100101:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b001;
-						aluop_o [7:0]     <= 8'b00100101;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b001;
+						aluop_o [7:0]     <= #`RD  8'b00100101;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					////////////////////////////////////////
 					/////xor
 					////////////////////////////////////////
 					6'b100110:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b001;
-						aluop_o [7:0]     <= 8'b00100110;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b001;
+						aluop_o [7:0]     <= #`RD  8'b00100110;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					////////////////////////////////////////
 					/////xor
 					////////////////////////////////////////
 					6'b100111:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b001;
-						aluop_o [7:0]     <= 8'b00100111;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b001;
+						aluop_o [7:0]     <= #`RD  8'b00100111;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					////////////////////////////////////////
 					/////sll
 					////////////////////////////////////////
 					6'b000000:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'h00;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b1;
-						imm[31:0]         <= {27'd0,inst_i[10:6]};
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'h00;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
+						imm[31:0]         <= #`RD  {27'd0,inst_i[10:6]};
 					end
 					////////////////////////////////////////
 					/////srl
 					////////////////////////////////////////
 					6'b000010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'b00000010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b1;
-						imm[31:0]         <= {27'd0,inst_i[10:6]};
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'b00000010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
+						imm[31:0]         <= #`RD  {27'd0,inst_i[10:6]};
 					end
 					////////////////////////////////////////
 					/////sra
 					////////////////////////////////////////
 					6'b000011:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'b00000011;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b1;
-						imm[31:0]         <= {27'd0,inst_i[10:6]};
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'b00000011;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
+						imm[31:0]         <= #`RD  {27'd0,inst_i[10:6]};
 					end
 					/////////////////////////////////
 					/////sllv
 					////////////////////////////////////////
 					6'b000100:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'b00000100;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'b00000100;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////srlv
 					////////////////////////////////////////
 					6'b000110:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'b00000110;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'b00000110;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////srav
 					////////////////////////////////////////
 					6'b000111:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b010;
-						aluop_o [7:0]     <= 8'b00000111;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b010;
+						aluop_o [7:0]     <= #`RD  8'b00000111;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////sync
 					////////////////////////////////////////
 					6'b001111:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b000;
-						aluop_o [7:0]     <= 8'b00001111;
-        	        	       	 	wreg_o            <= 1'b0;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b0;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b000;
+						aluop_o [7:0]     <= #`RD  8'b00001111;
+        	        	       	 	wreg_o            <= #`RD  1'b0;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b0;
 					end
 					/////////////////////////////////
 					/////movn
 					////////////////////////////////////////
 					6'b001011:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00001011;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00001011;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////movz
 					////////////////////////////////////////
 					6'b001010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00001010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00001010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////mfhi
 					////////////////////////////////////////
 					6'b010000:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00010000;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b0;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00010000;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b0;
 					end
 					/////////////////////////////////
 					/////mflo
 					////////////////////////////////////////
 					6'b010010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00010010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b0;
-        	        	        	reg2_read_o       <= 1'b0;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00010010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b0;
+        	        	        	reg2_read_o       <= #`RD  1'b0;
 					end
 					/////////////////////////////////
 					/////mthi
 					////////////////////////////////////////
 					6'b010001:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00010001;
-        	        	       	 	wreg_o            <= 1'b0;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b0;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00010001;
+        	        	       	 	wreg_o            <= #`RD  1'b0;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b0;
 					end
 					/////////////////////////////////
 					/////mtlo
 					////////////////////////////////////////
 					6'b010011:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b011;
-						aluop_o [7:0]     <= 8'b00010011;
-        	        	       	 	wreg_o            <= 1'b0;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b0;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b011;
+						aluop_o [7:0]     <= #`RD  8'b00010011;
+        	        	       	 	wreg_o            <= #`RD  1'b0;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b0;
 					end
 					/////////////////////////////////
 					/////add
 					////////////////////////////////////////
 					6'b100000:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100000;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100000;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////addu
 					////////////////////////////////////////
 					6'b100001:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100001;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100001;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////sub
 					////////////////////////////////////////
 					6'b100010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////subu
 					////////////////////////////////////////
 					6'b100011:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100011;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100011;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////slt
 					////////////////////////////////////////
 					6'b101010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00101010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00101010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////sltu
 					////////////////////////////////////////
 					6'b101011:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00101011;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00101011;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////mult
 					////////////////////////////////////////
 					6'b011000:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00011000;
-        	        	       	 	wreg_o            <= 1'b0;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00011000;
+        	        	       	 	wreg_o            <= #`RD  1'b0;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					//////////////////////////
 					/////multu
 					////////////////////////////////////////
 					6'b011001:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00011001;
-        	        	       	 	wreg_o            <= 1'b0;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00011001;
+        	        	       	 	wreg_o            <= #`RD  1'b0;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 				endcase
 				end
@@ -486,34 +486,34 @@ always @ (posedge clk or negedge reset_n) begin
 					/////clz
 					////////////////////////////////////////
 					6'b100000:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100000;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100000;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////clo
 					////////////////////////////////////////
 					6'b100001:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00100001;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00100001;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 					/////////////////////////////////
 					/////mul
 					////////////////////////////////////////
 					6'b000010:begin
-        				        waddr_o           <= inst_i[15:11];
-        	        	       		alusel_o[2:0]     <= 3'b100;
-						aluop_o [7:0]     <= 8'b00000010;
-        	        	       	 	wreg_o            <= 1'b1;
-        	        	        	reg1_read_o       <= 1'b1;
-        	        	        	reg2_read_o       <= 1'b1;
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00000010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
 					end
 						
 					endcase

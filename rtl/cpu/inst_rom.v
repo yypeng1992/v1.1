@@ -11,9 +11,9 @@ initial $readmemh ("inst.data", inst_rom1);
 
 always @ (posedge clk or negedge reset_n) begin
 	if(!ce) begin
-		inst[31:0] <= {32{1'b0}};
+		inst[31:0] <= #`RD  {32{1'b0}};
 	end else begin
-		inst <= inst_rom1[pc[31:2]];
+		inst[31:0] <= #`RD  inst_rom1[pc[31:2]];
 	end
 end
 

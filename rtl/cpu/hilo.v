@@ -11,11 +11,11 @@ output reg [31:0]lo_o;
 
 always @ (posedge clk or negedge reset_n) begin
 	if(!reset_n) begin
-		hi_o[31:0] <= {32{1'b0}};
-		lo_o[31:0] <= {32{1'b0}};
+		hi_o[31:0] <= #`RD  {32{1'b0}};
+		lo_o[31:0] <= #`RD  {32{1'b0}};
 	end else if(whilo) begin
-		hi_o[31:0] <= hi_i[31:0];
-		lo_o[31:0] <= hi_i[31:0];
+		hi_o[31:0] <= #`RD  hi_i[31:0];
+		lo_o[31:0] <= #`RD  hi_i[31:0];
 	end
 end
 endmodule

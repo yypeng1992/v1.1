@@ -69,35 +69,19 @@ wire       [63:0]mul_tempt;
 always @ (*) begin
 	if(!reset_n) begin
 		logicout[31:0] = {32{1'b0}};
-	end else if(alusel==3'b001) begin
+	end else if(alusel!=3'b001) begin
+		logicout[31:0] = {32{1'b0}};
+	end else begin
 		case(aluop[7:0])
-			8'b00100100 :begin	
-				logicout[31:0] = reg1_data & reg2_data;
-			end
-			8'b00001100:begin	
-				logicout[31:0] = reg1_data & reg2_data;
-			end
-			8'b00001101 :begin
-				logicout[31:0] = reg1_data | reg2_data;
-			end
-			8'b100101:begin
-				logicout[31:0] = reg1_data | reg2_data;
-			end
-			8'b00100110:begin	
-				logicout[31:0] = reg1_data ^ reg2_data;
-			end
-			8'b00001110:begin	
-				logicout[31:0] = reg1_data ^ reg2_data;
-			end
-			8'b00100111:begin
-				logicout[31:0] = ~(reg1_data | reg2_data);
-			end
-			8'b00001111:begin
-				logicout[31:0] = {reg2_data[15:0],16'd0};
-			end
-			default:begin
-				logicout[31:0] = {32{1'b0}};
-			end
+			8'b00100100, 
+			8'b00001100: logicout[31:0] = reg1_data & reg2_data;
+			8'b00001101,
+			8'b00100101: logicout[31:0] = reg1_data | reg2_data;
+			8'b00100110, 
+			8'b00001110: logicout[31:0] = reg1_data ^ reg2_data;
+			8'b00100111: logicout[31:0] = ~(reg1_data | reg2_data);
+			8'b00001111: logicout[31:0] = {reg2_data[15:0],16'd0};
+			default:     logicout[31:0] = {32{1'b0}};
 		endcase
 	end
 end
@@ -109,21 +93,14 @@ end
 always @ (*) begin
 	if(!reset_n) begin
 		moveout[31:0] = {32{1'b0}};
-	end else if(alusel==3'b010) begin
+	end else if(alusel==3'b010) begin //TODO
 		case(aluop[7:0])
-			8'b00000000 :begin
-				moveout[31:0] = (reg2_data << reg1_data[4:0]);
-			end
-			8'b00000100:begin
-				moveout[31:0] = (reg2_data << reg1_data[4:0]);
-			end
-			8'b00000010:begin
-				moveout[31:0] = (reg2_data >> reg1_data[4:0]);
-			end
-			8'b00000110:begin
-				moveout[31:0] = (reg2_data >> reg1_data[4:0]);
-			end
+			8'b00000000: moveout[31:0] = (reg2_data << reg1_data[4:0]);
+			8'b00000100: moveout[31:0] = (reg2_data << reg1_data[4:0]);
+			8'b00000010: moveout[31:0] = (reg2_data >> reg1_data[4:0]);
+			8'b00000110: moveout[31:0] = (reg2_data >> reg1_data[4:0]);
 			8'b00000011:begin
+				//TODO
 				tempt[63:0]   = {32'hffff,32'h0} | reg2_data;
 				right_move[63:0] = (tempt >> reg1_data[4:0]);
 				if(reg2_data[31]==1)begin
@@ -133,6 +110,7 @@ always @ (*) begin
 				end
 			end
 			8'b00000111:begin
+				//TODO
 				tempt[63:0]   = {32'hffff,32'h0} | reg2_data;
 				right_move[63:0] = (tempt >> reg1_data);
 				if(reg2_data[31]==1)begin
@@ -141,9 +119,7 @@ always @ (*) begin
 					moveout[31:0] = (reg2_data >> reg1_data[4:0]);
 				end
 			end
-			default:begin
-				moveout[31:0] = {32{1'b0}};
-			end
+			default: moveout[31:0] = {32{1'b0}};
 		endcase
 	end
 end
@@ -210,6 +186,7 @@ always @ (*) begin
 		arithmeticout[31:0] = {32{1'b0}};
 	end else if(alusel[2:0]==3'b100) begin
 		case(aluop[7:0])
+			//TODO case 分支不全
 			8'b00100000, 8'b00100010,8'b00100001, 8'b00100011,8'b00001000,8'b00001001:begin
 				arithmeticout[31:0] = sum_tempt[31:0];
 			end
@@ -301,29 +278,22 @@ end
 //////////////////////////////////////////////////////////////////////////
 always @ (posedge clk or negedge reset_n) begin
 	if(!reset_n) begin
-		ex_we         <= 1'b0;
-		ex_waddr[4:0] <= {5{1'b0}};
-		ex_wdata[31:0] <= {32{1'b0}};
+		ex_we         <= #`RD  1'b0;
+		ex_waddr[4:0] <= #`RD  {5{1'b0}};
+		ex_wdata[31:0]<= #`RD  {32{1'b0}};
 	end else begin
-		ex_we         <= id_we;
-		ex_waddr[4:0] <= id_waddr[4:0];
+		ex_we         <= #`RD  id_we;
+		ex_waddr[4:0] <= #`RD  id_waddr[4:0];
 		case(alusel[2:0])
-			3'b000:begin
-				ex_wdata[31:0] <= {32{1'b0}};
-			end
-			3'b001:begin
-              			ex_wdata[31:0] <= logicout[31:0];
-			end
-			3'b010:begin
-              			ex_wdata[31:0] <= moveout[31:0];
-			end
-			3'b011:begin
-				ex_wdata[31:0] <= shiftout[31:0];
-			end
+			3'b000: ex_wdata[31:0] <= #`RD  {32{1'b0}};
+			3'b001: ex_wdata[31:0] <= #`RD  logicout[31:0];
+			3'b010: ex_wdata[31:0] <= #`RD  moveout[31:0];
+			3'b011: ex_wdata[31:0] <= #`RD  shiftout[31:0];
 			3'b100:begin
+				//TODO rewrite in 'case' style 
 				if((aluop==8'b00100000) || (aluop==8'b00100010) || (aluop==8'b00001000))begin
 						if(!over_sum)begin
-							ex_wdata[31:0] <= arithmeticout[31:0];
+							ex_wdata[31:0] <= #`RD  arithmeticout[31:0];
 						end
 				end else if((aluop==8'b00001010) || (aluop==8'b00101010)) begin
 					if(reg1_lt_reg2)begin
@@ -331,12 +301,14 @@ always @ (posedge clk or negedge reset_n) begin
 					end else begin
 						ex_wdata[31:0] = 32'd0;
 					end
+					// A simple style looks like as follows:
+					//ex_wdata[31:0] = reg1_lt_reg2 ? 32'd1 : 32'd0;
 				end else  begin
-					ex_wdata[31:0] <= arithmeticout[31:0];
+					ex_wdata[31:0] <= #`RD  arithmeticout[31:0];
 				end
 			end
 			default:begin
-				ex_wdata[31:0] <= {32{1'b0}};
+				ex_wdata[31:0] <= #`RD  {32{1'b0}};
 			end
 		endcase
 	end
@@ -348,26 +320,29 @@ end
 //////////////////////////////////////////////////////////////////////////
 always @ (posedge clk or negedge reset_n) begin
 	if(!reset_n) begin
-		ex_whilo     <= 1'b0;
-		ex_hi [31:0] <= {32{1'b0}};
-		ex_lo [31:0] <= {32{1'b0}};
+		ex_whilo     <= #`RD  1'b0;
+		ex_hi [31:0] <= #`RD  {32{1'b0}};
+		ex_lo [31:0] <= #`RD  {32{1'b0}};
+	//TODO if-else if 分支不全
 	end else if(alusel==3'b011) begin
 		case(aluop[7:0])
+			//TODO case 分支不全
 			8'b00010001:begin
-				ex_whilo     <= 1'b1;
-                                ex_hi [31:0] <= reg1_data[31:0];
+				ex_whilo     <= #`RD  1'b1;
+                                ex_hi [31:0] <= #`RD  reg1_data[31:0];
 			end
 			8'b00010011:begin
-				ex_whilo     <= 1'b1;
-				ex_lo [31:0] <= reg1_data[31:0];
+				ex_whilo     <= #`RD  1'b1;
+				ex_lo [31:0] <= #`RD  reg1_data[31:0];
 			end
 		endcase
 	end else if(alusel==3'b100)begin
 		case(aluop[7:0])
+			//TODO case 分支不全
 			8'b00011000,8'b00011001:begin
-				ex_whilo    <= 1'b1;
-				ex_hi[31:0] <= mul_tempt[63:32];
-				ex_lo[31:0] <= mul_tempt[31:0 ];
+				ex_whilo    <= #`RD  1'b1;
+				ex_hi[31:0] <= #`RD  mul_tempt[63:32];
+				ex_lo[31:0] <= #`RD  mul_tempt[31:0 ];
 			end
 		endcase
 	end

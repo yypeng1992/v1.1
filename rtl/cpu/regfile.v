@@ -57,8 +57,8 @@ end
 /////////////////////////
 always @ (posedge clk or posedge reset_n) begin
 	if(reset_n) begin
-		 if((wb_we) && (wb_waddr != 0)) begin
-			regs[wb_waddr] <= wb_wdata[31:0];
+		if((wb_we) && (wb_waddr != 0)) begin
+			regs[wb_waddr] <= #`RD  wb_wdata[31:0];
 		end
 	end
 end
