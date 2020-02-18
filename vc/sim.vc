@@ -2,3 +2,7 @@ $WORK_PATH/sim/led/led_tb.v
 $WORK_PATH/sim/i2c/tb.v
 $WORK_PATH/sim/share/share_tb.v
 $WORK_PATH/sim/sort/sort_tb.v
+$WORK_PATH/sim/ori/ori_tb.v
+$WORK_PATH/sim/logic_move/logic_move_tb.v
+$WORK_PATH/sim/shift/shift_tb.v
+$WORK_PATH/sim/cpu/arithmetic_tb.v
