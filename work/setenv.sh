@@ -11,8 +11,8 @@ echo "WORK_PATH: $WORK_PATH"
 echo "seart to prepare filelist!"
 rm -rf $filelist
 touch $filelist
-for file in `ls $WORK_PATH/vc/*.vc`
-do
-	cat $file >> $filelist
-done
+cat $WORK_PATH/vc/rtl.vc    >  $filelist
+cat $WORK_PATH/vc/share.vc  >> $filelist
+cat $WORK_PATH/vc/sim.vc    >> $filelist
+
 echo "prepare filelist done!"

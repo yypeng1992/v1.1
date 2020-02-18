@@ -1,3 +1,4 @@
+`define `RD 1
 //`define SIM_LED
 //`define SIM_I2C
 //`define SIM_SHARE
