@@ -15,4 +15,6 @@ cat $WORK_PATH/vc/rtl.vc    >  $filelist
 cat $WORK_PATH/vc/share.vc  >> $filelist
 cat $WORK_PATH/vc/sim.vc    >> $filelist
 
+cp -p $WORK_PATH/mips_tools/inst_rom.data  ./
+
 echo "prepare filelist done!"
