@@ -67,8 +67,8 @@ always @ (posedge clk or negedge reset_n) begin
 	end else if(pc_i !=0) begin
 		reg1_addr_o[4:0]  <= #`RD  inst_i[25:21];
 		reg2_addr_o[4:0]  <= #`RD  inst_i[20:16];
-		case(inst_i[31:26]) //TODO 查看分支是否完全
-			////////////////////////////////////////
+		case(inst_i[31:26]) 		
+		        ////////////////////////////////////////
 			/////ori
 			////////////////////////////////////////
 			6'b001101:begin
@@ -185,7 +185,7 @@ always @ (posedge clk or negedge reset_n) begin
                         	reg1_read_o       <= #`RD  1'b1;
                         	reg2_read_o       <= #`RD  1'b0;
 				if(inst_i[15]==1)begin
-					imm[31:0]         <<= #`RD  {16'hffff,inst_i[15:0]};
+					imm[31:0]         <= #`RD  {16'hffff,inst_i[15:0]};
 				end else begin
 					imm[31:0]         <= #`RD  {16'h0,inst_i[15:0]};
 				end
@@ -518,9 +518,15 @@ always @ (posedge clk or negedge reset_n) begin
 						
 					endcase
 				end
-
-
-				
+				default:begin
+        				        waddr_o           <= #`RD  inst_i[15:11];
+        	        	       		alusel_o[2:0]     <= #`RD  3'b100;
+						aluop_o [7:0]     <= #`RD  8'b00000010;
+        	        	       	 	wreg_o            <= #`RD  1'b1;
+        	        	        	reg1_read_o       <= #`RD  1'b1;
+        	        	        	reg2_read_o       <= #`RD  1'b1;
+						imm[31:0]         <= #`RD  {32{1'b0}};
+				end
 		endcase
 	end
 end

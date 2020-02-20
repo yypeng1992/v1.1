@@ -55,13 +55,15 @@ reg        [31:0]arithmeticout;
 
 reg        [63:0]tempt;
 reg        [63:0]right_move;
-wire       [31:0]reg2_data_mux;
+wire       [31:0]reg1_data_mux;
+reg       [31:0]reg2_data_mux;
 wire             over_sum;
 wire       [31:0]sum_tempt;
 wire             reg1_lt_reg2;
-wire       [31:0]opdata1_mult;
-wire       [31:0]opdata2_mult;
 wire       [63:0]mul_tempt;
+
+assign  tempt[63:0]   = {32'hffff,32'h0} | reg2_data;
+assign  right_move[63:0] = (tempt >> reg1_data[4:0]);
 
 //////////////////////////////////////////////////////////////////////////
 /////////////logicout
@@ -93,26 +95,13 @@ end
 always @ (*) begin
 	if(!reset_n) begin
 		moveout[31:0] = {32{1'b0}};
-	end else if(alusel==3'b010) begin //TODO
+	end else if(alusel==3'b010) begin 
 		case(aluop[7:0])
-			8'b00000000: moveout[31:0] = (reg2_data << reg1_data[4:0]);
+			8'b00000000,
 			8'b00000100: moveout[31:0] = (reg2_data << reg1_data[4:0]);
-			8'b00000010: moveout[31:0] = (reg2_data >> reg1_data[4:0]);
+			8'b00000010, 
 			8'b00000110: moveout[31:0] = (reg2_data >> reg1_data[4:0]);
-			8'b00000011:begin
-				//TODO
-				tempt[63:0]   = {32'hffff,32'h0} | reg2_data;
-				right_move[63:0] = (tempt >> reg1_data[4:0]);
-				if(reg2_data[31]==1)begin
-					moveout[31:0] = right_move[31:0];
-				end else begin
-					moveout[31:0] = (reg2_data >> reg1_data[4:0]);
-				end
-			end
-			8'b00000111:begin
-				//TODO
-				tempt[63:0]   = {32'hffff,32'h0} | reg2_data;
-				right_move[63:0] = (tempt >> reg1_data);
+			8'b00000011,8'b00000111:begin
 				if(reg2_data[31]==1)begin
 					moveout[31:0] = right_move[31:0];
 				end else begin
@@ -121,6 +110,8 @@ always @ (*) begin
 			end
 			default: moveout[31:0] = {32{1'b0}};
 		endcase
+	end else begin
+		moveout[31:0] = {32{1'b0}};
 	end
 end
 
@@ -165,18 +156,32 @@ always @ (*) begin
 				shiftout[31:0] = {32{1'b0}};
 			end
 		endcase
+	end else begin
+		shiftout[31:0] = {32{1'b0}};
 	end
 end
 
-assign reg2_data_mux[31:0] = (alusel==3'b100 && ((aluop==8'b00100010)||(aluop==8'b00100011))||(aluop==8'b00101010)||(aluop==8'b00001010)||
-			     (aluop==8'b00101011)||(aluop==8'b00001011)) ? (~reg2_data[31:0]+1) : reg2_data[31:0];
-assign sum_tempt    [31:0] = reg1_data[31:0] + reg2_data_mux[31:0]; 
+assign reg1_data_mux[31:0] = ((alusel==3'b100 && ((aluop==8'b00101010)||(aluop==8'b00001010)||(aluop==8'b000010)||(aluop==8'b11000))) && (reg1_data[31]==1))
+				? (~reg1_data[31:0]+1) : reg1_data[31:0];
+always @ (*) begin
+	if(!reset_n)begin
+		reg2_data_mux[31:0] = {32{1'b0}};
+	end else if(alusel==3'b100)begin
+		case(aluop[7:0])
+			8'b00000010,8'b00011000,8'b00101011,8'b00001011,8'b00100010,8'b00100011:reg2_data_mux[31:0] = ~reg2_data+1;
+			8'b00101010,8'b00001010:reg2_data_mux[31:0] = ~reg2_data+1;
+			default:reg2_data_mux[31:0] = {32{1'b0}};
+		endcase
+	end else begin
+		reg2_data_mux[31:0] = {32{1'b0}};
+	end
+end
+assign sum_tempt    [31:0] = reg1_data_mux[31:0] + reg2_data_mux[31:0]; 
 assign over_sum            = (reg1_data[31]) && reg2_data[31] &&(!sum_tempt[31]);
-assign reg1_lt_reg2        = (alusel==3'b100 && ((aluop==8'b00101010)||(aluop==8'b00001010))) 
-			     && ((reg1_data[31]&&(!reg2_data[31]))||(reg1_data[31]&&reg2_data[31]&&(!sum_tempt[31]))||((!reg1_data[31])&&(!reg2_data[31])&&(sum_tempt[31])));
-assign opdata1_mult[31:0] = ((alusel==3'b100)&&((aluop==8'b000010)||(aluop==8'b11000)) && (reg1_data[31])) ? (~reg1_data+1):reg1_data;
-assign opdata2_mult[31:0] = ((alusel==3'b100)&&((aluop==8'b000010)||(aluop==8'b11000)) && (reg2_data[31])) ? (~reg2_data+1):reg2_data;
-assign mul_tempt   [63:0] = opdata1_mult[31:0] * opdata2_mult[31:0];
+assign reg1_lt_reg2        = (reg1_data[31]&&(!reg2_data[31])) || 
+			     (reg1_data[31]&&reg2_data[31]&&(!sum_tempt[31])) ||
+			     ((!reg1_data[31])&&(!reg2_data[31])&&(sum_tempt[31]));
+assign mul_tempt   [63:0] = reg1_data_mux[31:0] * reg2_data_mux[31:0];
 
 //////////////////////////////////////////////////////////////////////////
 /////////////arithmeticout
@@ -186,7 +191,6 @@ always @ (*) begin
 		arithmeticout[31:0] = {32{1'b0}};
 	end else if(alusel[2:0]==3'b100) begin
 		case(aluop[7:0])
-			//TODO case 分支不全
 			8'b00100000, 8'b00100010,8'b00100001, 8'b00100011,8'b00001000,8'b00001001:begin
 				arithmeticout[31:0] = sum_tempt[31:0];
 			end
@@ -265,11 +269,11 @@ always @ (*) begin
 						      !reg1_data[ 1] ? 32'd30  :
 						      !reg1_data[ 0] ? 32'd31  : 32'd32;
 			end
-			8'b00000010:begin
-				arithmeticout[31:0] = mul_tempt[31:0];
-			end
-
+			8'b00000010:arithmeticout[31:0] = mul_tempt[31:0];
+			default:    arithmeticout[31:0] = {32{1'b0}};
 		endcase
+	end else begin
+		arithmeticout[31:0] = {32{1'b0}};
 	end
 end
 
@@ -290,19 +294,12 @@ always @ (posedge clk or negedge reset_n) begin
 			3'b010: ex_wdata[31:0] <= #`RD  moveout[31:0];
 			3'b011: ex_wdata[31:0] <= #`RD  shiftout[31:0];
 			3'b100:begin
-				//TODO rewrite in 'case' style 
 				if((aluop==8'b00100000) || (aluop==8'b00100010) || (aluop==8'b00001000))begin
 						if(!over_sum)begin
 							ex_wdata[31:0] <= #`RD  arithmeticout[31:0];
 						end
 				end else if((aluop==8'b00001010) || (aluop==8'b00101010)) begin
-					if(reg1_lt_reg2)begin
-						ex_wdata[31:0] = 32'd1;
-					end else begin
-						ex_wdata[31:0] = 32'd0;
-					end
-					// A simple style looks like as follows:
-					//ex_wdata[31:0] = reg1_lt_reg2 ? 32'd1 : 32'd0;
+						ex_wdata[31:0] = #`RD reg1_lt_reg2;
 				end else  begin
 					ex_wdata[31:0] <= #`RD  arithmeticout[31:0];
 				end
@@ -323,10 +320,8 @@ always @ (posedge clk or negedge reset_n) begin
 		ex_whilo     <= #`RD  1'b0;
 		ex_hi [31:0] <= #`RD  {32{1'b0}};
 		ex_lo [31:0] <= #`RD  {32{1'b0}};
-	//TODO if-else if 分支不全
 	end else if(alusel==3'b011) begin
 		case(aluop[7:0])
-			//TODO case 分支不全
 			8'b00010001:begin
 				ex_whilo     <= #`RD  1'b1;
                                 ex_hi [31:0] <= #`RD  reg1_data[31:0];
@@ -335,16 +330,29 @@ always @ (posedge clk or negedge reset_n) begin
 				ex_whilo     <= #`RD  1'b1;
 				ex_lo [31:0] <= #`RD  reg1_data[31:0];
 			end
+			default:begin
+				ex_whilo     <= 1'b0;
+				ex_hi[31:0]  <= {32{1'b0}};
+				ex_lo[31:0]  <= {32{1'b0}};
+			end
 		endcase
 	end else if(alusel==3'b100)begin
 		case(aluop[7:0])
-			//TODO case 分支不全
 			8'b00011000,8'b00011001:begin
 				ex_whilo    <= #`RD  1'b1;
 				ex_hi[31:0] <= #`RD  mul_tempt[63:32];
 				ex_lo[31:0] <= #`RD  mul_tempt[31:0 ];
 			end
+			default:begin
+				ex_whilo     <= 1'b0;
+				ex_hi[31:0]  <= {32{1'b0}};
+				ex_lo[31:0]  <= {32{1'b0}};
+			end
 		endcase
+	end else begin
+		ex_whilo     <= 1'b0;
+		ex_hi[31:0]  <= {32{1'b0}};
+		ex_lo[31:0]  <= {32{1'b0}};
 	end
 end
 
