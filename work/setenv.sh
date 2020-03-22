@@ -11,10 +11,8 @@ echo "WORK_PATH: $WORK_PATH"
 echo "seart to prepare filelist!"
 rm -rf $filelist
 touch $filelist
-cat $WORK_PATH/vc/rtl.vc    >  $filelist
-cat $WORK_PATH/vc/share.vc  >> $filelist
-cat $WORK_PATH/vc/sim.vc    >> $filelist
-
-cp -p $WORK_PATH/mips_tools/inst_rom.data  ./
-
+for file in `ls $WORK_PATH/vc/*.vc`
+do
+	cat $file >> $filelist
+done
 echo "prepare filelist done!"

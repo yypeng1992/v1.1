@@ -1,136 +1,110 @@
-module uart_rx
-#(parameter CLK_FRE = 50_000_000,
-parameter BAUD_RATE = 115200
-)
-(
-input clk,
-input rst_n,
-input rx_pin,
-input rx_data_ready,
-output reg rx_data_valid,
+module uart_rx(clk,reset_n,rx_ready,rx_pin,rx_data,rx_done);
+input           clk;
+input           reset_n;
+input           rx_ready;
+input           rx_pin;
+output reg  [7:0]rx_data;
+output reg       rx_done;
 
-output reg [7:0] rx_data
-);
-
-reg rx_pin_delay;
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		rx_pin_delay <= 1'b1;
-	end else begin
-		rx_pin_delay <= rx_pin;
-	end
-end
-assign rx_negedge = (~rx_pin) && rx_pin_delay;
-
-
-localparam [2:0] S_IDLE = 3'b000;
-localparam [2:0] S_START = 3'b001;
-localparam [2:0] S_REC_BYTE = 3'b010;
-localparam [2:0] S_STOP = 3'b011;
-localparam [2:0] S_DATA = 3'b100;
-reg [2:0] state;
-reg [2:0] next_state;
-
-parameter CNT_IS_MAX = CLK_FRE / BAUD_RATE;
-reg [15:0] time_cnt;
-
+parameter TX_CLK = 5_000_000;
+parameter BAUR_RATE = 115200;
+parameter COUNR_IS_MAX = TX_CLK / BAUR_RATE;
+reg [15:0]count;
 reg [2:0]bit_cnt;
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
+reg rx_pin_d;
+wire down_edge;
+reg [7:0]get_data;
+
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		rx_pin_d <= 1'b1;
+	end else begin
+		rx_pin_d <= rx_pin;
+	end
+end
+assign down_edge = (~rx_pin) && rx_pin_d;
+
+parameter [2:0] R_IDLE = 3'b000;
+parameter [2:0] R_START = 3'b001;
+parameter [2:0] R_SEND = 3'b010;
+parameter [2:0] R_DONE = 3'b011;
+parameter [2:0] R_GER_DATA = 3'b100;
+reg [2:0]state;
+reg [2:0]next_state;
+
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		count[15:0] <= {16{1'b0}};
+	end else if(state != next_state)begin
+		count[15:0] <= {16{1'b0}};
+	end else if(count==COUNR_IS_MAX) begin
+		count[15:0] <= {16{1'b0}};
+	end else if((state==R_IDLE))begin
+		count[15:0] <= {16{1'b0}};
+	end else begin
+		count[15:0] <= count[15:0] + 1'b1;
+	end
+end
+
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
 		bit_cnt[2:0] <= 3'b000;
-	end else if ((state==S_REC_BYTE) && (time_cnt == CNT_IS_MAX-1 ))  begin
+	end else if((bit_cnt==3'b111) && (count==COUNR_IS_MAX))begin
+		bit_cnt[2:0] <= 3'b000;
+	end else if((state==R_SEND)&&(count==COUNR_IS_MAX)) begin
 		bit_cnt[2:0] <= bit_cnt[2:0] + 1'b1;
-	end else if(state!=S_REC_BYTE)begin
-		bit_cnt[2:0] <= 3'b000;
 	end
 end
 
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		time_cnt[15:0] <= 16'd0;
-	end else if(((state==S_REC_BYTE)&&(time_cnt == CNT_IS_MAX-1)) || (state==S_IDLE)||(state!=state)) begin
-		time_cnt[15:0] <= 16'd0;
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		state[2:0] <= R_IDLE[2:0];
 	end else begin
-		time_cnt[15:0] <= time_cnt[15:0] + 1'b1;
+		state[2:0] <= next_state[2:0];
 	end
 end
 
-
-always @ (posedge clk or negedge rst_n) begin
-	if (!rst_n) begin
-		state[2:0] <= S_IDLE[2:0] ;
-	end else begin
-		state[2:0]  <= next_state[2:0] ;
-	end
-end
 
 always @ (*) begin
-	if(!rst_n) begin
-		next_state[2:0]  = S_IDLE[2:0] ;
-	end else begin
-		case(state)
-			S_IDLE:
-				if(rx_negedge) begin
-					next_state[2:0]  = S_START[2:0] ;
-				end else begin
-					next_state[2:0]  = S_IDLE[2:0] ;
-				end
-			S_START:
-				if(time_cnt == CNT_IS_MAX-1) begin
-					next_state[2:0]  = S_REC_BYTE[2:0] ; 
-				end else begin
-					next_state[2:0]  = S_START[2:0] ;
-				end
-			S_REC_BYTE:
-				if ((time_cnt == CNT_IS_MAX-1) && (bit_cnt == 3'b111)) begin
-					next_state[2:0]  = S_STOP[2:0] ;
-				end else begin
-					next_state[2:0]  = S_REC_BYTE[2:0] ;
-				end
-			S_STOP:
-				if (time_cnt == CNT_IS_MAX/2) begin
-					next_state[2:0]  = S_DATA[2:0] ;
-				end else begin
-					next_state[2:0]  = S_STOP[2:0] ;
-				end
-			S_DATA:
-				if(rx_data_ready) begin
-					next_state[2:0]  = S_IDLE[2:0] ;
-				end else begin
-					next_state[2:0]  = S_DATA[2:0] ; 
-				end
-			default:next_state[2:0]  = S_IDLE[2:0] ;
-		endcase	
-	end
-
+	case(state[2:0])
+		R_IDLE[2:0]:next_state[2:0]= (down_edge&&rx_ready) ? R_START[2:0] : R_IDLE[2:0];
+		R_START[2:0]:next_state[2:0]=(count==COUNR_IS_MAX) ? R_SEND[2:0] : R_START[2:0];
+		R_SEND[2:0]:next_state[2:0]= ((bit_cnt==3'b111) && (count==COUNR_IS_MAX)) ? R_DONE[2:0] : R_SEND[2:0];
+		R_DONE[2:0]: next_state[2:0] = (count==COUNR_IS_MAX/2) ? R_GER_DATA[2:0] : R_DONE[2:0];
+		R_GER_DATA[2:0]:next_state[2:0] = rx_ready ? R_IDLE[2:0] : R_GER_DATA[2:0];
+		default:next_state[2:0] = R_IDLE[2:0];
+	endcase
 end
 
-reg [7:0]rx_bits;
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		rx_bits <= 8'd0;
-	end else if (state==S_REC_BYTE && time_cnt==CNT_IS_MAX/2) begin
-		rx_bits[bit_cnt] <= rx_pin;
-	end else begin
-		rx_bits <= rx_bits;
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		get_data[7:0] <= {8{1'b0}};
+	end else if((state==R_SEND)&&(count==COUNR_IS_MAX/2))begin
+		get_data[bit_cnt] <= rx_pin;
 	end
 end
 
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		rx_data_valid <= 1'b0;
-	end else if (state==S_STOP && next_state != state ) begin
-		rx_data_valid <= 1'b1;
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		rx_done <= 1'b0;
+	end else if((state==R_DONE)&&(next_state==R_GER_DATA)) begin
+		rx_done <= 1'b1;
 	end else begin
-		rx_data_valid <= 1'b0;
+		rx_done <= 1'b0;
 	end
 end
 
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		rx_data[7:0] <= 8'd0;	
-	end else if (rx_data_valid) begin
-		rx_data[7:0] <= rx_bits[7:0];
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		rx_data[7:0] <= {8{1'b0}};
+	end else if((state==R_DONE) && (next_state != R_DONE)) begin
+		rx_data[7:0] <= get_data[7:0];
 	end
 end
 

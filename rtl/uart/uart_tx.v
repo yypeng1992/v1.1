@@ -1,112 +1,101 @@
-module uart_tx
-#(
-parameter CLK_FRE = 50_000_000,
-parameter BAUD_RATE = 115200
-)
-(
-input clk,
-input rst_n,
-input tx_data_valid,
-input wire  [7:0]tx_data,
+module uart_tx(clk,reset_n,tx_start,tx_data,tx_done,tx_pin);
+input           clk;
+input           reset_n;
+input           tx_start;
+input      [7:0]tx_data;
+output          tx_done;
+output reg      tx_pin;
 
-output reg  tx_pin
-);
-
-
-parameter COUNT_MAX = CLK_FRE/BAUD_RATE;
-
-reg [2:0]cnt_bit;
+parameter S_CLK = 5_000_000;
+parameter BAUT_RATE = 115200;
+parameter COUNT_IS_MAX = S_CLK / BAUT_RATE;
 reg [15:0]count;
+reg [2:0]bit_cnt;
+wire     flag;
+assign flag = (count==COUNT_IS_MAX);
 
-localparam [2:0] S_IDLE = 3'b000;
-localparam [2:0] S_START = 3'b001;
-localparam [2:0] S_SEND_BYTE = 3'b010;
-localparam [2:0] S_STOP = 3'b011;
-reg [2:0] state;
-reg [2:0] next_state; 
+parameter [1:0] T_IDLE = 2'b00;
+parameter [1:0] T_START = 2'b01;
+parameter [1:0] T_WORK = 2'b10;
+parameter [1:0] T_DONE = 2'b11;
+reg [1:0]state;
+reg [1:0]next_state;
 
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		count[15:0] <= 16'h0;
-	end else if ((state == S_IDLE) || ((count[15:0]==COUNT_MAX-1)&&(state==S_SEND_BYTE) || (next_state != state) )) begin
-		count[15:0] <= 16'h0;	
+
+assign tx_done = (state==T_DONE)&&(next_state==T_IDLE);
+
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		count[15:0] <= {16{1'b0}};
+	end else if(flag) begin
+		count[15:0] <= {16{1'b0}};
+	end else if((state==T_IDLE))begin
+		count[15:0] <= {16{1'b0}};
 	end else begin
 		count[15:0] <= count[15:0] + 1'b1;
 	end
 end
 
 
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		state[2:0] <= S_IDLE;
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		bit_cnt[2:0] <= 3'b000;
+	end else if((bit_cnt==3'b111) && flag)begin
+		bit_cnt[2:0] <= 3'b000;
+	end else if((state==T_WORK)&& flag)begin
+		bit_cnt[2:0] <= bit_cnt[2:0] + 1'b1;
+	end 
+end
+
+
+
+
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
+		state[1:0] <= T_IDLE[1:0];
 	end else begin
-		state[2:0] <= next_state[2:0];
+		state[1:0] <= next_state[1:0];
 	end
 end
+
 
 always @ (*) begin
-next_state=state;
-case(state)
-	S_IDLE:begin
-		if (tx_data_valid) begin
-			next_state[2:0] = S_START[2:0];
-		end else begin
-			next_state[2:0] = S_IDLE[2:0];
+	case(state[1:0])
+		T_IDLE[1:0]:begin
+			if(tx_start)begin
+				next_state[1:0] = T_START[1:0];
+			end else begin
+				next_state[1:0] = T_IDLE[1:0];
+			end
 		end
-	end
-	S_START:begin
-		if(count[15:0]==COUNT_MAX-1) begin
-			next_state[2:0] = S_SEND_BYTE[2:0];
-		end else begin
-			next_state[2:0] = S_START[2:0];
+		T_START[1:0]:next_state[1:0] = flag ? T_WORK[1:0] : T_START[1:0]; 
+		T_WORK[1:0]:begin
+			if((bit_cnt==3'b111) && (count==COUNT_IS_MAX))begin
+				next_state[1:0] = T_DONE[1:0];
+			end else begin
+				next_state[1:0] = T_WORK[1:0];
+			end
 		end
-	end
-	S_SEND_BYTE:begin
-		if((count[15:0]==COUNT_MAX-1) && cnt_bit==3'b111)begin
-			next_state[2:0] = S_STOP[2:0];
-		end else begin
-			next_state[2:0] = S_SEND_BYTE[2:0];
-		end
-	end
-	S_STOP:begin
-		if(count[15:0]==COUNT_MAX/2) begin
-			next_state[2:0] = S_IDLE[2:0];
-		end else begin
-			next_state[2:0] = S_STOP[2:0];
-		end
-	end 
-	default:begin
-		next_state[2:0] = S_IDLE[2:0];
-	end
-endcase
-end
-
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		cnt_bit[2:0] <= 3'b000;
-	end else if (state==S_SEND_BYTE && (count[15:0]==COUNT_MAX-1) ) begin
-		cnt_bit[2:0] <= cnt_bit[2:0] + 1'b1;	
-	end else if (state != S_SEND_BYTE) begin
-		cnt_bit[2:0] <= 3'b000;
-	end
+		T_DONE[1:0]:next_state[1:0] = flag ? T_IDLE[1:0] : T_DONE[1:0];
+		default:next_state[1:0] = T_IDLE[1:0];
+	endcase
 end
 
 
 
-
-always @ (posedge clk or negedge rst_n) begin
-	if(!rst_n) begin
-		tx_pin <= 1'd1;
-	end else if(state==S_SEND_BYTE && count[15:0]==COUNT_MAX/2)begin
-		tx_pin <= tx_data[cnt_bit];
-	end else if(state==S_START)begin
-		tx_pin <= 1'b0;
-	end else if(state==S_STOP) begin
+always @ (posedge clk or negedge reset_n) begin
+	if(!reset_n) begin
 		tx_pin <= 1'b1;
+	end else if((state==T_WORK) && (next_state==T_DONE))begin
+		tx_pin <= 1'b1;
+	end else if(state==T_WORK)begin
+		tx_pin <= tx_data[bit_cnt];
+	end else if((state==T_IDLE)||(state==T_DONE))begin
+		tx_pin <= 1'b1;
+	end else if((state==T_START))begin
+		tx_pin <= 1'b0;
 	end
 end
-
-
-
 
 endmodule
