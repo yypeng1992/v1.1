@@ -130,14 +130,7 @@ seg_for_i2c seg1(
 );
 
 
-wire clk0;
-wire locked;
-pll pll0(
- .areset (reset_n),
- .inclk0 (clk),
- .c0     (clk0),
- .locked (locked)
-);
+
 
 
 
