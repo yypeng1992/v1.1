@@ -9,7 +9,7 @@ $WORK_PATH/sim/sort/sort_tb.v
 //$WORK_PATH/sim/arith_muldiv/arith_muldiv_tb.v
 //$WORK_PATH/sim/jump_branch/jump_branch_tb.v
 //$WORK_PATH/sim/load_store/load_store_tb.v
-//$WORK_PATH/sim/load_store_llsc/load_store_llsc_tb.v
+$WORK_PATH/sim/load_store_llsc/load_store_llsc_tb.v
 //$WORK_PATH/sim/load_relative/load_relative_tb.v
 //$WORK_PATH/sim/cp0/cp0_tb.v
 //$WORK_PATH/sim/cpu/except_tb.v
@@ -24,3 +24,4 @@ $WORK_PATH/sim/ram_fifo/fifo_test.v
 $WORK_PATH/sim/clock/clock_tb.v
 $WORK_PATH/sim/handshake/handshake_tb.v
 $WORK_PATH/sim/AES/aes_test.v
+$WORK_PATH/sim/ahb_sram/sram_tb.v

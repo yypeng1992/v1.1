@@ -1,15 +1,11 @@
-module ex(reset_n,	  alusel,aluop,reg1_data,reg2_data,id_we,id_waddr,
+module ex(reset_n,alusel,aluop,reg1_data,reg2_data,id_we,id_waddr,
 	  hilo_hi,hilo_lo,
 	  mem_whilo,mem_hi,mem_lo,
 	  wb_whilo,wb_hi,wb_lo,
-	  ex_we,ex_waddr,ex_wdata,ex_whilo,ex_hi,ex_lo,
+	  ,ex_aluop,ex_we,ex_waddr,ex_wdata,ex_whilo,ex_hi,ex_lo,
 	  mem_cnt,mem_hilo_tempt,mem_minuend,ex_cnt,ex_hilo_tempt,stallreg_from_ex,minuend,
-	  is_in_delayslot_i,link_address_i,
-	  inst_i,alusel_o,aluop_o,ram_addr_o,reg2_o,
-	  cp0_reg_data_i,mem_cp0_reg_we,mem_cp0_reg_write_addr,mem_cp0_reg_data,wb_cp0_reg_we,wb_cp0_reg_write_addr,wb_cp0_reg_data,
-	  cp0_reg_read_addr_o,cp0_reg_we_o,cp0_reg_write_addr_o,cp0_reg_data_o,
-	  excepttype_i,current_inst_addr_i,excepttype_o,current_inst_addr_o,is_in_delayslot_o);
-
+	  ex_delayslot,ex_link_addr,
+	  inst_i,aluop_o,mem_addr,mem_data);
 input            reset_n;
 ///////////////////////////////////
 ///input from id
@@ -20,7 +16,6 @@ input      [31:0]reg1_data;
 input      [31:0]reg2_data;
 input            id_we;
 input      [4:0] id_waddr;
-
 
 ///////////////////////////////////
 ///input from hilo
@@ -45,13 +40,13 @@ input     [31:0] wb_lo;
 ///////////////////////////////////
 ///output to mem
 ///////////////////////////////////
+output     [7:0] ex_aluop;
 output reg       ex_we;
 output reg [4:0] ex_waddr;
 output reg [31:0]ex_wdata;
 output reg       ex_whilo;
 output reg [31:0]ex_hi;
 output reg [31:0]ex_lo;
-
 
 ///////////////////////////////////
 ///input and output for ctrl
@@ -65,96 +60,31 @@ output reg       stallreg_from_ex;
 output reg[63:0] minuend;
 
 ///////////////////////////////////
-///input  for jump_branch
+///input and output for jump
 ///////////////////////////////////
-input wire is_in_delayslot_i;
-input [31:0]link_address_i;
+input            ex_delayslot;
+input      [31:0]ex_link_addr;
+
 
 ///////////////////////////////////
-///input  and output for load_store 
+///input and output for load_store
 ///////////////////////////////////
 input      [31:0]inst_i;
-output     [2 :0]alusel_o;
 output     [7 :0]aluop_o;
-output reg [31:0]ram_addr_o;
-output     [31:0]reg2_o;
+output     [31:0]mem_addr;
+output     [31:0]mem_data;
+
+wire [31:0]signed_offset;
+
+assign aluop_o[7:0]   = aluop[7:0];
+assign mem_data[31:0] = reg2_data[31:0];
+assign signed_offset[31:0] = inst_i[15] ? {16'hffff,inst_i[15:0]} : inst_i[15:0];
+assign mem_addr[31:0]      = signed_offset[31:0] + reg1_data[31:0];
+
+assign ex_aluop[7:0]      = aluop[7:0];
 
 
-///////////////////////////////////
-///input  and output for mtc0.mfc0
-///////////////////////////////////
-input      [31:0] cp0_reg_data_i;
-input             mem_cp0_reg_we;
-input      [4 :0] mem_cp0_reg_write_addr;
-input      [31:0] mem_cp0_reg_data;
-input             wb_cp0_reg_we;
-input      [4 :0] wb_cp0_reg_write_addr;
-input      [31:0] wb_cp0_reg_data;
-output reg [4 :0] cp0_reg_read_addr_o;
-output reg        cp0_reg_we_o;
-output reg [4 :0] cp0_reg_write_addr_o;
-output reg [31:0] cp0_reg_data_o;
 
-///////////////////////////////////
-///input  and output for excepttype
-///////////////////////////////////
-input      [31:0] excepttype_i;
-input      [31:0] current_inst_addr_i;
-output     [31:0] excepttype_o;
-output     [31:0] current_inst_addr_o;
-output            is_in_delayslot_o;
-
-assign cp0_reg_read_addr_o[4:0] = ((inst_i[31:21]==11'b01000000000) && (inst_i[10:0]==11'h0)) ? inst_i[15:11] : 5'd0;
-
-
-always @ (*) begin
-	if(!reset_n) begin
-		cp0_reg_we_o              = 1'b0;
-		cp0_reg_write_addr_o[4:0] = {5{1'b0}};
-		cp0_reg_data_o      [31:0]= {32{1'b0}}; 
-	end else if((inst_i[31:21]==11'b01000000100) && (inst_i[10:0]==11'h0))begin
-		cp0_reg_we_o              = 1'b1;
-		cp0_reg_write_addr_o[4:0] = inst_i[15:11];
-		if(mem_cp0_reg_we && (cp0_reg_write_addr_o==mem_cp0_reg_write_addr))begin
-			cp0_reg_data_o[31:0] = mem_cp0_reg_data[31:0];
-		end else if(wb_cp0_reg_we && (cp0_reg_write_addr_o==wb_cp0_reg_write_addr)) begin
-			cp0_reg_data_o[31:0] = wb_cp0_reg_data[31:0];
-		end else begin
-			cp0_reg_data_o[31:0] = reg1_data[31:0];
-		end
-	end else begin
-		cp0_reg_we_o              = 1'b0;
-		cp0_reg_write_addr_o[4:0] = {5{1'b0}};
-		cp0_reg_data_o      [31:0]= {32{1'b0}}; 
-	end
-end
-
-///////////////////////////////////
-/// load_store ram_addr 
-///////////////////////////////////
-always @ (*) begin
-	if(!reset_n) begin
-		ram_addr_o[31:0] = {32{1'b0}};
-	end else if(alusel==3'b110) begin
-		case(aluop)
-			8'b100000,8'b100100,8'b100001,8'b100101,8'b100011,8'b101000,8'b101001,8'b101011,8'b101010,8'b101110,8'b100010,8'b100110,8'b110000,8'b111000:begin
-				if(inst_i[15]) begin
-					ram_addr_o[31:0] = {16'hffff,inst_i[15:0]} + reg1_data[31:0];
-				end else begin
-					ram_addr_o[31:0] = {inst_i[15:0]} + reg1_data[31:0];
-				end
-			end
-
-		default:ram_addr_o[31:0] = {32{1'b0}};
-		endcase
-	end else begin
-		ram_addr_o[31:0] = {32{1'b0}};
-	end
-end
-
-assign alusel_o[2:0] = alusel[2:0];
-assign aluop_o [7:0] = aluop[7:0];
-assign reg2_o  [31:0] = reg2_data[31:0];
 
 reg        [31:0]logicout;
 reg        [31:0]moveout;
@@ -163,12 +93,10 @@ reg        [31:0]arithmeticout;
 
 reg        [63:0]tempt;
 reg        [63:0]right_move;
-reg       [31:0]reg1_data_mux;
+wire       [31:0]reg1_data_mux;
 reg       [31:0]reg2_data_mux;
-wire     [31:0] sub_for_except;
 wire             over_sum;
 wire       [31:0]sum_tempt;
-wire       [31:0]sum_nosign;
 reg             reg1_lt_reg2;
 wire       [63:0]mul_tempt;
 wire       [63:0]mul_result;
@@ -186,40 +114,6 @@ wire [31:0]n;
 reg [31:0]sub_tempt;
 wire [31:0]s_tempt;
 parameter K=31;
-
-
-//////////////////////////////////////////////////////////////////////////
-/////for div excepttype
-//////////////////////////////////////////////////////////////////////////
-wire ovassert;
-reg trapassert;
-assign excepttype_o       [31:0] = {excepttype_i[31:12],ovassert,trapassert,excepttype_i[9:0]};
-assign current_inst_addr_o[31:0] = current_inst_addr_i[31:0];
-assign is_in_delayslot_o         = is_in_delayslot_i;
-assign ovassert                  = (alusel==3'b100)&&((aluop==8'b100000)||(aluop==8'b100010)||(aluop==8'b001000))&&(over_sum);
-always @ (*) begin
-	if(!reset_n) begin
-		trapassert  = 1'b0;
-	end else if(alusel==3'b111) begin
-		case(aluop[7:0])
-			8'b110100,8'b01100:trapassert = (reg1_data[31:0]==reg2_data[31:0]) ? 1'b1 : 1'b0;
-			8'b110110,8'b01110:trapassert = (reg1_data[31:0]!=reg2_data[31:0]) ? 1'b1 : 1'b0;
-			8'b110000,8'b01000:trapassert = ((!reg1_data[31])&&reg2_data[31]) || ((!reg1_data[31])&&(!reg2_data[31])&&(!sub_for_except[31])) ||
-							(reg1_data[31] && reg2_data[31]&&(!sub_for_except[31]));
-			8'b110001,8'b01001:trapassert = ((!reg1_data[31])&&(!reg2_data[31])&&(!sub_for_except[31]))||(reg1_data[31]&&(~reg2_data[31]))||
-							(reg1_data[31]&&reg2_data[31]&&(!sub_for_except[31]));
-			8'b110010,8'b01010:trapassert = (reg1_data[31]&&(!reg2_data[31]))||((!reg1_data[31])&&(!reg2_data[31])&&sub_for_except[31])||
-							(reg1_data[31]&&reg2_data[31]&&sub_for_except[31]);
-			8'b110011,8'b01011:trapassert = ((!reg1_data[31])&&reg2_data[31])||((!reg1_data[31])&&(!reg2_data[31])&&sub_for_except[31])||
-							(reg1_data[31]&&reg2_data[31]&&sub_for_except[31]);
-			default:trapassert  = 1'b0;
-		endcase
-	end else begin
-		trapassert  = 1'b0;
-	end
-end
-
-
 
 //////////////////////////////////////////////////////////////////////////
 /////////////logicout
@@ -308,15 +202,6 @@ always @ (*) begin
 					shiftout[31:0] = hilo_lo[31:0];
 				end
 			end
-			8'b11100000:begin
-				if(mem_cp0_reg_we && (mem_cp0_reg_write_addr==cp0_reg_read_addr_o))begin
-					shiftout[31:0] = mem_cp0_reg_data[31:0];
-				end else if(wb_cp0_reg_we && (wb_cp0_reg_write_addr==cp0_reg_read_addr_o))begin
-					shiftout[31:0] = wb_cp0_reg_data[31:0];
-				end else begin
-					shiftout[31:0] = cp0_reg_data_i[31:0];
-				end
-			end
 			default:begin
 				shiftout[31:0] = {32{1'b0}};
 			end
@@ -326,21 +211,10 @@ always @ (*) begin
 	end
 end
 
-
-always @ (*) begin
-	if(!reset_n) begin
-		reg1_data_mux[31:0] = {32{1'b0}};
-	end else if(alusel==3'b100) begin
-		case(aluop)
-			8'b00101010,8'b00001010,8'b000010,8'b11000,8'b0,8'b100,8'b11000000,8'b11000100,8'b00011010:
-				reg1_data_mux[31:0] = reg1_data[31] ? (~reg1_data[31:0]+1) : reg1_data[31:0];
-			default:reg1_data_mux[31:0] = reg1_data[31:0];
-		endcase
-	end else begin
-		reg1_data_mux[31:0] = reg1_data[31:0];
-	end
-end
-
+assign reg1_data_mux[31:0] = ((alusel==3'b100 && ((aluop==8'b00101010)||(aluop==8'b00001010)||(aluop==8'b000010)||(aluop==8'b11000) 
+				||(aluop==8'b0)||(aluop==8'b100)) ||(aluop==8'b11000000)||(aluop==8'b11000100)||(aluop==8'b00011010)) 
+				&& (reg1_data[31]==1))
+				? (~reg1_data[31:0]+1) : reg1_data[31:0];
 always @ (*) begin
 	if(!reset_n)begin
 		reg2_data_mux[31:0] = {32{1'b0}};
@@ -361,11 +235,8 @@ always @ (*) begin
 		reg2_data_mux[31:0] = reg2_data[31:0];
 	end
 end
-
-assign sub_for_except    [31:0] = reg1_data[31:0] - reg2_data[31:0];
-assign sum_nosign   [31:0] = reg1_data[31:0] + reg2_data[31:0];
 assign sum_tempt    [31:0] = reg1_data_mux[31:0] + reg2_data_mux[31:0]; 
-assign over_sum            = (reg1_data[31]&&reg2_data[31]) || (reg1_data[31]&&(!reg2_data[31])&&(!sum_nosign[31])) ||((!reg1_data[31])&&reg2_data[31]&&(!sum_nosign[31]));
+assign over_sum            = (reg1_data[31]) && reg2_data[31] &&(!sum_tempt[31]);
 always @ (*) begin
 	if(!reset_n)begin
 		reg1_lt_reg2 = 1'b0;
@@ -632,9 +503,7 @@ always @ (*) begin
 					ex_wdata[31:0] = arithmeticout[31:0];
 				end
 			end
-			3'b101:begin
-				ex_wdata[31:0] = link_address_i[31:0];
-			end
+			3'b101:ex_wdata[31:0] = ex_link_addr[31:0]; 
 			default:begin
 				ex_wdata[31:0] = {32{1'b0}};
 			end

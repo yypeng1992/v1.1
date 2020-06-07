@@ -1,12 +1,10 @@
-module id(reset_n,pc_i,inst_i,stallreg_from_id,inst_o,
+module id(reset_n,pc_i,inst_i,stallreg_from_id,
           reg1_data_i,reg2_data_i,
-	  ex_we,ex_waddr,ex_wdata,
+	  ex_aluop_i,ex_we,ex_waddr,ex_wdata,
 	  mem_we,mem_waddr,mem_wdata,
-	  aluop_o,alusel_o,reg1_data_o,reg2_data_o,wreg_o,waddr_o,
+	  aluop_o,alusel_o,reg1_data_o,reg2_data_o,wreg_o,waddr_o,inst_o,
 	  reg1_read_o,reg1_addr_o,reg2_read_o,reg2_addr_o,
-	  is_in_delayslot_i,is_in_delayslot_o,link_addr_o,next_inst_in_delayslot_o,branch_flag_o,branch_target_address_o,
-	  ex_aluop_i,id_cnt_i,id_cnt_o,
-	  excepttype_o,current_inst_addr_o);
+	  is_in_delayslot_i,branch_flag,branch_target_addr,next_is_delayslot,is_in_delayslot_o,link_addr);
 ////////////////////////////////////////
 ///input from pc
 ////////////////////////////////////////
@@ -18,11 +16,12 @@ input       [31:0] inst_i;
 ////////////////////////////////////////
 ///contact with ctrl
 ////////////////////////////////////////
-output   reg       stallreg_from_id;
+output            stallreg_from_id;
 
 ////////////////////////////////////////
-///input from ep
+///input from ex
 ////////////////////////////////////////
+input [7:0]       ex_aluop_i;
 input             ex_we;
 input [4:0]       ex_waddr;
 input [31:0]      ex_wdata;
@@ -50,6 +49,7 @@ output reg  [31:0] reg1_data_o;
 output reg  [31:0] reg2_data_o;
 output reg         wreg_o;
 output reg  [4:0]  waddr_o;
+output      [31:0] inst_o;
 
 ////////////////////////////////////////
 ///output to regfile
@@ -58,120 +58,100 @@ output reg         reg1_read_o;
 output reg  [4:0]  reg1_addr_o;
 output reg         reg2_read_o;
 output reg  [4:0]  reg2_addr_o;
- 
+
+
+////////////////////////////////////////
+///for jump branch
+////////////////////////////////////////
+input             is_in_delayslot_i;
+output  reg       branch_flag;
+output  reg [31:0]branch_target_addr;
+output  reg       next_is_delayslot;
+output            is_in_delayslot_o;
+output  reg [31:0]link_addr;
+
 reg [31:0] imm;
-
-////////////////////////////////////////
-///input and output for jump
-////////////////////////////////////////
-input              is_in_delayslot_i;
-output reg         next_inst_in_delayslot_o;
-output reg         branch_flag_o;
-output reg[31:0]   branch_target_address_o;
-output reg         is_in_delayslot_o;
-output reg[31:0]    link_addr_o;
-
-
-
-////////////////////////////////////////
-/// output for load_store
-////////////////////////////////////////
-output [31:0]inst_o;
-assign inst_o[31:0] = inst_i[31:0];
-
-////////////////////////////////////////
-/// input for load_relative
-////////////////////////////////////////
-input [7:0]ex_aluop_i;
-input      [1:0]id_cnt_i;
-output reg [1:0]id_cnt_o;
-
-////////////////////////////////////////
-/// output for excepttype
-////////////////////////////////////////
-output    [31:0] excepttype_o;
-output    [31:0] current_inst_addr_o;
-
-wire last_is_load;
-wire load_is_relative;
-assign last_is_load = ((ex_aluop_i==8'b100000)||(ex_aluop_i==8'b100100)||(ex_aluop_i==8'b100001)||(ex_aluop_i==8'b100101)||
-		       (ex_aluop_i==8'b100011)||(ex_aluop_i==8'b100010)||(ex_aluop_i==8'b100110)||(ex_aluop_i==8'b110000)||
-		       (ex_aluop_i==8'b111000)) ? 1'b1 : 1'b0;
-
-assign load_is_relative = last_is_load && (ex_we && (( reg1_read_o && (ex_waddr==reg1_addr_o))||(reg2_read_o && (ex_waddr==reg2_addr_o))));
-
-
-always @ (*) begin
-	if(!reset_n) begin
-		id_cnt_o = 2'd0;
-	end else if(id_cnt_i==2'b1)begin
-		id_cnt_o = 2'b0;
-	end else if(load_is_relative) begin
-		id_cnt_o = id_cnt_i + 2'b1;	
-	end else begin
-		id_cnt_o = 2'b0;
-	end
-end
-always @ (*) begin
-	if(!reset_n) begin
-		stallreg_from_id = 1'b0;
-	end else if(id_cnt_o != 0) begin
-		stallreg_from_id = 1'b1;
-	end else begin
-		stallreg_from_id = 1'b0;
-	end
-end
-
-
-////////////////////////////////////////
-///for jump
-////////////////////////////////////////
 wire [31:0]pc_plus_4;
 wire [31:0]pc_plus_8;
-wire [27:0]j_target;
-wire [17:0]offset_left_2;
-wire [31:0]branch_target_tempt;
-wire [31:0]branch_target;
-assign pc_plus_4[31:0]     = pc_i[31:0] + 32'd4;
-assign pc_plus_8[31:0]     = pc_i[31:0] + 32'd8;
-assign j_target[27:0]      = inst_i[25:0] << 2;
-assign offset_left_2[17:0] = inst_i[15:0] << 2;
-assign branch_target_tempt[31:0] = inst_i[15] ? {14'h3fff,offset_left_2[17:0]} : {offset_left_2[17:0]};
-assign branch_target[31:0] = branch_target_tempt[31:0] + pc_plus_4[31:0];
+wire [31:0]target_addr;
+wire [31:0]tg_aadr_shift;
+wire [17:0]signed_shift;
+reg  [31:0]signed_target_addr;
+reg        stallreg_for_reg1_loadrelative;
+reg        stallreg_for_reg2_loadrelative;
+wire       pre_is_load;
 
-////////////////////////////////////////
-///for excepttype
-////////////////////////////////////////
-reg instvalid;
-wire excepttype_is_syscall;
-wire excepttype_is_eret;
 
-assign excepttype_is_syscall = (alusel_o==3'b111)&&(aluop_o==8'b11001100);
-assign excepttype_is_eret    = (alusel_o==3'b111)&&(aluop_o==8'b011000);
-assign excepttype_o       [31:0] = {19'd0,excepttype_is_eret,2'b0,(~instvalid),excepttype_is_syscall,8'b0};
-assign current_inst_addr_o[31:0] = pc_i[31:0];
+assign tg_aadr_shift[27:0] = inst_i[25:0]<<2;
+assign signed_shift[17:0]  = inst_i[15:0]<<2;
+assign pc_plus_4[31:0]     = pc_i[31:0] + 4;
+assign pc_plus_8[31:0]     = pc_i[31:0] + 8;
+assign target_addr[31:0]   = {pc_plus_4[31:28],tg_aadr_shift[27:0]};
 
+ 
+assign is_in_delayslot_o = is_in_delayslot_i;
+assign inst_o[31:0]      = inst_i[31:0];
+assign pre_is_load       = (ex_aluop_i==8'h20)||(ex_aluop_i==8'h24)||(ex_aluop_i==8'h21)||(ex_aluop_i==8'h25)||
+			   (ex_aluop_i==8'h23)||(ex_aluop_i==8'h22)||(ex_aluop_i==8'h26)||(ex_aluop_i==8'h30)||(ex_aluop_i==8'h38);
+assign stallreg_from_id  = stallreg_for_reg1_loadrelative | stallreg_for_reg2_loadrelative;
+
+
+always @ (*)begin
+	if(!reset_n)begin
+		stallreg_for_reg1_loadrelative = 1'b0;
+	end else if(pre_is_load && reg1_read_o && (reg1_addr_o==ex_waddr)) begin
+		stallreg_for_reg1_loadrelative = 1'b1;
+	end else begin
+		stallreg_for_reg1_loadrelative = 1'b0;
+	end
+end
+
+
+always @ (*)begin
+	if(!reset_n)begin
+		stallreg_for_reg2_loadrelative = 1'b0;
+	end else if(pre_is_load && reg2_read_o && (reg2_addr_o==ex_waddr)) begin
+		stallreg_for_reg2_loadrelative = 1'b1;
+	end else begin
+		stallreg_for_reg2_loadrelative = 1'b0;
+	end
+end
+
+
+always @ (*)begin
+	if(!reset_n)begin
+		signed_target_addr[31:0] = {32{1'b0}};
+	end else begin
+		if(inst_i[15])begin
+			signed_target_addr[31:0] = {14'h3fff,signed_shift[17:0]} + pc_plus_4[31:0];
+		end else begin
+			signed_target_addr[31:0] = signed_shift[17:0] + pc_plus_4[31:0];
+		end
+	end
+end
 
 always @ (*) begin
 	if(!reset_n ) begin
-		alusel_o[2:0]     =  {3{1'b0}};
-		aluop_o [7:0]     =  {8{1'b0}};
-		wreg_o            =  1'b0;
-		waddr_o           =  {5{1'b0}};
-		reg1_read_o       =  1'b0;
-		reg1_addr_o[4:0]  =  {5{1'b0}};  
-		reg2_read_o       =  1'b0;
-		reg2_addr_o[4:0]  =  {5{1'b0}};
-		imm               =  {32{1'b0}};
-		next_inst_in_delayslot_o      = 1'b0;
-		branch_flag_o     = 1'b0;
-		branch_target_address_o[31:0] = {32{1'b0}};
-		link_addr_o[31:0] = {32{1'b0}};
-		instvalid         = 1'b0;
+		alusel_o[2:0]            =  {3{1'b0}};
+		aluop_o [7:0]            =  {8{1'b0}};
+		wreg_o                   =  1'b0;
+		waddr_o                  =  {5{1'b0}};
+		reg1_read_o              =  1'b0;
+		reg1_addr_o[4:0]         =  {5{1'b0}};  
+		reg2_read_o              =  1'b0;
+		reg2_addr_o[4:0]         =  {5{1'b0}};
+		imm                      =  {32{1'b0}};
+		branch_flag              = 1'b0;
+		branch_target_addr[31:0] = {32{1'b0}};
+		next_is_delayslot        = 1'b0;
+		link_addr[31:0]          = {32{1'b0}};
 	end else  begin
-		reg1_addr_o[4:0]  =  inst_i[25:21];
-		reg2_addr_o[4:0]  =  inst_i[20:16];
-		instvalid         = 1'b1;
+		reg1_addr_o[4:0]         =  inst_i[25:21];
+		reg2_addr_o[4:0]         =  inst_i[20:16];
+		branch_flag              = 1'b0;
+		branch_target_addr[31:0] = {32{1'b0}};
+		next_is_delayslot        = 1'b0;
+		link_addr[31:0]          = {32{1'b0}};
 		case(inst_i[31:26]) 		
 		        ////////////////////////////////////////
 			/////ori
@@ -184,10 +164,6 @@ always @ (*) begin
                         	reg1_read_o       =  1'b1;
                         	reg2_read_o       =  1'b0;
 				imm[31:0]         =  {16'd0,inst_i[15:0]};
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////andi
@@ -200,10 +176,6 @@ always @ (*) begin
                         	reg1_read_o       =  1'b1;
                         	reg2_read_o       =  1'b0;
 				imm[31:0]         =  {16'd0,inst_i[15:0]};
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////xori
@@ -216,10 +188,6 @@ always @ (*) begin
                         	reg1_read_o       =  1'b1;
                         	reg2_read_o       =  1'b0;
 				imm[31:0]         =  {16'd0,inst_i[15:0]};
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////lui
@@ -232,10 +200,6 @@ always @ (*) begin
                         	reg1_read_o       =  1'b1;
                         	reg2_read_o       =  1'b0;
 				imm[31:0]         =  {16'd0,inst_i[15:0]};
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////pref
@@ -246,10 +210,6 @@ always @ (*) begin
                        	 	wreg_o            =  1'b0;
                         	reg1_read_o       =  1'b0;
                         	reg2_read_o       =  1'b0;
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////addi
@@ -266,10 +226,6 @@ always @ (*) begin
 				end else begin
 					imm[31:0]         =  {16'h0,inst_i[15:0]};
 				end
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////addiu
@@ -286,10 +242,6 @@ always @ (*) begin
 				end else begin
 					imm[31:0]         =  {16'h0,inst_i[15:0]};
 				end
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////slti
@@ -306,10 +258,6 @@ always @ (*) begin
 				end else begin
 					imm[31:0]         =  {16'h0,inst_i[15:0]};
 				end
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////sltiu
@@ -326,331 +274,280 @@ always @ (*) begin
 				end else begin
 					imm[31:0]         =  {16'h0,inst_i[15:0]};
 				end
-				next_inst_in_delayslot_o      = 1'b0;
-				branch_flag_o     = 1'b0;
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0] = {32{1'b0}};
-			end
-			////////////////////////////////////////
-			/////j
-			////////////////////////////////////////
-			6'b000010:begin
-        			waddr_o           =  inst_i[15:11];
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000010;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b0;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b1;
-				branch_target_address_o[31:0] = {pc_plus_4[31:28],j_target[27:0]};
-				next_inst_in_delayslot_o      = 1'b1; 
-				link_addr_o[31:0]  = {32{1'b0}};
-			end
-			////////////////////////////////////////
-			/////jal
-			////////////////////////////////////////
-			6'b000011:begin
-        			waddr_o           =  5'b11111;
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000011;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b0;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b1;
-				branch_target_address_o[31:0] = {pc_plus_4[31:28],j_target[27:0]};
-				next_inst_in_delayslot_o      = 1'b1; 
-				link_addr_o[31:0]  = pc_plus_8[31:0];
 			end
 			////////////////////////////////////////
 			/////beq
 			////////////////////////////////////////
 			6'b000100:begin
-        			waddr_o           =  inst_i[15:11];
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000100;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				if(reg1_data_o[31:0]==reg2_data_o[31:0])begin
-					branch_flag_o     =  1'b1;
-					branch_target_address_o[31:0] = branch_target[31:0];
-					next_inst_in_delayslot_o      = 1'b1; 
+        		        waddr_o           =  inst_i[20:16];
+                       		alusel_o[2:0]     =  3'b101;
+				aluop_o [7:0]     =  8'b0000100;
+                       	 	wreg_o            =  1'b0;
+                        	reg1_read_o       =  1'b1;
+                        	reg2_read_o       =  1'b1;
+				if(reg1_data_o==reg2_data_o)begin
+					branch_flag              = 1'b1;
+					branch_target_addr[31:0] = signed_target_addr[31:0];
+					next_is_delayslot        = 1'b1;
+					link_addr[31:0]          = {32{1'b0}};
 				end else begin
-					branch_flag_o     =  1'b0;
-					next_inst_in_delayslot_o     = 1'b0; 
+					branch_flag              = 1'b0;
+					branch_target_addr[31:0] = {32{1'b0}};
+					next_is_delayslot        = 1'b0;
+					link_addr[31:0]          = {32{1'b0}};
 				end
-				link_addr_o[4:0]  = {5{1'b0}};
 			end
 			////////////////////////////////////////
 			/////bgtz
 			////////////////////////////////////////
 			6'b000111:begin
-        			waddr_o           =  inst_i[15:11];
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000111;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
+        		        waddr_o           =  inst_i[20:16];
+                       		alusel_o[2:0]     =  3'b101;
+				aluop_o [7:0]     =  8'b0000111;
+                       	 	wreg_o            =  1'b0;
+                        	reg1_read_o       =  1'b1;
+                        	reg2_read_o       =  1'b0;
 				if(!reg1_data_o[31])begin
-					branch_flag_o     =  1'b1;
-					branch_target_address_o[31:0] = branch_target;
-					next_inst_in_delayslot_o      = 1'b1; 
+					branch_flag              = 1'b1;
+					branch_target_addr[31:0] = signed_target_addr[31:0];
+					next_is_delayslot        = 1'b1;
+					link_addr[31:0]          = {32{1'b0}};
 				end else begin
-					branch_flag_o     =  1'b0;
-					next_inst_in_delayslot_o     = 1'b0; 
+					branch_flag              = 1'b0;
+					branch_target_addr[31:0] = {32{1'b0}};
+					next_is_delayslot        = 1'b0;
+					link_addr[31:0]          = {32{1'b0}};
 				end
-				link_addr_o[31:0]  = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////blez
 			////////////////////////////////////////
 			6'b000110:begin
-        			waddr_o           =  inst_i[15:11];
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000110;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				if((reg1_data_o[31]) || (reg1_data_o==32'd0))begin
-					branch_flag_o     =  1'b1;
-					branch_target_address_o[31:0] = branch_target;
-					next_inst_in_delayslot_o      = 1'b1; 
+        		        waddr_o           =  inst_i[20:16];
+                       		alusel_o[2:0]     =  3'b101;
+				aluop_o [7:0]     =  8'b0000110;
+                       	 	wreg_o            =  1'b0;
+                        	reg1_read_o       =  1'b1;
+                        	reg2_read_o       =  1'b0;
+				if(reg1_data_o[31] || (reg1_data_o==0))begin
+					branch_flag              = 1'b1;
+					branch_target_addr[31:0] = signed_target_addr[31:0];
+					next_is_delayslot        = 1'b1;
+					link_addr[31:0]          = {32{1'b0}};
 				end else begin
-					branch_flag_o     =  1'b0;
-					next_inst_in_delayslot_o     = 1'b0; 
+					branch_flag              = 1'b0;
+					branch_target_addr[31:0] = {32{1'b0}};
+					next_is_delayslot        = 1'b0;
+					link_addr[31:0]          = {32{1'b0}};
 				end
-				link_addr_o[31:0]  = {32{1'b0}};
 			end
 			////////////////////////////////////////
 			/////bne
 			////////////////////////////////////////
 			6'b000101:begin
-        			waddr_o           =  inst_i[15:11];
-        	        	alusel_o[2:0]     =  3'b101;
-				aluop_o [7:0]     =  8'b00000101;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
+        		        waddr_o           =  inst_i[20:16];
+                       		alusel_o[2:0]     =  3'b101;
+				aluop_o [7:0]     =  8'b0000101;
+                       	 	wreg_o            =  1'b0;
+                        	reg1_read_o       =  1'b1;
+                        	reg2_read_o       =  1'b1;
 				if(reg1_data_o != reg2_data_o )begin
-					branch_flag_o     =  1'b1;
-					branch_target_address_o[31:0] = branch_target;
-					next_inst_in_delayslot_o      = 1'b1; 
+					branch_flag              = 1'b1;
+					branch_target_addr[31:0] = signed_target_addr[31:0];
+					next_is_delayslot        = 1'b1;
+					link_addr[31:0]          = {32{1'b0}};
 				end else begin
-					branch_flag_o     =  1'b0;
-					next_inst_in_delayslot_o     = 1'b0; 
+					branch_flag              = 1'b0;
+					branch_target_addr[31:0] = {32{1'b0}};
+					next_is_delayslot        = 1'b0;
+					link_addr[31:0]          = {32{1'b0}};
 				end
-				link_addr_o[31:0]  = {32{1'b0}};
+			end
+			////////////////////////////////////////
+			/////j
+			////////////////////////////////////////
+			6'b000010:begin
+        			waddr_o                  = inst_i[15:11];
+        	        	alusel_o[2:0]            = 3'b101;
+				aluop_o [7:0]            = 8'b00000010;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b0;
+        	        	reg2_read_o              = 1'b0;
+				branch_flag              = 1'b1;
+				branch_target_addr[31:0] = target_addr[31:0];
+				next_is_delayslot        = 1'b1;
+				link_addr[31:0]          = {32{1'b0}};
+			end
+			////////////////////////////////////////
+			/////jal
+			////////////////////////////////////////
+			6'b000011:begin
+        			waddr_o                  = 6'd31;
+        	        	alusel_o[2:0]            = 3'b101;
+				aluop_o [7:0]            = 8'b00000011;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b0;
+        	        	reg2_read_o              = 1'b0;
+				branch_flag              = 1'b1;
+				branch_target_addr[31:0] = target_addr[31:0];
+				next_is_delayslot        = 1'b1;
+				link_addr[31:0]          = pc_plus_8;
 			end
 			////////////////////////////////////////
 			/////lb
 			////////////////////////////////////////
 			6'b100000:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100000;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100000;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b0;
 			end
 			////////////////////////////////////////
 			/////lbu
 			////////////////////////////////////////
 			6'b100100:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100100;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100100;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b0;
 			end
 			////////////////////////////////////////
 			/////lh
 			////////////////////////////////////////
 			6'b100001:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100001;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100001;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b0;
 			end
 			////////////////////////////////////////
 			/////lhu
 			////////////////////////////////////////
 			6'b100101:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100101;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100101;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b0;
 			end
 			////////////////////////////////////////
 			/////lw
 			////////////////////////////////////////
 			6'b100011:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100011;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100011;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////sb
 			////////////////////////////////////////
 			6'b101000:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00101000;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00101000;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////sh
 			////////////////////////////////////////
 			6'b101001:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00101001;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00101001;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////sw
 			////////////////////////////////////////
 			6'b101011:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00101011;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00101011;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////lwl
 			////////////////////////////////////////
 			6'b100010:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100010;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100010;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////lwr
 			////////////////////////////////////////
 			6'b100110:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00100110;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00100110;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////swl
 			////////////////////////////////////////
 			6'b101010:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00101010;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00101010;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////swr
 			////////////////////////////////////////
 			6'b101110:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00101110;
-        	        	wreg_o            =  1'b0;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00101110;
+        	        	wreg_o                   = 1'b0;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////ll
 			////////////////////////////////////////
 			6'b110000:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00110000;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b0;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00110000;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
 			////////////////////////////////////////
 			/////sc
 			////////////////////////////////////////
 			6'b111000:begin
-        			waddr_o           =  inst_i[20:16];
-        	        	alusel_o[2:0]     =  3'b110;
-				aluop_o [7:0]     =  8'b00111000;
-        	        	wreg_o            =  1'b1;
-        	        	reg1_read_o       =  1'b1;
-        	       		reg2_read_o       =  1'b1;
-				branch_flag_o     =  1'b0;
-				next_inst_in_delayslot_o     = 1'b0; 
-				branch_target_address_o[31:0] = {32{1'b0}};
-				link_addr_o[31:0]  = {32{1'b0}};
+        			waddr_o                  = inst_i[20:16];
+        	        	alusel_o[2:0]            = 3'b110;
+				aluop_o [7:0]            = 8'b00111000;
+        	        	wreg_o                   = 1'b1;
+        	        	reg1_read_o              = 1'b1;
+        	        	reg2_read_o              = 1'b1;
 			end
+
 		
 //////////////////////////////////////////////////////////////////////////////////////
 //////////SPECIAL
@@ -667,10 +564,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////or
@@ -682,10 +575,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////xor
@@ -697,10 +586,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////xor
@@ -712,10 +597,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////sll
@@ -728,10 +609,6 @@ always @ (*) begin
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b1;
 						imm[31:0]         =  {27'd0,inst_i[10:6]};
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////srl
@@ -744,10 +621,6 @@ always @ (*) begin
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b1;
 						imm[31:0]         =  {27'd0,inst_i[10:6]};
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////sra
@@ -760,10 +633,6 @@ always @ (*) begin
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b1;
 						imm[31:0]         =  {27'd0,inst_i[10:6]};
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////sllv
@@ -775,10 +644,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////srlv
@@ -790,10 +655,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////srav
@@ -805,10 +666,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////sync
@@ -820,10 +677,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////movn
@@ -835,10 +688,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////movz
@@ -850,10 +699,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mfhi
@@ -865,10 +710,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mflo
@@ -880,10 +721,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b0;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mthi
@@ -895,10 +732,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mtlo
@@ -910,10 +743,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////add
@@ -925,10 +754,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////addu
@@ -940,10 +765,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////sub
@@ -955,10 +776,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////subu
@@ -970,10 +787,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////slt
@@ -985,10 +798,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////sltu
@@ -1000,10 +809,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mult
@@ -1015,10 +820,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////multu
@@ -1030,10 +831,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////div
@@ -1045,10 +842,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////divu
@@ -1060,146 +853,38 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////jr
 					////////////////////////////////////////
 					6'b001000:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b00001000;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						branch_flag_o     =  1'b1;
-						branch_target_address_o[31:0] = reg1_data_o;
-						next_inst_in_delayslot_o      = 1'b1; 
-						link_addr_o[31:0]  = {32{1'b0}}; 
+        				        waddr_o                  = inst_i[15:11];
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b00001000;
+        	        	       	 	wreg_o                   = 1'b0;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						branch_flag              = 1'b1;
+						branch_target_addr[31:0] = reg1_data_o;
+						next_is_delayslot        = 1'b1;
+						link_addr[31:0]          = {32{1'b0}};
 					end
 					////////////////////////////////////////
 					/////jalr
 					////////////////////////////////////////
 					6'b001001:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b00001001;
-        	        	       	 	wreg_o            =  1'b1;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						branch_flag_o     =  1'b1;
-						branch_target_address_o[31:0] = reg1_data_o[31:0];
-						next_inst_in_delayslot_o      = 1'b1; 
-						link_addr_o[31:0]  = pc_plus_8[31:0]; 
+        				        waddr_o                  = inst_i[15:11];
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b00001001;
+        	        	       	 	wreg_o                   = 1'b1;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						branch_flag              = 1'b1;
+						branch_target_addr[31:0] = reg1_data_o;
+						next_is_delayslot        = 1'b1;
+						link_addr[31:0]          = pc_plus_8;
 					end
-					////////////////////////////////////////
-					/////teq
-					////////////////////////////////////////
-					6'b110100:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110100;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tge
-					////////////////////////////////////////
-					6'b110000:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110000;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tgeu
-					////////////////////////////////////////
-					6'b110001:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110001;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tlt
-					////////////////////////////////////////
-					6'b110010:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110010;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tltu
-					////////////////////////////////////////
-					6'b110011:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110011;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tne
-					////////////////////////////////////////
-					6'b110110:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b00110110;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////syscall
-					////////////////////////////////////////
-					6'b001100:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b11001100;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b0;
-        	        	        	reg2_read_o       =  1'b0;
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
+
 				endcase
 				end
 
@@ -1218,10 +903,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////clo
@@ -1233,10 +914,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////mul
@@ -1248,10 +925,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////madd
@@ -1263,10 +936,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////maddu
@@ -1278,10 +947,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////msub
@@ -1293,10 +958,6 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 					/////////////////////////////////
 					/////msubu
@@ -1308,299 +969,120 @@ always @ (*) begin
         	        	       	 	wreg_o            =  1'b0;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 					end
 						
 					endcase
 				end
+
 //////////////////////////////////////////////////////////////////////////////////////
 ///////////REGIMM
 //////////////////////////////////////////////////////////////////////////////////////
-			6'b000001:begin
-				case(inst_i[20:16])
+				6'b000001:begin
+					case(inst_i[20:16])
 					////////////////////////////////////////
 					/////bltz
 					////////////////////////////////////////
 					5'b00000:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b11000000;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if (reg1_data_o[31]) begin
-							branch_flag_o     =  1'b1;
-							branch_target_address_o[31:0] = branch_target[31:0];
-							next_inst_in_delayslot_o      = 1'b1; 
+        				        waddr_o                  = inst_i[15:11];
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b11000000;
+        	        	       	 	wreg_o                   = 1'b0;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						if(reg1_data_o[31])begin
+							branch_flag              = 1'b1;
+							branch_target_addr[31:0] = signed_target_addr[31:0];
+							next_is_delayslot        = 1'b1;
+							link_addr[31:0]          = {32{1'b0}};
 						end else begin
-							branch_flag_o     =  1'b0;
-							branch_target_address_o[31:0] = reg1_data_o[31:0];
-							next_inst_in_delayslot_o      = 1'b0; 
+							branch_flag              = 1'b0;
+							branch_target_addr[31:0] = {32{1'b0}};
+							next_is_delayslot        = 1'b0;
+							link_addr[31:0]          = {32{1'b0}};
 						end
-						link_addr_o[31:0]  = {32{1'b0}}; 
 					end
 					////////////////////////////////////////
 					/////bltzal
 					////////////////////////////////////////
 					5'b10000:begin
-        				        waddr_o           =  5'b11111;;
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b11010000;
-        	        	       	 	wreg_o            =  1'b1;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if (reg1_data_o[31]) begin
-							branch_flag_o     =  1'b1;
-							branch_target_address_o[31:0] = branch_target[31:0];
-							next_inst_in_delayslot_o      = 1'b1; 
+        				        waddr_o                  = 5'd31;
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b1000000;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						if(reg1_data_o[31])begin
+							branch_flag              = 1'b1;
+							branch_target_addr[31:0] = signed_target_addr[31:0];
+							next_is_delayslot        = 1'b1;
+							link_addr[31:0]          = pc_plus_8;
+        	        	       	 		wreg_o                   = 1'b1;
 						end else begin
-							branch_flag_o     =  1'b0;
-							branch_target_address_o[31:0] = reg1_data_o[31:0];
-							next_inst_in_delayslot_o      = 1'b0; 
+							branch_flag              = 1'b0;
+							branch_target_addr[31:0] = {32{1'b0}};
+							next_is_delayslot        = 1'b0;
+							link_addr[31:0]          = {32{1'b0}};
+        	        	       	 		wreg_o                   = 1'b0;
 						end
-						link_addr_o[31:0]  = pc_plus_8[31:0]; 
 					end
 					////////////////////////////////////////
 					/////bgez
 					////////////////////////////////////////
 					5'b00001:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b11000001;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if (!reg1_data_o[31] ) begin
-							branch_flag_o     =  1'b1;
-							branch_target_address_o[31:0] = branch_target[31:0];
-							next_inst_in_delayslot_o      = 1'b1; 
+        				        waddr_o                  = inst_i[15:11];
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b000001;
+        	        	       	 	wreg_o                   = 1'b0;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						if(!reg1_data_o[31])begin
+							branch_flag              = 1'b1;
+							branch_target_addr[31:0] = signed_target_addr[31:0];
+							next_is_delayslot        = 1'b1;
+							link_addr[31:0]          = {32{1'b0}};
 						end else begin
-							branch_flag_o     =  1'b0;
-							branch_target_address_o[31:0] = reg1_data_o[31:0];
-							next_inst_in_delayslot_o      = 1'b0; 
+							branch_flag              = 1'b0;
+							branch_target_addr[31:0] = {32{1'b0}};
+							next_is_delayslot        = 1'b0;
+							link_addr[31:0]          = {32{1'b0}};
 						end
-						link_addr_o[31:0]  = {32{1'b0}}; 
 					end
 					////////////////////////////////////////
 					/////bgezal
 					////////////////////////////////////////
 					5'b10001:begin
-        				        waddr_o           =  5'b11111;;
-        	        	       		alusel_o[2:0]     =  3'b101;
-						aluop_o [7:0]     =  8'b11010001;
-        	        	       	 	wreg_o            =  1'b1;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if (!reg1_data_o[31]) begin
-							branch_flag_o     =  1'b1;
-							branch_target_address_o[31:0] = branch_target[31:0];
-							next_inst_in_delayslot_o      = 1'b1; 
+        				        waddr_o                  = 5'd31;
+        	        	       		alusel_o[2:0]            = 3'b101;
+						aluop_o [7:0]            = 8'b00010001;
+        	        	        	reg1_read_o              = 1'b1;
+        	        	        	reg2_read_o              = 1'b0;
+						if(!reg1_data_o[31])begin
+							branch_flag              = 1'b1;
+							branch_target_addr[31:0] = signed_target_addr[31:0];
+							next_is_delayslot        = 1'b1;
+							link_addr[31:0]          = pc_plus_8;
+        	        	       	 		wreg_o                   = 1'b1;
 						end else begin
-							branch_flag_o     =  1'b0;
-							branch_target_address_o[31:0] = reg1_data_o[31:0];
-							next_inst_in_delayslot_o      = 1'b0; 
+							branch_flag              = 1'b0;
+							branch_target_addr[31:0] = {32{1'b0}};
+							next_is_delayslot        = 1'b0;
+							link_addr[31:0]          = {32{1'b0}};
+        	        	       	 		wreg_o                   = 1'b0;
 						end
-						link_addr_o[31:0]  = pc_plus_8[31:0]; 
 					end
-					////////////////////////////////////////
-					/////teqi
-					////////////////////////////////////////
-					5'b01100:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01100;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tgei
-					////////////////////////////////////////
-					5'b01000:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01000;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tgeiu
-					////////////////////////////////////////
-					5'b01001:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01001;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tlti
-					////////////////////////////////////////
-					5'b01010:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01010;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tltiu
-					////////////////////////////////////////
-					5'b01011:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01011;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////tgeiu
-					////////////////////////////////////////
-					5'b01110:begin
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b01110;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b0;
-						if(inst_i[15])begin
-							imm[31:0] = {16'hffff,inst_i[15:0]};
-						end else begin
-							imm[31:0] = {16'd0,inst_i[15:0]};
-						end
-						branch_flag_o     =  1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0; 
-						link_addr_o[31:0]  =  {32{1'b0}};
-					end
-					
-				endcase
-			end
-//////////////////////////////////////////////////////////////////////////////////////
-///////////cop0
-//////////////////////////////////////////////////////////////////////////////////////
-			6'b010000:begin
-				case(inst_i[25:21])
-					////////////////////////////////////////
-					/////mtc0
-					////////////////////////////////////////
-					5'b00100:begin
-						reg1_addr_o       = inst_i[20:16];
-						reg2_addr_o       = inst_i[15:11];
-        				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b000;
-						aluop_o [7:0]     =  8'b11100100;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
-					end
-					////////////////////////////////////////
-					/////mfc0
-					////////////////////////////////////////
-					5'b00000:begin
-						reg1_addr_o       = inst_i[20:16];
-						reg2_addr_o       = inst_i[15:11];
-        				        waddr_o           =  inst_i[20:16];
-        	        	       		alusel_o[2:0]     =  3'b011;
-						aluop_o [7:0]     =  8'b11100000;
-        	        	       	 	wreg_o            =  1'b1;
-        	        	        	reg1_read_o       =  1'b1;
-        	        	        	reg2_read_o       =  1'b1;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
-					end
-				endcase
-				case(inst_i[5:0])
-					////////////////////////////////////////
-					/////eret
-					////////////////////////////////////////
-					6'b011000:begin
-						reg1_addr_o       = inst_i[20:16];
-						reg2_addr_o       = inst_i[15:11];
-        				        waddr_o           =  inst_i[20:16];
-        	        	       		alusel_o[2:0]     =  3'b111;
-						aluop_o [7:0]     =  8'b11000;
-        	        	       	 	wreg_o            =  1'b0;
-        	        	        	reg1_read_o       =  1'b0;
-        	        	        	reg2_read_o       =  1'b0;
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
-						
-					end
-				endcase
-			end
+
+
+
+					endcase
+				end
+			
 				default:begin
         				        waddr_o           =  inst_i[15:11];
-        	        	       		alusel_o[2:0]     =  3'b011;
+        	        	       		alusel_o[2:0]     =  3'b100;
 						aluop_o [7:0]     =  8'b00000010;
         	        	       	 	wreg_o            =  1'b1;
         	        	        	reg1_read_o       =  1'b1;
         	        	        	reg2_read_o       =  1'b1;
 						imm[31:0]         =  {32{1'b0}};
-						next_inst_in_delayslot_o      = 1'b0;
-						branch_flag_o     = 1'b0;
-						branch_target_address_o[31:0] = {32{1'b0}};
-						link_addr_o[31:0] = {32{1'b0}};
 				end
 		endcase
 	end
@@ -1610,66 +1092,32 @@ end
 always @ (*) begin
 	if(!reset_n) begin
 		reg1_data_o[31:0] = {32{1'b0}};
-	end else if(id_cnt_i != 0)begin
-		 if((reg1_addr_o == mem_waddr)&&(reg1_read_o)&&(mem_we))begin
-			reg1_data_o[31:0] = mem_wdata[31:0];
-		end else if(reg1_read_o) begin
-			reg1_data_o[31:0] = reg1_data_i[31:0];
-		end else if(!reg1_read_o)begin
-			reg1_data_o[31:0] = imm[31:0];
-		end else begin
-			reg1_data_o[31:0] = {32{1'b0}};
-		end
-		
+        end else if((reg1_addr_o == ex_waddr)&&(reg1_read_o)&&(ex_we))begin
+		reg1_data_o[31:0] = ex_wdata[31:0];
+	end else if((reg1_addr_o == mem_waddr)&&(reg1_read_o)&&(mem_we))begin
+		reg1_data_o[31:0] = mem_wdata[31:0];
+	end else if(reg1_read_o) begin
+		reg1_data_o[31:0] = reg1_data_i[31:0];
+	end else if(!reg1_read_o)begin
+		reg1_data_o[31:0] = imm[31:0];
 	end else begin
-        	 if((reg1_addr_o == ex_waddr)&&(reg1_read_o)&&(ex_we))begin
-			reg1_data_o[31:0] = ex_wdata[31:0];
-		end else if((reg1_addr_o == mem_waddr)&&(reg1_read_o)&&(mem_we))begin
-			reg1_data_o[31:0] = mem_wdata[31:0];
-		end else if(reg1_read_o) begin
-			reg1_data_o[31:0] = reg1_data_i[31:0];
-		end else if(!reg1_read_o)begin
-			reg1_data_o[31:0] = imm[31:0];
-		end else begin
-			reg1_data_o[31:0] = {32{1'b0}};
-		end
+		reg1_data_o[31:0] = {32{1'b0}};
 	end
 end
 
 always@ (*) begin
 	if(!reset_n) begin
 		reg2_data_o[31:0] = {32{1'b0}};
-	end else  if(id_cnt_i != 1'b0)begin
-		 if((reg2_addr_o == mem_waddr)&&(reg2_read_o)&&(mem_we))begin
-			reg2_data_o[31:0] = mem_wdata[31:0];
-		end else if(reg2_read_o) begin
-			reg2_data_o[31:0] = reg2_data_i[31:0];
-		end else if(!reg2_read_o)begin
-			reg2_data_o[31:0] = imm[31:0];
-		end else begin
-			reg2_data_o[31:0] = {32{1'b0}};
-		end
+	end else if((reg2_addr_o == ex_waddr)&&(reg2_read_o)&&(ex_we))begin
+		reg2_data_o[31:0] = ex_wdata[31:0];
+	end else if((reg2_addr_o == mem_waddr)&&(reg2_read_o)&&(mem_we))begin
+		reg2_data_o[31:0] = mem_wdata[31:0];
+	end else if(reg2_read_o) begin
+		reg2_data_o[31:0] = reg2_data_i[31:0];
+	end else if(!reg2_read_o)begin
+		reg2_data_o[31:0] = imm[31:0];
 	end else begin
-		 if((reg2_addr_o == ex_waddr)&&(reg2_read_o)&&(ex_we))begin
-			reg2_data_o[31:0] = ex_wdata[31:0];
-		end else if((reg2_addr_o == mem_waddr)&&(reg2_read_o)&&(mem_we))begin
-			reg2_data_o[31:0] = mem_wdata[31:0];
-		end else if(reg2_read_o) begin
-			reg2_data_o[31:0] = reg2_data_i[31:0];
-		end else if(!reg2_read_o)begin
-			reg2_data_o[31:0] = imm[31:0];
-		end else begin
-			reg2_data_o[31:0] = {32{1'b0}};
-		end
-	end
-end
-
-
-always @ (*) begin
-	if(!reset_n) begin
-		is_in_delayslot_o = 1'b0;
-	end else begin
-		is_in_delayslot_o = is_in_delayslot_i;
+		reg2_data_o[31:0] = {32{1'b0}};
 	end
 end
 

@@ -104,20 +104,18 @@ debounce_for_i2c debounce(
  .key    (key     )
 );
 
-i2c_eeprom_top top0(
+master master0(
  .clk           (clk          ),
  .reset_n       (reset_n      ),
- .wdata_in      (wdata_in[7:0]),
- .rdata         (rdata[7:0]   ),
- .i2c_scl       (i2c_eeprom_scl),
- .i2c_sda       (i2c_eeprom_sda),
- .i2c_write_req (i2c_write_req),
- .i2c_read_req  (i2c_read_req ),
- .i2c_write_ack (i2c_write_ack),
- .i2c_read_ack  (i2c_read_ack ),
- .wr_dev_addr   (wr_dev_addr[7:0]),
+ .wr_data       (wdata_in[7:0]),
+ .rd_data       (rdata[7:0]   ),
+ .scl           (i2c_eeprom_scl),
+ .sda           (i2c_eeprom_sda),
+ .wd_req        (i2c_write_req),
+ .rd_req        (i2c_read_req ),
+ .wr_ack        (i2c_write_ack),
+ .rd_ack        (i2c_read_ack ),
  .wr_reg_addr   (wr_reg_addr[7:0]),
- .rd_dev_addr   (rd_dev_addr[7:0]),
  .rd_reg_addr   (rd_reg_addr[7:0])
 );
 
