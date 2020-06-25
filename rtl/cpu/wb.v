@@ -1,10 +1,12 @@
-module wb(clk,reset_n,wb_stall,
+module wb(clk,reset_n,wb_stall,flush,
 	  mem_we,mem_waddr,mem_wdata,mem_whilo,mem_hi,mem_lo,
 	  wb_we,wb_waddr,wb_wdata,wb_whilo,wb_hi,wb_lo,
-	  LLbit_we_i,LLbit_value_i,LLbit_we_o,LLbit_value_o);
+	  mem_LLbit_we,mem_LLbit_value,wb_LLbit_we,wb_LLbit_value,
+	  mem_cp0_reg_we,mem_cp0_reg_write_addr,mem_cp0_reg_data,wb_cp0_reg_we,wb_cp0_reg_write_addr,wb_cp0_reg_data);
 input            clk;
 input            reset_n;
 input   [5:0]    wb_stall;
+input            flush;
 
 /////////////////////////////////
 ////input from mem
@@ -26,15 +28,24 @@ output reg       wb_whilo;
 output reg [31:0] wb_hi;
 output reg [31:0]wb_lo;
 
-////////////////////////////////////////////////////
-///for LLbit
-////////////////////////////////////////////////////
-input      LLbit_we_i;
-input      LLbit_value_i;
-output reg LLbit_we_o;
-output reg LLbit_value_o;
 
+/////////////////////////////////
+////for ll and sc
+/////////////////////////////////
+input      mem_LLbit_we;
+input      mem_LLbit_value;
+output reg wb_LLbit_we;
+output reg wb_LLbit_value;
 
+/////////////////////////////////
+////input and output for cp0
+/////////////////////////////////
+input            mem_cp0_reg_we;
+input      [4 :0]mem_cp0_reg_write_addr;
+input      [31:0]mem_cp0_reg_data;
+output reg       wb_cp0_reg_we;
+output reg [4 :0]wb_cp0_reg_write_addr;
+output reg [31:0]wb_cp0_reg_data;
 
 always @ (posedge clk or negedge reset_n ) begin
 	if(!reset_n ) begin
@@ -44,26 +55,36 @@ always @ (posedge clk or negedge reset_n ) begin
 		wb_whilo      <=  1'b0;
 		wb_hi   [31:0] <=  {32{1'b0}};
 		wb_lo  [31:0] <=  {32{1'b0}};
-		LLbit_we_o    <= 1'b0;
-		LLbit_value_o <= 1'b0;
-	end else if(wb_stall[4]&&(!wb_stall[5]))begin
+		wb_LLbit_we   <= 1'b0;
+		wb_LLbit_value<= 1'b0;
+                wb_cp0_reg_we <= 1'b0;
+                wb_cp0_reg_write_addr[4:0] <= {5{1'b0}};
+                wb_cp0_reg_data[31:0]      <= {32{1'b0}};
+	end else if(flush)begin
 		wb_we         <=  1'b0;
 		wb_waddr[4:0] <=  {5{1'b0}};
 		wb_wdata[31:0]<=  {32{1'b0}};
 		wb_whilo      <=  1'b0;
 		wb_hi   [31:0] <=  {32{1'b0}};
 		wb_lo  [31:0] <=  {32{1'b0}};
-		LLbit_we_o    <= 1'b0;
-		LLbit_value_o <= 1'b0;
-	end else if(!wb_stall[4])begin
+		wb_LLbit_we   <= 1'b0;
+		wb_LLbit_value<= 1'b0;
+                wb_cp0_reg_we <= 1'b0;
+                wb_cp0_reg_write_addr[4:0] <= {5{1'b0}};
+                wb_cp0_reg_data[31:0]      <= {32{1'b0}};
+
+	end else if(!wb_stall[5])begin
 		wb_we         <=  mem_we;
 		wb_waddr[4:0] <=  mem_waddr[4:0];
 		wb_wdata[31:0]<=  mem_wdata[31:0];
 		wb_whilo      <=  mem_whilo;
 		wb_hi   [31:0] <=  mem_hi[31:0];
 		wb_lo  [31:0] <=  mem_lo[31:0];
-		LLbit_we_o    <= LLbit_we_i;
-		LLbit_value_o <= LLbit_value_i;
+		wb_LLbit_we   <= mem_LLbit_we;
+		wb_LLbit_value<= mem_LLbit_value;
+                wb_cp0_reg_we <= mem_cp0_reg_we;
+                wb_cp0_reg_write_addr[4:0] <= mem_cp0_reg_write_addr[4:0];
+                wb_cp0_reg_data[31:0]      <= mem_cp0_reg_data[31:0];
 	end
 end
 

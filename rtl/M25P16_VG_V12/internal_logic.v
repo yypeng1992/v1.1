@@ -691,20 +691,20 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
                   write_op <= `FALSE ; 
                end
                else if (bp == 3'b101) // address 100000 to 1FFFFF write protected
-	       begin
-	           if (int_add >= ((`TOP_MEM + 1) / 2)) 
-	           begin
-	           protect <= `TRUE ; 
-	           write_op <= `FALSE ; 
-	           end 
+               begin
+                   if (int_add >= ((`TOP_MEM + 1) / 2)) 
+                   begin
+                   protect <= `TRUE ; 
+                   write_op <= `FALSE ; 
+                   end 
                end
                else if (bp == 3'b100) // address 180000 to 1FFFFF write protected
-	       begin
-	           if (int_add >= ((`TOP_MEM + 1) / 4 * 3))
-	           begin
-	           protect <= `TRUE ; 
-	           write_op <= `FALSE ; 
-	           end 
+               begin
+                   if (int_add >= ((`TOP_MEM + 1) / 4 * 3))
+                   begin
+                   protect <= `TRUE ; 
+                   write_op <= `FALSE ; 
+                   end 
                end
                else if (bp == 3'b011) //address 1C0000 to 1FFFFF write protected 
                begin
@@ -723,12 +723,12 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
                   end 
                end
                else if (bp == 3'b001) //address 1F0000 to 1FFFFF write protected
-	       begin
-	           if (int_add >= ((`TOP_MEM + 1) * 31 / 32))
-	           begin
-	           protect <= `TRUE ; 
-	           write_op <= `FALSE ; 
-	           end 
+               begin
+                   if (int_add >= ((`TOP_MEM + 1) * 31 / 32))
+                   begin
+                   protect <= `TRUE ; 
+                   write_op <= `FALSE ; 
+                   end 
                end
                else
                begin
@@ -1303,7 +1303,7 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
    begin
       if (((byte_cpt == 0) || (byte_cpt == 1) || (byte_cpt == 2) || (byte_cpt == 3) || ((byte_cpt == 4) && ((cpt != 7) || !byte_ok))) && pp && (!only_rdsr) && (!only_res) && (!select_ok))
          begin
-            if ($time != 0) $display("%t:  WARNING : Instruction canceled because the chip is deselected",$realtime); 
+            if ($time != 0) $display("%t:  WARNING1 : Instruction canceled because the chip is deselected",$realtime); 
             inhib_pp <= `TRUE ; 
          end 
       if (((byte_cpt == 5) || ((byte_cpt == 4) && (cpt == 7))) && pp && (!only_rdsr) && (!only_res))
@@ -1311,10 +1311,10 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
          add_pp_enable <= `TRUE ; 
          if (pp)
          begin
-            if ($time != 0) $display("%t:  NOTE : Page program cycle is started",$realtime); 
+            if ($time != 0) $display("%t:  NOTE1 : Page program cycle is started",$realtime); 
             wip <= 1'b1 ; 
             #`TPP; 
-            if ($time != 0) $display("%t:  NOTE : Page program cycle is finished",$realtime); 
+            if ($time != 0) $display("%t:  NOTE1 : Page program cycle is finished",$realtime); 
             pp_enable <= `TRUE ; 
             wip <= 1'b0 ; 
             inhib_pp <= `TRUE ; 
@@ -1323,10 +1323,10 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
       end 
       if ((byte_cpt > 5) && pp && (!only_rdsr) && (!only_res) && byte_ok)
       begin
-         if ($time != 0) $display("%t:  NOTE : Page program cycle is started",$realtime); 
+         if ($time != 0) $display("%t:  NOTE2 : Page program cycle is started",$realtime); 
          wip <= 1'b1 ; 
          #`TPP; 
-         if ($time != 0) $display("%t:  NOTE : Page program cycle is finished",$realtime); 
+         if ($time != 0) $display("%t:  NOTE2 : Page program cycle is finished",$realtime); 
          pp_enable <= `TRUE ; 
          wip <= 1'b0 ; 
          inhib_pp <= `TRUE ; 
@@ -1334,7 +1334,7 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
       end 
       if ((byte_cpt > 5) && pp && (!only_rdsr) && (!only_res) && (!byte_ok))
       begin
-         if ($time != 0) $display("%t:  WARNING : Instruction canceled because the chip is deselected",$realtime); 
+         if ($time != 0) $display("%t:  WARNING2 : Instruction canceled because the chip is deselected",$realtime); 
          inhib_pp <= `TRUE ; 
          pp_enable <= `FALSE ; 
       end 
@@ -1583,8 +1583,8 @@ module internal_logic (c, d, w, s, hold, data_to_read, q, data_to_write, page_ad
             @(write_protect)
             write_protect_toggle <= `TRUE;
             if ($time != 0)
-	        begin
-	        t_write_protect_toggle = $time;
+                begin
+                t_write_protect_toggle = $time;
                 end
        end
        if (!select_ok)

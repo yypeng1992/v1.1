@@ -24,7 +24,7 @@ $WORK_PATH/rtl/cpu/hilo.v
 $WORK_PATH/rtl/cpu/ctrl.v
 $WORK_PATH/rtl/cpu/LLbit.v
 $WORK_PATH/rtl/cpu/data_ram.v
-//$WORK_PATH/rtl/cpu/cp0_reg.v
+$WORK_PATH/rtl/cpu/cp0_reg.v
 $WORK_PATH/rtl/led_new/led.v
 $WORK_PATH/rtl/led_new/key_top.v
 $WORK_PATH/rtl/led_new/key_anaysis.v
@@ -51,7 +51,7 @@ $WORK_PATH/rtl/spi_flash/spi_master.v
 $WORK_PATH/rtl/M25P16_VG_V12/parameter.v
 $WORK_PATH/rtl/M25P16_VG_V12/acdc_check.v
 $WORK_PATH/rtl/M25P16_VG_V12/internal_logic.v
-$WORK_PATH/rtl/M25P16_VG_V12/m25p16_driver.v
+//$WORK_PATH/rtl/M25P16_VG_V12/m25p16_driver.v
 $WORK_PATH/rtl/M25P16_VG_V12/M25p16.v
 $WORK_PATH/rtl/M25P16_VG_V12/memory_access.v
 $WORK_PATH/rtl/rtc/ds1302_io.v

@@ -24,7 +24,6 @@ wire      flash_ack;
 wire      flash_read_req;        
 wire      flash_pp_req;
 wire      flash_se_req;
-wire      flash_be_req;
 wire[23:0]read_addr; 
 wire[23:0]write_addr;
 wire[23:0]se_addr;   
@@ -135,7 +134,6 @@ flash_ctrl ctrl0(
  .rd_req           (flash_read_req      ),
  .pp_req           (flash_pp_req        ),
  .se_req           (flash_se_req        ),
- .be_req           (flash_be_req        ),
  .flash_ack        (flash_ack           ),
  .data_into_flash  (data_for_write[7:0] ),
  .rdata            (ready_for_rdata[7:0]),
