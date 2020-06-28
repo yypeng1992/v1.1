@@ -9,10 +9,10 @@ $WORK_PATH/sim/sort/sort_tb.v
 //$WORK_PATH/sim/arith_muldiv/arith_muldiv_tb.v
 //$WORK_PATH/sim/jump_branch/jump_branch_tb.v
 //$WORK_PATH/sim/load_store/load_store_tb.v
-$WORK_PATH/sim/load_store_llsc/load_store_llsc_tb.v
+//$WORK_PATH/sim/load_store_llsc/load_store_llsc_tb.v
 //$WORK_PATH/sim/load_relative/load_relative_tb.v
 //$WORK_PATH/sim/cp0/cp0_tb.v
-//$WORK_PATH/sim/cpu/except_tb.v
+$WORK_PATH/sim/cpu/except_tb.v
 $WORK_PATH/sim/led_new/led_new_tb.v
 $WORK_PATH/sim/uart/uart_test.v
 $WORK_PATH/sim/seg/seg_test.v

@@ -16,12 +16,12 @@
 //`define SIM_LOAD_STORE_LLSC
 //`define SIM_LOAD_RELATIVE
 //`define SIM_CP0
-//`define SIM_EXCEPT
+`define SIM_EXCEPT
 //`define SIM_LED_NEW
 //`define SIM_UART
 //`define SIM_DIG
 //`define SIM_BUZZER
-`define SIM_SPI_FLASH
+//`define SIM_SPI_FLASH
 //`define SIM_RTC
 //`define SIM_I2C_EEPROM
 //`define SIM_FIFO

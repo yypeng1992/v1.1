@@ -41,7 +41,7 @@ always @ (*)begin
 			end
 		end 
 		S_WORK[1:0]:begin
-			if(clk_cnt[4:0]==5'h10)begin
+			if(clk_cnt[4:0]==5'hf)begin
 				next_state[1:0] = S_ACK[1:0];
 			end
 		end
@@ -66,7 +66,7 @@ end
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
 		rdata[7:0] <= {8{1'b0}};
-	end else if(flag&&(!clk_cnt[0])) begin
+	end else if(flag&&(!clk_cnt[0])&&(clk_cnt<=4'd15)) begin
 		rdata[7-index] <= Q;
 	end
 end
