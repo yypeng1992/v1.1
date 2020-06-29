@@ -16,7 +16,7 @@ $WORK_PATH/sim/cpu/except_tb.v
 $WORK_PATH/sim/led_new/led_new_tb.v
 $WORK_PATH/sim/uart/uart_test.v
 $WORK_PATH/sim/seg/seg_test.v
-$WORK_PATH/sim/spi_flash/spi_flash_tb.v
+//$WORK_PATH/sim/spi_flash/spi_flash_tb.v
 $WORK_PATH/sim/buzzer_pwm/buzzer_pwm_tb.v
 $WORK_PATH/sim/rtc/rtc_tb.v
 $WORK_PATH/sim/i2c_eeprom/i2c_eeprom_tb.v
@@ -25,3 +25,4 @@ $WORK_PATH/sim/clock/clock_tb.v
 $WORK_PATH/sim/handshake/handshake_tb.v
 $WORK_PATH/sim/AES/aes_test.v
 $WORK_PATH/sim/ahb_sram/sram_tb.v
+$WORK_PATH/sim/icache/icache_tb.v

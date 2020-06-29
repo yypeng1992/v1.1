@@ -16,7 +16,7 @@
 //`define SIM_LOAD_STORE_LLSC
 //`define SIM_LOAD_RELATIVE
 //`define SIM_CP0
-`define SIM_EXCEPT
+//`define SIM_EXCEPT
 //`define SIM_LED_NEW
 //`define SIM_UART
 //`define SIM_DIG
@@ -29,5 +29,6 @@
 //`define SIM_HANDSHAKE
 //`define SIM_AES
 //`define SIM_SRAM
+`define SIM_ICACHE
 
 

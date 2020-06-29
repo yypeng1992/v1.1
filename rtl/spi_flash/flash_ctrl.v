@@ -10,7 +10,7 @@ input [23:0]wr_addr;
 input [23:0]se_addr;
 input [7 :0]data_into_flash;
 output      flash_ack;
-output [7:0]rdata;
+output reg[31:0]rdata;
 
 /// flash inf
 output      CLK;
@@ -23,6 +23,7 @@ wire ack;
 wire data_flag;
 reg req;
 reg [7:0]data;
+wire [7:0]Data;
 
 
 parameter [7:0]INST_READ = 8'h03;
@@ -51,7 +52,7 @@ reg [8:0]size;
 reg [2:0]cs_cnt;
 
 assign flash_ack      = (state!=ST_IDLE)&&(next_state==ST_IDLE);
-assign data_size[7:0] = 8'd1;
+assign data_size[7:0] = 8'd4;
 assign data_flag      = ((state==ST_READ)&&(size==flash_size-1)) || ((state==ST_WRSR) && (size !=0));
 
 
@@ -111,6 +112,21 @@ always @ (*)begin
 end
 
 
+always @ (posedge clk or negedge reset_n)begin
+	if(!reset_n)begin
+		rdata[31:0] <= {4{8'h0}};
+	end else if(state==ST_READ && (ack)) begin
+		if(size==flash_size-1)begin
+			rdata[31:24] <= Data[7:0];
+		end else if(size==flash_size-2)begin
+			rdata[23:16]<= Data[7:0];
+		end else if(size==flash_size-3)begin
+			rdata[15:8] <= Data[7:0];
+		end else if(size==flash_size-4)begin
+			rdata[7:0] <= Data[7:0];
+		end
+	end
+end
 
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
@@ -248,7 +264,7 @@ spi_master spi0(
  .ack       (ack      ),
  .D         (D        ),
  .CLK       (CLK      ),
- .rdata     (rdata[7:0])
+ .rdata     (Data[7:0])
 );
 
 endmodule
