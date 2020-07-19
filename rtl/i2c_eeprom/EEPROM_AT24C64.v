@@ -134,11 +134,13 @@ module EEPROM_AT24C64(
             || ctrl_byte == r3  || ctrl_byte == r2
             || ctrl_byte == r1  || ctrl_byte == r0)
         begin
+	        read_valid = 1'b1;
             address = {addr_byte[7:0]};
             sda_buf = memory[address];
             shift_out;
             State = 2'b00;
-	    read_valid = 1'b1;
+	        read_valid = 1'b0;
+            address = 8'hx;
         end
     end
     endtask
@@ -181,9 +183,9 @@ module EEPROM_AT24C64(
             #`timeslice;
             sda_buf = sda_buf << 1;
         end
-	out_flag = 0;
+//	out_flag = 0;
 //        @(negedge scl) #`timeslice sda_buf[7] = 1;    //非应答信号输出
-//        @(negedge scl) #`timeslice out_flag = 0;
+        @(negedge scl) #`timeslice out_flag = 0;
     end
     endtask
 
