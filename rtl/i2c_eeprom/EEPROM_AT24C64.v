@@ -50,7 +50,7 @@ module EEPROM_AT24C64(
         shift        = 0;
 
         for(i=0;i<=8191;i=i+1)
-            memory[i] = 0;
+            memory[i] = i%256; /// 初始化为和地址强烈相关的值
     end
 
     //启动信号
