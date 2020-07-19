@@ -1,4 +1,4 @@
-module flash_ctrl(clk,reset_n,data_size,Q,rd_req,pp_req,se_req,rd_addr,wr_addr,se_addr,data_into_flash,flash_ack,D,rdata,CLK,CS);
+module flash_ctrl(clk,reset_n,data_size,Q,rd_req,pp_req,se_req,rd_addr,wr_addr,se_addr,data_into_flash,flash_ack,D,rdata,CLK,CS,valid);
 input       clk;
 input       reset_n;
 input [7:0] data_size;
@@ -11,6 +11,7 @@ input [23:0]se_addr;
 input [7 :0]data_into_flash;
 output      flash_ack;
 output reg[31:0]rdata;
+output reg    valid;
 
 /// flash inf
 output      CLK;
@@ -50,11 +51,21 @@ reg [3:0]next_state;
 reg [8:0]flash_size;
 reg [8:0]size;
 reg [2:0]cs_cnt;
+reg [4:0]byte_cnt;
 
 assign flash_ack      = (state!=ST_IDLE)&&(next_state==ST_IDLE);
-assign data_size[7:0] = 8'd4;
-assign data_flag      = ((state==ST_READ)&&(size==flash_size-1)) || ((state==ST_WRSR) && (size !=0));
+assign data_size[7:0] = 8'd16;
+assign data_flag      = ((state==ST_READ)&&(size>3)) || ((state==ST_WRSR) && (size !=0));
 
+always @ (posedge clk or negedge reset_n)begin
+	if(!reset_n)begin
+		valid <= 1'b0;
+	end else if((byte_cnt[1:0]==2'd0) && ack && (byte_cnt!=0)) begin
+		valid <= 1'b1;
+	end else begin
+		valid <= 1'b0;
+	end
+end
 
 always @ (*)begin
 	if(!reset_n)begin
@@ -114,16 +125,26 @@ end
 
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
+		byte_cnt[4:0] <= {5'h0};
+	end else if((state!=ST_READ) || (state==ST_READ && size<3 )||(byte_cnt==5'd16 && ack))begin
+		byte_cnt[4:0] <= {5'h0};
+	end else if(ack)  begin
+		byte_cnt[4:0] <= byte_cnt[4:0] + 1'b1;
+	end
+end
+
+always @ (posedge clk or negedge reset_n)begin
+	if(!reset_n)begin
 		rdata[31:0] <= {4{8'h0}};
 	end else if(state==ST_READ && (ack)) begin
-		if(size==flash_size-1)begin
-			rdata[31:24] <= Data[7:0];
-		end else if(size==flash_size-2)begin
-			rdata[23:16]<= Data[7:0];
-		end else if(size==flash_size-3)begin
-			rdata[15:8] <= Data[7:0];
-		end else if(size==flash_size-4)begin
+		if(byte_cnt[1:0]==2'b01)begin
 			rdata[7:0] <= Data[7:0];
+		end else if(byte_cnt[1:0]==2'b10)begin
+			rdata[15:8] <= Data[7:0];	;
+		end else if(byte_cnt[1:0]==2'b11)begin
+			rdata[23:16]<= Data[7:0];
+		end else if((byte_cnt!=0)&&(byte_cnt[1:0]==2'b00))begin
+			rdata[31:24] <= Data[7:0];
 		end
 	end
 end

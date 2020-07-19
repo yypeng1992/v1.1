@@ -26,3 +26,4 @@ $WORK_PATH/sim/handshake/handshake_tb.v
 $WORK_PATH/sim/AES/aes_test.v
 $WORK_PATH/sim/ahb_sram/sram_tb.v
 $WORK_PATH/sim/icache/icache_tb.v
+$WORK_PATH/sim/dcache/dcache_tb.v

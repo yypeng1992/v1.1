@@ -1,7 +1,8 @@
 module rf1_MxN#(
 	parameter M = 128,
 	parameter N = 8,
-	parameter WIDTH = 7
+	parameter WIDTH = 7,
+	parameter INIT = 0
 )(
 	clk, reset_n,
 	En, Wr, Addr, WrData, Data
@@ -43,7 +44,8 @@ always@(posedge clk or negedge reset_n)
 begin
 	if(!reset_n) begin
 		for(i=0; i<M; i=i+1) begin
-			mem[i][N-1:0] <= {N{1'b0}};
+			mem[i][N-1:0] <= INIT ? (i << 2)
+			                      : {N{1'b0}};
 		end
 	end
 	else if(En) begin

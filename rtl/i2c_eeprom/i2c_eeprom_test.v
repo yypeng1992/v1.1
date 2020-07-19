@@ -19,6 +19,9 @@ wire [7:0]wr_dev_addr;
 wire [7:0]wr_reg_addr;
 wire [7:0]rd_dev_addr;
 wire [7:0]rd_reg_addr;
+wire      A0;
+wire      A1;
+wire      A2;
 
 assign wr_dev_addr[7:0] = 8'b10100000;
 assign wr_reg_addr[7:0] = 8'd1;
@@ -126,9 +129,6 @@ seg_for_i2c seg1(
  .sel          (sel[5:0] ),
  .seg_out      (seg[7:0] )
 );
-
-
-
 
 
 

@@ -3,7 +3,9 @@ reg clk;
 reg rst_n;
 wire sda;
 
-
+wire      A0;
+wire      A1;
+wire      A2;
 
 `ifdef SIM_I2C
 initial begin
@@ -28,4 +30,7 @@ i2c_top top0(
  .rst_n(rst_n),
  .sda(sda)
 );
+
+
+
 endmodule

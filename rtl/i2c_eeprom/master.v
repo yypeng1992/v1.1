@@ -13,7 +13,7 @@ output      wr_ack,
 output      rd_ack
 );
 
-parameter [8:0]CLK_IS_MAX     = 50;
+parameter [9:0]CLK_IS_MAX     = 500;
 parameter [7:0]WR_DEV_ADDR    = 8'ha0;
 parameter [7:0]RD_DEV_ADDR    = 8'ha1;
 
@@ -35,11 +35,11 @@ reg mt_sda;
 reg mt_scl;
 wire sl_sda;
 wire en ;
-reg [8:0]clk_cnt;
+reg [9:0]clk_cnt;
 reg [3:0]byte_cnt;
 
 assign scl       = mt_scl;
-assign flag      = (clk_cnt[8:0]==CLK_IS_MAX-1);
+assign flag      = (clk_cnt[9:0]==CLK_IS_MAX-1);
 assign byte_flag = (byte_cnt==4'd8);
 assign en        = (((state==ST_DEV_ADDR)||(state==ST_WD_REG_ADDR)||(state==ST_WD_DATA)||(state==ST_RD_REG_ADDR))&&(byte_cnt==4'd8))||
 		   ((state==ST_RD_DATA)&&(byte_cnt!=4'd8));
@@ -55,36 +55,42 @@ always @ (posedge clk or negedge reset_n)begin
 		mt_scl <=1'b1;
 	end else if(state==ST_IDLE)begin
 		mt_scl <=1'b1;
-	end else if(((state==ST_RD_DATA)||(state==ST_RESTART))&&(next_state!=state))begin
-		mt_scl <=1'b1;
-	end else if((state==ST_START)&&(clk_cnt==37))begin
+	//end else if(((state==ST_RD_DATA)||(state==ST_RESTART))&&(next_state!=state))begin
+	//	mt_scl <=1'b1;
+	end else if((state==ST_START)&&(clk_cnt==CLK_IS_MAX/4))begin
 		mt_scl <= 1'b0;
-	end else if(clk_cnt==(12))begin
+	end else if(clk_cnt==(CLK_IS_MAX/4))begin
 		mt_scl <= 1'b1;
-	end else if(clk_cnt==(37))begin
+	end else if(clk_cnt==(CLK_IS_MAX*3/4))begin
 		mt_scl <= 1'b0;
 	end else if(state==ST_STOP)begin
 		mt_scl <=1'b1;
 	end
 end
 
-always @ (posedge clk or negedge reset_n)begin
-	if(!reset_n)begin
-		mt_sda <=1'b1;
-	end else if((state==ST_START) || (state==ST_RESTART)) begin
-		mt_sda <=1'b0;
-	end else if(state==ST_DEV_ADDR) begin
-		mt_sda <=WR_DEV_ADDR[7-byte_cnt];
+always @ (*)begin
+	if((state==ST_START) ) begin
+		mt_sda =1'b0;
+	end else if(state==ST_RESTART)begin
+		if(clk_cnt<(CLK_IS_MAX/2))begin
+			mt_sda = 1'b1;
+		end else begin
+			mt_sda = 1'b0;
+		end
+	end else if(state==ST_DEV_ADDR && (byte_cnt<8)) begin
+		mt_sda =WR_DEV_ADDR[7-byte_cnt];
 	end else if(state==ST_WD_REG_ADDR)begin
-		mt_sda <=wr_reg_addr[7-byte_cnt];
+		mt_sda =wr_reg_addr[7-byte_cnt];
 	end else if(state==ST_RD_REG_ADDR)begin
-		mt_sda <=rd_reg_addr[7-byte_cnt];
+		mt_sda =rd_reg_addr[7-byte_cnt];
 	end else if(state==ST_WD_DATA)begin
-		mt_sda <=wr_data[7-byte_cnt];
+		mt_sda =wr_data[7-byte_cnt];
 	end else if(state==ST_RD_DEV_ADDR)begin
-		mt_sda <=RD_DEV_ADDR[7-byte_cnt];
+		mt_sda =RD_DEV_ADDR[7-byte_cnt];
 	end else if(flag&&(byte_cnt==7))begin
-		mt_sda <=1'b1;
+		mt_sda =1'b1;
+	end else begin
+		mt_sda =1'b1;
 	end
 end
 
@@ -98,11 +104,11 @@ always @ (posedge clk or negedge reset_n)begin
 end
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
-		clk_cnt[8:0] <= {9{1'b0}};
+		clk_cnt[9:0] <= {9{1'b0}};
 	end else if(flag || (state!=next_state)) begin
-		clk_cnt[8:0] <= {9{1'b0}};
-	end else if((state!=ST_IDLE))begin
-		clk_cnt[8:0] <= clk_cnt[8:0] + 1'b1;
+		clk_cnt[9:0] <= {9{1'b0}};
+	end else begin
+		clk_cnt[9:0] <= clk_cnt[9:0] + 1'b1;
 	end
 end
 
@@ -132,7 +138,7 @@ always @ (*)begin
 	next_state[3:0] = state[3:0];
 	case(state[3:0])
 		ST_IDLE[3:0]:begin
-			if(wd_req || rd_req)begin
+			if((clk_cnt[9:0]==10'd5)&&(wd_req || rd_req))begin
 				next_state[3:0] = ST_START[3:0];
 			end
 		end

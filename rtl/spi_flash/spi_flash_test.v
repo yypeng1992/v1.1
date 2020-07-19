@@ -1,9 +1,9 @@
 module spi_flash_test(clk,reset_n,r_pin,
 			dclk,ncs,w_pin,
 			req,c_addr,ack,valid,data);
-input       clk;
-input       reset_n;
-input       req;
+input        clk;
+input        reset_n;
+input        req;
 input  [19:0]c_addr;
 output reg   ack;
 output       valid;
@@ -28,7 +28,6 @@ wire[23:0]se_addr;
 wire [7:0]data_for_write;
 wire [31:0]ready_for_rdata;
 reg  [7:0]read_data;
-reg [1:0]byte_cnt;
 
 wire r_pin;
 wire dclk;
@@ -42,19 +41,10 @@ assign read_addr[23:0]    = c_addr[19:0];
 //assign write_addr[23:0]   = 24'd0;
 //assign se_addr[23:0]      = 24'd0;
 //assign data_for_write[7:0] = read_data[7:0];
-assign valid = flash_ack;
 assign data[31:0] = ready_for_rdata[31:0];
 
 
-always @ (posedge clk or negedge reset_n)begin
-	if(!reset_n)begin
-		byte_cnt[1:0] <= 2'd0;
-	end else if((state==L_IDLE)) begin
-		byte_cnt[1:0] <= 2'd0;
-	end else if((state==L_READ)&&(flash_ack)) begin
-		byte_cnt[1:0] <= byte_cnt[1:0] + 1'b1;
-	end
-end
+
 
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
@@ -86,7 +76,7 @@ always @ (*) begin
 			end
 		end
 		L_READ[1:0]:begin
-			if(flash_ack && (byte_cnt==2'd3))begin
+			if(flash_ack )begin
 				next_state[1:0] = L_IDLE[1:0];
 			end
 		end
@@ -111,7 +101,8 @@ flash_ctrl ctrl0(
  .rdata            (ready_for_rdata[31:0]),
  .rd_addr          (read_addr[23:0]     ),
  .wr_addr          (write_addr[23:0]    ),
- .se_addr          (se_addr[23:0]       )
+ .se_addr          (se_addr[23:0]       ),
+ .valid            (valid               )
  );
 
 
