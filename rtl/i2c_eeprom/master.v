@@ -55,6 +55,8 @@ always @ (posedge clk or negedge reset_n)begin
 		mt_scl <=1'b1;
 	end else if(state==ST_IDLE)begin
 		mt_scl <=1'b1;
+	end else if(next_state==ST_STOP)begin
+		mt_scl <=1'b1;
 	//end else if(((state==ST_RD_DATA)||(state==ST_RESTART))&&(next_state!=state))begin
 	//	mt_scl <=1'b1;
 	end else if((state==ST_START)&&(clk_cnt==CLK_IS_MAX/4))begin
@@ -63,8 +65,6 @@ always @ (posedge clk or negedge reset_n)begin
 		mt_scl <= 1'b1;
 	end else if(clk_cnt==(CLK_IS_MAX*3/4))begin
 		mt_scl <= 1'b0;
-	end else if(state==ST_STOP)begin
-		mt_scl <=1'b1;
 	end
 end
 
@@ -89,8 +89,12 @@ always @ (*)begin
 		mt_sda =RD_DEV_ADDR[7-byte_cnt];
 	end else if(flag&&(byte_cnt==7))begin
 		mt_sda =1'b1;
-	end else begin
-		mt_sda =1'b1;
+	end else if(state==ST_STOP)begin
+		if(clk_cnt<(CLK_IS_MAX/2))begin
+			mt_sda = 1'b0;
+		end else begin
+			mt_sda = 1'b1;
+		end
 	end
 end
 
@@ -98,7 +102,7 @@ end
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
 		rd_data[7:0] <= {8{1'b0}};
-	end else if(state==ST_RD_DATA)begin
+	end else if((clk_cnt==CLK_IS_MAX<<1)&&state==ST_RD_DATA && byte_cnt!=8)begin
 		rd_data[7-byte_cnt] <= sda;
 	end
 end
@@ -186,7 +190,11 @@ always @ (*)begin
 				next_state[3:0] = ST_STOP[3:0];
 			end
 		end
-		ST_STOP[3:0]:next_state[3:0] = ST_IDLE[3:0];
+		ST_STOP[3:0]:begin
+			if(flag)begin
+				next_state[3:0] = ST_IDLE[3:0];
+			end
+		end
 	endcase
 end
 

@@ -16,10 +16,10 @@ module EEPROM_AT24C64(
     reg[7:0]memory_buf;      //数据输入输出寄存器
     reg[7:0]sda_buf;         //SDA数据输出寄存器
     reg[7:0]shift;           //SDA数据输入寄存器
-    reg[7:0]addr_byte_h;     //EEPROM存储单元地址高字节寄存器
-    reg[7:0]addr_byte_l;     //EEPROM存储单元地址低字节寄存器
+    reg[7:0]addr_byte;     //EEPROM存储单元地址高字节寄存器
     reg[7:0]ctrl_byte;       //控制字寄存器
     reg[1:0]State;           //状态寄存器
+    reg read_valid;
 
     integer i;
 
@@ -40,8 +40,7 @@ module EEPROM_AT24C64(
     //------------寄存器和存储器初始化---------------
     initial
     begin
-        addr_byte_h    = 0;
-        addr_byte_l    = 0;
+        addr_byte    = 0;
         ctrl_byte    = 0;
         out_flag     = 0;
         sda_buf      = 0;
@@ -101,8 +100,7 @@ module EEPROM_AT24C64(
     task stop_W_R;
     begin
         State        = 2'b00;
-        addr_byte_h  = 0;
-        addr_byte_l  = 0;
+        addr_byte  = 0;
         ctrl_byte    = 0;
         out_flag     = 0;
         sda_buf      = 0;
@@ -113,8 +111,7 @@ module EEPROM_AT24C64(
     task read_in;
     begin
         shift_in(ctrl_byte);
-        shift_in(addr_byte_h);
-        shift_in(addr_byte_l);
+        shift_in(addr_byte);
     end
     endtask
 
@@ -122,7 +119,7 @@ module EEPROM_AT24C64(
     task write_to_eeprom;
     begin
         shift_in(memory_buf);
-        address = {addr_byte_h[4:0], addr_byte_l};
+        address = {addr_byte[7:0]};
         memory[address] = memory_buf;
         State = 2'b00;
     end
@@ -137,10 +134,11 @@ module EEPROM_AT24C64(
             || ctrl_byte == r3  || ctrl_byte == r2
             || ctrl_byte == r1  || ctrl_byte == r0)
         begin
-            address = {addr_byte_h[4:0], addr_byte_l};
+            address = {addr_byte[7:0]};
             sda_buf = memory[address];
             shift_out;
             State = 2'b00;
+	    read_valid = 1'b1;
         end
     end
     endtask
@@ -183,8 +181,9 @@ module EEPROM_AT24C64(
             #`timeslice;
             sda_buf = sda_buf << 1;
         end
-        @(negedge scl) #`timeslice sda_buf[7] = 1;    //非应答信号输出
-        @(negedge scl) #`timeslice out_flag = 0;
+	out_flag = 0;
+//        @(negedge scl) #`timeslice sda_buf[7] = 1;    //非应答信号输出
+//        @(negedge scl) #`timeslice out_flag = 0;
     end
     endtask
 

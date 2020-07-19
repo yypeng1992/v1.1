@@ -19,9 +19,6 @@ wire [7:0]wr_dev_addr;
 wire [7:0]wr_reg_addr;
 wire [7:0]rd_dev_addr;
 wire [7:0]rd_reg_addr;
-wire      A0;
-wire      A1;
-wire      A2;
 
 assign wr_dev_addr[7:0] = 8'b10100000;
 assign wr_reg_addr[7:0] = 8'd1;
@@ -47,7 +44,7 @@ assign i2c_read_req  = (state==T_READ );
 always @ (posedge clk or negedge reset_n) begin
 	if(!reset_n) begin
 		read_data[7:0] <= 8'hff; 
-	end else if(state==T_READ)begin
+	end else if(state==T_READ&&(next_state!=state))begin
 		read_data[7:0] <=rdata[7:0];
 	end else if((state==T_WAIT)&&key) begin
 		read_data[7:0] <=read_data[7:0] + 8'd1;
