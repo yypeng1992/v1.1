@@ -1,5 +1,6 @@
+
 `timescale 1ns/1ns
-`define timeslice 1980
+`define timeslice 2480
 //`define timeslice 300
 
 module EEPROM_AT24C64(
@@ -16,10 +17,10 @@ module EEPROM_AT24C64(
     reg[7:0]memory_buf;      //数据输入输出寄存器
     reg[7:0]sda_buf;         //SDA数据输出寄存器
     reg[7:0]shift;           //SDA数据输入寄存器
-    reg[7:0]addr_byte_h;     //EEPROM存储单元地址高字节寄存器
-    reg[7:0]addr_byte_l;     //EEPROM存储单元地址低字节寄存器
+    reg[7:0]addr_byte;     //EEPROM存储单元地址高字节寄存器
     reg[7:0]ctrl_byte;       //控制字寄存器
     reg[1:0]State;           //状态寄存器
+    reg read_valid;
 
     integer i;
 
@@ -40,8 +41,7 @@ module EEPROM_AT24C64(
     //------------寄存器和存储器初始化---------------
     initial
     begin
-        addr_byte_h    = 0;
-        addr_byte_l    = 0;
+        addr_byte    = 0;
         ctrl_byte    = 0;
         out_flag     = 0;
         sda_buf      = 0;
@@ -51,7 +51,7 @@ module EEPROM_AT24C64(
         shift        = 0;
 
         for(i=0;i<=8191;i=i+1)
-            memory[i] = 0;
+            memory[i] = i%256; /// 初始化为和地址强烈相关的值
     end
 
     //启动信号
@@ -101,8 +101,7 @@ module EEPROM_AT24C64(
     task stop_W_R;
     begin
         State        = 2'b00;
-        addr_byte_h  = 0;
-        addr_byte_l  = 0;
+        addr_byte  = 0;
         ctrl_byte    = 0;
         out_flag     = 0;
         sda_buf      = 0;
@@ -113,8 +112,7 @@ module EEPROM_AT24C64(
     task read_in;
     begin
         shift_in(ctrl_byte);
-        shift_in(addr_byte_h);
-        shift_in(addr_byte_l);
+        shift_in(addr_byte);
     end
     endtask
 
@@ -122,7 +120,7 @@ module EEPROM_AT24C64(
     task write_to_eeprom;
     begin
         shift_in(memory_buf);
-        address = {addr_byte_h[0], addr_byte_l};
+        address = {addr_byte[7:0]};
         memory[address] = memory_buf;
         State = 2'b00;
     end
@@ -132,15 +130,18 @@ module EEPROM_AT24C64(
     task read_from_eeprom;
     begin
         shift_in(ctrl_byte);
-        if(ctrl_byte == r7 || ctrl_byte == r6
+        if(ctrl_byte == r7 || ctrl_byte == w6
             || ctrl_byte == r5  || ctrl_byte == r4
             || ctrl_byte == r3  || ctrl_byte == r2
             || ctrl_byte == r1  || ctrl_byte == r0)
         begin
-            address = {addr_byte_h[0], addr_byte_l};
+	        read_valid = 1'b1;
+            address = {addr_byte[7:0]};
             sda_buf = memory[address];
             shift_out;
             State = 2'b00;
+	        read_valid = 1'b0;
+            address = 8'hx;
         end
     end
     endtask
@@ -183,10 +184,10 @@ module EEPROM_AT24C64(
             #`timeslice;
             sda_buf = sda_buf << 1;
         end
-        @(negedge scl) #`timeslice sda_buf[7] = 1;    //非应答信号输出
+//	out_flag = 0;
+//        @(negedge scl) #`timeslice sda_buf[7] = 1;    //非应答信号输出
         @(negedge scl) #`timeslice out_flag = 0;
     end
     endtask
 
 endmodule
-//eeprom.v文件结束
