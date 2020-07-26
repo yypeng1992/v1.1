@@ -1,0 +1,38 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "873"
+debImport "-sv" "-f" "filelist.vc"
+srcHBSelect "div7_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "div7_tb" -delim "."
+wvCreateWindow
+srcHBSelect "div7_tb.div7" -win $_nTrace1
+srcSetScope -win $_nTrace1 "div7_tb.div7" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/div/div7.fsdb}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count\[2:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "div1" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "div2" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk_out" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 160.987794 736.119760
+wvSetCursor -win $_nWave2 209.146435 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 219.886851 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 229.241407 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 238.249498 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 248.643449 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 260.076795 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 279.132373 -snap {("G1" 2)}

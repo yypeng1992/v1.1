@@ -1,0 +1,13 @@
+$WORK_PATH/rtl/led/led_key.v
+$WORK_PATH/rtl/led/led_top.v
+$WORK_PATH/rtl/led/led_key_old.v
+$WORK_PATH/rtl/led/debounce.v
+$WORK_PATH/rtl/i2c/i2c.v
+$WORK_PATH/rtl/i2c/i2c_top.v
+$WORK_PATH/rtl/i2c/eepram.v
+$WORK_PATH/share/stack_MxN.v
+$WORK_PATH/share/rf1_MxN.v
+$WORK_PATH/share/rf1_128x8.v
+$WORK_PATH/sim/share/share_tb.v
+$WORK_PATH/sim/led/led_tb.v
+$WORK_PATH/sim/i2c/tb.v

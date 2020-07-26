@@ -1,0 +1,274 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "debounce_for_clock": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "load_store_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 30
+        },
+        "handshake_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "debounce_for_i2c": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "clock_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "hilo": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "aes_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "led_new_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "uart_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "data_ram": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "aes": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "sram_bist": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 67
+        },
+        "seg_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "spi_flash_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "rtc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "sram_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "buzzer_pwm_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "i2c_eeprom_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "fifo_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        },
+        "aes_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 32
+        }
+    },
+    "CompUnits": {
+        "hTzew_d": {
+            "checksum": 0,
+            "mod": "load_store_tb",
+            "out": "hTzew_d.o",
+            "archive": "archive.66/_27822_archive_1.a",
+            "bytes": 118853,
+            "mode": 4
+        }
+    },
+    "reusePaths": {
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "NW4FU_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "uzmws_d": {
+            "icPath": "csrc"
+        },
+        "GGhbu_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "tvjIp_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "DgZ94_d": {
+            "icPath": "csrc"
+        },
+        "E2Tre_d": {
+            "icPath": "csrc"
+        },
+        "xKp10_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "SDgzu_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "WmSAT_d": {
+            "icPath": "csrc"
+        },
+        "HfzMG_d": {
+            "icPath": "csrc"
+        },
+        "LRhIH_d": {
+            "icPath": "csrc"
+        },
+        "VZ0hy_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "I6qmI_d": {
+            "icPath": "csrc"
+        },
+        "yAzgh_d": {
+            "icPath": "csrc"
+        },
+        "k6uK4_d": {
+            "icPath": "csrc"
+        },
+        "KTZ9E_d": {
+            "icPath": "csrc"
+        },
+        "yjUpe_d": {
+            "icPath": "csrc"
+        },
+        "VDxkt_d": {
+            "icPath": "csrc"
+        },
+        "vVJ5h_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.66/_27822_archive_1.a",
+            "objects": [
+                [
+                    "hTzew_d.o",
+                    118853
+                ]
+            ],
+            "size": 118853
+        }
+    ]
+}

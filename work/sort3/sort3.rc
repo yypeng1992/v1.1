@@ -1,0 +1,98 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1853 407 197 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/sort3/sort.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 1139.707305 1919.596620
+cursor 1970.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 7
+; marker line index
+markerPos 19
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname quick_sort3.state
+nalias QS_SWAP_RIGHT_GAP2		5'b01000		NULL
+nalias QS_RD_VALUE		5'b00010		NULL
+nalias QS_NONE_VALID		5'b10010		NULL
+nalias QS_SWAP_LEFT_GAP1		5'b01100		NULL
+nalias QS_LEFT_MOVE		5'b01001		NULL
+nalias QS_GET_VALUE		5'b00011		NULL
+nalias QS_GET_STACK		5'b10011		NULL
+nalias QS_SWAP_LEFT_GAP2		5'b01101		NULL
+nalias QS_SWAP_RIGHT_GAP1		5'b00111		NULL
+nalias QS_IDLE		5'b00000		NULL
+nalias QS_LEFT_VALID		5'b10000		NULL
+nalias QS_RIGHT_MOVE		5'b00100		NULL
+nalias QS_INIT		5'b00001		NULL
+nalias QS_DONE		5'b10100		NULL
+nalias QS_RIGHT_VALID		5'b10001		NULL
+nalias QS_GET_POSITION		5'b01110		NULL
+nalias QS_BOTH_VALID		5'b01111		NULL
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/sort3/sort.fsdb"
+addSignal -h 15 /sort_tb/quick_sort_top/host_rd_mem_d
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_Data[31:0]
+addGroup "G2"
+addSignal -h 15 /sort_tb/quick_sort_top/quick_sort_core/clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope num[8:0]
+addSignal -h 15 -holdScope start
+addSignal -h 15 -holdScope done
+addSignal -h 15 -holdScope MemWr
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemWrAddr[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemWrData[31:0]
+addSignal -h 15 -holdScope MemRd
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemRdAddr[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemRdData[31:0]
+addGroup "G3"
+aliasname quick_sort3.state
+addSignal -h 15 -UNSIGNED -HEX /sort_tb/quick_sort_top/quick_sort_core/state_next[4:0]
+aliasname quick_sort3.state
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[4:0]
+aliasname quick_sort3.state
+addSignal -h 15 -UNSIGNED -HEX -holdScope state_last1[4:0]
+aliasname quick_sort3.state
+addSignal -h 15 -UNSIGNED -HEX -holdScope state_last2[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt0[8:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt1[8:0]
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

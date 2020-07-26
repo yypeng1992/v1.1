@@ -1,0 +1,70 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/uart/uart.fsdb
+syncTime = 180990000
+viewport = 67 27 1851 833 605 283 334 1849
+activeNode = "uart_test.top0.tx0"
+activeScope = "uart_test.top0.tx0"
+activeFile = "/home/ft/tree/v1.1/rtl/uart/uart_tx.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 81
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "uart_test.top0.tx0"
+Scope2 = "uart_test.top0"
+multipleSelection = 1 90 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = uart_test.top0.tx0
+File = /home/ft/tree/v1.1/rtl/uart/uart_tx.v
+Line = 82
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/uart
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/uart/uart.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 360 100 65
+SessionFile = /home/ft/tree/v1.1/work/uart/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

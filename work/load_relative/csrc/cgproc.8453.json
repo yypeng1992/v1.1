@@ -1,0 +1,334 @@
+{
+    "Modules": {
+        "pc_id": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "...MASTER...": {},
+        "ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "arith_muladd_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "jump_branch_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "arithmetic_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "arith_muldiv_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "data_ram": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "hilo": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "pc_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "LLbit_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "ori_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "logic_move_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "shift_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "load_store_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "load_store_llsc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        },
+        "load_relative_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 9
+        }
+    },
+    "CompUnits": {
+        "YzKuZ_d": {
+            "mod": "ori_tb",
+            "bytes": 71534,
+            "out": "YzKuZ_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "QmxGU_d": {
+            "mod": "jump_branch_tb",
+            "bytes": 71590,
+            "out": "QmxGU_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "y9d1I_d": {
+            "mod": "logic_move_tb",
+            "bytes": 71589,
+            "out": "y9d1I_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "a5isL_d": {
+            "mod": "shift_tb",
+            "bytes": 71568,
+            "out": "a5isL_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "yCZsx_d": {
+            "mod": "arith_muladd_tb",
+            "bytes": 71591,
+            "out": "yCZsx_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "hTzew_d": {
+            "mod": "load_store_tb",
+            "bytes": 71589,
+            "out": "hTzew_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "yanbT_d": {
+            "mod": "arithmetic_tb",
+            "bytes": 71589,
+            "out": "yanbT_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "fti4k_d": {
+            "mod": "arith_muldiv_tb",
+            "bytes": 71591,
+            "out": "fti4k_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "yDxvt_d": {
+            "mod": "load_store_llsc_tb",
+            "bytes": 71634,
+            "out": "yDxvt_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        },
+        "WID3Z_d": {
+            "mod": "load_relative_tb",
+            "bytes": 75978,
+            "out": "WID3Z_d.o",
+            "archive": "archive.8/_8453_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        }
+    },
+    "reusePaths": {
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "tvjIp_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "Ehwa7_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "r2dgF_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "DgZ94_d": {
+            "icPath": "csrc"
+        },
+        "re2bz_d": {
+            "icPath": "csrc"
+        },
+        "wxG7b_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.8/_8453_archive_1.a",
+            "objects": [
+                [
+                    "YzKuZ_d.o",
+                    71534
+                ],
+                [
+                    "y9d1I_d.o",
+                    71589
+                ],
+                [
+                    "a5isL_d.o",
+                    71568
+                ],
+                [
+                    "yanbT_d.o",
+                    71589
+                ],
+                [
+                    "yCZsx_d.o",
+                    71591
+                ],
+                [
+                    "fti4k_d.o",
+                    71591
+                ],
+                [
+                    "QmxGU_d.o",
+                    71590
+                ],
+                [
+                    "hTzew_d.o",
+                    71589
+                ],
+                [
+                    "yDxvt_d.o",
+                    71634
+                ],
+                [
+                    "WID3Z_d.o",
+                    75978
+                ]
+            ],
+            "size": 720253
+        }
+    ]
+}

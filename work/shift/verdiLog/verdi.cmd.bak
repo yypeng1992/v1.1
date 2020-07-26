@@ -1,0 +1,109 @@
+debImport "-sv" "-f" "filelist.vc"
+verdiWindowResize -win $_Verdi_1 "57" "17" "1851" "833"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/shift/shift.fsdb}
+srcHBSelect "shift_tb.sopc.rom0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "shift_tb.sopc.rom0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 8 2 1 12 1}
+wvAddSignal -win $_nWave2 "/shift_tb/sopc/rom0/clk" "/shift_tb/sopc/rom0/reset_n" \
+           "/shift_tb/sopc/rom0/ce" "/shift_tb/sopc/rom0/pc\[31:0\]" \
+           "/shift_tb/sopc/rom0/inst\[31:0\]"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+srcHBSelect "shift_tb.sopc.openmips0.id0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "shift_tb.sopc.openmips0.id0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {49 54 4 1 9 1}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/shift_tb/sopc/openmips0/id0/reg1_read_o" \
+           "/shift_tb/sopc/openmips0/id0/reg1_addr_o\[4:0\]" \
+           "/shift_tb/sopc/openmips0/id0/reg2_read_o" \
+           "/shift_tb/sopc/openmips0/id0/reg2_addr_o\[4:0\]"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+srcHBSelect "shift_tb.sopc.openmips0.regfile0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "shift_tb.sopc.openmips0.regfile0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {9 12 1 1 1 1}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvAddSignal -win $_nWave2 "/shift_tb/sopc/openmips0/regfile0/reg1_data\[31:0\]" \
+           "/shift_tb/sopc/openmips0/regfile0/reg2_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+srcDeselectAll -win $_nTrace1
+srcHBSelect "shift_tb.sopc.openmips0.id0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "shift_tb.sopc.openmips0.id0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {38 45 1 1 19 1}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvAddSignal -win $_nWave2 "/shift_tb/sopc/openmips0/id0/alusel_o\[2:0\]" \
+           "/shift_tb/sopc/openmips0/id0/aluop_o\[7:0\]" \
+           "/shift_tb/sopc/openmips0/id0/reg1_data_o\[31:0\]" \
+           "/shift_tb/sopc/openmips0/id0/reg2_data_o\[31:0\]" \
+           "/shift_tb/sopc/openmips0/id0/wreg_o" \
+           "/shift_tb/sopc/openmips0/id0/waddr_o\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 2
+srcHBSelect "shift_tb.sopc.openmips0.ex0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "shift_tb.sopc.openmips0.ex0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {43 50 4 1 7 1}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G3" 2)}
+wvSetPosition -win $_nWave2 {("G3" 3)}
+wvSetPosition -win $_nWave2 {("G3" 4)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvAddSignal -win $_nWave2 "/shift_tb/sopc/openmips0/ex0/ex_we" \
+           "/shift_tb/sopc/openmips0/ex0/ex_waddr\[4:0\]" \
+           "/shift_tb/sopc/openmips0/ex0/ex_wdata\[31:0\]" \
+           "/shift_tb/sopc/openmips0/ex0/ex_whilo" \
+           "/shift_tb/sopc/openmips0/ex0/ex_hi\[31:0\]" \
+           "/shift_tb/sopc/openmips0/ex0/ex_lo\[31:0\]"
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvSetPosition -win $_nWave2 {("G4" 6)}
+wvSetPosition -win $_nWave2 {("G4" 6)}
+verdiWindowBeWindow -win $_nWave2
+wvResizeWindow -win $_nWave2 57 19 1851 805
+wvZoom -win $_nWave2 200.447565 602.611350
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvCloseWindow -win $_nWave2
+debExit

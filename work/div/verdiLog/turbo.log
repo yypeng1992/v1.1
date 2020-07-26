@@ -1,0 +1,4 @@
+Command Line: /usr/synopsys/verdi_L-2016.06-1/platform/LINUXAMD64/bin/Novas -sv -f filelist.vc
+uname(Linux ft-virtual-machine 5.3.0-62-generic #56~18.04.1-Ubuntu SMP Wed Jun 24 16:17:03 UTC 2020 x86_64)
+au time 344.825030 15.853028 5.540390 delta 278077440 278077440 total 667238400 667238400
+ 2.222343 0.576768 delta 250068992 250068992 total 639229952 639229952

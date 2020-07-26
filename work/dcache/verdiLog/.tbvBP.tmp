@@ -1,0 +1,2 @@
+Simulation Mode: VCS
+stop -line 79 -file /home/ft/tree/v1.1/share/sram_model.v 

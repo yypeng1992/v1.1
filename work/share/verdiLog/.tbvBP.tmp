@@ -1,0 +1,2 @@
+Simulation Mode: VCS
+stop -line 5 -file /home/ft/tree/v1.1/share/stack_MxN.v 

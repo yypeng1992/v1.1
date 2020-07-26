@@ -1,0 +1,65 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 423 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/handshake/handshake.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 608549.337349
+cursor 100000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 5
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/handshake/handshake.fsdb"
+addSignal -h 15 /handshake_tb/top/tx0/tx_clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_data_out[7:0]
+addSignal -h 15 -holdScope req
+addSignal -h 15 -holdScope tx_ack
+addSignal -h 15 -holdScope ack
+addGroup "G2"
+addSignal -h 15 /handshake_tb/top/rx0/rx_clk
+addSignal -h 15 -holdScope req
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data_out[7:0]
+addSignal -h 15 -holdScope ack
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

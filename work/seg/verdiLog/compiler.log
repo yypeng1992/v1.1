@@ -1,0 +1,40 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.vc
+        /home/ft/tree/v1.1/rtl/define.v
+        /home/ft/tree/v1.1/rtl/seg/seg0.v
+        /home/ft/tree/v1.1/rtl/seg/seg1.v
+        /home/ft/tree/v1.1/rtl/seg/seg2.v
+        /home/ft/tree/v1.1/rtl/seg/seg3.v
+        /home/ft/tree/v1.1/rtl/seg/seg4.v
+        /home/ft/tree/v1.1/rtl/seg/seg5.v
+        /home/ft/tree/v1.1/rtl/seg/seg_decoder.v
+        /home/ft/tree/v1.1/sim/seg/seg_test.v
+
+Highest level modules:
+seg_test
+
+
+*Warning* port sizes differ (5 vs 6) in port connection (port sel)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 114: 
+
+*Warning* port sizes differ (5 vs 6) in port connection (port sel)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 122: 
+
+*Warning* port sizes differ (5 vs 6) in port connection (port sel)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 131: 
+
+*Warning* port sizes differ (5 vs 6) in port connection (port sel)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 140: 
+
+*Warning* port sizes differ (5 vs 6) in port connection (port sel)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 149: 
+
+*Warning* port sizes differ (5 vs 4) in port connection (port seg4_dig)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 151: 
+
+*Warning* port sizes differ (6 vs 4) in port connection (port seg5_dig)
+"/home/ft/tree/v1.1/rtl/seg/seg_decoder.v", 160: 
+Total	0 error(s),   7 warning(s)

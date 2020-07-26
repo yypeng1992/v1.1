@@ -1,0 +1,74 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/ori/ori.fsdb
+syncTime = 330
+viewport = 67 27 1851 833 610 181 58 1849
+activeNode = "ori_tb.sopc.openmips0.regfile0"
+activeScope = "ori_tb.sopc.openmips0.regfile0"
+activeFile = "/home/ft/tree/v1.1/rtl/ori/regfile.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 7
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "ori_tb.sopc.openmips0.regfile0"
+Scope2 = "ori_tb.sopc.rom0"
+Scope3 = "ori_tb.sopc.openmips0.wb0"
+Scope4 = "ori_tb.sopc.openmips0.mem0"
+Scope5 = "ori_tb.sopc.openmips0.ex0"
+Scope6 = "ori_tb.sopc.openmips0.id0"
+Scope7 = "led_key_old"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = ori_tb.sopc.openmips0.regfile0
+File = /home/ft/tree/v1.1/rtl/ori/regfile.v
+Line = 8
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/ori
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/ori/ori.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 464 201 108
+SessionFile = /home/ft/tree/v1.1/work/ori/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

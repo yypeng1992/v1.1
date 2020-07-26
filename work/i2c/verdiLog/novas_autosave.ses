@@ -1,0 +1,69 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+viewport = 67 27 1853 1025 605 655 58 1851
+activeNode = "tb"
+activeScope = "tb"
+activeFile = "/home/ft/tree/v1.1/sim/i2c/tb.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 0
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "tb"
+Scope2 = "led_tb"
+Scope3 = "led_key_old"
+Scope4 = "tb.top0"
+Scope5 = "led_tb.top0.led0"
+Scope6 = "led_tb.top0"
+Scope7 = "led_tb.top0.debounce0"
+multipleSelection = 1 0 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = tb
+File = /home/ft/tree/v1.1/sim/i2c/tb.v
+Line = 1
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/i2c
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc +define+SIM_I2C
+[wave.0]
+viewPort = 0 28 1853 182 100 65
+Empty = /home/ft/tree/v1.1/work/i2c/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

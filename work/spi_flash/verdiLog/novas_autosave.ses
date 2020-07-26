@@ -1,0 +1,73 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/spi_flash/flash.fsdb
+syncTime = 4020
+viewport = 67 27 1847 869 588 350 363 1845
+activeNode = "spi_flash_tb.memory.mem_access"
+activeScope = "spi_flash_tb.memory.mem_access"
+activeFile = "/home/ft/tree/v1.1/rtl/M25P16_VG_V12/memory_access.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 172
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "spi_flash_tb.memory.mem_access"
+multipleSelection = 1 183 1 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = spi_flash_tb.memory.mem_access
+File = /home/ft/tree/v1.1/rtl/M25P16_VG_V12/memory_access.v
+Line = 173
+[hb.sourceTab.2]
+scope = spi_flash_tb
+File = /home/ft/tree/v1.1/sim/spi_flash/spi_flash_tb.v
+Line = 1
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/spi_flash
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/spi_flash/flash.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1847 329 180 65
+SessionFile = /home/ft/tree/v1.1/work/spi_flash/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

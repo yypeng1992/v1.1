@@ -1,0 +1,344 @@
+{
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "r2dgF_d": {
+            "icPath": "csrc"
+        },
+        "k6uK4_d": {
+            "icPath": "csrc"
+        },
+        "I6qmI_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "xKp10_d": {
+            "icPath": "csrc"
+        },
+        "Ysnwd_d": {
+            "icPath": "csrc"
+        },
+        "KTZ9E_d": {
+            "icPath": "csrc"
+        },
+        "Ehwa7_d": {
+            "icPath": "csrc"
+        },
+        "DgZ94_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "WmSAT_d": {
+            "icPath": "csrc"
+        },
+        "tvjIp_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "wxG7b_d": {
+            "icPath": "csrc"
+        },
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "uzmws_d": {
+            "icPath": "csrc"
+        },
+        "re2bz_d": {
+            "icPath": "csrc"
+        },
+        "CVHuj_d": {
+            "icPath": "csrc"
+        },
+        "E2Tre_d": {
+            "icPath": "csrc"
+        },
+        "KA3k1_d": {
+            "icPath": "csrc"
+        },
+        "VDxkt_d": {
+            "icPath": "csrc"
+        },
+        "y5PkS_d": {
+            "icPath": "csrc"
+        },
+        "VZ0hy_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "ebSBN_d": {
+            "icPath": "csrc"
+        },
+        "HfzMG_d": {
+            "icPath": "csrc"
+        },
+        "LRhIH_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "Pg5vD_d": {
+            "icPath": "csrc"
+        },
+        "uP0gg_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "pQCx1_d": {
+            "icPath": "csrc"
+        },
+        "SDgzu_d": {
+            "icPath": "csrc"
+        },
+        "yAzgh_d": {
+            "icPath": "csrc"
+        },
+        "NW4FU_d": {
+            "icPath": "csrc"
+        },
+        "vVJ5h_d": {
+            "icPath": "csrc"
+        },
+        "uYAtS_d": {
+            "icPath": "csrc"
+        }
+    },
+    "Modules": {
+        "clock_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "aes_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "except_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "...MASTER...": {},
+        "cp0_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "debounce_for_clock": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "fifo_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "i2c_eeprom_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "dcache_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "pc_id": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "pc_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "hilo": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "aes": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "LLbit_reg": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "data_ram": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "buzzer_pwm_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "m25p16": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "aes_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "icache_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "sram_bist": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "rf1_MxN_0002": {
+            "Compiled": "Yes",
+            "Compiled Times": 80
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "rf1_MxN_0003": {
+            "Compiled": "Yes",
+            "Compiled Times": 80
+        },
+        "rf1_MxN_0004": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "led_new_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "uart_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "seg_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "rtc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "handshake_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        },
+        "div7_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "sram_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 81
+        }
+    },
+    "CompUnits": {
+        "Y9KLm_d": {
+            "archive": "archive.80/_10747_archive_1.a",
+            "mod": "dcache_tb",
+            "out": "Y9KLm_d.o",
+            "bytes": 147634,
+            "mode": 4,
+            "checksum": 0
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.80/_10747_archive_1.a",
+            "objects": [
+                [
+                    "Y9KLm_d.o",
+                    147634
+                ]
+            ],
+            "size": 147634
+        }
+    ]
+}

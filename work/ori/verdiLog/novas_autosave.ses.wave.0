@@ -1,0 +1,85 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 464 201 108
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/ori/ori.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 490.487646 707.136510
+cursor 330.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 16
+; marker line index
+markerPos 31
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/ori/ori.fsdb"
+addSignal -h 15 /ori_tb/sopc/rom0/clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -holdScope ce
+addSignal -h 15 -UNSIGNED -HEX -holdScope pc[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope inst[31:0]
+addGroup "G2"
+addSignal -h 15 /ori_tb/sopc/openmips0/id0/reg1_read_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_addr_o[4:0]
+addSignal -h 15 -holdScope reg2_read_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_addr_o[4:0]
+addSignal -h 15 -UNSIGNED -HEX /ori_tb/sopc/openmips0/regfile0/reg1_data[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_data[31:0]
+addGroup "G3"
+addSignal -h 15 -UNSIGNED -HEX /ori_tb/sopc/openmips0/id0/alusel_o[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope aluop_o[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg1_data_o[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope reg2_data_o[31:0]
+addSignal -h 15 -holdScope wreg_o
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr_o[4:0]
+addGroup "G4"
+addSignal -h 15 /ori_tb/sopc/openmips0/ex0/ex_we
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_waddr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ex_wdata[31:0]
+addGroup "G5"
+addSignal -h 15 /ori_tb/sopc/openmips0/mem0/mem_we
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_waddr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_wdata[31:0]
+addGroup "G6"
+addSignal -h 15 /ori_tb/sopc/openmips0/wb0/wb_we
+addSignal -h 15 -UNSIGNED -HEX -holdScope wb_waddr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wb_wdata[31:0]
+addGroup "G7"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

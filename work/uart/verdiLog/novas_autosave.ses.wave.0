@@ -1,0 +1,84 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 360 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/uart/uart.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 56077615.325156
+cursor 180990000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 20
+; marker line index
+markerPos 31
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/uart/uart.fsdb"
+addSignal -h 15 /uart_test/clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -holdScope rx_pin
+addSignal -h 15 -holdScope tx_pin
+addSignal -h 15 -UNSIGNED -HEX /uart_test/top0/tx0/state[1:0]
+addSignal -h 15 -holdScope flag
+addSignal -h 15 -UNSIGNED -HEX /uart_test/top0/tx_cnt[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_str[7:0]
+addSignal -h 15 -holdScope tx_start
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[1:0]
+addSignal -h 15 -holdScope tx_done
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_cnt[4:0]
+addSignal -h 15 /uart_test/top0/tx0/flag
+addGroup "G2"
+addSignal -h 15 /uart_test/top0/rx0/rx_pin
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[7:0]
+addSignal -h 15 -holdScope rx_done
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope bit_cnt[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope get_data[7:0]
+addSignal -h 15 -UNSIGNED -HEX /uart_test/top0/tx0/tx_data[7:0]
+addSignal -h 15 -holdScope tx_start
+addSignal -h 15 -UNSIGNED -HEX /uart_test/top0/state[1:0]
+addSignal -h 15 -holdScope rx_done
+addSignal -h 15 -UNSIGNED -HEX -holdScope rx_data[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope tx_data[7:0]
+addSignal -h 15 /uart_test/top0/tx0/tx_start
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[1:0]
+addSignal -h 15 -holdScope tx_pin
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

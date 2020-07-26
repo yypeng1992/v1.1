@@ -1,0 +1,154 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "833"
+debImport "-sv" "-f" "filelist.vc"
+srcHBSelect "led_new_tb.led_new0.key_anaysis0" -win $_nTrace1
+srcHBSelect "led_new_tb.led_new0.led0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "led_new_tb.led_new0.led0" -delim "."
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/led_new/led_new.fsdb}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 7 2 1 10 1}
+wvAddSignal -win $_nWave2 "/led_new_tb/led_new0/led0/clk" \
+           "/led_new_tb/led_new0/led0/reset_n" \
+           "/led_new_tb/led_new0/led0/key_status\[2:0\]" \
+           "/led_new_tb/led_new0/led0/led\[3:0\]"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoom -win $_nWave2 12169.769880 6316110.567470
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 15967.324577 2864133.347585
+wvZoom -win $_nWave2 22830.375235 1412598.133449
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+srcHBSelect "led_new_tb.led_new0.key_anaysis0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "led_new_tb.led_new0.key_anaysis0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "key" -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcSelect -signal "key_status" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/led_new_tb/led_new0/key_anaysis0/key" \
+           "/led_new_tb/led_new0/key_anaysis0/key_status\[2:0\]"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+verdiWindowBeWindow -win $_nWave2
+wvResizeWindow -win $_nWave2 57 19 1851 737
+wvSetCursor -win $_nWave2 174976.784016 -snap {("G2" 2)}
+srcActiveTrace "led_new_tb.led_new0.key_anaysis0.key_status\[2:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 165000 -TraceValue 000
+nsMsgSwitchTab -tab trace
+srcHBSelect "led_new_tb.led_new0.key_anaysis0" -win $_nTrace1
+verdiWindowBeDocked -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state\[1:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvAddSignal -win $_nWave2 "/led_new_tb/led_new0/key_anaysis0/state\[1:0\]"
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "enter_cnt0\[17:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvAddSignal -win $_nWave2 "/led_new_tb/led_new0/key_anaysis0/enter_cnt0\[17:0\]"
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 41023.265152 761860.638539
+wvScrollUp -win $_nWave2 1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "enter_cnt1\[17:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvAddSignal -win $_nWave2 "/led_new_tb/led_new0/key_anaysis0/enter_cnt1\[17:0\]"
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 4
+verdiWindowBeWindow -win $_nWave2
+wvResizeWindow -win $_nWave2 57 19 1851 737
+wvSelectSignal -win $_nWave2 {( "G2" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 2 )} 
+wvSetCursor -win $_nWave2 154409.513049 -snap {("G2" 2)}
+wvSetCursor -win $_nWave2 154409.513049 -snap {("G2" 2)}
+srcActiveTrace "led_new_tb.led_new0.key_anaysis0.state\[1:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 145000 -TraceValue 00
+srcHBSelect "led_new_tb.led_new0.key_anaysis0" -win $_nTrace1
+verdiWindowBeDocked -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "298" "100" "1388" "615"
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "833"
+debReload
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+srcDeselectAll -win $_nTrace1

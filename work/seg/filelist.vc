@@ -1,0 +1,12 @@
+
+
+$WORK_PATH/rtl/define.v
+$WORK_PATH/rtl/seg/seg0.v
+$WORK_PATH/rtl/seg/seg1.v
+$WORK_PATH/rtl/seg/seg2.v
+$WORK_PATH/rtl/seg/seg3.v
+$WORK_PATH/rtl/seg/seg4.v
+$WORK_PATH/rtl/seg/seg5.v
+$WORK_PATH/rtl/seg/seg_decoder.v
+$WORK_PATH/sim/seg/seg_test.v
+

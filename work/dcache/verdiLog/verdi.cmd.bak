@@ -1,0 +1,303 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "873"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/dcache/icache.fsdb}
+srcHBSelect "icache_tb.memory.acdc_watch" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.memory.acdc_watch" -delim "."
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.memory.spi_decoder" -delim "."
+srcHBSelect "icache_tb.memory.acdc_watch" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.memory.acdc_watch" -delim "."
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.hit_ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "htrans" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "haddr" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "busy" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reset_n" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.sync0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.sync0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "up_reset" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "reset_d" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 6 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSelectSignal -win $_nWave2 {( "G1" 6 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 1)}
+srcDeselectAll -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.hit_ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "index_cnt\[3:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hit_tag_En" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G2" 3 )} 
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hit_tag_En" -win $_nTrace1
+srcAction -pos 307 6 7 -win $_nTrace1 -name "hit_tag_En" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tag_En" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tag_En" -win $_nTrace1
+srcAction -pos 80 14 3 -win $_nTrace1 -name "tag_En" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.sync0" -win $_nTrace1
+srcHBSelect "icache_tb.test0.spi_ctrl" -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.sync0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.sync0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sync_done" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+wvSetCursor -win $_nWave2 172.363058 -snap {("G3" 2)}
+srcActiveTrace "icache_tb.test0.inst_cache0.hit_ctrl0.tag_En" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 0
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 3 )} 
+nsMsgSwitchTab -tab search
+nsMsgSwitchTab -tab cmpl
+nsMsgSwitchTab -tab general
+nsMsgSwitchTab -tab intercon
+nsMsgSwitchTab -tab search
+nsMsgSwitchTab -tab trace
+nsMsgSwitchTab -tab cmpl
+verdiDockWidgetHide -dock widgetDock_<Message>
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tag_Wr" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 1 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 2 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "index\[3:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 621.455796 -snap {("G3" 5)}
+srcActiveTrace "icache_tb.test0.inst_cache0.hit_ctrl0.index\[3:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 580 -TraceValue 1110
+nsMsgSwitchTab -tab trace
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+verdiDockWidgetHide -dock widgetDock_<Message>
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "miss" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 697.358794 -snap {("G3" 6)}
+wvSetCursor -win $_nWave2 736.891606 -snap {("G3" 6)}
+wvSetCursor -win $_nWave2 694.196169 -snap {("G3" 6)}
+wvSetCursor -win $_nWave2 698.940107 -snap {("G3" 6)}
+srcActiveTrace "icache_tb.test0.inst_cache0.hit_ctrl0.miss" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 260 -TraceValue 0
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcHBSelect "icache_tb.test0.inst_cache0.miss_ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.miss_ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "req" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 698.940107 -snap {("G3" 7)}
+srcActiveTrace "icache_tb.test0.inst_cache0.miss_ctrl0.req" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 0
+srcHBSelect "icache_tb.test0.inst_cache0.miss_ctrl0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "valid" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 4415.024385 -snap {("G3" 9)}
+srcActiveTrace "icache_tb.test0.inst_cache0.miss_ctrl0.data\[31:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 0 -TraceValue \
+           00000000000000000000000000000000
+srcHBSelect "icache_tb.test0.spi_ctrl" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ready_for_rdata\[31:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 4415.024385 -snap {("G3" 10)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ready_for_rdata\[31:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue \
+           00000000000000000000000000000000
+srcHBSelect "icache_tb.test0.spi_ctrl.ctrl0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "Data\[7:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 3112.022919 8007.766291
+wvSetCursor -win $_nWave2 3728.428314 -snap {("G3" 11)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ctrl0.Data\[7:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 00000000
+srcHBSelect "icache_tb.test0.spi_ctrl.ctrl0.spi0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "Q" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3660.655993 -snap {("G3" 12)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ctrl0.spi0.Q" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3650.974233 -snap {("G3" 13)}
+srcActiveTrace "icache_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcHBSelect "icache_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "w_pin" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "dclk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ncs" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "r_pin" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3613.725405 -snap {("G3" 18)}
+srcActiveTrace "icache_tb.r_pin" -win $_nTrace1 -TraceByDConWave -TraceTime 0 \
+           -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3629.858108 -snap {("G3" 19)}
+srcActiveTrace "icache_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 435.582973 12954.560270
+wvSelectSignal -win $_nWave2 {( "G3" 16 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 17 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 15 )} 
+wvSetPosition -win $_nWave2 {("G3" 15)}
+wvSetPosition -win $_nWave2 {("G3" 16)}
+wvSetPosition -win $_nWave2 {("G3" 17)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 17)}
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 3662.293667 -snap {("G3" 18)}
+srcActiveTrace "icache_tb.r_pin" -win $_nTrace1 -TraceByDConWave -TraceTime 0 \
+           -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 12 )} 
+wvSetCursor -win $_nWave2 3654.041210 -snap {("G3" 12)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ctrl0.spi0.Q" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "icache_tb.memory.spi_decoder" -win $_nTrace1
+wvSetCursor -win $_nWave2 3728.313323 -snap {("G3" 11)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ctrl0.Data\[7:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 00000000
+srcHBSelect "icache_tb.test0.spi_ctrl.ctrl0.spi0" -win $_nTrace1
+wvSetCursor -win $_nWave2 4396.762342 -snap {("G3" 10)}
+srcActiveTrace "icache_tb.test0.spi_ctrl.ready_for_rdata\[31:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue \
+           00000000000000000000000000000000
+srcHBSelect "icache_tb.test0.spi_ctrl.ctrl0" -win $_nTrace1
+wvSetCursor -win $_nWave2 4396.762342 -snap {("G3" 10)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data\[7:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+debExit

@@ -1,0 +1,141 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "led_key_old": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "std": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "seg_test": {
+            "Compiled Times": 22,
+            "Compiled": "Yes"
+        },
+        "led_new_tb": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "quick_sort2": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "tb": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "led_tb": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "quick_sort3": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "buzzer_pwm_tb": {
+            "Compiled Times": 22,
+            "Compiled": "Yes"
+        },
+        "stack_MxN": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "share_tb": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "sort_tb": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "uart_test": {
+            "Compiled Times": 38,
+            "Compiled": "Yes"
+        },
+        "spi_flash_tb": {
+            "Compiled Times": 22,
+            "Compiled": "Yes"
+        },
+        "rtc_tb": {
+            "Compiled Times": 22,
+            "Compiled": "Yes"
+        },
+        "i2c_eeprom_tb": {
+            "Compiled Times": 22,
+            "Compiled": "Yes"
+        }
+    },
+    "CompUnits": {
+        "KTZ9E_d": {
+            "mod": "uart_test",
+            "out": "KTZ9E_d.o",
+            "mode": 4,
+            "bytes": 43303,
+            "archive": "archive.37/_16554_archive_1.a",
+            "checksum": 0
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.37/_16554_archive_1.a",
+            "size": 43303,
+            "objects": [
+                [
+                    "KTZ9E_d.o",
+                    43303
+                ]
+            ]
+        }
+    ],
+    "reusePaths": {
+        "yAzgh_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "uzmws_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "LRhIH_d": {
+            "icPath": "csrc"
+        },
+        "yjUpe_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "I6qmI_d": {
+            "icPath": "csrc"
+        },
+        "SDgzu_d": {
+            "icPath": "csrc"
+        }
+    }
+}

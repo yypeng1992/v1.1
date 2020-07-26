@@ -1,0 +1,11 @@
+Command Line: /usr/synopsys/verdi_L-2016.06-1/platform/LINUXAMD64/bin/Novas -sv -f filelist.vc
+uname(Linux ft-virtual-machine 5.3.0-53-generic #47~18.04.1-Ubuntu SMP Thu May 7 13:10:50 UTC 2020 x86_64)
+---------textLine Info begin-----------
+word no: 1, getWordNo:0,word str:
+,word layer: 0
+---------textLine Info end-----------
+---------filter textLine Info begin-----------
+word no: 1, getWordNo:0,GetCurrentWordNo: 0, word str:
+,word layer: 0
+---------textLine Info end-----------
+au time 33874.453181 802.040021 517.204119 delta 294170624 294170624 total 683331584 683331584

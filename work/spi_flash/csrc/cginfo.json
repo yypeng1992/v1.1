@@ -1,0 +1,559 @@
+{
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "clock_tb": {
+            "NW4FU_d": {
+                "bytes": 173673,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "clock_tb",
+                "mode": 4,
+                "out": "NW4FU_d.o",
+                "checksum": 0
+            }
+        },
+        "stack_MxN": {
+            "P24hE_d": {
+                "bytes": 30385,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "stack_MxN",
+                "mode": 4,
+                "out": "P24hE_d.o",
+                "checksum": 0
+            }
+        },
+        "sram_bist": {
+            "VZ0hy_d": {
+                "bytes": 40337,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "sram_bist",
+                "mode": 4,
+                "out": "VZ0hy_d.o",
+                "checksum": 0
+            }
+        },
+        "quick_sort2": {
+            "tHkF2_d": {
+                "bytes": 43038,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "quick_sort2",
+                "mode": 4,
+                "out": "tHkF2_d.o",
+                "checksum": 0
+            }
+        },
+        "aes_test": {
+            "k6uK4_d": {
+                "bytes": 11662,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "aes_test",
+                "mode": 4,
+                "out": "k6uK4_d.o",
+                "checksum": 0
+            }
+        },
+        "fifo_test": {
+            "E2Tre_d": {
+                "bytes": 46167,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "fifo_test",
+                "mode": 4,
+                "out": "E2Tre_d.o",
+                "checksum": 0
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 11250,
+                "mod": "...MASTER...",
+                "mode": 4,
+                "out": "objs/amcQw_d.o",
+                "checksum": 0
+            }
+        },
+        "sram_tb": {
+            "vVJ5h_d": {
+                "bytes": 32353,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "sram_tb",
+                "mode": 4,
+                "out": "vVJ5h_d.o",
+                "checksum": 0
+            }
+        },
+        "spi_flash_tb": {
+            "yjUpe_d": {
+                "bytes": 290940,
+                "archive": "archive.133/_30704_archive_1.a",
+                "mod": "spi_flash_tb",
+                "checksum": 0,
+                "out": "yjUpe_d.o",
+                "mode": 4
+            }
+        },
+        "memory_access": {
+            "r7WZg_d": {
+                "bytes": 27257,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "memory_access",
+                "mode": 4,
+                "out": "r7WZg_d.o",
+                "checksum": 0
+            }
+        },
+        "sort_tb": {
+            "ADc5c_d": {
+                "bytes": 101573,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "sort_tb",
+                "mode": 4,
+                "out": "ADc5c_d.o",
+                "checksum": 0
+            }
+        },
+        "inst_rom": {
+            "vnxvv_d": {
+                "bytes": 9887,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "inst_rom",
+                "mode": 4,
+                "out": "vnxvv_d.o",
+                "checksum": 0
+            }
+        },
+        "quick_sort3": {
+            "zPe7U_d": {
+                "bytes": 66200,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "quick_sort3",
+                "mode": 4,
+                "out": "zPe7U_d.o",
+                "checksum": 0
+            }
+        },
+        "led_new_tb": {
+            "I6qmI_d": {
+                "bytes": 47428,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "led_new_tb",
+                "mode": 4,
+                "out": "I6qmI_d.o",
+                "checksum": 0
+            }
+        },
+        "handshake_tb": {
+            "VDxkt_d": {
+                "bytes": 23444,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "handshake_tb",
+                "mode": 4,
+                "out": "VDxkt_d.o",
+                "checksum": 0
+            }
+        },
+        "seg_test": {
+            "SDgzu_d": {
+                "bytes": 62909,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "seg_test",
+                "mode": 4,
+                "out": "SDgzu_d.o",
+                "checksum": 0
+            }
+        },
+        "share_tb": {
+            "KEaIt_d": {
+                "bytes": 33270,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "share_tb",
+                "mode": 4,
+                "out": "KEaIt_d.o",
+                "checksum": 0
+            }
+        },
+        "load_store_llsc_tb": {
+            "yDxvt_d": {
+                "bytes": 269876,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "load_store_llsc_tb",
+                "mode": 4,
+                "out": "yDxvt_d.o",
+                "checksum": 0
+            }
+        },
+        "mem": {
+            "FSbWZ_d": {
+                "bytes": 36731,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "mem",
+                "mode": 4,
+                "out": "FSbWZ_d.o",
+                "checksum": 0
+            }
+        },
+        "i2c_eeprom_tb": {
+            "LRhIH_d": {
+                "bytes": 83965,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "i2c_eeprom_tb",
+                "mode": 4,
+                "out": "LRhIH_d.o",
+                "checksum": 0
+            }
+        },
+        "acdc_check": {
+            "DpaZ4_d": {
+                "bytes": 48291,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "acdc_check",
+                "mode": 4,
+                "out": "DpaZ4_d.o",
+                "checksum": 0
+            }
+        },
+        "buzzer_pwm_tb": {
+            "yAzgh_d": {
+                "bytes": 34411,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "buzzer_pwm_tb",
+                "mode": 4,
+                "out": "yAzgh_d.o",
+                "checksum": 0
+            }
+        },
+        "led_tb": {
+            "aER8J_d": {
+                "bytes": 30686,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "led_tb",
+                "mode": 4,
+                "out": "aER8J_d.o",
+                "checksum": 0
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "bytes": 41566,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "std",
+                "mode": 4,
+                "out": "reYIK_d.o",
+                "checksum": 0
+            }
+        },
+        "led_key_old": {
+            "tNB2R_d": {
+                "bytes": 14261,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "led_key_old",
+                "mode": 4,
+                "out": "tNB2R_d.o",
+                "checksum": 0
+            }
+        },
+        "rtc_tb": {
+            "uzmws_d": {
+                "bytes": 152622,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "rtc_tb",
+                "mode": 4,
+                "out": "uzmws_d.o",
+                "checksum": 0
+            }
+        },
+        "uart_test": {
+            "KTZ9E_d": {
+                "bytes": 66309,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "uart_test",
+                "mode": 4,
+                "out": "KTZ9E_d.o",
+                "checksum": 0
+            }
+        },
+        "aes_top": {
+            "xKp10_d": {
+                "bytes": 33537,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "aes_top",
+                "mode": 4,
+                "out": "xKp10_d.o",
+                "checksum": 0
+            }
+        },
+        "ctrl": {
+            "FzTxA_d": {
+                "bytes": 8796,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "ctrl",
+                "mode": 4,
+                "out": "FzTxA_d.o",
+                "checksum": 0
+            }
+        },
+        "aes": {
+            "HfzMG_d": {
+                "bytes": 193178,
+                "archive": "archive.133/_prev_archive_1.a",
+                "mod": "aes",
+                "mode": 4,
+                "out": "HfzMG_d.o",
+                "checksum": 0
+            }
+        }
+    },
+    "PEModules": [],
+    "NameTable": {
+        "inst_rom": [
+            "inst_rom",
+            "vnxvv",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "i2c_eeprom_tb": [
+            "i2c_eeprom_tb",
+            "LRhIH",
+            "module"
+        ],
+        "acdc_check": [
+            "acdc_check",
+            "DpaZ4",
+            "module"
+        ],
+        "aes": [
+            "aes",
+            "HfzMG",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "aes_test": [
+            "aes_test",
+            "k6uK4",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "sram_bist": [
+            "sram_bist",
+            "VZ0hy",
+            "module"
+        ],
+        "ctrl": [
+            "ctrl",
+            "FzTxA",
+            "module"
+        ],
+        "aes_top": [
+            "aes_top",
+            "xKp10",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "load_store_llsc_tb": [
+            "load_store_llsc_tb",
+            "yDxvt",
+            "module"
+        ],
+        "mem": [
+            "mem",
+            "FSbWZ",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "memory_access": [
+            "memory_access",
+            "r7WZg",
+            "module"
+        ],
+        "clock_tb": [
+            "clock_tb",
+            "NW4FU",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "led_new_tb": [
+            "led_new_tb",
+            "I6qmI",
+            "module"
+        ],
+        "uart_test": [
+            "uart_test",
+            "KTZ9E",
+            "module"
+        ],
+        "handshake_tb": [
+            "handshake_tb",
+            "VDxkt",
+            "module"
+        ],
+        "seg_test": [
+            "seg_test",
+            "SDgzu",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "sram_tb": [
+            "sram_tb",
+            "vVJ5h",
+            "module"
+        ],
+        "spi_flash_tb": [
+            "spi_flash_tb",
+            "yjUpe",
+            "module"
+        ],
+        "buzzer_pwm_tb": [
+            "buzzer_pwm_tb",
+            "yAzgh",
+            "module"
+        ],
+        "rtc_tb": [
+            "rtc_tb",
+            "uzmws",
+            "module"
+        ],
+        "fifo_test": [
+            "fifo_test",
+            "E2Tre",
+            "module"
+        ]
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort3",
+        "inst_rom",
+        "mem",
+        "ctrl",
+        "acdc_check",
+        "memory_access",
+        "aes_top",
+        "aes",
+        "sram_bist",
+        "stack_MxN",
+        "led_tb",
+        "share_tb",
+        "sort_tb",
+        "load_store_llsc_tb",
+        "led_new_tb",
+        "uart_test",
+        "seg_test",
+        "spi_flash_tb",
+        "spi_flash_tb",
+        "buzzer_pwm_tb",
+        "rtc_tb",
+        "i2c_eeprom_tb",
+        "fifo_test",
+        "clock_tb",
+        "handshake_tb",
+        "aes_test",
+        "sram_tb"
+    ],
+    "CurCompileUdps": {},
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.73392999999999997,
+            "ru_stime_sec": 0.282003,
+            "ru_maxrss_kb": 129740,
+            "ru_nvcsw": 790,
+            "ru_minflt": 32815,
+            "ru_majflt": 698,
+            "ru_nivcsw": 1426
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0053940000000000004,
+            "ru_stime_sec": 0.0045589999999999997,
+            "ru_maxrss_kb": 71320,
+            "ru_nvcsw": 6,
+            "ru_minflt": 752,
+            "ru_majflt": 0,
+            "ru_nivcsw": 5
+        },
+        "nMops": 140231,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0084080000000000005,
+            "ru_stime_sec": 0.0045589999999999997,
+            "ru_maxrss_kb": 71320,
+            "ru_nvcsw": 7,
+            "ru_minflt": 971,
+            "ru_majflt": 0,
+            "ru_nivcsw": 7
+        },
+        "nQuads": 53565,
+        "totalObjSize": 428035,
+        "mop/quad": 2.6179594884719499,
+        "ru_self_end": {
+            "ru_utime_sec": 1.1294930000000001,
+            "ru_stime_sec": 0.32532299999999997,
+            "ru_maxrss_kb": 129740,
+            "ru_nvcsw": 866,
+            "ru_minflt": 37270,
+            "ru_majflt": 742,
+            "ru_nivcsw": 1635
+        },
+        "mopSpeed": 354509.90107770433,
+        "quadSpeed": 135414.58629851625,
+        "outputSizePerQuad": 7.0,
+        "Frontend(%)": 64.978711687456226,
+        "CodeGen(%)": 35.021288312543774
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 137039
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileProcesses": [
+        "cgproc.30704.json"
+    ],
+    "Misc": {
+        "cwd": "/home/ft/tree/v1.1/work/spi_flash",
+        "csrc": "csrc",
+        "csrc_abs": "/home/ft/tree/v1.1/work/spi_flash/csrc",
+        "default_output_dir": "csrc",
+        "daidir_abs": "/home/ft/tree/v1.1/work/spi_flash/simv.daidir",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.133"
+    },
+    "CompileStatus": "Successful"
+}

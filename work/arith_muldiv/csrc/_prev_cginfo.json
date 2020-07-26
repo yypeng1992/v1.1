@@ -1,0 +1,468 @@
+{
+    "PEModules": [],
+    "MlibObjs": {},
+    "NameTable": {
+        "mem": [
+            "mem",
+            "FSbWZ",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "ctrl": [
+            "ctrl",
+            "FzTxA",
+            "module"
+        ],
+        "wb": [
+            "wb",
+            "DgZ94",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "inst_rom": [
+            "inst_rom",
+            "vnxvv",
+            "module"
+        ],
+        "arith_muladd_tb": [
+            "arith_muladd_tb",
+            "yCZsx",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "hilo": [
+            "hilo",
+            "tvjIp",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "ex_mem": [
+            "ex_mem",
+            "K7u6h",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "id_ex": [
+            "id_ex",
+            "UmCUI",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "regfile": [
+            "regfile",
+            "Nxspn",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "logic_move_tb": [
+            "logic_move_tb",
+            "y9d1I",
+            "module"
+        ],
+        "tb": [
+            "tb",
+            "g7hgQ",
+            "module"
+        ],
+        "ori_tb": [
+            "ori_tb",
+            "YzKuZ",
+            "module"
+        ],
+        "shift_tb": [
+            "shift_tb",
+            "a5isL",
+            "module"
+        ],
+        "arithmetic_tb": [
+            "arithmetic_tb",
+            "yanbT",
+            "module"
+        ],
+        "arith_muldiv_tb": [
+            "arith_muldiv_tb",
+            "fti4k",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "PrevCompiledModules": {
+        "inst_rom": {
+            "vnxvv_d": {
+                "out": "vnxvv_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 8987,
+                "mode": 4,
+                "mod": "inst_rom",
+                "checksum": 0
+            }
+        },
+        "arith_muldiv_tb": {
+            "fti4k_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "fti4k_d.o",
+                "bytes": 90182,
+                "mode": 4,
+                "mod": "arith_muldiv_tb",
+                "checksum": 0
+            }
+        },
+        "arith_muladd_tb": {
+            "yCZsx_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "yCZsx_d.o",
+                "bytes": 85068,
+                "mode": 4,
+                "mod": "arith_muladd_tb",
+                "checksum": 0
+            }
+        },
+        "quick_sort2": {
+            "tHkF2_d": {
+                "out": "tHkF2_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 32150,
+                "mode": 4,
+                "mod": "quick_sort2",
+                "checksum": 0
+            }
+        },
+        "hilo": {
+            "tvjIp_d": {
+                "out": "tvjIp_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 9183,
+                "mode": 4,
+                "mod": "hilo",
+                "checksum": 0
+            }
+        },
+        "ex_mem": {
+            "K7u6h_d": {
+                "out": "K7u6h_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 14165,
+                "mode": 4,
+                "mod": "ex_mem",
+                "checksum": 0
+            }
+        },
+        "sort_tb": {
+            "ADc5c_d": {
+                "out": "ADc5c_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 64045,
+                "mode": 4,
+                "mod": "sort_tb",
+                "checksum": 0
+            }
+        },
+        "quick_sort3": {
+            "zPe7U_d": {
+                "out": "zPe7U_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 48588,
+                "mode": 4,
+                "mod": "quick_sort3",
+                "checksum": 0
+            }
+        },
+        "stack_MxN": {
+            "P24hE_d": {
+                "out": "P24hE_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 23659,
+                "mode": 4,
+                "mod": "stack_MxN",
+                "checksum": 0
+            }
+        },
+        "regfile": {
+            "Nxspn_d": {
+                "out": "Nxspn_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 12692,
+                "mode": 4,
+                "mod": "regfile",
+                "checksum": 0
+            }
+        },
+        "shift_tb": {
+            "a5isL_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "a5isL_d.o",
+                "bytes": 85045,
+                "mode": 4,
+                "mod": "shift_tb",
+                "checksum": 0
+            }
+        },
+        "ori_tb": {
+            "YzKuZ_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "YzKuZ_d.o",
+                "bytes": 85011,
+                "mode": 4,
+                "mod": "ori_tb",
+                "checksum": 0
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "out": "reYIK_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 33397,
+                "mode": 4,
+                "mod": "std",
+                "checksum": 0
+            }
+        },
+        "mem": {
+            "FSbWZ_d": {
+                "out": "FSbWZ_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 11584,
+                "mode": 4,
+                "mod": "mem",
+                "checksum": 0
+            }
+        },
+        "id_ex": {
+            "UmCUI_d": {
+                "out": "UmCUI_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 12043,
+                "mode": 4,
+                "mod": "id_ex",
+                "checksum": 0
+            }
+        },
+        "led_tb": {
+            "aER8J_d": {
+                "out": "aER8J_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 25376,
+                "mode": 4,
+                "mod": "led_tb",
+                "checksum": 0
+            }
+        },
+        "led_key_old": {
+            "tNB2R_d": {
+                "out": "tNB2R_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 11850,
+                "mode": 4,
+                "mod": "led_key_old",
+                "checksum": 0
+            }
+        },
+        "logic_move_tb": {
+            "y9d1I_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "y9d1I_d.o",
+                "bytes": 85066,
+                "mode": 4,
+                "mod": "logic_move_tb",
+                "checksum": 0
+            }
+        },
+        "tb": {
+            "g7hgQ_d": {
+                "out": "g7hgQ_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 46106,
+                "mode": 4,
+                "mod": "tb",
+                "checksum": 0
+            }
+        },
+        "wb": {
+            "DgZ94_d": {
+                "out": "DgZ94_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 11770,
+                "mode": 4,
+                "mod": "wb",
+                "checksum": 0
+            }
+        },
+        "ctrl": {
+            "FzTxA_d": {
+                "out": "FzTxA_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 7662,
+                "mode": 4,
+                "mod": "ctrl",
+                "checksum": 0
+            }
+        },
+        "arithmetic_tb": {
+            "yanbT_d": {
+                "archive": "archive.20/_14969_archive_1.a",
+                "out": "yanbT_d.o",
+                "bytes": 85066,
+                "mode": 4,
+                "mod": "arithmetic_tb",
+                "checksum": 0
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "out": "objs/amcQw_d.o",
+                "bytes": 10322,
+                "mode": 4,
+                "mod": "...MASTER...",
+                "checksum": 0
+            }
+        },
+        "share_tb": {
+            "KEaIt_d": {
+                "out": "KEaIt_d.o",
+                "archive": "archive.20/_prev_archive_1.a",
+                "bytes": 22570,
+                "mode": 4,
+                "mod": "share_tb",
+                "checksum": 0
+            }
+        }
+    },
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_stime_sec": 0.074796000000000001,
+            "ru_utime_sec": 0.34406399999999998,
+            "ru_maxrss_kb": 93156,
+            "ru_minflt": 6818,
+            "ru_nvcsw": 5,
+            "ru_majflt": 0,
+            "ru_nivcsw": 916
+        },
+        "ru_childs_cgstart": {
+            "ru_stime_sec": 0.0,
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_nvcsw": 0,
+            "ru_majflt": 0,
+            "ru_nivcsw": 0
+        },
+        "totalObjSize": 630830,
+        "mop/quad": 2.4433286777575445,
+        "nMops": 138202,
+        "outputSizePerQuad": 11.0,
+        "nQuads": 56563,
+        "ru_self_end": {
+            "ru_stime_sec": 0.093895999999999993,
+            "ru_utime_sec": 0.78873099999999996,
+            "ru_maxrss_kb": 106028,
+            "ru_minflt": 10967,
+            "ru_nvcsw": 6,
+            "ru_majflt": 0,
+            "ru_nivcsw": 1076
+        },
+        "mopSpeed": 310798.86746711587,
+        "Frontend(%)": 43.622477118307764,
+        "ru_childs_end": {
+            "ru_stime_sec": 0.002643,
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 24056,
+            "ru_minflt": 220,
+            "ru_nvcsw": 1,
+            "ru_majflt": 0,
+            "ru_nivcsw": 2
+        },
+        "quadSpeed": 127203.05307117461,
+        "CodeGen(%)": 56.377522881692236
+    },
+    "CurCompileUdps": {},
+    "CompileProcesses": [
+        "cgproc.14969.json"
+    ],
+    "SIMBData": {
+        "bytes": 115392,
+        "out": "amcQwB.o"
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort3",
+        "ex_mem",
+        "id_ex",
+        "wb",
+        "inst_rom",
+        "mem",
+        "regfile",
+        "hilo",
+        "ctrl",
+        "stack_MxN",
+        "led_tb",
+        "tb",
+        "share_tb",
+        "sort_tb",
+        "ori_tb",
+        "ori_tb",
+        "logic_move_tb",
+        "logic_move_tb",
+        "shift_tb",
+        "shift_tb",
+        "arithmetic_tb",
+        "arithmetic_tb",
+        "arith_muladd_tb",
+        "arith_muladd_tb",
+        "arith_muldiv_tb",
+        "arith_muldiv_tb"
+    ],
+    "CompileStatus": "Successful",
+    "LVLData": [
+        "SIM"
+    ],
+    "Misc": {
+        "cwd": "/home/ft/tree/v1.1/work/cpu",
+        "daidir_abs": "/home/ft/tree/v1.1/work/cpu/simv.daidir",
+        "csrc": "csrc",
+        "archive_dir": "archive.20",
+        "daidir": "simv.daidir",
+        "csrc_abs": "/home/ft/tree/v1.1/work/cpu/csrc",
+        "default_output_dir": "csrc"
+    }
+}

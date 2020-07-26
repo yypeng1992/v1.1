@@ -1,0 +1,4 @@
+Command Line: /usr/synopsys/verdi_L-2016.06-1/platform/LINUXAMD64/bin/Novas -sv -f filelist.vc
+uname(Linux ft-virtual-machine 5.3.0-28-generic #30~18.04.1-Ubuntu SMP Fri Jan 17 06:14:09 UTC 2020 x86_64)
+Disabled AskUser2 Message (Response 0): Close all windows and exit verdi?
+au time 5384.127764 192.300255 101.444537 delta 281538560 281538560 total 670699520 670699520

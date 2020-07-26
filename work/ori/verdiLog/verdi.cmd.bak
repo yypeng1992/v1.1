@@ -1,0 +1,168 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "833"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/ori/ori.fsdb}
+srcHBSelect "ori_tb.sopc.openmips0.id0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.id0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcHBSelect "ori_tb.sopc.openmips0.regfile0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.regfile0" -delim "."
+srcHBSelect "ori_tb.sopc.rom0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.rom0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 8 3 1 1 1}
+wvAddSignal -win $_nWave2 "/ori_tb/sopc/rom0/clk" "/ori_tb/sopc/rom0/reset_n" \
+           "/ori_tb/sopc/rom0/ce" "/ori_tb/sopc/rom0/pc\[31:0\]" \
+           "/ori_tb/sopc/rom0/inst\[31:0\]"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 270.474669 -snap {("G1" 5)}
+wvZoomIn -win $_nWave2
+wvSetCursor -win $_nWave2 588.046917 -snap {("G1" 4)}
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvSetCursor -win $_nWave2 270.474669 -snap {("G1" 4)}
+wvScrollDown -win $_nWave2 0
+srcHBSelect "ori_tb.sopc.openmips0.id0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.id0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {48 52 1 13 19 1}
+wvSetCursor -win $_nWave2 249.280758 -snap {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/ori_tb/sopc/openmips0/id0/reg1_read_o" \
+           "/ori_tb/sopc/openmips0/id0/reg1_addr_o\[4:0\]" \
+           "/ori_tb/sopc/openmips0/id0/reg2_read_o" \
+           "/ori_tb/sopc/openmips0/id0/reg2_addr_o\[4:0\]"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSetCursor -win $_nWave2 270.811080 -snap {("G2" 2)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+srcHBSelect "ori_tb.sopc.openmips0.regfile0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.regfile0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {9 10 1 11 1 1}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvAddSignal -win $_nWave2 "/ori_tb/sopc/openmips0/regfile0/reg1_data\[31:0\]" \
+           "/ori_tb/sopc/openmips0/regfile0/reg2_data\[31:0\]"
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcHBSelect "ori_tb.sopc.openmips0.id0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.id0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {38 46 1 1 20 36}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {38 45 1 1 20 1}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvAddSignal -win $_nWave2 "/ori_tb/sopc/openmips0/id0/alusel_o\[2:0\]" \
+           "/ori_tb/sopc/openmips0/id0/aluop_o\[7:0\]" \
+           "/ori_tb/sopc/openmips0/id0/reg1_data_o\[31:0\]" \
+           "/ori_tb/sopc/openmips0/id0/reg2_data_o\[31:0\]" \
+           "/ori_tb/sopc/openmips0/id0/wreg_o" \
+           "/ori_tb/sopc/openmips0/id0/waddr_o\[4:0\]"
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetCursor -win $_nWave2 289.145495 -snap {("G3" 4)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcHBSelect "ori_tb.sopc.openmips0.ex0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "ori_tb.sopc.openmips0.ex0" -delim "."
+srcHBSelect "ori_tb.sopc.openmips0.ex0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {11 13 4 12 7 1}
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvAddSignal -win $_nWave2 "/ori_tb/sopc/openmips0/ex0/ex_we" \
+           "/ori_tb/sopc/openmips0/ex0/ex_waddr\[4:0\]" \
+           "/ori_tb/sopc/openmips0/ex0/ex_wdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("G4" 0)}
+wvSetPosition -win $_nWave2 {("G4" 3)}
+wvSetPosition -win $_nWave2 {("G4" 3)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 309.834789 -snap {("G4" 3)}
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+srcDeselectAll -win $_nTrace1
+debExit

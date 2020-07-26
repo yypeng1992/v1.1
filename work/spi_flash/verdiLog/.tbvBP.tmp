@@ -1,0 +1,3 @@
+Simulation Mode: VCS
+stop -line 296 -file /home/ft/tree/v1.1/rtl/M25P16_VG_V12/acdc_check.v 
+stop -line 953 -file /home/ft/tree/v1.1/rtl/M25P16_VG_V12/internal_logic.v 

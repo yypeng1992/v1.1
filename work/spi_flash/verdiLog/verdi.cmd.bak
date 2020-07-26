@@ -1,0 +1,1505 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "873"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/spi_flash/flash.fsdb}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 0.000000 1821.413544
+srcHBSelect "spi_flash_tb.test0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.memory" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_in" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave2 266.295271 -snap {("G1" 1)}
+wvSetMarker -win $_nWave2 290.000000
+wvSetWindowTimeUnit -win $_nWave2 20.000000 ns
+wvSetMarker -win $_nWave2 15.500000
+wvSetMarker -win $_nWave2 14.500000
+wvSetMarker -win $_nWave2 15.500000
+srcSearchString "ERROR : Clock frequency condition violated for READ instruction" \
+           -win $_nTrace1 -next -case -allfiles -fileType "*.*"
+nsMsgSwitchTab -tab search
+nsMsgSelect -range {0 0 0-0}
+nsMsgAction -tab search -index {0 0 0}
+nsMsgSelect -range {0 0 0-0}
+srcSelect -win $_nTrace1 -range {296 296 1 20 1 1}
+srcTBAddBrkPnt -win $_nTrace1 -line 296 -file \
+           /home/ft/tree/v1.1/rtl/M25P16_VG_V12/acdc_check.v
+srcSelect -win $_nTrace1 -range {296 296 1 20 1 1}
+srcTBSetBrkPnt -win $_nTrace1 -disable -index 0
+srcSelect -win $_nTrace1 -range {296 296 1 20 1 1}
+srcTBSetBrkPnt -win $_nTrace1 -delete -index 0
+srcSelect -win $_nTrace1 -range {296 296 1 20 1 1}
+srcTBAddBrkPnt -win $_nTrace1 -line 296 -file \
+           /home/ft/tree/v1.1/rtl/M25P16_VG_V12/acdc_check.v
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcAction -pos 293 5 3 -win $_nTrace1 -name "high_time" -ctrlKey off
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.acdc_watch" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.acdc_watch.freq_watch" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcAction -pos 293 5 4 -win $_nTrace1 -name "high_time" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.acdc_watch.c_high_watch" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.acdc_watch.c_high_watch" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+nsMsgSwitchTab -tab general
+nsMsgSwitchTab -tab cmpl
+nsMsgSwitchTab -tab trace
+nsMsgSwitchTab -tab search
+nsMsgSelect -range {0 0 0-0}
+nsMsgAction -tab search -index {0 0 0}
+nsMsgSelect -range {0 0 0-0}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "toggle" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_op" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "toggle" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 293 -pos 15 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {296 296 14 14 8 80}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "low_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "low_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "high_time" -win $_nTrace1
+srcAction -pos 293 5 4 -win $_nTrace1 -name "high_time" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.acdc_watch.c_high_watch" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.acdc_watch.c_high_watch" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {227 227 2 8 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {228 230 4 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {230 231 3 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {232 232 2 15 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {233 234 3 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {235 236 1 1 17 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {236 238 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {238 239 1 1 16 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {239 240 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {240 240 2 13 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {241 243 1 1 20 1}
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSelectSignal -win $_nWave2 {( "G1" 1 )} 
+wvSetCursor -win $_nWave2 13.314764 -snap {("G1" 1)}
+wvSetMarker -win $_nWave2 14.500000
+wvSetCursor -win $_nWave2 13.372403 -snap {("G1" 1)}
+wvSetMarker -win $_nWave2 14.500000
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetCursor -win $_nWave2 21.499597 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 25.419094 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 22.191273 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 24.496859 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 8.473031 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 9.568185 -snap {("G1" 1)}
+wvSetCursor -win $_nWave2 10.490420 -snap {("G1" 1)}
+wvSetMarker -win $_nWave2 12.500000
+wvSetCursor -win $_nWave2 12.623088 -snap {("G1" 3)}
+wvSetMarker -win $_nWave2 13.500000
+wvSetCursor -win $_nWave2 13.314764 -snap {("G1" 3)}
+wvSetMarker -win $_nWave2 14.500000
+wvSetCursor -win $_nWave2 13.487683 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 12.623088 -snap {("G1" 3)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+simSetInteractiveFsdbFile inter.fsdb
+simSetSimMode on
+srcSetPreference -setDefaultEditor OtherEditor
+srcInvokeExtEditor -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcSetPreference -setDefaultEditor TurboEditor
+srcInvokeExtEditor -win $_nTrace1
+srcCloseWindow -win $_nTrace3
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.memory" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {4 5 1 1 12 1}
+srcDeselectAll -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.acdc_watch" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.acdc_watch" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.memory.acdc_watch" -delim "."
+srcDeselectAll -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcSaveAs -win $_nTrace4 -file /home/ft/tree/v1.1/sim/spi_flash/spi_flash_tb.v
+srcCloseWindow -win $_nTrace4
+srcDeselectAll -win $_nTrace1
+debReload
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSetCursor -win $_nWave2 1086.915335 -snap {("G1" 3)}
+wvSetWindowTimeUnit -win $_nWave2 1.000000 ns
+wvZoom -win $_nWave2 7032.981582 28387.671114
+wvZoomAll -win $_nWave2
+wvSetCursor -win $_nWave2 3964.044165 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 18030.007329 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 15856.176658 -snap {("G1" 2)}
+wvZoom -win $_nWave2 9590.429430 24167.882165
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectGroup -win $_nWave2 {G2}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSetCursor -win $_nWave2 21354.689532 -snap {("G1" 3)}
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvZoom -win $_nWave2 0.000000 6137.874835
+wvSetCursor -win $_nWave2 808.024029 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 982.836920 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 842.986607 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 947.874342 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 819.678222 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 1052.762076 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 796.369836 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 963.413265 -snap {("G1" 4)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+srcTraceConnectivity "spi_flash_tb.memory.data_in" -win $_nTrace1
+nsMsgSwitchTab -tab trace
+srcHBSelect "spi_flash_tb.memory.acdc_watch.d_watch" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "d" -win $_nTrace1
+srcAction -pos 196 3 0 -win $_nTrace1 -name "d" -ctrlKey off
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+srcTraceConnectivity "spi_flash_tb.memory.data_in" -win $_nTrace1
+srcHBSelect "spi_flash_tb.test0.ctrl0.spi0" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "D" -win $_nTrace1
+srcTraceLoad "spi_flash_tb.test0.ctrl0.spi0.D" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.acdc_watch.d_watch" -win $_nTrace1
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.data_in" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_in" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_in" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcSelect -signal "data_in" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 69 -pos 2 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 70 -pos 2 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_out" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "r_pin" -win $_nTrace1
+srcAction -pos 71 4 1 -win $_nTrace1 -name "r_pin" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 6 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "869"
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 13425.971626 25329.089989
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+srcHBSelect "spi_flash_tb.test0.ctrl0.spi0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0.ctrl0.spi0" -delim "."
+srcHBSelect "spi_flash_tb.test0.ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0.ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "CS" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 18576.940359 -snap {("G1" 8)}
+srcActiveTrace "spi_flash_tb.test0.ctrl0.state\[3:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 15540 -TraceValue 0110
+srcHBSelect "spi_flash_tb.test0.ctrl0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "ST_WRSR" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSetCursor -win $_nWave2 3262.783714 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcAction -pos 319 5 2 -win $_nTrace1 -name "hold_cond" -ctrlKey off
+wvSetCursor -win $_nWave2 3738.606339 -snap {("G1" 9)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.hold_cond" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 0
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave2 3240.125493 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+srcHBSelect "spi_flash_tb.test0.ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0.ctrl0" -delim "."
+srcHBSelect "spi_flash_tb.test0.ctrl0.spi0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0.ctrl0.spi0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3481.813176 -snap {("G1" 10)}
+srcActiveTrace "spi_flash_tb.test0.ctrl0.spi0.rdata\[7:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue 00000000
+srcHBSelect "spi_flash_tb.test0" -win $_nTrace1
+wvSetCursor -win $_nWave2 3255.230974 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvZoom -win $_nWave2 166.160282 5989.322882
+srcHBSelect "spi_flash_tb.test0.ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.test0.ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_into_flash" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data\[7:0\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 1041.851612 -snap {("G1" 12)}
+wvSetCursor -win $_nWave2 3317.910090 -snap {("G1" 3)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 11)}
+wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetCursor -win $_nWave2 3258.791688 -snap {("G1" 6)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcAction -pos 319 5 6 -win $_nTrace1 -name "hold_cond" -ctrlKey off
+wvSetCursor -win $_nWave2 3262.486588 -snap {("G1" 6)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3258.791688 -snap {("G1" 7)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 7 )} 
+wvSetCursor -win $_nWave2 3258.791688 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 299.176686 -snap {("G1" 6)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.data_to_read\[7:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 0 -TraceValue xxxxxxxx
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+wvSetCursor -win $_nWave2 0.000000 -snap {("G1" 6)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.data_to_read\[7:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 0 -TraceValue xxxxxxxx
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAction -pos 952 12 9 -win $_nTrace1 -name "data_to_read\[7 - bit_index\]" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAction -pos 126 5 4 -win $_nTrace1 -name "content\[int_add\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcAction -pos 183 9 3 -win $_nTrace1 -name "content\[int_add + i\]" -ctrlKey off
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "int_add" -win $_nTrace1
+srcAction -pos 183 1 10 -win $_nTrace1 -name "content\[int_add + i\]" -ctrlKey \
+          off
+wvSetCursor -win $_nWave2 3.694900 -snap {("G1" 6)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.data_to_read\[7:0\]" -win \
+           $_nTrace1 -TraceByDConWave -TraceTime 0 -TraceValue xxxxxxxx
+wvSetCursor -win $_nWave2 3258.901912 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAction -pos 952 12 4 -win $_nTrace1 -name "data_to_read\[7 - bit_index\]" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAction -pos 126 5 1 -win $_nTrace1 -name "content\[int_add\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAction -pos 183 5 2 -win $_nTrace1 -name "p_prog\[i\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAction -pos 63 1 4 -win $_nTrace1 -name "p_prog\[i\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAction -pos 63 1 4 -win $_nTrace1 -name "p_prog\[i\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAction -pos 63 1 4 -win $_nTrace1 -name "p_prog\[i\]" -ctrlKey off
+wvSetCursor -win $_nWave2 3262.596812 -snap {("G1" 8)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 321 5 1 -win $_nTrace1 -name "q_bis" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 189 1 2 -win $_nTrace1 -name "q_bis" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 189 1 2 -win $_nTrace1 -name "q_bis" -ctrlKey off
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSetCursor -win $_nWave2 3262.596812 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAction -pos 952 12 7 -win $_nTrace1 -name "data_to_read\[7 - bit_index\]" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAction -pos 126 5 3 -win $_nTrace1 -name "content\[int_add\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcAction -pos 183 9 5 -win $_nTrace1 -name "content\[int_add + i\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcAction -pos 183 9 5 -win $_nTrace1 -name "content\[int_add + i\]" -ctrlKey off
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "int_add" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "i" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAction -pos 183 5 5 -win $_nTrace1 -name "p_prog\[i\]" -ctrlKey off
+wvSetCursor -win $_nWave2 3218.258011 -snap {("G1" 9)}
+srcActiveTrace "spi_flash_tb.memory.mem_access.i\[31:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue \
+           00000000000000000000000100000000
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 61 -pos 16 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "p_prog\[i\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 3262.596812 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvSetCursor -win $_nWave2 373.184913 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 450.777815 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 365.795113 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 447.082915 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 376.879813 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 447.082915 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 3262.596812 -snap {("G1" 11)}
+wvSetCursor -win $_nWave2 3266.291712 -snap {("G1" 11)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 321 5 3 -win $_nTrace1 -name "q_bis" -ctrlKey off
+wvSetCursor -win $_nWave2 3258.901912 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "select_ok" -win $_nTrace1
+wvSetCursor -win $_nWave2 3266.291712 -snap {("G1" 11)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+wvSetCursor -win $_nWave2 3266.291712 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvSetCursor -win $_nWave2 3258.901912 -snap {("G1" 11)}
+srcActiveTrace "spi_flash_tb.memory.data_out" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+wvSetCursor -win $_nWave2 3255.207012 -snap {("G1" 5)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.q_bis" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue z
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {319 324 1 1 3 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 11 )} 
+wvSetCursor -win $_nWave2 968.063833 -snap {("G1" 10)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 321 1 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {317 318 1 1 3 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetPosition -win $_nWave2 {("G1" 11)}
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 14)}
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSetPosition -win $_nWave2 {("G1" 17)}
+wvSetPosition -win $_nWave2 {("G1" 18)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 18)}
+wvSetPosition -win $_nWave2 {("G1" 17)}
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvAddSignal -win $_nWave2 "/spi_flash_tb/memory/spi_decoder/hold_cond"
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSelectSignal -win $_nWave2 {( "G1" 16 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSelectSignal -win $_nWave2 {( "G1" 15 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 316 10 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcAction -pos 314 7 4 -win $_nTrace1 -name "hold_cond" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcPrevTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcPrevTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcPrevTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcAction -pos 258 15 0 -win $_nTrace1 -name "s" -ctrlKey off
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.test0.ctrl0" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcAction -pos 260 4 0 -win $_nTrace1 -name "c" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c" -win $_nTrace1
+srcAction -pos 48 7 0 -win $_nTrace1 -name "c" -ctrlKey off
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.test0.ctrl0.spi0" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcForwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {260 264 2 5 4 1} -backward
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {261 275 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold" -win $_nTrace1
+srcAction -pos 275 6 2 -win $_nTrace1 -name "hold" -ctrlKey off
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {276 293 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {278 292 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {283 291 2 4 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.hold_com" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 10 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 11 )} 
+wvZoomAll -win $_nWave2
+wvZoom -win $_nWave2 0.000000 28587.917982
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 0.000000 -snap {("G1" 11)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 314 11 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+wvScrollDown -win $_nWave2 4
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 2
+wvSelectSignal -win $_nWave2 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 15 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSetPosition -win $_nWave2 {("G1" 14)}
+wvSelectSignal -win $_nWave2 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 17 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 14 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 10 )} 
+wvScrollDown -win $_nWave2 1
+wvSetPosition -win $_nWave2 {("G2" 0)}
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb.memory" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {21 28 1 1 1 1} -backward
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 14)}
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSetPosition -win $_nWave2 {("G1" 17)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/spi_flash_tb/memory/c" "/spi_flash_tb/memory/data_in" \
+           "/spi_flash_tb/memory/s" "/spi_flash_tb/memory/w" \
+           "/spi_flash_tb/memory/hold" "/spi_flash_tb/memory/data_out"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G2" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 4 )} 
+wvZoom -win $_nWave2 0.000000 598.604882
+wvSetCursor -win $_nWave2 0.000000 -snap {("G2" 5)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 373.748226 -snap {("G2" 1)}
+wvSetCursor -win $_nWave2 416.288674 -snap {("G2" 1)}
+wvSetCursor -win $_nWave2 501.369571 -snap {("G2" 1)}
+wvSetCursor -win $_nWave2 419.327277 -snap {("G2" 1)}
+wvSetCursor -win $_nWave2 498.330967 -snap {("G2" 1)}
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G2" 6 )} 
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G1" 16)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 11)}
+wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+srcTraceConnectivity "spi_flash_tb.memory.data_out" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+wvSetCursor -win $_nWave2 376.786829 -snap {("G2" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 321 1 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 11)}
+wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 10)}
+wvSetPosition -win $_nWave2 {("G1" 11)}
+wvSetPosition -win $_nWave2 {("G1" 12)}
+wvSetPosition -win $_nWave2 {("G1" 13)}
+wvSetPosition -win $_nWave2 {("G1" 14)}
+wvSetPosition -win $_nWave2 {("G1" 15)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvAddSignal -win $_nWave2 "/spi_flash_tb/memory/spi_decoder/hold_cond"
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 1 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 314 11 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcSelect -signal "s" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 294.744536 -snap {("G3" 3)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q" -win $_nTrace1
+srcAction -pos 321 1 0 -win $_nTrace1 -name "q" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "hold_cond" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 321 5 1 -win $_nTrace1 -name "q_bis" -ctrlKey off
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+nsMsgSelect -range {32 1 0-0}
+nsMsgClearMsg -tab trace
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "q_bis" -win $_nTrace1
+srcAction -pos 1506 1 2 -win $_nTrace1 -name "q_bis" -ctrlKey off
+nsMsgSelect -range {0 1 1-1}
+nsMsgSelect -range {0 1 2-2}
+nsMsgSelect -range {0 1 6-6}
+nsMsgSelect -range {0 1 5-5}
+nsMsgSelect -range {0 1 4-4}
+nsMsgSelect -range {0 1 3-3}
+nsMsgSelect -range {0 1 2-2}
+nsMsgSelect -range {0 1 1-1}
+nsMsgSelect -range {0 1 0-0}
+nsMsgSelect -range {0 1 0-0}
+nsMsgAction -tab trace -index {0 1 0}
+nsMsgSelect -range {0 1 0-0}
+nsMsgSelect -range {0 1 1-1}
+nsMsgAction -tab trace -index {0 1 1}
+nsMsgSelect -range {0 1 1-1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c_int" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcAction -pos 922 1 4 -win $_nTrace1 -name "begin" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c_int" -win $_nTrace1
+srcAction -pos 921 3 2 -win $_nTrace1 -name "c_int" -ctrlKey off
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c_int" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.horloge" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "select_ok" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "select_ok" -win $_nTrace1
+srcAction -pos 921 7 4 -win $_nTrace1 -name "select_ok" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcPrevTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {1522 1522 2 2 30 54}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {1522 1523 2 1 25 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {1523 1523 2 2 15 48}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {0-0}
+nsMsgSelect -range {0 1-1}
+nsMsgSelect -range {0 1 2-2}
+nsMsgSelect -range {0 1 2-2}
+nsMsgAction -tab trace -index {0 1 2}
+nsMsgSelect -range {0 1 2-2}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "c_int" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "select_ok" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "select_ok" -win $_nTrace1
+srcAction -pos 921 7 5 -win $_nTrace1 -name "select_ok" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcPrevTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder.pin_s" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {1531 1545 2 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+nsMsgSelect -range {1 1-1}
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {0 1 2-2}
+nsMsgAction -tab trace -index {0 1 2}
+nsMsgSelect -range {0 1 2-2}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcAction -pos 947 4 4 -win $_nTrace1 -name "read_data" -ctrlKey off
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.decode" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_op" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_op" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_op" -win $_nTrace1
+srcAction -pos 510 1 2 -win $_nTrace1 -name "read_op" -ctrlKey off
+nsMsgSelect -range {2 2-2}
+nsMsgSelect -range {2 2-2}
+nsMsgClearMsg -selected
+nsMsgSelect -range {2 1-1}
+nsMsgSelect -range {2 1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {2-2}
+nsMsgSelect -range {2-2}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {0 1 2-2}
+nsMsgSelect -range {0 1 2-2}
+nsMsgSelect -range {0 1 1-1}
+nsMsgSelect -range {0 1 2-2}
+nsMsgAction -tab trace -index {0 1 2}
+nsMsgSelect -range {0 1 2-2}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "cpt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcAction -pos 947 11 4 -win $_nTrace1 -name "byte_cpt" -ctrlKey off
+srcNextTraced
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_ok" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit_raz" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_enable" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvPrevView -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSetCursor -win $_nWave2 923.735452 -snap {("G3" 8)}
+wvSetCursor -win $_nWave2 960.198693 -snap {("G3" 5)}
+wvSetCursor -win $_nWave2 413.250071 -snap {("G3" 7)}
+wvSetCursor -win $_nWave2 370.709622 -snap {("G3" 4)}
+wvSetCursor -win $_nWave2 413.250071 -snap {("G3" 7)}
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSetPosition -win $_nWave2 {("G3" 8)}
+wvSetPosition -win $_nWave2 {("G3" 7)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSetCursor -win $_nWave2 941.967073 -snap {("G3" 6)}
+wvSetCursor -win $_nWave2 954.121486 -snap {("G3" 7)}
+wvSetCursor -win $_nWave2 990.584728 -snap {("G3" 7)}
+srcActiveTrace "spi_flash_tb.memory.spi_decoder.byte_cpt\[31:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 0 -TraceValue \
+           00000000000000000000000000000000
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit_raz" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSetCursor -win $_nWave2 449.713312 -snap {("G3" 8)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "cpt" -win $_nTrace1
+srcAction -pos 333 1 1 -win $_nTrace1 -name "cpt" -ctrlKey off
+srcPrevTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_enable" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSetPosition -win $_nWave2 {("G3" 9)}
+wvSetPosition -win $_nWave2 {("G3" 8)}
+wvSetPosition -win $_nWave2 {("G3" 7)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_enable" -win $_nTrace1
+srcAction -pos 360 4 5 -win $_nTrace1 -name "count_enable" -ctrlKey off
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit_enable" -win $_nTrace1
+srcNextTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit_raz" -win $_nTrace1
+srcPrevTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit_enable" -win $_nTrace1
+srcPrevTraced -scope
+srcHBSelect "spi_flash_tb.memory.spi_decoder" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_enable" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 7)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_enable" -win $_nTrace1
+srcTraceLoad "spi_flash_tb.memory.spi_decoder.count_enable" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.spi_decoder.count_bit" -win $_nTrace1
+wvPartialBus -win $_nWave2 {("G3" 6)} -range 0 0
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
+wvSetCursor -win $_nWave2 941.967073 -snap {("G3" 5)}
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvScrollDown -win $_nWave2 0
+wvSetPosition -win $_nWave2 {("G3" 9)}
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {1-1}
+nsMsgSelect -range {1-1}
+nsMsgClearMsg -selected
+nsMsgSelect -range {0 1 2-2}
+nsMsgAction -tab trace -index {0 1 2}
+nsMsgSelect -range {0 1 2-2}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {948 948 10 28 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {948 948 9 29 1 1} -backward
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {948 948 10 28 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cpt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {948 948 32 39 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_index" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_index" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvSetCursor -win $_nWave2 3992.724946 -snap {("G3" 8)}
+verdiDockWidgetSetCurTab -dock widgetDock_<Message>
+srcSelect -win $_nTrace1 -range {953 953 1 14 1 1}
+srcTBAddBrkPnt -win $_nTrace1 -line 953 -file \
+           /home/ft/tree/v1.1/rtl/M25P16_VG_V12/internal_logic.v
+srcSelect -win $_nTrace1 -range {953 953 1 14 1 1}
+srcTBSetBrkPnt -win $_nTrace1 -disable -index 4
+srcSelect -win $_nTrace1 -range {953 953 1 14 1 1}
+srcTBSetBrkPnt -win $_nTrace1 -delete -index 4
+srcSelect -win $_nTrace1 -range {953 953 1 14 1 1}
+srcTBAddBrkPnt -win $_nTrace1 -line 953 -file \
+           /home/ft/tree/v1.1/rtl/M25P16_VG_V12/internal_logic.v
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read\[7 - bit_index\]" -win $_nTrace1
+srcAction -pos 952 12 6 -win $_nTrace1 -name "data_to_read\[7 - bit_index\]" \
+          -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "data_to_read" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 3
+wvSelectSignal -win $_nWave2 {( "G3" 10 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 11 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 10 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 11 )} 
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "memory.mem_access.initfile" -line 14 -pos 1
+srcHBSelect "spi_flash_tb.memory" -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcSaveAs -win $_nTrace5 -file /home/ft/tree/v1.1/sim/spi_flash/spi_flash_tb.v
+srcCloseWindow -win $_nTrace5
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+debReload
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "spi_flash_tb.memory.mem_access.initfile" -line \
+          14 -pos 1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "spi_flash_tb.memory.mem_access.initfile" -line \
+          14 -pos 1
+srcAction -pos 13 2 19 -win $_nTrace1 -name \
+          "spi_flash_tb.memory.mem_access.initfile" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcCloseWindow -win $_nTrace6
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+srcCloseWindow -win $_nTrace7
+srcDeselectAll -win $_nTrace1
+debReload
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 9 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSaveSignal -win $_nWave2 "/home/ft/tree/v1.1/work/spi_flash/flash.rc"
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 11 )} 
+wvSetPosition -win $_nWave2 {("G3" 10)}
+wvSetPosition -win $_nWave2 {("G3" 9)}
+wvSetPosition -win $_nWave2 {("G3" 11)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvSetPosition -win $_nWave2 {("G3" 3)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+srcTraceConnectivity "spi_flash_tb.memory.mem_access.data_to_read\[7:0\]" -win \
+           $_nTrace1
+nsMsgSwitchTab -tab trace
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G3" 11)}
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 118 -pos 9 -win $_nTrace1
+srcAction -pos 118 9 3 -win $_nTrace1 -name "TOP_MEM" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {32 33 4 1 1 1}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {33 33 8 9 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {33 33 10 11 1 11}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcBackwardHistory -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 118 -pos 4 -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 118 -pos 4 -win $_nTrace1
+srcAction -pos 118 4 3 -win $_nTrace1 -name "int_add" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -word -line 124 -pos 1 -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAction -pos 126 5 3 -win $_nTrace1 -name "content\[int_add\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcCreateSourceTab -win $_nTrace1
+srcHBSelect "spi_flash_tb" -win $_nTrace1
+srcSetScope -win $_nTrace1 "spi_flash_tb" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "spi_flash_tb.memory.mem_access.initfile" -line \
+          14 -pos 1
+srcDeselectAll -win $_nTrace1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcSearchString "initfile" -win $_nTrace1 -next -case
+srcSearchString "initfile" -win $_nTrace1 -next -case
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_2
+verdiDockWidgetSetCurTab -dock widgetDock_MTB_SOURCE_TAB_1
+srcSetActiveSourceTab -win $_nTrace1 -tab 1
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSearchString "initfile" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {58 58 4 5 1 1}
+srcSearchString "initfile" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {43 43 4 5 1 1}
+srcSearchString "initfile" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {58 58 4 5 1 1}
+srcSearchString "initfile" -win $_nTrace1 -next -case
+srcSearchString "initfile" -win $_nTrace1 -next -case
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "cut_add" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+srcDeselectAll -win $_nTrace1
+debReload
+wvSelectSignal -win $_nWave2 {( "G3" 8 )} 
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G3" 10 )} 
+wvSelectSignal -win $_nWave2 {( "G3" 11 )} 
+wvSetPosition -win $_nWave2 {("G3" 11)}
+wvSetPosition -win $_nWave2 {("G3" 10)}
+wvSetPosition -win $_nWave2 {("G3" 9)}
+wvSetPosition -win $_nWave2 {("G3" 12)}
+wvSetPosition -win $_nWave2 {("G3" 6)}
+wvSetPosition -win $_nWave2 {("G3" 5)}
+wvSetPosition -win $_nWave2 {("G3" 4)}
+wvSetPosition -win $_nWave2 {("G3" 2)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+srcTraceConnectivity "spi_flash_tb.memory.mem_access.data_to_read\[7:0\]" -win \
+           $_nTrace1
+nsMsgSwitchTab -tab trace
+srcHBSelect "spi_flash_tb.memory.mem_access" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G3" 12)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add\]" -win $_nTrace1
+srcAction -pos 126 5 3 -win $_nTrace1 -name "content\[int_add\]" -ctrlKey off
+srcSearchString "content" -win $_nTrace1 -next -case
+srcSearchString "content" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {184 184 2 2 1 8}
+srcSearchString "content" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {127 127 6 6 1 8}
+srcSearchString "content" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {58 58 11 11 50 57}
+srcSearchString "content" -win $_nTrace1 -prev -case
+srcSelect -win $_nTrace1 -range {58 58 7 8 1 1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content" -win $_nTrace1
+srcAction -pos 57 6 2 -win $_nTrace1 -name "content" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "content\[int_add + i\]" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G3" 6 )} 
+debExit

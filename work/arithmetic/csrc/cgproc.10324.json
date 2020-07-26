@@ -1,0 +1,147 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "ori_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 27
+        },
+        "arithmetic_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 41
+        },
+        "logic_move_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 27
+        },
+        "shift_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 27
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.40/_10324_archive_1.a",
+            "objects": [
+                [
+                    "YzKuZ_d.o",
+                    114887
+                ],
+                [
+                    "y9d1I_d.o",
+                    114942
+                ],
+                [
+                    "a5isL_d.o",
+                    114921
+                ],
+                [
+                    "yanbT_d.o",
+                    118557
+                ]
+            ],
+            "size": 463307
+        }
+    ],
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        }
+    },
+    "CompUnits": {
+        "a5isL_d": {
+            "bytes": 114921,
+            "mod": "shift_tb",
+            "archive": "archive.40/_10324_archive_1.a",
+            "out": "a5isL_d.o",
+            "mode": 4,
+            "checksum": 0
+        },
+        "YzKuZ_d": {
+            "bytes": 114887,
+            "mod": "ori_tb",
+            "archive": "archive.40/_10324_archive_1.a",
+            "out": "YzKuZ_d.o",
+            "mode": 4,
+            "checksum": 0
+        },
+        "yanbT_d": {
+            "bytes": 118557,
+            "mod": "arithmetic_tb",
+            "archive": "archive.40/_10324_archive_1.a",
+            "out": "yanbT_d.o",
+            "mode": 4,
+            "checksum": 0
+        },
+        "y9d1I_d": {
+            "bytes": 114942,
+            "mod": "logic_move_tb",
+            "archive": "archive.40/_10324_archive_1.a",
+            "out": "y9d1I_d.o",
+            "mode": 4,
+            "checksum": 0
+        }
+    }
+}

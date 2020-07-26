@@ -1,0 +1,563 @@
+
+Warning-[DBG_FLAG_DEP] Debug Option is being Deprecated
+  The '-fsdb' debug-related option is being deprecated and will no longer be 
+  supported in a future release.
+  Please recompile using the '-debug_access<+options>' switch and incremental 
+  options as required.  Recommended options are '-debug_access' for 
+  post-process debug, '-debug_access+classdbg' for testbench debug, and 
+  '-debug_access+all' for all debug capabilities.  Refer the VCS user guide 
+  for more granular options for debug control under the switch '-debug_access'
+  and refer to '-debug_region' for region control.
+
+Command: vcs -full64 -LDFLAGS -Wl,--no-as-needed -sverilog -P /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/novas.tab \
+/usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/pli.a -debug_pp +vcs+lic+wait \
+-l compile.log -fsdb -f filelist.vc
+                         Chronologic VCS (TM)
+         Version L-2016.06_Full64 -- Thu Mar 26 22:00:21 2020
+               Copyright (c) 1991-2016 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpvars' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpvarsES' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMDA' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpSVA' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpvarsByFile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbSuppress' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpon' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpoff' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbSwitchDumpfile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpfile' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbAutoSwitchDumpfile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpFinish' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpflush' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbLog' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbAddRuntimeSignal' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpSC' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpvarsToFile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_create_transaction_stream' has multiple definitions 
+  in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_begin_transaction' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_end_transaction' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_free_transaction' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_add_attribute' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_update_label' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_add_relation' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbWhatif' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpClassMethod' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbSuppressClassMethod' has multiple definitions in PLI
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbSuppressClassProp' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMDAByFile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_create_stream_begin' has multiple definitions 
+  in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_define_attribute' has multiple definitions in 
+  PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_create_stream_end' has multiple definitions in
+  PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_begin' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_set_label' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_add_attribute' has multiple definitions in PLI
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_add_tag' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_end' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_add_relation' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_get_error_code' has multiple definitions in 
+  PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_add_stream_attribute' has multiple definitions
+  in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbTrans_add_scope_attribute' has multiple definitions 
+  in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_interactive' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_test' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpClassObject' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpClassObjectByFile' has multiple definitions in 
+  PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$ridbDump' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$sps_flush_file' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpPSL' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDisplay' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumplimit' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMem' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMemNow' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMemInScope' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMDANow' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMDAOnChange' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMDAInScope' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpMemInFile' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpPSLon' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpPSLoff' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpSVAon' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpSVAoff' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpStrength' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpSingle' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpIO' has multiple definitions in PLI table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbDumpPattern' has multiple definitions in PLI 
+  table(s).
+  
+
+
+Warning-[UFTMD] User function/task multiply defined
+  The function/task '$fsdbSubstituteHier' has multiple definitions in PLI 
+  table(s).
+  
+
+Parsing design file '/home/ft/tree/v1.1/rtl/define.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led/led_key.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led/led_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led/led_key_old.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led/debounce.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/sort/sort_define.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/sort/quick_sort.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/sort/quick_sort2.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/sort/quick_sort3.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/sort/quick_sort_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led_new/led.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led_new/key_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led_new/key_anaysis.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/led_new/debounce_new.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/uart/uart_rx.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/uart/uart_tx.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/uart/uart_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg0.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg1.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg2.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg3.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg4.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg5.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/seg/seg_decoder.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/buzzer_pwm_test/buzzer_pwm_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/buzzer_pwm_test/pwm.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/buzzer_pwm_test/debounce_for_buzzer.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/spi_flash/debounce_for_flash.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/spi_flash/seg_for_flash.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/spi_flash/flash_ctrl.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/spi_flash/spi_flash_test.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/spi_flash/spi_master.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/ds1302_io.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/ds1302.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/ds1302_test.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/rtc_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/seg_for_rtc.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/rtc/spi_master_for_rtc.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/debounce_for_i2c.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/slaver.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/i2c_eeprom_test.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/i2c_eeprom_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/master.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/i2c_eeprom/seg_for_i2c.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/ram_fifo/ram.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/ram_fifo/fifo.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/add_anaysis.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/clock_top.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/debounce_for_clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/hour_clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/min_clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/mode_anaysis.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/second_clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/seg_for_clock.v'
+Parsing design file '/home/ft/tree/v1.1/rtl/clock/time_clock_select.v'
+Parsing design file '/home/ft/tree/v1.1/share/stack_MxN.v'
+Parsing design file '/home/ft/tree/v1.1/share/rf1_MxN.v'
+Parsing design file '/home/ft/tree/v1.1/sim/led/led_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/share/share_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/sort/sort_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/led_new/led_new_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/uart/uart_test.v'
+Parsing design file '/home/ft/tree/v1.1/sim/seg/seg_test.v'
+Parsing design file '/home/ft/tree/v1.1/sim/spi_flash/spi_flash_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/buzzer_pwm/buzzer_pwm_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/rtc/rtc_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/i2c_eeprom/i2c_eeprom_tb.v'
+Parsing design file '/home/ft/tree/v1.1/sim/ram_fifo/fifo_test.v'
+Parsing design file '/home/ft/tree/v1.1/sim/clock/clock_tb.v'
+Top Level Modules:
+       led_key_old
+       quick_sort2
+       quick_sort3
+       led_tb
+       share_tb
+       sort_tb
+       led_new_tb
+       uart_test
+       seg_test
+       spi_flash_tb
+       buzzer_pwm_tb
+       rtc_tb
+       i2c_eeprom_tb
+       fifo_test
+       clock_tb
+TimeScale is 1 ns / 1 ps
+
+Warning-[TFIPC] Too few instance port connections
+/home/ft/tree/v1.1/rtl/spi_flash/spi_flash_test.v, 130
+"flash_ctrl ctrl0( .clk (clk),  .reset_n (reset_n),  .dcs (ncs),  .dclk (dclk),  .w_pin (w_pin),  .r_pin (r_pin),  .flash_read_req (flash_read_req),  .flash_write_req (flash_write_req),  .flash_pp_req (flash_pp_req),  .flash_se_req (flash_se_req),  .flash_be_req (flash_be_req),  .flash_ack (flash_ack),  .data_for_write (data_for_write[7:0]),  .rdata (ready_for_rdata[7:0]),  .flash_read_addr (read_addr[23:0]),  .flash_pp_addr (write_addr[23:0]),  .flash_se_addr (se_addr[23:0]));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ft/tree/v1.1/rtl/seg/seg_decoder.v, 142
+"seg4 seg4( .clk (clk),  .reset_n (reset_n),  .en_from_3 (en3),  .seg4_dig (seg4_dig),  .en4 (en4));"
+  The following 4-bit expression is connected to 5-bit port "seg4_dig" of 
+  module "seg4", instance "seg4".
+  Expression: seg4_dig
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ft/tree/v1.1/rtl/seg/seg_decoder.v, 150
+"seg5 seg5( .clk (clk),  .reset_n (reset_n),  .en_from_4 (en4),  .seg5_dig (seg5_dig));"
+  The following 4-bit expression is connected to 6-bit port "seg5_dig" of 
+  module "seg5", instance "seg5".
+  Expression: seg5_dig
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ft/tree/v1.1/rtl/buzzer_pwm_test/buzzer_pwm_top.v, 70
+"pwm pwm0( .clk (clk),  .reset_n (reset_n),  .period (period[(N - 1):0]),  .key (key),  .duty (duty[(N - 1):0]),  .pwm_out (pwm));"
+  The following 32-bit expression is connected to 9-bit port "period" of 
+  module "pwm", instance "pwm0".
+  Expression: period[(N - 1):0]
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ft/tree/v1.1/rtl/buzzer_pwm_test/buzzer_pwm_top.v, 70
+"pwm pwm0( .clk (clk),  .reset_n (reset_n),  .period (period[(N - 1):0]),  .key (key),  .duty (duty[(N - 1):0]),  .pwm_out (pwm));"
+  The following 32-bit expression is connected to 9-bit port "duty" of module 
+  "pwm", instance "pwm0".
+  Expression: duty[(N - 1):0]
+  	use +lint=PCWM for more details
+
+
+Warning-[PCWM-W] Port connection width mismatch
+/home/ft/tree/v1.1/rtl/spi_flash/flash_ctrl.v, 250
+"spi_master spi_master0( .clk (clk),  .reset_n (reset_n),  .dclk (dclk),  .w_pin (w_pin),  .r_pin (r_pin),  .send_data (send_data[7:0]),  .rdata (rdata[7:0]),  .wr_req (wr_req),  .wr_ack (wr_ack),  .clk_div (15'b0),  .rdata_is_valid (rdata_is_valid));"
+  The following 15-bit expression is connected to 16-bit port "clk_div" of 
+  module "spi_master", instance "spi_master0".
+  Expression: 15'b0
+  	use +lint=PCWM for more details
+
+Starting vcs inline pass...
+19 unique modules to generate
+19 modules and 0 UDP read. 
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+recompiling module clock_tb
+All of 1 modules done
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+ld -shared  -o .//../simv.daidir//_csrc0.so objs/amcQw_d.o 
+rm -f _csrc0.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
+-Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,--no-as-needed -rdynamic   amcQwB.o \
+_26553_archive_1.so _prev_archive_1.so _csrc0.so  SIM_l.o  _csrc0.so     rmapats_mop.o \
+rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libzerosoft_rt_stubs.so \
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libvirsim.so /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/liberrorinf.so \
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libsnpsmalloc.so /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/pli.a \
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libvcsnew.so /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libsimprofile.so \
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libuclinative.so   -Wl,-whole-archive \
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libvcsucli.so -Wl,-no-whole-archive  \
+_vcs_pli_stub_.o   /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/vcs_save_restore_new.o \
+/usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc -lpthread \
+-ldl 
+../simv up to date
+CPU time: .671 seconds to compile + .296 seconds to elab + .228 seconds to link

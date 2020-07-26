@@ -1,0 +1,59 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.vc
+        /home/ft/tree/v1.1/rtl/define.v
+        /home/ft/tree/v1.1/rtl/led/led_key.v
+        /home/ft/tree/v1.1/rtl/led/led_top.v
+        /home/ft/tree/v1.1/rtl/led/led_key_old.v
+        /home/ft/tree/v1.1/rtl/led/debounce.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c_top.v
+        /home/ft/tree/v1.1/rtl/i2c/eepram.v
+        /home/ft/tree/v1.1/rtl/sort/sort_define.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort2.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort3.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort_top.v
+        /home/ft/tree/v1.1/rtl/cpu/ex.v
+        /home/ft/tree/v1.1/rtl/cpu/ex_mem.v
+        /home/ft/tree/v1.1/rtl/cpu/id.v
+        /home/ft/tree/v1.1/rtl/cpu/id_ex.v
+        /home/ft/tree/v1.1/rtl/cpu/wb.v
+        /home/ft/tree/v1.1/rtl/cpu/inst_rom.v
+        /home/ft/tree/v1.1/rtl/cpu/mem.v
+        /home/ft/tree/v1.1/rtl/cpu/openmips_min_sopc.v
+        /home/ft/tree/v1.1/rtl/cpu/openmips.v
+        /home/ft/tree/v1.1/rtl/cpu/pc_reg.v
+        /home/ft/tree/v1.1/rtl/cpu/pc_id.v
+        /home/ft/tree/v1.1/rtl/cpu/regfile.v
+        /home/ft/tree/v1.1/rtl/cpu/hilo.v
+        /home/ft/tree/v1.1/rtl/cpu/ctrl.v
+        /home/ft/tree/v1.1/share/stack_MxN.v
+        /home/ft/tree/v1.1/share/rf1_MxN.v
+        /home/ft/tree/v1.1/sim/led/led_tb.v
+        /home/ft/tree/v1.1/sim/i2c/tb.v
+        /home/ft/tree/v1.1/sim/share/share_tb.v
+        /home/ft/tree/v1.1/sim/sort/sort_tb.v
+        /home/ft/tree/v1.1/sim/ori/ori_tb.v
+        /home/ft/tree/v1.1/sim/logic_move/logic_move_tb.v
+        /home/ft/tree/v1.1/sim/shift/shift_tb.v
+        /home/ft/tree/v1.1/sim/arithmetic/arithmetic_tb.v
+        /home/ft/tree/v1.1/sim/cpu/arith_muladd_tb.v
+
+Highest level modules:
+led_key_old
+quick_sort2
+quick_sort3
+led_tb
+tb
+share_tb
+sort_tb
+ori_tb
+logic_move_tb
+shift_tb
+arithmetic_tb
+arith_muladd_tb
+
+Total	0 error(s),   0 warning(s)

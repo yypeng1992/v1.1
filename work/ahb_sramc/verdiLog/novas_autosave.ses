@@ -1,0 +1,51 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/ahb_sramc/sram.fsdb
+syncTime = 130000
+viewport = 67 27 733 545 137 416 413 158
+activeNode = "sram_tb.top.sram_core0.gen_sram_block[0].u_sram_bist.mbist0"
+activeScope = "sram_tb.top.sram_core0.gen_sram_block[0].u_sram_bist.mbist0"
+activeFile = "/home/ft/tree/v1.1/rtl/ahb_sramc/mbist_8kx8.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 37
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "sram_tb.top.sram_core0.gen_sram_block[0].u_sram_bist.mbist0"
+multipleSelection = 1 51 14 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = sram_tb.top.sram_core0.gen_sram_block[0].u_sram_bist.mbist0
+File = /home/ft/tree/v1.1/rtl/ahb_sramc/mbist_8kx8.v
+Line = 38
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/ahb_sramc
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/ahb_sramc/sram.fsdb
+UserActionNum = 0
+nMemWindowNum = 0

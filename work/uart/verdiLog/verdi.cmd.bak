@@ -1,0 +1,515 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "829"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/uart/uart.fsdb}
+srcHBSelect "uart_test.top0.tx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.tx0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 7 3 1 1 1}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/clk" "/uart_test/top0/tx0/reset_n" \
+           "/uart_test/top0/tx0/tx_data" "/uart_test/top0/tx0/data\[7:0\]" \
+           "/uart_test/top0/tx0/tx_done"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/state\[1:0\]"
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "down_edge" -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "down_edge" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/down_edge"
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "tx_data_d" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/tx_data_d"
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+debReload
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 6 )} 
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.rx0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 9 2 1 11 1}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/rx0/clk" "/uart_test/top0/rx0/reset_n" \
+           "/uart_test/top0/rx0/rx_start" "/uart_test/top0/rx0/data_i\[7:0\]" \
+           "/uart_test/top0/rx0/done" "/uart_test/top0/rx0/rx_data"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt\[2:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 2)}
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/rx0/bit_cnt\[2:0\]"
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state\[1:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 3)}
+wvSetPosition -win $_nWave2 {("G2" 4)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/rx0/state\[1:0\]"
+wvSetPosition -win $_nWave2 {("G2" 5)}
+wvSetPosition -win $_nWave2 {("G2" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+verdiWindowResize -win $_Verdi_1 "67" "27" "1853" "1025"
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G2" 7 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 6 )} 
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "829"
+verdiWindowResize -win $_Verdi_1 "1" "22" "1913" "834"
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "829"
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 2606904.921030 -snap {("G2" 8)}
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "G2" 1 )} 
+wvSelectSignal -win $_nWave2 {( "G2" 1 2 3 4 5 6 7 8 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+verdiWindowBeWindow -win $_nWave2
+wvResizeWindow -win $_nWave2 57 20 1847 319
+wvResizeWindow -win $_nWave2 57 20 1847 716
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+verdiWindowBeDocked -win $_nWave2
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcHBSelect "uart_test.top0.tx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.tx0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+debReload
+wvDisplayGridCount -win $_nWave2 -off
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "G1" 6 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 3 )} 
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/count\[8:0\]"
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/bit_cnt\[2:0\]"
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetCursor -win $_nWave2 3715448.602402 -snap {("G1" 4)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvZoom -win $_nWave2 8222714.120071 8588168.080963
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "get_data\[bit_cnt\]" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/get_data\[7:0\]"
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+debReload
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvSetCursor -win $_nWave2 8203319.414251 -snap {("G1" 8)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvAddSignal -win $_nWave2 "/uart_test/top0/tx0/state\[2:0\]"
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSelectSignal -win $_nWave2 {( "G1" 8 )} 
+srcDeselectAll -win $_nTrace1
+debReload
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvTpfCloseForm -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvCloseWindow -win $_nWave2
+srcDeselectAll -win $_nTrace1
+debReload
+wvCreateWindow
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.rx0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {2 7 3 1 1 1}
+wvAddSignal -win $_nWave3 "/uart_test/top0/rx0/clk" "/uart_test/top0/rx0/reset_n" \
+           "/uart_test/top0/rx0/rx_data" "/uart_test/top0/rx0/data\[7:0\]" \
+           "/uart_test/top0/rx0/rx_done"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+srcHBSelect "uart_test.top0.tx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.tx0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -range {1 8 5 1 1 1}
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/tx0/clk" "/uart_test/top0/tx0/reset_n" \
+           "/uart_test/top0/tx0/tx_start" "/uart_test/top0/tx0/data_i\[7:0\]" \
+           "/uart_test/top0/tx0/tx_done" "/uart_test/top0/tx0/tx_data"
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G2" 6)}
+wvSetPosition -win $_nWave3 {("G2" 6)}
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+verdiWindowBeWindow -win $_nWave3
+wvResizeWindow -win $_nWave3 57 20 1847 321
+wvResizeWindow -win $_nWave3 57 20 1847 823
+wvSelectSignal -win $_nWave3 {( "G1" 3 )} 
+verdiWindowBeDocked -win $_nWave3
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.rx0" -delim "."
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "G2" 3 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("G2" 5)}
+wvSelectSignal -win $_nWave3 {( "G1" 3 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 2 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 3 )} 
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/rx0/state\[2:0\]"
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt\[2:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/rx0/bit_cnt\[2:0\]"
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "get_data\[bit_cnt\]" -win $_nTrace1
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/rx0/get_data\[7:0\]"
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSelectSignal -win $_nWave3 {( "G1" 7 )} 
+srcHBSelect "uart_test.top0.tx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.tx0" -delim "."
+srcDeselectAll -win $_nTrace1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt\[2:0\]" -win $_nTrace1
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSetPosition -win $_nWave3 {("G1" 8)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/tx0/bit_cnt\[2:0\]"
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvSetPosition -win $_nWave3 {("G2" 3)}
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSetPosition -win $_nWave3 {("G1" 8)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvSetPosition -win $_nWave3 {("G2" 3)}
+wvSetPosition -win $_nWave3 {("G2" 4)}
+wvSetPosition -win $_nWave3 {("G2" 5)}
+wvSetPosition -win $_nWave3 {("G2" 6)}
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("G2" 6)}
+wvSetPosition -win $_nWave3 {("G2" 5)}
+wvSetPosition -win $_nWave3 {("G2" 4)}
+wvSetPosition -win $_nWave3 {("G2" 3)}
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvAddSignal -win $_nWave3 "/uart_test/top0/tx0/state\[1:0\]"
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvSetPosition -win $_nWave3 {("G2" 3)}
+wvScrollDown -win $_nWave3 1
+debReload
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+srcDeselectAll -win $_nTrace1
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "uart_test.top0.rx0" -delim "."
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave3 10183852.566425 -snap {("G1" 8)}
+srcActiveTrace "uart_test.top0.rx0.rx_done" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 0 -TraceValue x
+nsMsgSwitchTab -tab trace
+srcHBSelect "uart_test.top0.rx0" -win $_nTrace1
+debReload
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+debExit

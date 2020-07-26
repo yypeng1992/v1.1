@@ -1,0 +1,66 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "829"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/cp0/cp0.fsdb}
+srcHBSelect "cp0_tb.sopc.openmips0.cp0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "cp0_tb.sopc.openmips0.cp0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "compare_o" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+wvSetCursor -win $_nWave2 481666.194444
+wvSelectGroup -win $_nWave2 {G1}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk" -win $_nTrace1
+srcSelect -signal "compare_o" -win $_nTrace1
+srcSelect -signal "count_o" -win $_nTrace1
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSelectGroup -win $_nWave2 {G1}
+wvSetCursor -win $_nWave2 481666.194444
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_o" -win $_nTrace1
+wvAddSignal -win $_nWave2 "/cp0_tb/sopc/openmips0/cp0/count_o\[31:0\]"
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "compare_o" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvAddSignal -win $_nWave2 "/cp0_tb/sopc/openmips0/cp0/compare_o\[31:0\]"
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_o" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "timer_int_o" -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G2" 1)}
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvAddSignal -win $_nWave2 "/cp0_tb/sopc/openmips0/cp0/timer_int_o"
+wvSetPosition -win $_nWave2 {("G3" 0)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+wvSetPosition -win $_nWave2 {("G3" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "timer_int_o" -win $_nTrace1
+srcAction -pos 16 4 8 -win $_nTrace1 -name "timer_int_o" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "count_o\[31:0\]" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave2 489057.491546 -snap {("G1" 1)}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSetOptions -win $_nTrace1 -annotate on
+schSetOptions -win $_nSchema1 -annotate on
+wvZoom -win $_nWave2 372028.620773 570361.759662
+srcDeselectAll -win $_nTrace1
+debReload
+debExit

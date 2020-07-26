@@ -1,0 +1,77 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/dcache/icache.fsdb
+syncTime = 4420
+viewport = 67 27 1851 873 605 232 364 1849
+activeNode = "icache_tb.test0.spi_ctrl.ctrl0"
+activeScope = "icache_tb.test0.spi_ctrl.ctrl0"
+activeFile = "/home/ft/tree/v1.1/rtl/spi_flash/flash_ctrl.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 52
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "icache_tb.test0.spi_ctrl.ctrl0"
+Scope2 = "icache_tb.test0.spi_ctrl.ctrl0.spi0"
+Scope3 = "icache_tb.memory.spi_decoder"
+Scope4 = "icache_tb"
+Scope5 = "icache_tb.test0.spi_ctrl"
+Scope6 = "icache_tb.test0.inst_cache0.miss_ctrl0"
+Scope7 = "icache_tb.test0.inst_cache0.hit_ctrl0"
+Scope8 = "icache_tb.test0.inst_cache0.sync0"
+Scope9 = "icache_tb.memory.acdc_watch"
+Scope10 = "led_key_old"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = icache_tb.test0.spi_ctrl.ctrl0
+File = /home/ft/tree/v1.1/rtl/spi_flash/flash_ctrl.v
+Line = 53
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/dcache
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/dcache/icache.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 317 243 65
+SessionFile = /home/ft/tree/v1.1/work/dcache/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

@@ -1,0 +1,43 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "seg_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        }
+    },
+    "CompUnits": {
+        "SDgzu_d": {
+            "mod": "seg_test",
+            "out": "SDgzu_d.o",
+            "archive": "archive.1/_20268_archive_1.a",
+            "checksum": 0,
+            "bytes": 32235,
+            "mode": 4
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.1/_20268_archive_1.a",
+            "size": 32235,
+            "objects": [
+                [
+                    "SDgzu_d.o",
+                    32235
+                ]
+            ]
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 317 243 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/dcache/icache.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 435.582973 12954.560270
+cursor 4420.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 18
+; marker line index
+markerPos 26
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/dcache/icache.fsdb"
+addSignal -h 15 -UNSIGNED -HEX /icache_tb/test0/inst_cache0/hit_ctrl0/htrans[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope haddr[19:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdata[31:0]
+addGroup "G2"
+addSignal -h 15 /icache_tb/test0/inst_cache0/hit_ctrl0/reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope index_cnt[3:0]
+addSignal -h 15 -holdScope busy
+addGroup "G3"
+addSignal -h 15 /icache_tb/test0/inst_cache0/hit_ctrl0/hit_tag_En
+addSignal -h 15 -holdScope tag_En
+addSignal -h 15 /icache_tb/test0/inst_cache0/sync0/sync_done
+addSignal -h 15 /icache_tb/test0/inst_cache0/hit_ctrl0/tag_Wr
+addSignal -h 15 -UNSIGNED -HEX -holdScope index[3:0]
+addSignal -h 15 -holdScope miss
+addSignal -h 15 /icache_tb/test0/inst_cache0/miss_ctrl0/req
+addSignal -h 15 -holdScope valid
+addSignal -h 15 -UNSIGNED -HEX -holdScope data[31:0]
+addSignal -h 15 -UNSIGNED -HEX /icache_tb/test0/spi_ctrl/ready_for_rdata[31:0]
+addSignal -h 15 -UNSIGNED -HEX /icache_tb/test0/spi_ctrl/ctrl0/Data[7:0]
+addSignal -h 15 /icache_tb/test0/spi_ctrl/ctrl0/spi0/Q
+addSignal -h 15 /icache_tb/memory/spi_decoder/q_bis
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_to_read[7:0]
+addSignal -h 15 /icache_tb/dclk
+addSignal -h 15 -holdScope ncs
+addSignal -h 15 -holdScope w_pin
+addSignal -h 15 -UNSIGNED -HEX /icache_tb/test0/spi_ctrl/ctrl0/data[7:0]
+addSignal -h 15 /icache_tb/r_pin
+addSignal -h 15 /icache_tb/memory/spi_decoder/q_bis
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_to_read[7:0]
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

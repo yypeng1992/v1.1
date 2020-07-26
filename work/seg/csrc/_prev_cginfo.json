@@ -1,0 +1,96 @@
+{
+    "MlibObjs": {},
+    "PEModules": [],
+    "PrevCompiledModules": {},
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "std",
+        "seg_test",
+        "seg_test"
+    ],
+    "LVLData": [
+        "SIM"
+    ],
+    "CurCompileUdps": {},
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "seg_test": [
+            "seg_test",
+            "SDgzu",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "CompileStatus": "Successful",
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "Frontend(%)": 88.004993329988125,
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.071908,
+            "ru_stime_sec": 0.078756000000000007,
+            "ru_nivcsw": 863,
+            "ru_maxrss_kb": 86204,
+            "ru_minflt": 5818,
+            "ru_majflt": 118,
+            "ru_nvcsw": 132
+        },
+        "CodeGen(%)": 11.995006670011875,
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0025349999999999999,
+            "ru_stime_sec": 0.0,
+            "ru_nivcsw": 0,
+            "ru_maxrss_kb": 16644,
+            "ru_minflt": 205,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1
+        },
+        "nQuads": 1141,
+        "nMops": 2767,
+        "totalObjSize": 185204,
+        "ru_self_end": {
+            "ru_utime_sec": 0.081709000000000004,
+            "ru_stime_sec": 0.13855100000000001,
+            "ru_nivcsw": 897,
+            "ru_maxrss_kb": 95088,
+            "ru_minflt": 7609,
+            "ru_majflt": 144,
+            "ru_nvcsw": 154
+        },
+        "outputSizePerQuad": 162.0,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0025349999999999999,
+            "ru_stime_sec": 0.0,
+            "ru_nivcsw": 0,
+            "ru_maxrss_kb": 16644,
+            "ru_minflt": 205,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1
+        }
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 112177
+    },
+    "CompileProcesses": [
+        "cgproc.19693.json"
+    ],
+    "Misc": {
+        "daidir_abs": "/home/ft/tree/v1.1/work/seg/simv.daidir",
+        "cwd": "/home/ft/tree/v1.1/work/seg",
+        "csrc": "csrc",
+        "csrc_abs": "/home/ft/tree/v1.1/work/seg/csrc",
+        "daidir": "simv.daidir",
+        "archive_dir": "archive.0",
+        "default_output_dir": "csrc"
+    }
+}

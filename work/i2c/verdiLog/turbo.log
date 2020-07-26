@@ -1,0 +1,4 @@
+Command Line: /usr/synopsys/verdi_L-2016.06-1/platform/LINUXAMD64/bin/Novas -sv -f filelist.vc +define+SIM_I2C
+uname(Linux ft-virtual-machine 5.0.0-37-generic #40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019 x86_64)
+Disabled AskUser2 Message (Response 0): Close all windows and exit verdi?
+au time 181.305495 9.112547 3.102705 delta 244527104 244527104 total 633688064 633688064

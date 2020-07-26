@@ -1,0 +1,256 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "873"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/i2c_eeprom/i2c_eeprom.fsdb}
+wvCreateWindow
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvOpenFile -win $_nWave3 {/home/ft/tree/v1.1/work/i2c_eeprom/i2c_eeprom.fsdb}
+wvTpfCloseForm -win $_nWave3
+wvGetSignalClose -win $_nWave3
+wvCloseWindow -win $_nWave3
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0.master0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.model0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.model0" -delim "."
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+wvZoomIn -win $_nWave2
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0.master0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "scl" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sda" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0" -delim "."
+wvZoomOut -win $_nWave2
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0.master0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "byte_cnt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 5 )} 
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetCursor -win $_nWave2 280581.366667 -snap {("G1" 5)}
+srcActiveTrace "i2c_eeprom_tb.test0.master0.sda" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 270250 -TraceValue 1
+nsMsgSwitchTab -tab trace
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "en" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvScrollDown -win $_nWave2 2
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 6)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "mt_sda" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.model0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.model0" -delim "."
+srcHBSelect "i2c_eeprom_tb.model0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "out_flag" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 289934.078889 -snap {("G1" 6)}
+srcActiveTrace "i2c_eeprom_tb.test0.master0.en" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 190250 -TraceValue 0
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 288811.753422 -snap {("G1" 6)}
+srcActiveTrace "i2c_eeprom_tb.test0.master0.en" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 190250 -TraceValue 0
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+wvSetCursor -win $_nWave2 288811.753422 -snap {("G1" 6)}
+wvSetCursor -win $_nWave2 277962.607244 -snap {("G1" 3)}
+wvSetCursor -win $_nWave2 280581.366667 -snap {("G1" 6)}
+srcActiveTrace "i2c_eeprom_tb.test0.master0.en" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 190250 -TraceValue 0
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+wvSetCursor -win $_nWave2 179946.183156 -snap {("G1" 6)}
+srcActiveTrace "i2c_eeprom_tb.test0.master0.en" -win $_nTrace1 -TraceByDConWave \
+           -TraceTime 100250 -TraceValue 0
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+debReload
+wvSelectSignal -win $_nWave2 {( "G1" 7 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSelectSignal -win $_nWave2 {( "G1" 7 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSetCursor -win $_nWave2 1112037.483222 -snap {("G1" 6)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_data" -win $_nTrace1
+srcAction -pos 16 7 7 -win $_nTrace1 -name "read_data" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata\[7:0\]" -win $_nTrace1
+srcAction -pos 47 5 4 -win $_nTrace1 -name "rdata\[7:0\]" -ctrlKey off
+wvSetCursor -win $_nWave2 1099878.957333 -snap {("G1" 5)}
+srcHBSelect "i2c_eeprom_tb.model0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.model0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "read_valid" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSetCursor -win $_nWave2 1107361.127111 -snap {("G1" 9)}
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.test0.master0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.test0.master0" -delim "."
+wvSetCursor -win $_nWave2 1125131.280333 -snap {("G1" 8)}
+srcActiveTrace "i2c_eeprom_tb.test0.read_data\[7:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 444590 -TraceValue 00000001
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+wvSetCursor -win $_nWave2 1126066.551556 -snap {("G1" 8)}
+srcActiveTrace "i2c_eeprom_tb.test0.read_data\[7:0\]" -win $_nTrace1 \
+           -TraceByDConWave -TraceTime 444590 -TraceValue 00000001
+srcHBSelect "i2c_eeprom_tb.test0" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata\[7:0\]" -win $_nTrace1
+srcAction -pos 47 5 4 -win $_nTrace1 -name "rdata\[7:0\]" -ctrlKey off
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvZoom -win $_nWave2 864190.609333 1280386.303222
+wvSetCursor -win $_nWave2 1029898.154122 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 1111595.827367 -snap {("G1" 9)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "clk_cnt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 10 )} 
+wvSetPosition -win $_nWave2 {("G1" 9)}
+wvSetPosition -win $_nWave2 {("G1" 8)}
+wvSetPosition -win $_nWave2 {("G1" 7)}
+wvSetPosition -win $_nWave2 {("G1" 6)}
+wvSetPosition -win $_nWave2 {("G1" 5)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 4)}
+wvZoom -win $_nWave2 1031182.708733 1051478.671583
+wvZoom -win $_nWave2 1031232.822222 1038236.182242
+wvZoom -win $_nWave2 1028855.138264 1033147.938573
+wvZoom -win $_nWave2 1029597.103748 1031942.244658
+wvZoom -win $_nWave2 1030322.360289 1031862.625676
+wvGoToGroup -win $_nWave2 "G2"
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvSetCursor -win $_nWave2 1035507.920425 -snap {("G1" 4)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvSetCursor -win $_nWave2 1044719.087756 -snap {("G1" 2)}
+wvSetCursor -win $_nWave2 1045205.887681 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 1055185.286142 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 1065651.484527 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 1075387.483026 -snap {("G1" 4)}
+wvSetCursor -win $_nWave2 1105325.678409 -snap {("G1" 4)}
+srcHBSelect "i2c_eeprom_tb.model0.shift_out" -win $_nTrace1
+srcHBSelect "i2c_eeprom_tb.model0.shift_out" -win $_nTrace1
+srcSetScope -win $_nTrace1 "i2c_eeprom_tb.model0.shift_out" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "sda_buf" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+debReload
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+debReload
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 887572.389889 1256069.251444
+wvSetCursor -win $_nWave2 1020413.233808 -snap {("G1" 3)}
+debExit

@@ -1,0 +1,93 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1847 329 180 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/spi_flash/flash.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+windowTimeUnit 1ns
+
+; waveform viewport range
+zoom 0.000000 9577.678106 1n
+cursor 4020.000000
+marker 290.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 27
+; marker line index
+markerPos 37
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/spi_flash/flash.fsdb"
+addSignal -h 15 /spi_flash_tb/clk
+addSignal -h 15 /spi_flash_tb/memory/s
+addSignal -h 15 -holdScope c
+addSignal -h 15 -UNSIGNED -HEX /spi_flash_tb/test0/ctrl0/state[3:0]
+addSignal -h 15 /spi_flash_tb/memory/spi_decoder/q_bis
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_to_read[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data_to_read[7:0]
+addSignal -h 15 -UNSIGNED -HEX /spi_flash_tb/memory/mem_access/int_add[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope i[31:0]
+addSignal -h 15 /spi_flash_tb/memory/data_in
+addSignal -h 15 -holdScope data_out
+addSignal -h 15 /spi_flash_tb/memory/spi_decoder/hold_cond
+addSignal -h 15 /spi_flash_tb/test0/ctrl0/CS
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[3:0]
+addSignal -h 15 -UNSIGNED -HEX /spi_flash_tb/test0/ctrl0/spi0/rdata[7:0]
+addSignal -h 15 -UNSIGNED -HEX /spi_flash_tb/test0/ctrl0/data_into_flash[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data[7:0]
+addGroup "G2"
+addSignal -h 15 /spi_flash_tb/memory/c
+addSignal -h 15 -holdScope data_in
+addSignal -h 15 -holdScope s
+addSignal -h 15 -holdScope w
+addSignal -h 15 -holdScope hold
+addSignal -h 15 -holdScope data_out
+addGroup "G3"
+addSignal -h 15 /spi_flash_tb/memory/spi_decoder/hold_cond
+addSignal -h 15 -holdScope q_bis
+addSignal -h 15 -holdScope s
+addSignal -h 15 -holdScope c_int
+addSignal -h 15 -holdScope read_data
+addSignal -h 15 -holdScope count_enable[0]
+addSignal -h 15 -holdScope byte_ok
+addSignal -h 15 -UNSIGNED -HEX -holdScope byte_cpt[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cpt[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope bit_index[2:0]
+addSignal -h 15 -UNSIGNED -HEX /spi_flash_tb/memory/mem_access/data_to_read[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope int_add[31:0]
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

@@ -1,0 +1,52 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/load_store/load_store.fsdb
+syncTime = 390000
+viewport = 67 27 1851 873 563 458 139 1849
+activeNode = "load_store_tb.sopc.openmips0.id0"
+activeScope = "load_store_tb.sopc.openmips0.id0"
+activeFile = "/home/ft/tree/v1.1/rtl/cpu/id.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 131
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "load_store_tb.sopc.openmips0.id0"
+Scope2 = "load_store_tb.sopc.openmips0.mem0"
+multipleSelection = 1 149 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = load_store_tb.sopc.openmips0.id0
+File = /home/ft/tree/v1.1/rtl/cpu/id.v
+Line = 132
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/load_store
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/load_store/load_store.fsdb
+UserActionNum = 0
+nMemWindowNum = 0

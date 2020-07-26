@@ -1,0 +1,225 @@
+{
+    "MlibObjs": {},
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "std",
+        "led_key_old",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort2",
+        "quick_sort3",
+        "quick_sort3",
+        "debounce_for_i2c",
+        "debounce_for_i2c",
+        "debounce_for_clock",
+        "debounce_for_clock",
+        "stack_MxN",
+        "stack_MxN",
+        "led_tb",
+        "led_tb",
+        "share_tb",
+        "share_tb",
+        "sort_tb",
+        "sort_tb",
+        "led_new_tb",
+        "led_new_tb",
+        "uart_test",
+        "uart_test",
+        "seg_test",
+        "seg_test",
+        "spi_flash_tb",
+        "spi_flash_tb",
+        "buzzer_pwm_tb",
+        "buzzer_pwm_tb",
+        "rtc_tb",
+        "rtc_tb",
+        "i2c_eeprom_tb",
+        "i2c_eeprom_tb",
+        "fifo_test",
+        "fifo_test",
+        "clock_tb",
+        "clock_tb",
+        "handshake_tb",
+        "handshake_tb"
+    ],
+    "PrevCompiledModules": {},
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "spi_flash_tb": [
+            "spi_flash_tb",
+            "yjUpe",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "handshake_tb": [
+            "handshake_tb",
+            "VDxkt",
+            "module"
+        ],
+        "debounce_for_i2c": [
+            "debounce_for_i2c",
+            "GGhbu",
+            "module"
+        ],
+        "seg_test": [
+            "seg_test",
+            "SDgzu",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "uart_test": [
+            "uart_test",
+            "KTZ9E",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "debounce_for_clock": [
+            "debounce_for_clock",
+            "WmSAT",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "led_new_tb": [
+            "led_new_tb",
+            "I6qmI",
+            "module"
+        ],
+        "rtc_tb": [
+            "rtc_tb",
+            "uzmws",
+            "module"
+        ],
+        "buzzer_pwm_tb": [
+            "buzzer_pwm_tb",
+            "yAzgh",
+            "module"
+        ],
+        "i2c_eeprom_tb": [
+            "i2c_eeprom_tb",
+            "LRhIH",
+            "module"
+        ],
+        "fifo_test": [
+            "fifo_test",
+            "E2Tre",
+            "module"
+        ],
+        "clock_tb": [
+            "clock_tb",
+            "NW4FU",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.37152400000000002,
+            "ru_stime_sec": 0.096010999999999999,
+            "ru_minflt": 9040,
+            "ru_maxrss_kb": 95788,
+            "ru_nivcsw": 1014,
+            "ru_majflt": 131,
+            "ru_nvcsw": 151
+        },
+        "ru_self_end": {
+            "ru_utime_sec": 0.75976299999999997,
+            "ru_stime_sec": 0.14144499999999999,
+            "ru_minflt": 11348,
+            "ru_maxrss_kb": 104968,
+            "ru_nivcsw": 1133,
+            "ru_majflt": 173,
+            "ru_nvcsw": 196
+        },
+        "outputSizePerQuad": 34.0,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.002562,
+            "ru_minflt": 206,
+            "ru_maxrss_kb": 24036,
+            "ru_nivcsw": 1,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.002562,
+            "ru_minflt": 206,
+            "ru_maxrss_kb": 24036,
+            "ru_nivcsw": 1,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1
+        },
+        "nMops": 59111,
+        "totalObjSize": 868473,
+        "nQuads": 24979,
+        "mopSpeed": 152254.15272551187,
+        "quadSpeed": 64339.234337611633,
+        "mop/quad": 2.3664277993514551,
+        "Frontend(%)": 48.899985916660853,
+        "CodeGen(%)": 51.10001408333914
+    },
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "bytes": 117537,
+        "out": "amcQwB.o"
+    },
+    "CompileStatus": "Successful",
+    "LVLData": [
+        "SIM"
+    ],
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.3800.json"
+    ],
+    "Misc": {
+        "daidir_abs": "/home/ft/tree/v1.1/work/handshake/simv.daidir",
+        "csrc": "csrc",
+        "cwd": "/home/ft/tree/v1.1/work/handshake",
+        "csrc_abs": "/home/ft/tree/v1.1/work/handshake/csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.0"
+    }
+}

@@ -1,0 +1,85 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 321 147 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/clock/clock.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 1857296.029064 3812344.480710
+cursor 2630000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 19
+; marker line index
+markerPos 30
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/clock/clock.fsdb"
+addSignal -h 15 /clock_tb/top0/clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope sel[5:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope seg[7:0]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/seg0/sec_reg[7:0]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/second_clock0/sec_reg[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope sec_count[29:0]
+addSignal -h 15 -holdScope time_clock_key[0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope sec_reg_temp[7:0]
+addSignal -h 15 -holdScope mode_key[0]
+addSignal -h 15 -holdScope min_en
+addSignal -h 15 -UNSIGNED -HEX -holdScope sec_count[29:0]
+addSignal -h 15 -holdScope time_clock_key[0]
+addSignal -h 15 -holdScope add_key[1]
+addSignal -h 15 /clock_tb/top0/add0/clk
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt0[29:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt1[29:0]
+addSignal -h 15 /clock_tb/top0/second_clock0/mode_key[0]
+addSignal -h 15 /clock_tb/top0/add0/add_key
+addSignal -h 15 /clock_tb/top0/second_clock0/add_key[2]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/add0/state[2:0]
+addSignal -h 15 /clock_tb/top0/second_clock0/add_key[0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope sec_reg_temp[7:0]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/min_clock0/min_reg[7:0]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/add0/cnt0[29:0]
+addSignal -h 15 -UNSIGNED -HEX /clock_tb/top0/seg0/hour_clock[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope min_clock[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope sec_reg[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope min_reg[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope hour_reg[7:0]
+addGroup "G2"
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

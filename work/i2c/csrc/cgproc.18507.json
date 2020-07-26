@@ -1,0 +1,71 @@
+{
+    "Modules": {
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "...MASTER...": {},
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 3
+        },
+        "rf1_128x8": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        }
+    },
+    "CompUnits": {
+        "g7hgQ_d": {
+            "mode": 4,
+            "mod": "tb",
+            "checksum": 0,
+            "bytes": 48603,
+            "out": "g7hgQ_d.o",
+            "archive": "archive.2/_18507_archive_1.a"
+        }
+    },
+    "reusePaths": {
+        "LMIdY_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.2/_18507_archive_1.a",
+            "objects": [
+                [
+                    "g7hgQ_d.o",
+                    48603
+                ]
+            ],
+            "size": 48603
+        }
+    ]
+}

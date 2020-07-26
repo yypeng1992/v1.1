@@ -1,0 +1,306 @@
+{
+    "MlibObjs": {},
+    "Misc": {
+        "cwd": "/home/ft/tree/v1.1/work/cpu",
+        "csrc": "csrc",
+        "csrc_abs": "/home/ft/tree/v1.1/work/cpu/csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/ft/tree/v1.1/work/cpu/simv.daidir",
+        "default_output_dir": "csrc",
+        "archive_dir": "archive.40"
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort3",
+        "stack_MxN",
+        "led_tb",
+        "tb",
+        "share_tb",
+        "sort_tb",
+        "ori_tb",
+        "ori_tb",
+        "logic_move_tb",
+        "logic_move_tb",
+        "shift_tb",
+        "shift_tb",
+        "arithmetic_tb",
+        "arithmetic_tb"
+    ],
+    "PrevCompiledModules": {
+        "quick_sort2": {
+            "tHkF2_d": {
+                "mod": "quick_sort2",
+                "bytes": 32150,
+                "mode": 4,
+                "checksum": 0,
+                "out": "tHkF2_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "quick_sort3": {
+            "zPe7U_d": {
+                "mod": "quick_sort3",
+                "bytes": 48588,
+                "mode": 4,
+                "checksum": 0,
+                "out": "zPe7U_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "mod": "...MASTER...",
+                "bytes": 10038,
+                "mode": 4,
+                "checksum": 0,
+                "out": "objs/amcQw_d.o"
+            }
+        },
+        "led_tb": {
+            "aER8J_d": {
+                "mod": "led_tb",
+                "bytes": 25376,
+                "mode": 4,
+                "checksum": 0,
+                "out": "aER8J_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "shift_tb": {
+            "a5isL_d": {
+                "mod": "shift_tb",
+                "bytes": 113532,
+                "archive": "archive.40/_10324_archive_1.a",
+                "out": "a5isL_d.o",
+                "mode": 4,
+                "checksum": 0
+            }
+        },
+        "stack_MxN": {
+            "P24hE_d": {
+                "mod": "stack_MxN",
+                "bytes": 23659,
+                "mode": 4,
+                "checksum": 0,
+                "out": "P24hE_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "mod": "std",
+                "bytes": 33397,
+                "mode": 4,
+                "checksum": 0,
+                "out": "reYIK_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "ori_tb": {
+            "YzKuZ_d": {
+                "mod": "ori_tb",
+                "bytes": 113498,
+                "archive": "archive.40/_10324_archive_1.a",
+                "out": "YzKuZ_d.o",
+                "mode": 4,
+                "checksum": 0
+            }
+        },
+        "led_key_old": {
+            "tNB2R_d": {
+                "mod": "led_key_old",
+                "bytes": 11850,
+                "mode": 4,
+                "checksum": 0,
+                "out": "tNB2R_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "tb": {
+            "g7hgQ_d": {
+                "mod": "tb",
+                "bytes": 46106,
+                "mode": 4,
+                "checksum": 0,
+                "out": "g7hgQ_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "sort_tb": {
+            "ADc5c_d": {
+                "mod": "sort_tb",
+                "bytes": 64045,
+                "mode": 4,
+                "checksum": 0,
+                "out": "ADc5c_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        },
+        "logic_move_tb": {
+            "y9d1I_d": {
+                "mod": "logic_move_tb",
+                "bytes": 113553,
+                "archive": "archive.40/_10324_archive_1.a",
+                "out": "y9d1I_d.o",
+                "mode": 4,
+                "checksum": 0
+            }
+        },
+        "arithmetic_tb": {
+            "yanbT_d": {
+                "mod": "arithmetic_tb",
+                "bytes": 117176,
+                "archive": "archive.40/_10324_archive_1.a",
+                "out": "yanbT_d.o",
+                "mode": 4,
+                "checksum": 0
+            }
+        },
+        "share_tb": {
+            "KEaIt_d": {
+                "mod": "share_tb",
+                "bytes": 22570,
+                "mode": 4,
+                "checksum": 0,
+                "out": "KEaIt_d.o",
+                "archive": "archive.40/_prev_archive_1.a"
+            }
+        }
+    },
+    "CompileProcesses": [
+        "cgproc.10324.json"
+    ],
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "tb": [
+            "tb",
+            "g7hgQ",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "ori_tb": [
+            "ori_tb",
+            "YzKuZ",
+            "module"
+        ],
+        "arithmetic_tb": [
+            "arithmetic_tb",
+            "yanbT",
+            "module"
+        ],
+        "logic_move_tb": [
+            "logic_move_tb",
+            "y9d1I",
+            "module"
+        ],
+        "shift_tb": [
+            "shift_tb",
+            "a5isL",
+            "module"
+        ]
+    },
+    "stat": {
+        "CodeGen(%)": 52.02715078381727,
+        "ru_self_cgstart": {
+            "ru_nvcsw": 5,
+            "ru_majflt": 0,
+            "ru_utime_sec": 0.267156,
+            "ru_stime_sec": 0.038164999999999998,
+            "ru_maxrss_kb": 93228,
+            "ru_minflt": 6758,
+            "ru_nivcsw": 878
+        },
+        "ru_self_end": {
+            "ru_nvcsw": 6,
+            "ru_majflt": 0,
+            "ru_utime_sec": 0.55689,
+            "ru_stime_sec": 0.053037000000000001,
+            "ru_maxrss_kb": 104188,
+            "ru_minflt": 10436,
+            "ru_nivcsw": 1009
+        },
+        "nMops": 62142,
+        "ru_childs_end": {
+            "ru_nvcsw": 1,
+            "ru_majflt": 0,
+            "ru_utime_sec": 0.002947,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 23748,
+            "ru_minflt": 218,
+            "ru_nivcsw": 3
+        },
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 0,
+            "ru_majflt": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0,
+            "ru_nivcsw": 0
+        },
+        "nQuads": 27660,
+        "totalObjSize": 579532,
+        "mopSpeed": 214479.48808217194,
+        "quadSpeed": 95466.876514320029,
+        "mop/quad": 2.246637744034707,
+        "outputSizePerQuad": 20.0,
+        "Frontend(%)": 47.97284921618273
+    },
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 116225
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileStatus": "Successful"
+}

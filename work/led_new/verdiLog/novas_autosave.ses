@@ -1,0 +1,68 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/led_new/led_new.fsdb
+syncTime = 505000
+viewport = 67 27 1851 833 306 341 276 1849
+activeNode = "led_new_tb.led_new0.key_anaysis0"
+activeScope = "led_new_tb.led_new0.key_anaysis0"
+activeFile = "/home/ft/tree/v1.1/rtl/led_new/key_anaysis.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 59
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "led_new_tb.led_new0.key_anaysis0"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = led_new_tb.led_new0.key_anaysis0
+File = /home/ft/tree/v1.1/rtl/led_new/key_anaysis.v
+Line = 60
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/led_new
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/led_new/led_new.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 302 173 65
+SessionFile = /home/ft/tree/v1.1/work/led_new/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

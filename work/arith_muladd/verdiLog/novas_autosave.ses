@@ -1,0 +1,51 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/cpu/arith_muladd.fsdb
+syncTime = 0
+viewport = 67 27 1853 1025 743 421 194 1849
+activeNode = "arith_muladd_tb.sopc.openmips0.pc_reg0"
+activeScope = "arith_muladd_tb.sopc.openmips0.pc_reg0"
+activeFile = "/home/ft/tree/v1.1/rtl/cpu/pc_reg.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 0
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "arith_muladd_tb.sopc.openmips0.pc_reg0"
+Scope2 = "arith_muladd_tb.sopc.rom0"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = arith_muladd_tb.sopc.openmips0.pc_reg0
+File = /home/ft/tree/v1.1/rtl/cpu/pc_reg.v
+Line = 1
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/cpu
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/cpu/arith_muladd.fsdb
+UserActionNum = 0
+nMemWindowNum = 0

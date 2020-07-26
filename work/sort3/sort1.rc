@@ -1,0 +1,127 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1853 664 197 117
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/sort3/sort.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 9616.031097 10659.246279
+cursor 4250.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 6
+; marker line index
+markerPos 31
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname quick_sort3.state
+nalias QS_RD_VALUE		5'b00010		NULL
+nalias QS_SWAP_RIGHT_GAP2		5'b01000		NULL
+nalias QS_GET_VALUE		5'b00011		NULL
+nalias QS_LEFT_MOVE		5'b01001		NULL
+nalias QS_SWAP_LEFT_GAP1		5'b01100		NULL
+nalias QS_NONE_VALID		5'b10010		NULL
+nalias QS_SWAP_RIGHT_GAP1		5'b00111		NULL
+nalias QS_SWAP_LEFT_GAP2		5'b01101		NULL
+nalias QS_GET_STACK		5'b10011		NULL
+nalias QS_IDLE		5'b00000		NULL
+nalias QS_INIT		5'b00001		NULL
+nalias QS_RIGHT_MOVE		5'b00100		NULL
+nalias QS_LEFT_VALID		5'b10000		NULL
+nalias QS_RIGHT_VALID		5'b10001		NULL
+nalias QS_DONE		5'b10100		NULL
+nalias QS_GET_POSITION		5'b01110		NULL
+nalias QS_BOTH_VALID		5'b01111		NULL
+
+aliasmapname quick_sort.state
+nalias QS_SWAP_RIGHT_GAP2		5'b01000		NULL
+nalias QS_RD_VALUE		5'b00010		NULL
+nalias QS_NONE_VALID		5'b10010		NULL
+nalias QS_SWAP_LEFT_GAP1		5'b01100		NULL
+nalias QS_RD_LEFT		5'b01001		NULL
+nalias QS_COMPARE_RIGHT		5'b00110		NULL
+nalias QS_GET_VALUE		5'b00011		NULL
+nalias QS_GET_STACK		5'b10011		NULL
+nalias QS_SWAP_LEFT_GAP2		5'b01101		NULL
+nalias QS_SWAP_RIGHT_GAP1		5'b00111		NULL
+nalias QS_IDLE		5'b00000		NULL
+nalias QS_LEFT_VALID		5'b10000		NULL
+nalias QS_RD_RIGHT		5'b00100		NULL
+nalias QS_INIT		5'b00001		NULL
+nalias QS_DONE		5'b10100		NULL
+nalias QS_RIGHT_VALID		5'b10001		NULL
+nalias QS_GET_LEFT		5'b01010		NULL
+nalias QS_GET_RIGHT		5'b00101		NULL
+nalias QS_COMPARE_LEFT		5'b01011		NULL
+nalias QS_GET_POSITION		5'b01110		NULL
+nalias QS_BOTH_VALID		5'b01111		NULL
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/sort3/sort.fsdb"
+addSignal -h 15 /sort_tb/quick_sort_top/host_rd_mem_d
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem_Data[31:0]
+addGroup "G2"
+addSignal -h 15 /sort_tb/quick_sort_top/quick_sort_core/clk
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope num[8:0]
+addSignal -h 15 -holdScope start
+addSignal -h 15 -holdScope done
+addSignal -h 15 -holdScope MemWr
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemWrAddr[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemWrData[31:0]
+addSignal -h 15 -holdScope MemRd
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemRdAddr[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope MemRdData[31:0]
+addGroup "G3"
+addSignal -h 15 /sort_tb/quick_sort_top/quick_sort_core/right_compare
+addSignal -h 15 -holdScope left_compare
+addSignal -h 15 -holdScope ready_to_meet
+addSignal -h 15 -holdScope swap_exit_meet
+addSignal -h 15 -holdScope meet_pending
+addSignal -c ID_PURPLE7 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope reg_V[31:0]
+addSignal -c ID_PURPLE7 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope reg_R[31:0]
+addSignal -c ID_PURPLE7 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope reg_L[31:0]
+addSignal -h 15 -holdScope left_move
+addSignal -h 15 -holdScope right_move
+addSignal -h 15 -holdScope swap_right_gap2
+addSignal -h 15 -holdScope swap_left_gap2
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt0[8:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cnt1[8:0]
+addGroup "G4"
+addSignal -h 15 -UNSIGNED -HEX /sort_tb/quick_sort_top/quick_sort_core/debug_cnt[63:0]
+addGroup "G5"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

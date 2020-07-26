@@ -1,0 +1,28 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.vc
+        /home/ft/tree/v1.1/rtl/led/led_key.v
+        /home/ft/tree/v1.1/rtl/led/led_top.v
+        /home/ft/tree/v1.1/rtl/led/led_key_old.v
+        /home/ft/tree/v1.1/rtl/led/debounce.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c_top.v
+        /home/ft/tree/v1.1/rtl/i2c/eepram.v
+        /home/ft/tree/v1.1/share/stack_MxN.v
+        /home/ft/tree/v1.1/share/rf1_MxN.v
+        /home/ft/tree/v1.1/share/rf1_128x8.v
+        /home/ft/tree/v1.1/sim/share/share_tb.v
+        /home/ft/tree/v1.1/sim/led/led_tb.v
+        /home/ft/tree/v1.1/sim/i2c/tb.v
+    +define+SIM_SHARE
+
+Highest level modules:
+led_key_old
+rf1_128x8
+share_tb
+led_tb
+tb
+
+Total	0 error(s),   0 warning(s)

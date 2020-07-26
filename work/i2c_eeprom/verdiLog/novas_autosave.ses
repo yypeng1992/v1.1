@@ -1,0 +1,69 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/i2c_eeprom/i2c_eeprom.fsdb
+syncTime = 384250
+viewport = 67 27 1851 873 605 317 312 1849
+activeNode = "i2c_eeprom_tb.test0.master0"
+activeScope = "i2c_eeprom_tb.test0.master0"
+activeFile = "/home/ft/tree/v1.1/rtl/i2c_eeprom/master.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 37
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "i2c_eeprom_tb.test0.master0"
+multipleSelection = 1 0 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = i2c_eeprom_tb.test0.master0
+File = /home/ft/tree/v1.1/rtl/i2c_eeprom/master.v
+Line = 38
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/i2c_eeprom
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/i2c_eeprom/i2c_eeprom.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 366 140 65
+SessionFile = /home/ft/tree/v1.1/work/i2c_eeprom/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

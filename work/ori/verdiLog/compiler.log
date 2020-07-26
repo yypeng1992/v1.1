@@ -1,0 +1,58 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.vc
+        /home/ft/tree/v1.1/rtl/define.v
+        /home/ft/tree/v1.1/rtl/led/led_key.v
+        /home/ft/tree/v1.1/rtl/led/led_top.v
+        /home/ft/tree/v1.1/rtl/led/led_key_old.v
+        /home/ft/tree/v1.1/rtl/led/debounce.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c_top.v
+        /home/ft/tree/v1.1/rtl/i2c/eepram.v
+        /home/ft/tree/v1.1/rtl/sort/sort_define.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort2.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort3.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort_top.v
+        /home/ft/tree/v1.1/share/stack_MxN.v
+        /home/ft/tree/v1.1/share/rf1_MxN.v
+        /home/ft/tree/v1.1/sim/led/led_tb.v
+        /home/ft/tree/v1.1/sim/i2c/tb.v
+        /home/ft/tree/v1.1/sim/share/share_tb.v
+        /home/ft/tree/v1.1/sim/sort/sort_tb.v
+        /home/ft/tree/v1.1/rtl/ori/ex.v
+        /home/ft/tree/v1.1/rtl/ori/wb.v
+        /home/ft/tree/v1.1/rtl/ori/id.v
+        /home/ft/tree/v1.1/rtl/ori/inst_rom.v
+        /home/ft/tree/v1.1/rtl/ori/mem.v
+        /home/ft/tree/v1.1/rtl/ori/openmips_min_sopc.v
+        /home/ft/tree/v1.1/rtl/ori/openmips.v
+        /home/ft/tree/v1.1/rtl/ori/pc_reg.v
+        /home/ft/tree/v1.1/rtl/ori/regfile.v
+        /home/ft/tree/v1.1/sim/ori/ori_tb.v
+
+Highest level modules:
+led_key_old
+quick_sort2
+quick_sort3
+led_tb
+tb
+share_tb
+sort_tb
+ori_tb
+
+
+*Warning* port sizes differ (5 vs 1) in port connection (port wb_waddr)
+"/home/ft/tree/v1.1/rtl/ori/openmips.v", 74: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port wb_wdata)
+"/home/ft/tree/v1.1/rtl/ori/openmips.v", 75: 
+
+*Warning* port sizes differ (5 vs 1) in port connection (port wb_waddr)
+"/home/ft/tree/v1.1/rtl/ori/openmips.v", 110: 
+
+*Warning* port sizes differ (32 vs 1) in port connection (port wb_wdata)
+"/home/ft/tree/v1.1/rtl/ori/openmips.v", 111: 
+Total	0 error(s),   4 warning(s)

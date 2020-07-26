@@ -1,0 +1,463 @@
+{
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_nvcsw": 235,
+            "ru_utime_sec": 33.614787999999997,
+            "ru_stime_sec": 0.27273599999999998,
+            "ru_maxrss_kb": 107208,
+            "ru_nivcsw": 7196,
+            "ru_minflt": 10120,
+            "ru_majflt": 143
+        },
+        "ru_childs_end": {
+            "ru_nvcsw": 2,
+            "ru_utime_sec": 0.0051440000000000001,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 36180,
+            "ru_nivcsw": 0,
+            "ru_minflt": 219,
+            "ru_majflt": 1
+        },
+        "ru_childs_cgstart": {
+            "ru_nvcsw": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_maxrss_kb": 0,
+            "ru_nivcsw": 0,
+            "ru_minflt": 0,
+            "ru_majflt": 0
+        },
+        "ru_self_end": {
+            "ru_nvcsw": 242,
+            "ru_utime_sec": 34.672561000000002,
+            "ru_stime_sec": 0.32191799999999998,
+            "ru_maxrss_kb": 126744,
+            "ru_nivcsw": 7472,
+            "ru_minflt": 20466,
+            "ru_majflt": 146
+        },
+        "nMops": 275232,
+        "nQuads": 204136,
+        "totalObjSize": 258293,
+        "mopSpeed": 260199.49459855643,
+        "quadSpeed": 192986.58596882236,
+        "mop/quad": 1.3482776188423404,
+        "outputSizePerQuad": 1.0,
+        "CodeGen(%)": 3.0507495538042444,
+        "Frontend(%)": 96.949250446195762
+    },
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "share_tb": {
+            "KEaIt_d": {
+                "bytes": 22442,
+                "mod": "share_tb",
+                "mode": 4,
+                "out": "KEaIt_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "rtc_tb": {
+            "uzmws_d": {
+                "bytes": 85067,
+                "mod": "rtc_tb",
+                "mode": 4,
+                "out": "uzmws_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "buzzer_pwm_tb": {
+            "yAzgh_d": {
+                "bytes": 23829,
+                "mod": "buzzer_pwm_tb",
+                "mode": 4,
+                "out": "yAzgh_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "sort_tb": {
+            "ADc5c_d": {
+                "bytes": 64045,
+                "mod": "sort_tb",
+                "mode": 4,
+                "out": "ADc5c_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "fifo_test": {
+            "E2Tre_d": {
+                "bytes": 30250,
+                "mod": "fifo_test",
+                "mode": 4,
+                "out": "E2Tre_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "clock_tb": {
+            "NW4FU_d": {
+                "bytes": 76317,
+                "mod": "clock_tb",
+                "mode": 4,
+                "out": "NW4FU_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "...MASTER...": {
+            "amcQw_d": {
+                "bytes": 11430,
+                "mod": "...MASTER...",
+                "mode": 4,
+                "out": "objs/amcQw_d.o",
+                "checksum": 0
+            }
+        },
+        "cipher_top": {
+            "m5e31_d": {
+                "bytes": 1689198,
+                "mod": "cipher_top",
+                "mode": 4,
+                "out": "m5e31_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "quick_sort2": {
+            "tHkF2_d": {
+                "bytes": 31246,
+                "mod": "quick_sort2",
+                "mode": 4,
+                "out": "tHkF2_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "led_new_tb": {
+            "I6qmI_d": {
+                "bytes": 29386,
+                "mod": "led_new_tb",
+                "mode": 4,
+                "out": "I6qmI_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "bytes": 33397,
+                "mod": "std",
+                "mode": 4,
+                "out": "reYIK_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "quick_sort3": {
+            "zPe7U_d": {
+                "bytes": 46292,
+                "mod": "quick_sort3",
+                "mode": 4,
+                "out": "zPe7U_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "handshake_tb": {
+            "VDxkt_d": {
+                "bytes": 16146,
+                "mod": "handshake_tb",
+                "mode": 4,
+                "out": "VDxkt_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "spi_flash_tb": {
+            "yjUpe_d": {
+                "bytes": 49666,
+                "mod": "spi_flash_tb",
+                "mode": 4,
+                "out": "yjUpe_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "seg_test": {
+            "SDgzu_d": {
+                "bytes": 37879,
+                "mod": "seg_test",
+                "mode": 4,
+                "out": "SDgzu_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "debounce_for_i2c": {
+            "GGhbu_d": {
+                "bytes": 13374,
+                "mod": "debounce_for_i2c",
+                "mode": 4,
+                "out": "GGhbu_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "aes_test": {
+            "k6uK4_d": {
+                "bytes": 140184,
+                "mod": "aes_test",
+                "checksum": 0,
+                "out": "k6uK4_d.o",
+                "mode": 4,
+                "archive": "archive.141/_6927_archive_1.a"
+            }
+        },
+        "uart_test": {
+            "KTZ9E_d": {
+                "bytes": 39832,
+                "mod": "uart_test",
+                "mode": 4,
+                "out": "KTZ9E_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "stack_MxN": {
+            "P24hE_d": {
+                "bytes": 23659,
+                "mod": "stack_MxN",
+                "mode": 4,
+                "out": "P24hE_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "inverse_cipher": {
+            "GqpYu_d": {
+                "bytes": 1738685,
+                "mod": "inverse_cipher",
+                "mode": 4,
+                "out": "GqpYu_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "led_tb": {
+            "aER8J_d": {
+                "bytes": 25376,
+                "mod": "led_tb",
+                "mode": 4,
+                "out": "aER8J_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "led_key_old": {
+            "tNB2R_d": {
+                "bytes": 11850,
+                "mod": "led_key_old",
+                "mode": 4,
+                "out": "tNB2R_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "debounce_for_clock": {
+            "WmSAT_d": {
+                "bytes": 12567,
+                "mod": "debounce_for_clock",
+                "mode": 4,
+                "out": "WmSAT_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        },
+        "i2c_eeprom_tb": {
+            "LRhIH_d": {
+                "bytes": 56828,
+                "mod": "i2c_eeprom_tb",
+                "mode": 4,
+                "out": "LRhIH_d.o",
+                "checksum": 0,
+                "archive": "archive.141/_prev_archive_1.a"
+            }
+        }
+    },
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "led_new_tb": [
+            "led_new_tb",
+            "I6qmI",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "cipher_top": [
+            "cipher_top",
+            "m5e31",
+            "module"
+        ],
+        "inverse_cipher": [
+            "inverse_cipher",
+            "GqpYu",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "debounce_for_i2c": [
+            "debounce_for_i2c",
+            "GGhbu",
+            "module"
+        ],
+        "debounce_for_clock": [
+            "debounce_for_clock",
+            "WmSAT",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "uart_test": [
+            "uart_test",
+            "KTZ9E",
+            "module"
+        ],
+        "fifo_test": [
+            "fifo_test",
+            "E2Tre",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "rtc_tb": [
+            "rtc_tb",
+            "uzmws",
+            "module"
+        ],
+        "buzzer_pwm_tb": [
+            "buzzer_pwm_tb",
+            "yAzgh",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "seg_test": [
+            "seg_test",
+            "SDgzu",
+            "module"
+        ],
+        "spi_flash_tb": [
+            "spi_flash_tb",
+            "yjUpe",
+            "module"
+        ],
+        "i2c_eeprom_tb": [
+            "i2c_eeprom_tb",
+            "LRhIH",
+            "module"
+        ],
+        "clock_tb": [
+            "clock_tb",
+            "NW4FU",
+            "module"
+        ],
+        "handshake_tb": [
+            "handshake_tb",
+            "VDxkt",
+            "module"
+        ],
+        "aes_test": [
+            "aes_test",
+            "k6uK4",
+            "module"
+        ]
+    },
+    "CompileStrategy": "fullobj",
+    "CurCompileModules": [
+        "...MASTER...",
+        "std",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort3",
+        "debounce_for_i2c",
+        "debounce_for_clock",
+        "cipher_top",
+        "inverse_cipher",
+        "stack_MxN",
+        "led_tb",
+        "share_tb",
+        "sort_tb",
+        "led_new_tb",
+        "uart_test",
+        "seg_test",
+        "spi_flash_tb",
+        "buzzer_pwm_tb",
+        "rtc_tb",
+        "i2c_eeprom_tb",
+        "fifo_test",
+        "clock_tb",
+        "handshake_tb",
+        "aes_test",
+        "aes_test"
+    ],
+    "CurCompileUdps": {},
+    "CompileStatus": "Successful",
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 118109
+    },
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileProcesses": [
+        "cgproc.6927.json"
+    ],
+    "PEModules": [],
+    "Misc": {
+        "cwd": "/home/ft/tree/v1.1/work/AES",
+        "archive_dir": "archive.141",
+        "daidir_abs": "/home/ft/tree/v1.1/work/AES/simv.daidir",
+        "csrc": "csrc",
+        "csrc_abs": "/home/ft/tree/v1.1/work/AES/csrc",
+        "daidir": "simv.daidir",
+        "default_output_dir": "csrc"
+    }
+}

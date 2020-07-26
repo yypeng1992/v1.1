@@ -1,0 +1,23 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1851" "873"
+debImport "-sv" "-f" "filelist.vc"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/icache/icache.fsdb}
+srcHBSelect "icache_tb.test0.inst_cache0" -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.hit_ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.hit_ctrl0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "index_cnt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.miss_ctrl0" -win $_nTrace1
+srcHBSelect "icache_tb.test0.inst_cache0.miss_ctrl0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.miss_ctrl0" -delim "."
+srcHBSelect "icache_tb.test0.inst_cache0.sync0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "icache_tb.test0.inst_cache0.sync0" -delim "."
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "up_reset" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+debExit

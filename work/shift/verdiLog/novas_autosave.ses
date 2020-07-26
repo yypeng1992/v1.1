@@ -1,0 +1,51 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/shift/shift.fsdb
+syncTime = 0
+viewport = 67 27 1851 833 603 463 158 1849
+activeNode = "shift_tb.sopc.openmips0.ex0"
+activeScope = "shift_tb.sopc.openmips0.ex0"
+activeFile = "/home/ft/tree/v1.1/rtl/shift/ex.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 40
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "shift_tb.sopc.openmips0.ex0"
+Scope2 = "led_key_old"
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = shift_tb.sopc.openmips0.ex0
+File = /home/ft/tree/v1.1/rtl/shift/ex.v
+Line = 41
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/shift
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/shift/shift.fsdb
+UserActionNum = 0
+nMemWindowNum = 0

@@ -1,0 +1,52 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/icache/icache.fsdb
+syncTime = 15220
+viewport = 67 27 1851 873 813 107 314 1849
+activeNode = "icache_tb.test0.inst_cache0.hit_ctrl0"
+activeScope = "icache_tb.test0.inst_cache0.hit_ctrl0"
+activeFile = "/home/ft/tree/v1.1/rtl/icache/hit_ctrl.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 81
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "icache_tb.test0.inst_cache0.hit_ctrl0"
+Scope2 = "icache_tb.test0.inst_cache0.miss_ctrl0"
+multipleSelection = 1 88 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = icache_tb.test0.inst_cache0.hit_ctrl0
+File = /home/ft/tree/v1.1/rtl/icache/hit_ctrl.v
+Line = 82
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/icache
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/icache/icache.fsdb
+UserActionNum = 0
+nMemWindowNum = 0

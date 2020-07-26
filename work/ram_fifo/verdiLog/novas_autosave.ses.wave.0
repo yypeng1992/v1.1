@@ -1,0 +1,101 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 427 127 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/ram_fifo/fifo.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 9700678.348759 10645505.879199
+cursor 45000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 34
+; marker line index
+markerPos 22
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/ram_fifo/fifo.fsdb"
+addSignal -h 15 /fifo_test/rclk
+addSignal -h 15 -UNSIGNED -HEX /fifo_test/fifo0/g_waddr_d[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr_d[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope g_waddr[4:0]
+addSignal -h 15 /fifo_test/reset_n
+addSignal -h 15 -UNSIGNED -HEX /fifo_test/fifo0/ram0/wdata[3:0]
+addSignal -h 15 /fifo_test/rden
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata[3:0]
+addSignal -h 15 -UNSIGNED -HEX /fifo_test/fifo0/waddr[4:0]
+addSignal -h 15 -UNSIGNED -HEX /fifo_test/fifo0/ram0/wdata[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope addr[3:0]
+addSignal -h 15 -holdScope wren
+addSignal -h 15 -holdScope valid
+addSignal -h 15 /fifo_test/wclk
+addSignal -h 15 -UNSIGNED -HEX /fifo_test/fifo0/ram0/addr[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem0[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem1[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem2[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem3[3:0]
+addSignal -h 15 -holdScope reset_n
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem4[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem5[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem6[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem7[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem8[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem9[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem10[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem11[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem12[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem13[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem14[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope mem15[3:0]
+addSignal -h 15 /fifo_test/fifo0/wren
+addSignal -h 15 -holdScope full
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr[3:0]
+addSignal -h 15 -holdScope waddr_d[4]
+addSignal -h 15 -holdScope g_waddr_d[4]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rdata[3:0]
+addSignal -h 15 /fifo_test/fifo0/ram0/rden
+addSignal -h 15 -UNSIGNED -HEX -holdScope raddr[3:0]
+addSignal -h 15 /fifo_test/fifo0/empty
+addGroup "G2"
+addSignal -h 15 /fifo_test/fifo0/ram0/wclk
+addSignal -h 15 -UNSIGNED -HEX -holdScope waddr[3:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope wdata[3:0]
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

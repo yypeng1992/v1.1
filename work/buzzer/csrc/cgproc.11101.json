@@ -1,0 +1,120 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "uart_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "seg_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "led_new_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        },
+        "buzzer_pwm_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 10
+        }
+    },
+    "CompUnits": {
+        "yAzgh_d": {
+            "archive": "archive.9/_11101_archive_1.a",
+            "mod": "buzzer_pwm_tb",
+            "out": "yAzgh_d.o",
+            "bytes": 29317,
+            "checksum": 0,
+            "mode": 4
+        }
+    },
+    "ObjArchives": [
+        {
+            "size": 29317,
+            "archive": "archive.9/_11101_archive_1.a",
+            "objects": [
+                [
+                    "yAzgh_d.o",
+                    29317
+                ]
+            ]
+        }
+    ],
+    "reusePaths": {
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "KTZ9E_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "I6qmI_d": {
+            "icPath": "csrc"
+        },
+        "SDgzu_d": {
+            "icPath": "csrc"
+        }
+    }
+}

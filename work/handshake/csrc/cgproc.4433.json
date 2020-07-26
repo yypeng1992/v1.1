@@ -1,0 +1,169 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "debounce_for_i2c": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "led_new_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "fifo_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "i2c_eeprom_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "debounce_for_clock": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "buzzer_pwm_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "seg_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "uart_test": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "spi_flash_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "rtc_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "clock_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "handshake_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        }
+    },
+    "CompUnits": {
+        "VDxkt_d": {
+            "archive": "archive.1/_4433_archive_1.a",
+            "bytes": 20930,
+            "mod": "handshake_tb",
+            "out": "VDxkt_d.o",
+            "mode": 4,
+            "checksum": 0
+        }
+    },
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "VDxkt_d.o",
+                    20930
+                ]
+            ],
+            "archive": "archive.1/_4433_archive_1.a",
+            "size": 20930
+        }
+    ],
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "E2Tre_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        },
+        "yjUpe_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "I6qmI_d": {
+            "icPath": "csrc"
+        },
+        "GGhbu_d": {
+            "icPath": "csrc"
+        },
+        "WmSAT_d": {
+            "icPath": "csrc"
+        },
+        "KTZ9E_d": {
+            "icPath": "csrc"
+        },
+        "SDgzu_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "LRhIH_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "yAzgh_d": {
+            "icPath": "csrc"
+        },
+        "uzmws_d": {
+            "icPath": "csrc"
+        },
+        "NW4FU_d": {
+            "icPath": "csrc"
+        }
+    }
+}

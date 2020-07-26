@@ -1,0 +1,68 @@
+*design* DebussyLib (btIdent Verdi3_L-2016.06-1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.vc
+        /home/ft/tree/v1.1/rtl/define.v
+        /home/ft/tree/v1.1/rtl/led/led_key.v
+        /home/ft/tree/v1.1/rtl/led/led_top.v
+        /home/ft/tree/v1.1/rtl/led/led_key_old.v
+        /home/ft/tree/v1.1/rtl/led/debounce.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c.v
+        /home/ft/tree/v1.1/rtl/i2c/i2c_top.v
+        /home/ft/tree/v1.1/rtl/i2c/eepram.v
+        /home/ft/tree/v1.1/rtl/sort/sort_define.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort2.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort3.v
+        /home/ft/tree/v1.1/rtl/sort/quick_sort_top.v
+        /home/ft/tree/v1.1/share/stack_MxN.v
+        /home/ft/tree/v1.1/share/rf1_MxN.v
+        /home/ft/tree/v1.1/sim/led/led_tb.v
+        /home/ft/tree/v1.1/sim/i2c/tb.v
+        /home/ft/tree/v1.1/sim/share/share_tb.v
+        /home/ft/tree/v1.1/sim/sort/sort_tb.v
+        /home/ft/tree/v1.1/rtl/shift/ex.v
+        /home/ft/tree/v1.1/rtl/shift/wb.v
+        /home/ft/tree/v1.1/rtl/shift/id.v
+        /home/ft/tree/v1.1/rtl/shift/inst_rom.v
+        /home/ft/tree/v1.1/rtl/shift/mem.v
+        /home/ft/tree/v1.1/rtl/shift/openmips_min_sopc.v
+        /home/ft/tree/v1.1/rtl/shift/openmips.v
+        /home/ft/tree/v1.1/rtl/shift/pc_reg.v
+        /home/ft/tree/v1.1/rtl/shift/regfile.v
+        /home/ft/tree/v1.1/rtl/shift/hilo.v
+        /home/ft/tree/v1.1/sim/shift/shift_tb.v
+
+
+*Warning* most significant bit in part-select is out of range
+"/home/ft/tree/v1.1/rtl/shift/mem.v", 42: 
+
+*Warning* most significant bit in part-select is out of range
+"/home/ft/tree/v1.1/rtl/shift/mem.v", 42: 
+Highest level modules:
+led_key_old
+quick_sort2
+quick_sort3
+led_tb
+tb
+share_tb
+sort_tb
+shift_tb
+
+
+*Warning* port sizes differ (5 vs 32) in port connection (port ex_hi)
+"/home/ft/tree/v1.1/rtl/shift/openmips.v", 158: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port ex_lo)
+"/home/ft/tree/v1.1/rtl/shift/openmips.v", 159: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port mem_hi)
+"/home/ft/tree/v1.1/rtl/shift/openmips.v", 164: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port mem_hi)
+"/home/ft/tree/v1.1/rtl/shift/openmips.v", 175: 
+
+*Warning* port sizes differ (5 vs 32) in port connection (port wb_hi)
+"/home/ft/tree/v1.1/rtl/shift/openmips.v", 181: 
+Total	0 error(s),   7 warning(s)

@@ -1,0 +1,175 @@
+{
+    "MlibObjs": {},
+    "PrevCompiledModules": {
+        "...MASTER...": {
+            "amcQw_d": {
+                "checksum": 0,
+                "bytes": 8231,
+                "mod": "...MASTER...",
+                "out": "objs/amcQw_d.o",
+                "mode": 4
+            }
+        },
+        "led_tb": {
+            "aER8J_d": {
+                "checksum": 0,
+                "bytes": 25376,
+                "mod": "led_tb",
+                "archive": "archive.1/_17695_archive_1.a",
+                "out": "aER8J_d.o",
+                "mode": 4
+            }
+        },
+        "std": {
+            "reYIK_d": {
+                "checksum": 0,
+                "bytes": 33397,
+                "mod": "std",
+                "archive": "archive.1/_prev_archive_1.a",
+                "out": "reYIK_d.o",
+                "mode": 4
+            }
+        },
+        "led_key_old": {
+            "tNB2R_d": {
+                "checksum": 0,
+                "bytes": 11850,
+                "mod": "led_key_old",
+                "archive": "archive.1/_prev_archive_1.a",
+                "out": "tNB2R_d.o",
+                "mode": 4
+            }
+        },
+        "tb": {
+            "g7hgQ_d": {
+                "checksum": 0,
+                "bytes": 48603,
+                "mod": "tb",
+                "archive": "archive.1/_17695_archive_1.a",
+                "out": "g7hgQ_d.o",
+                "mode": 4
+            }
+        }
+    },
+    "PEModules": [],
+    "CompileStrategy": "fullobj",
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "led_key_old",
+        "rf1_128x8",
+        "rf1_128x8",
+        "share_tb",
+        "share_tb",
+        "led_tb",
+        "led_tb",
+        "tb",
+        "tb"
+    ],
+    "Misc": {
+        "cwd": "/home/ft/tree/v1.1/work/i2c",
+        "csrc": "csrc",
+        "archive_dir": "archive.1",
+        "daidir_abs": "/home/ft/tree/v1.1/work/i2c/simv.daidir",
+        "csrc_abs": "/home/ft/tree/v1.1/work/i2c/csrc",
+        "default_output_dir": "csrc",
+        "daidir": "simv.daidir"
+    },
+    "NameTable": {
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "rf1_128x8": [
+            "rf1_128x8",
+            "LMIdY",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "tb": [
+            "tb",
+            "g7hgQ",
+            "module"
+        ]
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 111841
+    },
+    "stat": {
+        "Frontend(%)": 45.938892538214354,
+        "outputSizePerQuad": 49.0,
+        "ru_self_cgstart": {
+            "ru_nivcsw": 759,
+            "ru_nvcsw": 786,
+            "ru_utime_sec": 0.051751999999999999,
+            "ru_stime_sec": 0.18710499999999999,
+            "ru_majflt": 696,
+            "ru_maxrss_kb": 86732,
+            "ru_minflt": 5278
+        },
+        "ru_childs_cgstart": {
+            "ru_nivcsw": 0,
+            "ru_nvcsw": 0,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0,
+            "ru_majflt": 0,
+            "ru_maxrss_kb": 0,
+            "ru_minflt": 0
+        },
+        "nQuads": 4594,
+        "nMops": 10790,
+        "totalObjSize": 226060,
+        "mop/quad": 2.348715716151502,
+        "ru_self_end": {
+            "ru_nivcsw": 797,
+            "ru_nvcsw": 844,
+            "ru_utime_sec": 0.112654,
+            "ru_stime_sec": 0.21726100000000001,
+            "ru_majflt": 739,
+            "ru_maxrss_kb": 97728,
+            "ru_minflt": 7911
+        },
+        "ru_childs_end": {
+            "ru_nivcsw": 4,
+            "ru_nvcsw": 1,
+            "ru_utime_sec": 0.0,
+            "ru_stime_sec": 0.0027469999999999999,
+            "ru_majflt": 0,
+            "ru_maxrss_kb": 18060,
+            "ru_minflt": 216
+        },
+        "mopSpeed": 177169.87947850645,
+        "quadSpeed": 75432.662309940555,
+        "CodeGen(%)": 54.061107461785646
+    },
+    "CurCompileUdps": {},
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileStatus": "Successful",
+    "CompileProcesses": [
+        "cgproc.17695.json"
+    ]
+}

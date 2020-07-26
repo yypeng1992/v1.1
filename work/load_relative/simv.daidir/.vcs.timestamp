@@ -1,0 +1,157 @@
+0 
+39
++cli+1
++itf+/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/vcsdp.tab
++memcbk
++vcs+lic+wait
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/usr/synopsys/vcs-mx_vL-2016.06/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -Wl,--no-as-needed -rdynamic
+-Mobjects= /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libvirsim.so /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/liberrorinf.so /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libsnpsmalloc.so /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/pli.a
+-Mout=simv
+-Msaverestoreobj=/usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/usr/synopsys/vcs-mx_vL-2016.06/include
+-P
+-P
+-Xcbug=0x1
+-Xpiyushb1=0x80
+-debug=1
+-f filelist.vc
+-fsdb
+-fsdb
+-full64
+-gen_obj
+-l
+-picarchive
+-sverilog
+/usr/synopsys/vcs-mx_vL-2016.06/linux64/bin/vcs1
+/usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
+/usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/novas.tab
+compile.log
+57
+sysc_uni_pwd=/home/ft/tree/v1.1/work/cpu
+XMODIFIERS=@im=ibus
+XDG_VTNR=2
+XDG_SESSION_TYPE=x11
+XDG_SESSION_ID=7
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SEAT=seat0
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_MENU_PREFIX=gnome-
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+XAUTHORITY=/run/user/1000/gdm/Xauthority
+WORK_PATH=/home/ft/tree/v1.1
+WINDOWPATH=2
+VTE_VERSION=5202
+VMR_MODE_FLAG=64
+VERDI_HOME=/usr/synopsys/verdi_L-2016.06-1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=compile.log
+VCS_HOME=/usr/synopsys/vcs-mx_vL-2016.06
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH_OVERRIDE=linux
+VCS_ARCH=linux64
+USERNAME=ft
+UNAME=/bin/uname
+TOOL_HOME=/usr/synopsys/vcs-mx_vL-2016.06/linux64
+TEXTDOMAINDIR=/usr/share/locale/
+TEXTDOMAIN=im-config
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AGENT_PID=1871
+SESSION_MANAGER=local/ft-virtual-machine:@/tmp/.ICE-unix/1793,unix/ft-virtual-machine:/tmp/.ICE-unix/1793
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QT_IM_MODULE=xim
+QT_ACCESSIBILITY=1
+QT4_IM_MODULE=xim
+OVA_UUM=0
+NOVAS_HOME=/usr/synopsys/verdi_L-2016.06-1
+LESSOPEN=| /usr/bin/lesspipe %s
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LC_ALL=C
+IM_CONFIG_PHASE=2
+GTK_MODULES=gail:atk-bridge
+GTK_IM_MODULE=ibus
+GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
+GNOME_TERMINAL_SERVICE=:1.57
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/806124c2_5e9a_4d27_b901_129e36cd2ae0
+GNOME_SHELL_SESSION_MODE=ubuntu
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDMSESSION=ubuntu
+DESKTOP_SESSION=ubuntu
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+COLORTERM=truecolor
+CLUTTER_IM_MODULE=xim
+0
+49
+1583119795 /home/ft/tree/v1.1/sim/cpu/load_relative_tb.v
+1583066769 /home/ft/tree/v1.1/sim/load_store_llsc/load_store_llsc_tb.v
+1583051689 /home/ft/tree/v1.1/sim/load_store/load_store_tb.v
+1582811338 /home/ft/tree/v1.1/sim/jump_branch/jump_branch_tb.v
+1582702067 /home/ft/tree/v1.1/sim/arith_muldiv/arith_muldiv_tb.v
+1582563782 /home/ft/tree/v1.1/sim/arith_muladd/arith_muladd_tb.v
+1582258431 /home/ft/tree/v1.1/sim/arithmetic/arithmetic_tb.v
+1581863094 /home/ft/tree/v1.1/sim/shift/shift_tb.v
+1581863042 /home/ft/tree/v1.1/sim/logic_move/logic_move_tb.v
+1581862939 /home/ft/tree/v1.1/sim/ori/ori_tb.v
+1581860633 /home/ft/tree/v1.1/sim/sort/sort_tb.v
+1581860633 /home/ft/tree/v1.1/sim/share/share_tb.v
+1581860633 /home/ft/tree/v1.1/sim/i2c/tb.v
+1581860633 /home/ft/tree/v1.1/sim/led/led_tb.v
+1581860633 /home/ft/tree/v1.1/share/rf1_MxN.v
+1581860633 /home/ft/tree/v1.1/share/stack_MxN.v
+1583050754 /home/ft/tree/v1.1/rtl/cpu/data_ram.v
+1583069904 /home/ft/tree/v1.1/rtl/cpu/LLbit_reg.v
+1583121378 /home/ft/tree/v1.1/rtl/cpu/ctrl.v
+1582448350 /home/ft/tree/v1.1/rtl/cpu/hilo.v
+1582448233 /home/ft/tree/v1.1/rtl/cpu/regfile.v
+1582559390 /home/ft/tree/v1.1/rtl/cpu/pc_id.v
+1582793274 /home/ft/tree/v1.1/rtl/cpu/pc_reg.v
+1583122710 /home/ft/tree/v1.1/rtl/cpu/openmips.v
+1582895360 /home/ft/tree/v1.1/rtl/cpu/openmips_min_sopc.v
+1583070309 /home/ft/tree/v1.1/rtl/cpu/mem.v
+1582897231 /home/ft/tree/v1.1/rtl/cpu/inst_rom.v
+1583065584 /home/ft/tree/v1.1/rtl/cpu/wb.v
+1583123068 /home/ft/tree/v1.1/rtl/cpu/id_ex.v
+1583125106 /home/ft/tree/v1.1/rtl/cpu/id.v
+1583123178 /home/ft/tree/v1.1/rtl/cpu/ex_mem.v
+1583068947 /home/ft/tree/v1.1/rtl/cpu/ex.v
+1581860633 /home/ft/tree/v1.1/rtl/sort/quick_sort_top.v
+1581860633 /home/ft/tree/v1.1/rtl/sort/quick_sort3.v
+1581860633 /home/ft/tree/v1.1/rtl/sort/quick_sort2.v
+1581860633 /home/ft/tree/v1.1/rtl/sort/quick_sort.v
+1581860633 /home/ft/tree/v1.1/rtl/sort/sort_define.v
+1581860633 /home/ft/tree/v1.1/rtl/i2c/eepram.v
+1581860633 /home/ft/tree/v1.1/rtl/i2c/i2c_top.v
+1581860633 /home/ft/tree/v1.1/rtl/i2c/i2c.v
+1581860633 /home/ft/tree/v1.1/rtl/led/debounce.v
+1581860633 /home/ft/tree/v1.1/rtl/led/led_key_old.v
+1581860633 /home/ft/tree/v1.1/rtl/led/led_top.v
+1581860633 /home/ft/tree/v1.1/rtl/led/led_key.v
+1583119652 /home/ft/tree/v1.1/rtl/define.v
+1583119864 filelist.vc
+1464145466 /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/vcsdp.tab
+1468145700 /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
+1468145700 /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/novas.tab
+5
+0 
+1464147802 /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libvirsim.so
+1464147272 /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/liberrorinf.so
+1464147248 /usr/synopsys/vcs-mx_vL-2016.06/linux64/lib/libsnpsmalloc.so
+1468144468 /usr/synopsys/verdi_L-2016.06-1/share/PLI/VCS/LINUXAMD64/pli.a
+1583125153 simv.daidir

@@ -1,0 +1,71 @@
+{
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "LMIdY_d": {
+            "icPath": "csrc"
+        }
+    },
+    "Modules": {
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "...MASTER...": {},
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "rf1_128x8": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 8
+        }
+    },
+    "CompUnits": {
+        "KEaIt_d": {
+            "mod": "share_tb",
+            "bytes": 30298,
+            "out": "KEaIt_d.o",
+            "mode": 4,
+            "checksum": 0,
+            "archive": "archive.7/_13078_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.7/_13078_archive_1.a",
+            "objects": [
+                [
+                    "KEaIt_d.o",
+                    30298
+                ]
+            ],
+            "size": 30298
+        }
+    ]
+}

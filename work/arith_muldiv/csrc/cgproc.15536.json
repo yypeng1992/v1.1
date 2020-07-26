@@ -1,0 +1,235 @@
+{
+    "CompUnits": {
+        "yanbT_d": {
+            "mod": "arithmetic_tb",
+            "out": "yanbT_d.o",
+            "mode": 4,
+            "bytes": 84282,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        },
+        "YzKuZ_d": {
+            "mod": "ori_tb",
+            "out": "YzKuZ_d.o",
+            "mode": 4,
+            "bytes": 84227,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        },
+        "y9d1I_d": {
+            "mod": "logic_move_tb",
+            "out": "y9d1I_d.o",
+            "mode": 4,
+            "bytes": 84282,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        },
+        "a5isL_d": {
+            "mod": "shift_tb",
+            "out": "a5isL_d.o",
+            "mode": 4,
+            "bytes": 84261,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        },
+        "yCZsx_d": {
+            "mod": "arith_muladd_tb",
+            "out": "yCZsx_d.o",
+            "mode": 4,
+            "bytes": 84284,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        },
+        "fti4k_d": {
+            "mod": "arith_muldiv_tb",
+            "out": "fti4k_d.o",
+            "mode": 4,
+            "bytes": 89398,
+            "checksum": 0,
+            "archive": "archive.21/_15536_archive_1.a"
+        }
+    },
+    "Modules": {
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "id_ex": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "...MASTER...": {},
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "ctrl": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "hilo": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "inst_rom": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "ex_mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "shift_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "wb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "logic_move_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "mem": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "regfile": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "ori_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "arithmetic_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "arith_muladd_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        },
+        "arith_muldiv_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 22
+        }
+    },
+    "reusePaths": {
+        "Nxspn_d": {
+            "icPath": "csrc"
+        },
+        "K7u6h_d": {
+            "icPath": "csrc"
+        },
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "DgZ94_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "UmCUI_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "vnxvv_d": {
+            "icPath": "csrc"
+        },
+        "FSbWZ_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "FzTxA_d": {
+            "icPath": "csrc"
+        },
+        "tvjIp_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "ADc5c_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.21/_15536_archive_1.a",
+            "objects": [
+                [
+                    "YzKuZ_d.o",
+                    84227
+                ],
+                [
+                    "y9d1I_d.o",
+                    84282
+                ],
+                [
+                    "a5isL_d.o",
+                    84261
+                ],
+                [
+                    "yanbT_d.o",
+                    84282
+                ],
+                [
+                    "yCZsx_d.o",
+                    84284
+                ],
+                [
+                    "fti4k_d.o",
+                    89398
+                ]
+            ],
+            "size": 510734
+        }
+    ]
+}

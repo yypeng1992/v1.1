@@ -1,0 +1,4 @@
+ source ../setenv.sh 
+ vcs -f filelist.vc +define+SIM_I2C
+ ./simv
+ verdi -sv -f filelist.vc +define+SIM_I2C &

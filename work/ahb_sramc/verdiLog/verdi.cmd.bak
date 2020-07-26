@@ -1,0 +1,86 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "733" "545"
+debImport "-sv" "-f" "filelist.vc"
+srcHBSelect "sram_tb.top.sram_core0" -win $_nTrace1
+srcSetScope -win $_nTrace1 "sram_tb.top.sram_core0" -delim "."
+srcHBSelect "sram_tb.top" -win $_nTrace1
+srcSetScope -win $_nTrace1 "sram_tb.top" -delim "."
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/ft/tree/v1.1/work/ahb_sramc/sram.fsdb}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bist_done" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "sram_tb.top.sram_core0.gen_sram_block\[0\]" -win $_nTrace1
+srcSetScope -win $_nTrace1 "sram_tb.top.sram_core0.gen_sram_block\[0\]" -delim \
+           "."
+srcHBSelect "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist" -win \
+           $_nTrace1
+srcHBSelect "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist" -delim "."
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bist_done" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcHBSelect "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist.mbist0" -win \
+           $_nTrace1
+srcSetScope -win $_nTrace1 \
+           "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist.mbist0" \
+           -delim "."
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("G1" 1)}
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "state" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvZoom -win $_nWave2 22411.937269 1143008.800738
+wvSetCursor -win $_nWave2 204353.863441 -snap {("G1" 2)}
+srcActiveTrace \
+           "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist.mbist0.state\[3:0\]" \
+           -win $_nTrace1 -TraceByDConWave -TraceTime 190000 -TraceValue 0110
+nsMsgSwitchTab -tab trace
+srcHBSelect "sram_tb.top.sram_core0.gen_sram_block\[0\].u_sram_bist.mbist0" -win \
+           $_nTrace1
+wvZoomOut -win $_nWave2
+wvZoom -win $_nWave2 45485.481543 1430725.146716
+wvZoom -win $_nWave2 60820.237984 955347.697044
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "addr_cnt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "bit_cnt" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+wvSelectSignal -win $_nWave2 {( "G1" 2 3 4 )} 
+wvSelectSignal -win $_nWave2 {( "G1" 4 )} 
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("G1" 2)}
+wvSetPosition -win $_nWave2 {("G1" 3)}
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+wvZoomOut -win $_nWave2
+srcDeselectAll -win $_nTrace1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata_fun" -win $_nTrace1
+srcAddSelectedToWave -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata_fun" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rdata_fun" -win $_nTrace1

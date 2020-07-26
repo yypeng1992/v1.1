@@ -1,0 +1,66 @@
+Magic 271485
+Revision Verdi3_L-2016.06-1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 28 1851 320 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/ft/tree/v1.1/work/rtc/rtc.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 1927920.496488 605367035.897283
+cursor 285210000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 4
+; marker line index
+markerPos 12
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/ft/tree/v1.1/work/rtc/rtc.fsdb"
+addSignal -h 15 /rtc_tb/rtc0/test0/ds0/dce
+addSignal -h 15 -holdScope dclk
+addSignal -h 15 -holdScope ds1302_io
+addSignal -h 15 -UNSIGNED -HEX -holdScope state[4:0]
+addSignal -h 15 -UNSIGNED -HEX /rtc_tb/rtc0/test0/state[2:0]
+addSignal -h 15 -holdScope CH
+addSignal -h 15 -holdScope read_second[7]
+addSignal -h 15 -UNSIGNED -HEX /rtc_tb/rtc0/test0/ds0/state[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope read_data[7:0]
+addSignal -h 15 -UNSIGNED -HEX /rtc_tb/rtc0/test0/ds0/io0/rdata[7:0]
+addSignal -h 15 -holdScope rdata_rec[0]
+addSignal -h 15 -UNSIGNED -HEX /rtc_tb/rtc0/test0/ds0/io0/spi_mastet0/data_for_read[7:0]
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

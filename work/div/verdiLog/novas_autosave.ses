@@ -1,0 +1,71 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/div/div7.fsdb
+syncTime = 280
+viewport = 67 27 1851 873 604 295 68 1849
+activeNode = "div7_tb.div7"
+activeScope = "div7_tb.div7"
+activeFile = "/home/ft/tree/v1.1/rtl/div_7/div_t7.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 21
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "div7_tb.div7"
+Scope2 = "div7_tb"
+Scope3 = "led_key_old"
+multipleSelection = 1 10 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = div7_tb.div7
+File = /home/ft/tree/v1.1/rtl/div_7/div_t7.v
+Line = 22
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/div
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/div/div7.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1851 390 100 65
+SessionFile = /home/ft/tree/v1.1/work/div/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

@@ -98,4 +98,4 @@ $WORK_PATH/rtl/dcache/dcache_test.v
 $WORK_PATH/rtl/dcache/darbit.v
 $WORK_PATH/rtl/dcache/dsync.v
 $WORK_PATH/rtl/dcache/dhit_ctrl.v
-
+$WORK_PATH/rtl/div_7/div_t7.v

@@ -1,0 +1,3 @@
+verdiWindowResize -win $_Verdi_1 "67" "27" "1847" "829"
+debImport "--help"
+debExit

@@ -1,0 +1,69 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/ft/tree/v1.1/work/cp0/cp0.fsdb
+syncTime = 490000
+viewport = 67 27 1847 829 603 314 58 1845
+activeNode = "cp0_tb.sopc.openmips0.cp0"
+activeScope = "cp0_tb.sopc.openmips0.cp0"
+activeFile = "/home/ft/tree/v1.1/rtl/cpu/cp0_reg.v"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 31
+baMode = True
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "cp0_tb.sopc.openmips0.cp0"
+multipleSelection = 1 0 2 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = cp0_tb.sopc.openmips0.cp0
+File = /home/ft/tree/v1.1/rtl/cpu/cp0_reg.v
+Line = 32
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/ft/tree/v1.1/work/cp0
+design = DebussyLib
+hostCommand = hostCommand -sv -f filelist.vc
+[nMemoryManager]
+FsdbFile = /home/ft/tree/v1.1/work/cp0/cp0.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1847 298 100 65
+SessionFile = /home/ft/tree/v1.1/work/cp0/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

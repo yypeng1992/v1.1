@@ -1,0 +1,92 @@
+{
+    "Modules": {
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "...MASTER...": {},
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "quick_sort3": {
+            "Compiled": "Yes",
+            "Compiled Times": 2
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 24
+        }
+    },
+    "CompUnits": {
+        "ADc5c_d": {
+            "mod": "sort_tb",
+            "out": "ADc5c_d.o",
+            "bytes": 82548,
+            "mode": 4,
+            "checksum": 0,
+            "archive": "archive.23/_8404_archive_1.a"
+        }
+    },
+    "ObjArchives": [
+        {
+            "objects": [
+                [
+                    "ADc5c_d.o",
+                    82548
+                ]
+            ],
+            "archive": "archive.23/_8404_archive_1.a",
+            "size": 82548
+        }
+    ],
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "zPe7U_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        }
+    }
+}

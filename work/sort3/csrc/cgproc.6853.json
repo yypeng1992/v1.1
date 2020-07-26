@@ -1,0 +1,92 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "quick_sort": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "share_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "led_key_old": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "quick_sort2": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "stack_MxN": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "led_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        },
+        "sort_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 6
+        }
+    },
+    "CompUnits": {
+        "ADc5c_d": {
+            "mod": "sort_tb",
+            "out": "ADc5c_d.o",
+            "bytes": 90877,
+            "archive": "archive.5/_6853_archive_1.a",
+            "mode": 4,
+            "checksum": 0
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "tHkF2_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "tNB2R_d": {
+            "icPath": "csrc"
+        },
+        "zF0Pj_d": {
+            "icPath": "csrc"
+        },
+        "KEaIt_d": {
+            "icPath": "csrc"
+        },
+        "P24hE_d": {
+            "icPath": "csrc"
+        },
+        "aER8J_d": {
+            "icPath": "csrc"
+        },
+        "g7hgQ_d": {
+            "icPath": "csrc"
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.5/_6853_archive_1.a",
+            "objects": [
+                [
+                    "ADc5c_d.o",
+                    90877
+                ]
+            ],
+            "size": 90877
+        }
+    ]
+}

@@ -1,0 +1,400 @@
+{
+    "CompileProcesses": [
+        "cgproc.6200.json"
+    ],
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 0.80083300000000002,
+            "ru_maxrss_kb": 98836,
+            "ru_stime_sec": 0.35330899999999998,
+            "ru_minflt": 10092,
+            "ru_majflt": 697,
+            "ru_nvcsw": 876,
+            "ru_nivcsw": 1432
+        },
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 26368,
+            "ru_stime_sec": 0.0033869999999999998,
+            "ru_minflt": 206,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1,
+            "ru_nivcsw": 1
+        },
+        "ru_childs_end": {
+            "ru_utime_sec": 0.0,
+            "ru_maxrss_kb": 26368,
+            "ru_stime_sec": 0.0033869999999999998,
+            "ru_minflt": 206,
+            "ru_majflt": 0,
+            "ru_nvcsw": 1,
+            "ru_nivcsw": 1
+        },
+        "mop/quad": 2.4385331721684058,
+        "nMops": 143237,
+        "nQuads": 58739,
+        "totalObjSize": 1872777,
+        "ru_self_end": {
+            "ru_utime_sec": 1.6989700000000001,
+            "ru_maxrss_kb": 107744,
+            "ru_stime_sec": 0.44937899999999997,
+            "ru_minflt": 12291,
+            "ru_majflt": 740,
+            "ru_nvcsw": 923,
+            "ru_nivcsw": 1689
+        },
+        "mopSpeed": 159482.35068814666,
+        "quadSpeed": 65400.935492024037,
+        "Frontend(%)": 47.136382631829875,
+        "outputSizePerQuad": 31.0,
+        "CodeGen(%)": 52.863617368170132
+    },
+    "MlibObjs": {},
+    "Misc": {
+        "default_output_dir": "csrc",
+        "cwd": "/home/ft/tree/v1.1/work/div",
+        "csrc_abs": "/home/ft/tree/v1.1/work/div/csrc",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/ft/tree/v1.1/work/div/simv.daidir",
+        "archive_dir": "archive.0"
+    },
+    "CompileStrategy": "fullobj",
+    "PrevCompiledModules": {},
+    "NameTable": {
+        "id_ex": [
+            "id_ex",
+            "UmCUI",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "led_tb": [
+            "led_tb",
+            "aER8J",
+            "module"
+        ],
+        "quick_sort2": [
+            "quick_sort2",
+            "tHkF2",
+            "module"
+        ],
+        "pc_reg": [
+            "pc_reg",
+            "wxG7b",
+            "module"
+        ],
+        "led_key_old": [
+            "led_key_old",
+            "tNB2R",
+            "module"
+        ],
+        "quick_sort3": [
+            "quick_sort3",
+            "zPe7U",
+            "module"
+        ],
+        "aes_top": [
+            "aes_top",
+            "xKp10",
+            "module"
+        ],
+        "ex": [
+            "ex",
+            "r2dgF",
+            "module"
+        ],
+        "rf1_MxN_0002": [
+            "rf1_MxN_0002",
+            "CVHuj",
+            "module"
+        ],
+        "ex_mem": [
+            "ex_mem",
+            "K7u6h",
+            "module"
+        ],
+        "debounce_for_clock": [
+            "debounce_for_clock",
+            "WmSAT",
+            "module"
+        ],
+        "led_new_tb": [
+            "led_new_tb",
+            "I6qmI",
+            "module"
+        ],
+        "sram_tb": [
+            "sram_tb",
+            "vVJ5h",
+            "module"
+        ],
+        "clock_tb": [
+            "clock_tb",
+            "NW4FU",
+            "module"
+        ],
+        "wb": [
+            "wb",
+            "DgZ94",
+            "module"
+        ],
+        "sort_tb": [
+            "sort_tb",
+            "ADc5c",
+            "module"
+        ],
+        "except_tb": [
+            "except_tb",
+            "pQCx1",
+            "module"
+        ],
+        "handshake_tb": [
+            "handshake_tb",
+            "VDxkt",
+            "module"
+        ],
+        "inst_rom": [
+            "inst_rom",
+            "vnxvv",
+            "module"
+        ],
+        "fifo_test": [
+            "fifo_test",
+            "E2Tre",
+            "module"
+        ],
+        "mem": [
+            "mem",
+            "FSbWZ",
+            "module"
+        ],
+        "cp0_reg": [
+            "cp0_reg",
+            "y5PkS",
+            "module"
+        ],
+        "aes_test": [
+            "aes_test",
+            "k6uK4",
+            "module"
+        ],
+        "hilo": [
+            "hilo",
+            "tvjIp",
+            "module"
+        ],
+        "pc_id": [
+            "pc_id",
+            "Ehwa7",
+            "module"
+        ],
+        "m25p16": [
+            "m25p16",
+            "ebSBN",
+            "module"
+        ],
+        "regfile": [
+            "regfile",
+            "Nxspn",
+            "module"
+        ],
+        "ctrl": [
+            "ctrl",
+            "FzTxA",
+            "module"
+        ],
+        "sram_bist": [
+            "sram_bist",
+            "VZ0hy",
+            "module"
+        ],
+        "LLbit_reg": [
+            "LLbit_reg",
+            "re2bz",
+            "module"
+        ],
+        "data_ram": [
+            "data_ram",
+            "KA3k1",
+            "module"
+        ],
+        "aes": [
+            "aes",
+            "HfzMG",
+            "module"
+        ],
+        "stack_MxN": [
+            "stack_MxN",
+            "P24hE",
+            "module"
+        ],
+        "rf1_MxN_0004": [
+            "rf1_MxN_0004",
+            "uP0gg",
+            "module"
+        ],
+        "rf1_MxN_0003": [
+            "rf1_MxN_0003",
+            "Pg5vD",
+            "module"
+        ],
+        "share_tb": [
+            "share_tb",
+            "KEaIt",
+            "module"
+        ],
+        "uart_test": [
+            "uart_test",
+            "KTZ9E",
+            "module"
+        ],
+        "seg_test": [
+            "seg_test",
+            "SDgzu",
+            "module"
+        ],
+        "buzzer_pwm_tb": [
+            "buzzer_pwm_tb",
+            "yAzgh",
+            "module"
+        ],
+        "rtc_tb": [
+            "rtc_tb",
+            "uzmws",
+            "module"
+        ],
+        "i2c_eeprom_tb": [
+            "i2c_eeprom_tb",
+            "LRhIH",
+            "module"
+        ],
+        "icache_tb": [
+            "icache_tb",
+            "uYAtS",
+            "module"
+        ],
+        "dcache_tb": [
+            "dcache_tb",
+            "Y9KLm",
+            "module"
+        ],
+        "div7_tb": [
+            "div7_tb",
+            "Ysnwd",
+            "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ]
+    },
+    "PEModules": [],
+    "CurCompileUdps": {},
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 137531
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "std",
+        "std",
+        "led_key_old",
+        "led_key_old",
+        "quick_sort2",
+        "quick_sort2",
+        "quick_sort3",
+        "quick_sort3",
+        "ex",
+        "ex",
+        "ex_mem",
+        "ex_mem",
+        "id_ex",
+        "id_ex",
+        "wb",
+        "wb",
+        "inst_rom",
+        "inst_rom",
+        "mem",
+        "mem",
+        "pc_reg",
+        "pc_reg",
+        "pc_id",
+        "pc_id",
+        "regfile",
+        "regfile",
+        "hilo",
+        "hilo",
+        "ctrl",
+        "ctrl",
+        "LLbit_reg",
+        "LLbit_reg",
+        "data_ram",
+        "data_ram",
+        "cp0_reg",
+        "cp0_reg",
+        "m25p16",
+        "m25p16",
+        "debounce_for_clock",
+        "debounce_for_clock",
+        "aes_top",
+        "aes_top",
+        "aes",
+        "aes",
+        "sram_bist",
+        "sram_bist",
+        "stack_MxN",
+        "stack_MxN",
+        "rf1_MxN_0002",
+        "rf1_MxN_0002",
+        "rf1_MxN_0003",
+        "rf1_MxN_0003",
+        "rf1_MxN_0004",
+        "rf1_MxN_0004",
+        "led_tb",
+        "led_tb",
+        "share_tb",
+        "share_tb",
+        "sort_tb",
+        "sort_tb",
+        "except_tb",
+        "except_tb",
+        "led_new_tb",
+        "led_new_tb",
+        "uart_test",
+        "uart_test",
+        "seg_test",
+        "seg_test",
+        "buzzer_pwm_tb",
+        "buzzer_pwm_tb",
+        "rtc_tb",
+        "rtc_tb",
+        "i2c_eeprom_tb",
+        "i2c_eeprom_tb",
+        "fifo_test",
+        "fifo_test",
+        "clock_tb",
+        "clock_tb",
+        "handshake_tb",
+        "handshake_tb",
+        "aes_test",
+        "aes_test",
+        "sram_tb",
+        "sram_tb",
+        "icache_tb",
+        "icache_tb",
+        "dcache_tb",
+        "dcache_tb",
+        "div7_tb",
+        "div7_tb"
+    ],
+    "LVLData": [
+        "SIM"
+    ],
+    "CompileStatus": "Successful"
+}
