@@ -1,0 +1,331 @@
+$log_line=1 --------------------multiline comment----------start-----
+$log_line=2 --------------------multiline comment----------go on..---
+$log_line=3 --------------------multiline comment----------go on..---
+$log_line=4 --------------------multiline comment----------go on..---
+$log_line=5 --------------------multiline comment----------go on..---
+$log_line=6 --------------------multiline comment----------go on..---
+$log_line=7 --------------------multiline comment----------end-------
+$log_line=8 ----------- space line
+$log_line=9 --------------------multiline comment----------start-----
+$log_line=10 --------------------multiline comment----------go on..---
+$log_line=11 --------------------multiline comment----------go on..---
+$log_line=12 --------------------multiline comment----------go on..---
+$log_line=13 --------------------multiline comment----------go on..---
+$log_line=14 --------------------multiline comment----------go on..---
+$log_line=15 --------------------multiline comment----------end-------
+$log_line=16 ----------- space line
+$log_line=17 --------------------singleline comment--
+$log_line=18 --------valid ------singleline comment--
+$log_line=19 ----------- space line
+$log_line=20 --------------------singleline comment--
+$log_line=21 ----------- space line
+$log_line=22 ----------- space line
+$log_line=23 --------------------multiline comment----------start-----
+$log_line=24 --------------------multiline comment----------go on..---
+$log_line=25 --------------------multiline comment----------go on..---
+$log_line=26 --------------------multiline comment----------go on..---
+$log_line=27 --------------------multiline comment----------go on..---
+$log_line=28 --------------------multiline comment----------go on..---
+$log_line=29 --------------------multiline comment----------go on..---
+$log_line=30 --------------------multiline comment----------go on..---
+$log_line=31 --------------------multiline comment----------go on..---
+$log_line=32 ----------- space line
+$log_line=33 --------------------multiline comment----------go on..---
+$log_line=34 --------------------multiline comment----------go on..---
+$log_line=35 --------------------multiline comment----------go on..---
+$log_line=36 --------------------multiline comment----------go on..---
+$log_line=37 --------------------multiline comment----------go on..---
+$log_line=38 --------------------multiline comment----------go on..---
+$log_line=39 --------------------multiline comment----------go on..---
+$log_line=40 --------------------multiline comment----------go on..---
+$log_line=41 --------------------multiline comment----------go on..---
+$log_line=42 --------------------multiline comment----------go on..---
+$log_line=43 ----------- space line
+$log_line=44 --------------------multiline comment----------go on..---
+$log_line=45 --------------------multiline comment----------go on..---
+$log_line=46 --------------------multiline comment----------go on..---
+$log_line=47 --------------------multiline comment----------go on..---
+$log_line=48 --------------------multiline comment----------go on..---
+$log_line=49 --------------------multiline comment----------go on..---
+$log_line=50 --------------------multiline comment----------go on..---
+$log_line=51 --------------------multiline comment----------go on..---
+$log_line=52 --------------------multiline comment----------go on..---
+$log_line=53 --------------------multiline comment----------go on..---
+$log_line=54 ----------- space line
+$log_line=55 --------------------multiline comment----------go on..---
+$log_line=56 --------------------multiline comment----------go on..---
+$log_line=57 --------------------multiline comment----------go on..---
+$log_line=58 --------------------multiline comment----------go on..---
+$log_line=59 --------------------multiline comment----------go on..---
+$log_line=60 ----------- space line
+$log_line=61 --------------------multiline comment----------go on..---
+$log_line=62 --------------------multiline comment----------go on..---
+$log_line=63 --------------------multiline comment----------go on..---
+$log_line=64 --------------------multiline comment----------go on..---
+$log_line=65 --------------------multiline comment----------go on..---
+$log_line=66 ----------- space line
+$log_line=67 --------------------multiline comment----------go on..---
+$log_line=68 --------------------multiline comment----------go on..---
+$log_line=69 --------------------multiline comment----------go on..---
+$log_line=70 --------------------multiline comment----------go on..---
+$log_line=71 --------------------multiline comment----------go on..---
+$log_line=72 ----------- space line
+$log_line=73 --------------------multiline comment----------go on..---
+$log_line=74 --------------------multiline comment----------go on..---
+$log_line=75 --------------------multiline comment----------go on..---
+$log_line=76 --------------------multiline comment----------go on..---
+$log_line=77 --------------------multiline comment----------go on..---
+$log_line=78 --------------------multiline comment----------go on..---
+$log_line=79 --------------------multiline comment----------go on..---
+$log_line=80 --------------------multiline comment----------go on..---
+$log_line=81 --------------------multiline comment----------go on..---
+$log_line=82 ----------- space line
+$log_line=83 --------------------multiline comment----------go on..---
+$log_line=84 --------------------multiline comment----------go on..---
+$log_line=85 --------------------multiline comment----------go on..---
+$log_line=86 --------------------multiline comment----------go on..---
+$log_line=87 --------------------multiline comment----------go on..---
+$log_line=88 --------------------multiline comment----------go on..---
+$log_line=89 --------------------multiline comment----------go on..---
+$log_line=90 --------------------multiline comment----------go on..---
+$log_line=91 --------------------multiline comment----------go on..---
+$log_line=92 ----------- space line
+$log_line=93 --------------------multiline comment----------go on..---
+$log_line=94 --------------------multiline comment----------go on..---
+$log_line=95 --------------------multiline comment----------go on..---
+$log_line=96 --------------------multiline comment----------go on..---
+$log_line=97 --------------------multiline comment----------go on..---
+$log_line=98 ----------- space line
+$log_line=99 --------------------multiline comment----------go on..---
+$log_line=100 --------------------multiline comment----------go on..---
+$log_line=101 --------------------multiline comment----------go on..---
+$log_line=102 --------------------multiline comment----------go on..---
+$log_line=103 --------------------multiline comment----------go on..---
+$log_line=104 ----------- space line
+$log_line=105 --------------------multiline comment----------go on..---
+$log_line=106 --------------------multiline comment----------go on..---
+$log_line=107 --------------------multiline comment----------go on..---
+$log_line=108 --------------------multiline comment----------go on..---
+$log_line=109 --------------------multiline comment----------go on..---
+$log_line=110 ----------- space line
+$log_line=111 --------------------multiline comment----------go on..---
+$log_line=112 --------------------multiline comment----------go on..---
+$log_line=113 --------------------multiline comment----------go on..---
+$log_line=114 --------------------multiline comment----------go on..---
+$log_line=115 --------------------multiline comment----------go on..---
+$log_line=116 ----------- space line
+$log_line=117 --------------------multiline comment----------go on..---
+$log_line=118 --------------------multiline comment----------go on..---
+$log_line=119 --------------------multiline comment----------go on..---
+$log_line=120 --------------------multiline comment----------go on..---
+$log_line=121 --------------------multiline comment----------go on..---
+$log_line=122 ----------- space line
+$log_line=123 --------------------multiline comment----------go on..---
+$log_line=124 --------------------multiline comment----------end-------
+$log_line=125 ----------- space line
+$log_line=126 ----------- space line
+$log_line=127 --------------------multiline comment----------start-----
+$log_line=128 --------------------multiline comment----------go on..---
+$log_line=129 --------------------multiline comment----------end-------
+$log_line=130 --------------------singleline comment--
+$log_line=131 --------valid ------singleline comment--
+$log_line=132 --------valid ------singleline comment--
+$log_line=133 --------valid ------singleline comment--
+$log_line=134 --------valid ------singleline comment--
+$log_line=135 --------valid ------singleline comment--
+$log_line=136 --------valid ------singleline comment--
+$log_line=137 --------valid ------singleline comment--
+$log_line=138 --------valid ------singleline comment--
+$log_line=139 --------valid ------singleline comment--
+----------here gets cfg0 info
+CFG0: 00011000001000000000000000000001
+$log_line=140 --------------------singleline comment--
+$log_line=141 --------valid ------singleline comment--
+$log_line=142 --------valid ------singleline comment--
+$log_line=143 --------valid ------singleline comment--
+$log_line=144 --------valid ------singleline comment--
+----------here gets cfg1 info
+CFG1: 00000000001000110010001000100001
+$log_line=145 --------------------singleline comment--
+$log_line=146 --------valid ------singleline comment--
+$log_line=147 --------valid ------singleline comment--
+$log_line=148 --------valid ------singleline comment--
+$log_line=149 --------valid ------singleline comment--
+----------here gets cfg2 info
+CFG2: 00000000000000000000000000000000
+$log_line=150 --------------------singleline comment--
+$log_line=151 --------valid ------singleline comment--
+$log_line=152 --------valid ------singleline comment--
+$log_line=153 --------valid ------singleline comment--
+$log_line=154 --------valid ------singleline comment--
+----------here gets cfg3 info
+CFG3: 00000000000000000000000000000000
+$log_line=155 --------------------singleline comment--
+$log_line=156 --------valid ------singleline comment--
+$log_line=157 --------valid ------singleline comment--
+$log_line=158 --------valid ------singleline comment--
+$log_line=159 --------valid ------singleline comment--
+----------here gets cfg4 info
+CFG4: 00000000000000000000000000000000
+$log_line=160 --------------------singleline comment--
+$log_line=161 --------valid ------singleline comment--
+----------here gets cfg5 info
+CFG5: 00000000000000000000000000000000
+$log_line=162 --------------------singleline comment--
+$log_line=163 --------valid ------singleline comment--
+$log_line=164 --------valid ------singleline comment--
+----------here gets cfg6 info
+CFG6: 00000000000000110000000000000010
+$log_line=165 --------------------singleline comment--
+$log_line=166 --------valid ------singleline comment--
+$log_line=167 --------valid ------singleline comment--
+----------here gets cfg7 info
+CFG7: 00000000011111110000001111111111
+$log_line=168 --------------------singleline comment--
+$log_line=169 --------valid ------singleline comment--
+$log_line=170 --------valid ------singleline comment--
+$log_line=171 --------valid ------singleline comment--
+$log_line=172 --------valid ------singleline comment--
+$log_line=173 --------valid ------singleline comment--
+$log_line=174 --------valid ------singleline comment--
+$log_line=175 --------valid ------singleline comment--
+$log_line=176 --------valid ------singleline comment--
+----------here gets cfg8 info
+CFG8: 00000000000000000000000000000000
+$log_line=177 --------------------singleline comment--
+$log_line=178 --------valid ------singleline comment--
+$log_line=179 --------valid ------singleline comment--
+$log_line=180 --------valid ------singleline comment--
+$log_line=181 --------valid ------singleline comment--
+$log_line=182 --------valid ------singleline comment--
+$log_line=183 --------valid ------singleline comment--
+$log_line=184 --------valid ------singleline comment--
+$log_line=185 --------valid ------singleline comment--
+----------here gets cfg9 info
+CFG9: 00000000000000000000000000000000
+$log_line=186 --------------------singleline comment--
+$log_line=187 --------valid ------singleline comment--
+----------here gets cfg10 info
+CFG10: 00000000000000000000000000000011
+$log_line=188 --------------------singleline comment--
+$log_line=189 --------valid ------singleline comment--
+----------here gets cfg11 info
+CFG11: 00000000000000000000010000000000
+$log_line=190 --------------------singleline comment--
+$log_line=191 --------valid ------singleline comment--
+----------here gets cfg12 info
+CFG12: 00000000010000000000000000000000
+$log_line=192 --------------------singleline comment--
+$log_line=193 --------valid ------singleline comment--
+----------here gets cfg13 info
+CFG13: 00000000000000000001000000000000
+$log_line=194 --------------------singleline comment--
+$log_line=195 --------valid ------singleline comment--
+----------here gets cfg14 info
+CFG14: 00000000000100000000000000000000
+CFG15: 00000000000000000000000000000000 (default add)
+$log_line=196 --------------------singleline comment--
+$log_line=197 --------------------singleline comment--
+$log_line=198 ----------- space line
+$log_line=199 ----------- space line
+$log_line=200 ----------- space line
+$log_line=201 ----------- space line
+$log_line=202 ----------- space line
+$log_line=203 --------------------singleline comment--
+$log_line=204 --------valid ------singleline comment--
+$log_line=205 --------valid ------singleline comment--
+$log_line=206 --------valid ------singleline comment--
+$log_line=207 --------valid ------singleline comment--
+$log_line=208 --------valid ------singleline comment--
+$log_line=209 --------valid ------singleline comment--
+$log_line=210 --------valid ------singleline comment--
+$log_line=211 --------valid ------singleline comment--
+$log_line=212 --------valid ------singleline comment--
+----------here gets cfg0 info
+CFG0: 00010000011100000000000100000010
+$log_line=213 --------------------singleline comment--
+$log_line=214 --------valid ------singleline comment--
+$log_line=215 --------valid ------singleline comment--
+$log_line=216 --------valid ------singleline comment--
+$log_line=217 --------valid ------singleline comment--
+----------here gets cfg1 info
+CFG1: 00110100001100110011001000110001
+$log_line=218 --------------------singleline comment--
+$log_line=219 --------valid ------singleline comment--
+$log_line=220 --------valid ------singleline comment--
+$log_line=221 --------valid ------singleline comment--
+$log_line=222 --------valid ------singleline comment--
+----------here gets cfg2 info
+CFG2: 00111000001101110011011000110101
+$log_line=223 --------------------singleline comment--
+$log_line=224 --------valid ------singleline comment--
+$log_line=225 --------valid ------singleline comment--
+$log_line=226 --------valid ------singleline comment--
+$log_line=227 --------valid ------singleline comment--
+----------here gets cfg3 info
+CFG3: 00000000000000000000000000000000
+$log_line=228 --------------------singleline comment--
+$log_line=229 --------valid ------singleline comment--
+$log_line=230 --------valid ------singleline comment--
+$log_line=231 --------valid ------singleline comment--
+$log_line=232 --------valid ------singleline comment--
+----------here gets cfg4 info
+CFG4: 00000000000000000000000000000000
+$log_line=233 --------------------singleline comment--
+$log_line=234 --------valid ------singleline comment--
+----------here gets cfg5 info
+CFG5: 00000000010000000000000000000000
+$log_line=235 --------------------singleline comment--
+$log_line=236 --------valid ------singleline comment--
+$log_line=237 --------valid ------singleline comment--
+----------here gets cfg6 info
+CFG6: 00000000000000110000000000000001
+$log_line=238 --------------------singleline comment--
+$log_line=239 --------valid ------singleline comment--
+$log_line=240 --------valid ------singleline comment--
+----------here gets cfg7 info
+CFG7: 00000000011111110000001111111111
+$log_line=241 --------------------singleline comment--
+$log_line=242 --------valid ------singleline comment--
+$log_line=243 --------valid ------singleline comment--
+$log_line=244 --------valid ------singleline comment--
+$log_line=245 --------valid ------singleline comment--
+$log_line=246 --------valid ------singleline comment--
+$log_line=247 --------valid ------singleline comment--
+$log_line=248 --------valid ------singleline comment--
+$log_line=249 --------valid ------singleline comment--
+----------here gets cfg8 info
+CFG8: 00000000000000000000000000000000
+$log_line=250 --------------------singleline comment--
+$log_line=251 --------valid ------singleline comment--
+$log_line=252 --------valid ------singleline comment--
+$log_line=253 --------valid ------singleline comment--
+$log_line=254 --------valid ------singleline comment--
+$log_line=255 --------valid ------singleline comment--
+$log_line=256 --------valid ------singleline comment--
+$log_line=257 --------valid ------singleline comment--
+$log_line=258 --------valid ------singleline comment--
+----------here gets cfg9 info
+CFG9: 00000000000000000000000000000000
+$log_line=259 --------------------singleline comment--
+$log_line=260 --------valid ------singleline comment--
+----------here gets cfg10 info
+CFG10: 00000000000000000000000000000000
+$log_line=261 --------------------singleline comment--
+$log_line=262 --------valid ------singleline comment--
+----------here gets cfg11 info
+CFG11: 00000000000000000000010000000000
+$log_line=263 --------------------singleline comment--
+$log_line=264 --------valid ------singleline comment--
+----------here gets cfg12 info
+CFG12: 00000000010000000000000000000000
+$log_line=265 --------------------singleline comment--
+$log_line=266 --------valid ------singleline comment--
+----------here gets cfg13 info
+CFG13: 00000000000000000001000000000000
+$log_line=267 --------------------singleline comment--
+$log_line=268 --------valid ------singleline comment--
+----------here gets cfg14 info
+CFG14: 00000000010000000000000000000000
+CFG15: 00000000000000000000000000000000 (default add)
+ end......

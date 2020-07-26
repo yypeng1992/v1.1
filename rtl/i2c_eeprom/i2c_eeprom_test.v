@@ -17,13 +17,17 @@ wire       i2c_read_ack ;
 reg  [7:0]read_data;
 wire [7:0]wr_dev_addr;
 wire [7:0]wr_reg_addr;
+wire [7:0]wr_reg_addr_h;
 wire [7:0]rd_dev_addr;
 wire [7:0]rd_reg_addr;
+wire [7:0]rd_reg_addr_h;
 
 assign wr_dev_addr[7:0] = 8'b10100000;
 assign wr_reg_addr[7:0] = 8'd1;
 assign rd_dev_addr[7:0] = 8'b10100001;
 assign rd_reg_addr[7:0] = 8'd1;
+assign wr_reg_addr_h[7:0] = 8'd1;
+assign rd_reg_addr_h[7:0] = 8'd1;
 
 parameter DELAY_TIME   = 3;
 parameter [1:0]T_IDLE  = 2'd0;
@@ -116,7 +120,9 @@ master master0(
  .wr_ack        (i2c_write_ack),
  .rd_ack        (i2c_read_ack ),
  .wr_reg_addr   (wr_reg_addr[7:0]),
- .rd_reg_addr   (rd_reg_addr[7:0])
+ .wr_reg_addr_h   (wr_reg_addr_h[7:0]),
+ .rd_reg_addr   (rd_reg_addr[7:0]),
+ .rd_reg_addr_h   (rd_reg_addr_h[7:0])
 );
 
 seg_for_i2c seg1(

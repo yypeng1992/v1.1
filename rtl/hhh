@@ -1,0 +1,6 @@
+M25P16_VG_V12/acdc_check.v
+M25P16_VG_V12/internal_logic.v
+M25P16_VG_V12/m25p16_driver.v
+M25P16_VG_V12/M25p16.v
+M25P16_VG_V12/memory_access.v
+M25P16_VG_V12/parameter.v

@@ -23,13 +23,14 @@
 //`define SIM_BUZZER
 //`define SIM_SPI_FLASH
 //`define SIM_RTC
-`define SIM_I2C_EEPROM
+//`define SIM_I2C_EEPROM
 //`define SIM_FIFO
 //`define SIM_CLOCK
 //`define SIM_HANDSHAKE
 //`define SIM_AES
 //`define SIM_SRAM
 //`define SIM_ICACHE
-//`define SIM_DCACHE
+`define SIM_DCACHE
+//`define SIM_DIV
 
 

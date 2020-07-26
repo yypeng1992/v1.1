@@ -1,0 +1,80 @@
+文件夹 PATH 列表
+卷序列号为 0000-4823
+E:.
+│  file_tree.txt
+│  log.txt
+│  
+├─constraints
+│      ddr3_ctrl_ip.rar
+│      ddr3_ctrl_ip.xdc
+│      ddr3_ctrl_ip.xdc.bak
+│      ddr3_ctrl_ip_ooc.xdc
+│      
+└─rtl
+    │  ddr3_ctrl_ip.v
+    │  ddr3_ctrl_ip_mig.v
+    │  ddr3_ctrl_ip_mig_sim.v
+    │  
+    ├─clocking
+    │      mig_7series_v2_2_clk_ibuf.v             Instantiates the input clock buffer.
+    │      mig_7series_v2_2_infrastructure.v       Helps in clock generation and distribution,and reset synchronization.
+    │      mig_7series_v2_2_iodelay_ctrl.v         Instantiates IDELAYCNTRL primitives needed for IDELAY use.
+    │      mig_7series_v2_2_tempmon.v
+    │      
+    ├─controller
+    │      mig_7series_v2_2_arb_mux.v              The top-level module of arbitration logic.
+    │      mig_7series_v2_2_arb_row_col.v          Receives requests to send row and column commands from bank machines and selects one request,if any,for each state.
+    │      mig_7series_v2_2_arb_select.v           Selects a row and column command from the request information provided by the bank machines.
+    │      mig_7series_v2_2_bank_cntrl.v           Instantiates the three subblocks that comprise the bank machine.
+    │      mig_7series_v2_2_bank_common.v          Computes various items that cross all of the bank machines.
+    │      mig_7series_v2_2_bank_compare.v         Stores the request for a bank machine.
+    │      mig_7series_v2_2_bank_mach.v            The top-level bank machine block.
+    │      mig_7series_v2_2_bank_queue.v           The bank machine queue controller.
+    │      mig_7series_v2_2_bank_state.v           The primary bank state machine.
+    │      mig_7series_v2_2_col_mach.v             Manages the DQ bus.
+    │      mig_7series_v2_2_mc.v                   The top-level module of the Memory Controller.
+    │      mig_7series_v2_2_rank_cntrl.v           Manages various rank-level timing parameters.
+    │      mig_7series_v2_2_rank_common.v          Contains logic common to all rank machines. It contains a clock prescaler and arbiters for refresh and periodic read.
+    │      mig_7series_v2_2_rank_mach.v            The top-level rank machine structural block.
+    │      mig_7series_v2_2_round_robin_arb.v      This is a simpleround-robin arbiter.
+    │      
+    ├─ecc
+    │      mig_7series_v2_2_ecc_buf.v
+    │      mig_7series_v2_2_ecc_dec_fix.v
+    │      mig_7series_v2_2_ecc_gen.v
+    │      mig_7series_v2_2_ecc_merge_enc.v
+    │      mig_7series_v2_2_fi_xor.v
+    │      
+    ├─ip_top
+    │      mig_7series_v2_2_memc_ui_top_std.v       This is the top-level Memory Controller module.
+    │      mig_7series_v2_2_mem_intfc.v             This top-level memory interface block instantiates the controller and the PHY.
+    │      
+    ├─phy
+    │      mig_7series_v2_2_ddr_byte_group_io.v
+    │      mig_7series_v2_2_ddr_byte_lane.v
+    │      mig_7series_v2_2_ddr_calib_top.v
+    │      mig_7series_v2_2_ddr_if_post_fifo.v
+    │      mig_7series_v2_2_ddr_mc_phy.v
+    │      mig_7series_v2_2_ddr_mc_phy_wrapper.v
+    │      mig_7series_v2_2_ddr_of_pre_fifo.v
+    │      mig_7series_v2_2_ddr_phy_4lanes.v
+    │      mig_7series_v2_2_ddr_phy_ck_addr_cmd_delay.v
+    │      mig_7series_v2_2_ddr_phy_dqs_found_cal.v
+    │      mig_7series_v2_2_ddr_phy_dqs_found_cal_hr.v
+    │      mig_7series_v2_2_ddr_phy_init.v
+    │      mig_7series_v2_2_ddr_phy_oclkdelay_cal.v
+    │      mig_7series_v2_2_ddr_phy_prbs_rdlvl.v
+    │      mig_7series_v2_2_ddr_phy_rdlvl.v
+    │      mig_7series_v2_2_ddr_phy_tempmon.v
+    │      mig_7series_v2_2_ddr_phy_top.v
+    │      mig_7series_v2_2_ddr_phy_wrcal.v
+    │      mig_7series_v2_2_ddr_phy_wrlvl.v
+    │      mig_7series_v2_2_ddr_phy_wrlvl_off_delay.v
+    │      mig_7series_v2_2_ddr_prbs_gen.v
+    │      
+    └─ui
+            mig_7series_v2_2_ui_cmd.v            This is the user interface command port.
+            mig_7series_v2_2_ui_rd_data.v        This is the user interface read buffer. It reorders read data returned from the Memory Controller back to the request order.
+            mig_7series_v2_2_ui_wr_data.v        Thie is the user interface write buffer.
+            mig_7series_v2_2_ui_top.v            This is the top-level of the Memory Controller user interface.
+            

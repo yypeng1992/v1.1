@@ -1,0 +1,1324 @@
+MIG: 10:35:03 : Running customizer.xit
+MIG: 10:35:03 : ################# RUNNING MIG INTERACTIVE ###################
+MIG: 10:35:03 : Writing IN file for 'mig_7series_0'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-5112-FL-PC/coregen/mig_7series_0
+MIG: 10:35:03 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:35:04 : outputDirectory: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-5112-FL-PC/coregen/mig_7series_0/_tmp/
+MIG: 10:35:04 : vivado_mode: xpg_pa
+MIG: 10:35:04 :  locked false  
+MIG: 10:35:04 : HDL Language: Verilog
+MIG: 10:35:04 : compInfo: true
+MIG: 10:35:04 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:35:04 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:35:04 : I am in catch area
+MIG: 10:35:04 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-5112-FL-PC/coregen/mig_7series_0/xil_txt.in -cg_exc_out d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-5112-FL-PC/coregen/mig_7series_0/xil_txt.out ... 
+MIG: 13:08:45 : Prasad before: xmlPropertyPrj --  .prj
+MIG: 13:08:45 : Prasad After: xmlPropertyPrj -- mig_a.prj
+MIG: 13:08:45 : XML_INPUT_FILE: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-5112-FL-PC/coregen/mig_7series_0/mig_a.prj
+MIG: 13:08:45 : Component_Name: ddr3_ctrl_ip
+MIG: 13:08:45 : Moving ddr3_ctrl_ip ...
+MIG: 13:08:45 : Moving ddr3_ctrl_ip.veo ...
+MIG: 13:08:45 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 13:08:45 : Sending back 0
+MIG: 13:08:52 : xml_input_file: mig_a.prj
+MIG: 13:08:52 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_five/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 13:08:52 : xml_input_file: mig_a.prj
+MIG: 13:08:52 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_five/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 13:08:52 : In updateAllModelParams
+MIG: 13:08:52 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:08:52 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 13:08:52 : XGUI hdlLanguage: Verilog
+MIG: 13:08:52 : xgui vivado_mode: xpg_pa
+MIG: 13:08:52 : xgui hdlLanguage: Verilog -- hdlExt: v
+MIG: 13:08:52 : Reading F:/v7_2000_oldchip/ddr3_4g_five/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/ddr3_ctrl_ip/user_design/rtl/ddr3_ctrl_ip_mig.v ...
+MIG: 13:08:53 : 1
+MIG: 13:08:53 : Inside fn mem: DDR3
+MIG: 13:08:53 : QDRII+ Inside fn ui: 200000000
+MIG: 13:08:53 : 
+MIG: 13:08:53 : 
+MIG: 13:08:53 : 200000000
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  polarity_value: 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 : 
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_BANK_WIDTH ==> 3
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_CK_WIDTH ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_COL_WIDTH ==> 10
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_CS_WIDTH ==> 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_nCS_PER_RANK ==> 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_CKE_WIDTH ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_BUF_ADDR_WIDTH ==> 4
+MIG: 13:08:53 :  Invalid Param: DDR3_DQ_CNT_WIDTH ==> 6
+MIG: 13:08:53 :  Invalid Param: DDR3_DQ_PER_DM ==> 8
+MIG: 13:08:53 : 8
+MIG: 13:08:53 :  Valid Param: DDR3_DM_WIDTH ==> 8
+MIG: 13:08:53 : 64
+MIG: 13:08:53 :  Valid Param: DDR3_DQ_WIDTH ==> 64
+MIG: 13:08:53 : 8
+MIG: 13:08:53 :  Valid Param: DDR3_DQS_WIDTH ==> 8
+MIG: 13:08:53 : 3
+MIG: 13:08:53 :  Valid Param: DDR3_DQS_CNT_WIDTH ==> 3
+MIG: 13:08:53 :  Invalid Param: DDR3_DRAM_WIDTH ==> 8
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: ECC ==> OFF
+MIG: 13:08:53 : 64
+MIG: 13:08:53 :  Valid Param: DDR3_DATA_WIDTH ==> 64
+MIG: 13:08:53 :  Invalid Param: ECC_TEST ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_PAYLOAD_WIDTH ==> (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH
+MIG: 13:08:53 :  Invalid Param: DDR3_MEM_ADDR_ORDER ==> "BANK_ROW_COLUMN"
+MIG: 13:08:53 :  Invalid Param: DDR3_nBANK_MACHS ==> 4
+MIG: 13:08:53 :  Invalid Param: DDR3_RANKS ==> 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_ODT_WIDTH ==> 1
+MIG: 13:08:53 : 16
+MIG: 13:08:53 :  Valid Param: DDR3_ROW_WIDTH ==> 16
+MIG: 13:08:53 : 30
+MIG: 13:08:53 :  Valid Param: DDR3_ADDR_WIDTH ==> 30
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_USE_CS_PORT ==> 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_USE_DM_PORT ==> 1
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_USE_ODT_PORT ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_IS_CLK_SHARED ==> "FALSE"
+MIG: 13:08:53 :  Invalid Param: DDR3_PHY_CONTROL_MASTER_BANK ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_MEM_DENSITY ==> "4Gb"
+MIG: 13:08:53 :  Invalid Param: DDR3_MEM_SPEEDGRADE ==> "125"
+MIG: 13:08:53 :  Invalid Param: DDR3_MEM_DEVICE_WIDTH ==> 8
+MIG: 13:08:53 :  Invalid Param: DDR3_AL ==> "0"
+MIG: 13:08:53 :  Invalid Param: DDR3_nAL ==> 0
+MIG: 13:08:53 :  Invalid Param: DDR3_BURST_MODE ==> "8"
+MIG: 13:08:53 :  Invalid Param: DDR3_BURST_TYPE ==> "SEQ"
+MIG: 13:08:53 :  Invalid Param: DDR3_CL ==> 6
+MIG: 13:08:53 :  Invalid Param: DDR3_CWL ==> 5
+MIG: 13:08:53 :  Invalid Param: DDR3_OUTPUT_DRV ==> "HIGH"
+MIG: 13:08:53 :  Invalid Param: DDR3_RTT_NOM ==> "60"
+MIG: 13:08:53 :  Invalid Param: DDR3_RTT_WR ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_ADDR_CMD_MODE ==> "1T"
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_REG_CTRL ==> OFF
+MIG: 13:08:53 :  Invalid Param: DDR3_CA_MIRROR ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_VDD_OP_VOLT ==> "150"
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKIN_PERIOD ==> 2500
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKFBOUT_MULT ==> 2
+MIG: 13:08:53 :  Invalid Param: DDR3_DIVCLK_DIVIDE ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKOUT0_PHASE ==> 337.5
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKOUT0_DIVIDE ==> 2
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKOUT1_DIVIDE ==> 2
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKOUT2_DIVIDE ==> 32
+MIG: 13:08:53 :  Invalid Param: DDR3_CLKOUT3_DIVIDE ==> 4
+MIG: 13:08:53 :  Invalid Param: DDR3_tCKE ==> 5000
+MIG: 13:08:53 :  Invalid Param: DDR3_tFAW ==> 32000
+MIG: 13:08:53 :  Invalid Param: DDR3_tPRDI ==> 1_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_tRAS ==> 35000
+MIG: 13:08:53 :  Invalid Param: DDR3_tRCD ==> 13125
+MIG: 13:08:53 :  Invalid Param: DDR3_tREFI ==> 7800000
+MIG: 13:08:53 :  Invalid Param: DDR3_tRFC ==> 260000
+MIG: 13:08:53 :  Invalid Param: DDR3_tRP ==> 13125
+MIG: 13:08:53 :  Invalid Param: DDR3_tRRD ==> 6000
+MIG: 13:08:53 :  Invalid Param: DDR3_tRTP ==> 7500
+MIG: 13:08:53 :  Invalid Param: DDR3_tWTR ==> 7500
+MIG: 13:08:53 :  Invalid Param: DDR3_tZQI ==> 128_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_tZQCS ==> 64
+MIG: 13:08:53 :  Invalid Param: DDR3_SIM_BYPASS_INIT_CAL ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_SIMULATION ==> "FALSE"
+MIG: 13:08:53 :  Invalid Param: DDR3_BYTE_LANES_B0 ==> 4'b1111
+MIG: 13:08:53 :  Invalid Param: DDR3_BYTE_LANES_B1 ==> 4'b1111
+MIG: 13:08:53 :  Invalid Param: DDR3_BYTE_LANES_B2 ==> 4'b1111
+MIG: 13:08:53 :  Invalid Param: DDR3_BYTE_LANES_B3 ==> 4'b0000
+MIG: 13:08:53 :  Invalid Param: DDR3_BYTE_LANES_B4 ==> 4'b0000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_CTL_B0 ==> 4'b1111
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_CTL_B1 ==> 4'b0000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_CTL_B2 ==> 4'b1111
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_CTL_B3 ==> 4'b0000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_CTL_B4 ==> 4'b0000
+MIG: 13:08:53 :  Invalid Param: DDR3_PHY_0_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 13:08:53 :  Invalid Param: DDR3_PHY_1_BITLANES ==> 48'h1FF_1FC_CF5_200
+MIG: 13:08:53 :  Invalid Param: DDR3_PHY_2_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 13:08:53 :  Invalid Param: DDR3_CK_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13
+MIG: 13:08:53 :  Invalid Param: DDR3_ADDR_MAP ==> 192'h131_11B_136_112_122_114_123_137_124_109_115_134_132_11A_127_135
+MIG: 13:08:53 :  Invalid Param: DDR3_BANK_MAP ==> 36'h130_126_128
+MIG: 13:08:53 :  Invalid Param: DDR3_CAS_MAP ==> 12'h110
+MIG: 13:08:53 :  Invalid Param: DDR3_CKE_ODT_BYTE_MAP ==> 8'h00
+MIG: 13:08:53 :  Invalid Param: DDR3_CKE_MAP ==> 96'h000_000_000_000_000_000_000_125
+MIG: 13:08:53 :  Invalid Param: DDR3_ODT_MAP ==> 96'h000_000_000_000_000_000_000_133
+MIG: 13:08:53 :  Invalid Param: DDR3_CS_MAP ==> 120'h000_000_000_000_000_000_000_000_000_138
+MIG: 13:08:53 :  Invalid Param: DDR3_PARITY_MAP ==> 12'h000
+MIG: 13:08:53 :  Invalid Param: DDR3_RAS_MAP ==> 12'h117
+MIG: 13:08:53 :  Invalid Param: DDR3_WE_MAP ==> 12'h116
+MIG: 13:08:53 :  Invalid Param: DDR3_DQS_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_03_00_02_01_21_22_20_23
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA0_MAP ==> 96'h236_233_231_234_232_238_237_235
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA1_MAP ==> 96'h203_202_205_204_200_201_206_207
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA2_MAP ==> 96'h226_228_225_227_221_224_222_223
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA3_MAP ==> 96'h216_211_212_218_219_214_217_213
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA4_MAP ==> 96'h014_018_013_012_017_016_011_019
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA5_MAP ==> 96'h024_025_022_021_028_023_027_026
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA6_MAP ==> 96'h002_003_006_004_007_005_000_001
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA7_MAP ==> 96'h036_037_032_033_035_031_038_034
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA8_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA9_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA10_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA11_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA12_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA13_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA14_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA15_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA16_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA17_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_MASK0_MAP ==> 108'h000_039_009_029_015_215_229_209_239
+MIG: 13:08:53 :  Invalid Param: DDR3_MASK1_MAP ==> 108'h000_000_000_000_000_000_000_000_000
+MIG: 13:08:53 :  Invalid Param: DDR3_SLOT_0_CONFIG ==> 8'b0000_0001
+MIG: 13:08:53 :  Invalid Param: DDR3_SLOT_1_CONFIG ==> 8'b0000_0000
+MIG: 13:08:53 :  Invalid Param: DDR3_IBUF_LPWR_MODE ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_IO_IDLE_PWRDWN ==> "ON"
+MIG: 13:08:53 :  Invalid Param: DDR3_BANK_TYPE ==> "HP_IO"
+MIG: 13:08:53 :  Invalid Param: DDR3_DATA_IO_PRIM_TYPE ==> "HP_LP"
+MIG: 13:08:53 :  Invalid Param: DDR3_CKE_ODT_AUX ==> "FALSE"
+MIG: 13:08:53 :  Invalid Param: DDR3_USER_REFRESH ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_WRLVL ==> "ON"
+MIG: 13:08:53 :  Invalid Param: DDR3_ORDERING ==> "NORM"
+MIG: 13:08:53 :  Invalid Param: DDR3_CALIB_ROW_ADD ==> 16'h0000
+MIG: 13:08:53 :  Invalid Param: DDR3_CALIB_COL_ADD ==> 12'h000
+MIG: 13:08:53 :  Invalid Param: DDR3_CALIB_BA_ADD ==> 3'h0
+MIG: 13:08:53 :  Invalid Param: DDR3_TCQ ==> 100
+MIG: 13:08:53 :  Invalid Param: DDR3_IDELAY_ADJ ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_FINE_PER_BIT ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_CENTER_COMP_MODE ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_PI_VAL_ADJ ==> "OFF"
+MIG: 13:08:53 :  Invalid Param: DDR3_IODELAY_GRP0 ==> "DDR3_CTRL_IP_IODELAY_MIG0"
+MIG: 13:08:53 :  Invalid Param: DDR3_IODELAY_GRP1 ==> "DDR3_CTRL_IP_IODELAY_MIG1"
+MIG: 13:08:53 :  Invalid Param: DDR3_SYSCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 13:08:53 :  Invalid Param: DDR3_REFCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 13:08:53 :  Invalid Param: DDR3_SYS_RST_PORT ==> "FALSE"
+MIG: 13:08:53 :  Invalid Param: DDR3_FPGA_SPEED_GRADE ==> 1
+MIG: 13:08:53 :  Invalid Param: DDR3_CMD_PIPE_PLUS1 ==> "ON"
+MIG: 13:08:53 :  Invalid Param: DDR3_DRAM_TYPE ==> "DDR3"
+MIG: 13:08:53 :  Invalid Param: DDR3_CAL_WIDTH ==> "HALF"
+MIG: 13:08:53 :  Invalid Param: DDR3_STARVE_LIMIT ==> 2
+MIG: 13:08:53 :  Invalid Param: DDR3_REF_CLK_MMCM_IODELAY_CTRL ==> "FALSE"
+MIG: 13:08:53 :  Invalid Param: DDR3_REFCLK_FREQ ==> 200.0
+MIG: 13:08:53 :  Invalid Param: DDR3_DIFF_TERM_REFCLK ==> "TRUE"
+MIG: 13:08:53 :  Invalid Param: DDR3_tCK ==> 2500
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_nCK_PER_CLK ==> 2
+MIG: 13:08:53 :  Invalid Param: DDR3_DIFF_TERM_SYSCLK ==> "TRUE"
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Valid Param: DDR3_DEBUG_PORT ==> OFF
+MIG: 13:08:53 : 
+MIG: 13:08:53 :  Invalid Param: DDR3_TEMP_MON_CONTROL ==> "INTERNAL"
+MIG: 13:08:53 :  Invalid Param: DDR3_RST_ACT_LOW ==> 1
+MIG: 13:08:53 : SINGLE
+MIG: 13:08:53 : SINGLE
+MIG: 13:08:53 : 
+MIG: 13:08:53 : Same Interface
+MIG: 13:09:31 : Running synthesis.xit
+MIG: 13:09:31 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:09:31 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 13:09:32 : Running vlog_synth_rpr.xit
+MIG: 13:09:32 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:09:32 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 13:09:33 : Running simulation.xit
+MIG: 13:09:33 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:09:33 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 13:09:34 : Running vlog_sim_rpr.xit .. PRASAD DBG1
+MIG: 13:09:34 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:09:34 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 13:09:34 : Running implementation.xit
+MIG: 13:09:35 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 13:09:35 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:05:35 : xml_input_file: mig_a.prj
+MIG: 18:05:35 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:35 : xml_input_file: mig_a.prj
+MIG: 18:05:35 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:37 : xml_input_file: mig_a.prj
+MIG: 18:05:37 : Absolute path of xml_input_file: mig_a.prj
+MIG: 18:05:37 : xml_input_file: mig_a.prj
+MIG: 18:05:37 : Absolute path of xml_input_file: mig_a.prj
+MIG: 18:05:37 : xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:37 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:37 : xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:37 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_a.prj
+MIG: 18:05:37 : In updateAllModelParams
+MIG: 18:05:37 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 18:05:37 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:05:37 : XGUI hdlLanguage: Verilog
+MIG: 18:05:37 : xgui vivado_mode: xpg_pa
+MIG: 18:05:37 : xgui hdlLanguage: Verilog -- hdlExt: v
+MIG: 18:05:37 : Reading F:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/ddr3_ctrl_ip/user_design/rtl/ddr3_ctrl_ip_mig.v ...
+MIG: 18:05:38 : 
+MIG: 18:05:38 : Inside fn mem: DDR3
+MIG: 18:05:38 : QDRII+ Inside fn ui: 200000000
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  polarity_value: 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_BANK_WIDTH ==> 3
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_CK_WIDTH ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_COL_WIDTH ==> 10
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_CS_WIDTH ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_nCS_PER_RANK ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_CKE_WIDTH ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_BUF_ADDR_WIDTH ==> 4
+MIG: 18:05:38 :  Invalid Param: DDR3_DQ_CNT_WIDTH ==> 6
+MIG: 18:05:38 :  Invalid Param: DDR3_DQ_PER_DM ==> 8
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DM_WIDTH ==> 8
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DQ_WIDTH ==> 64
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DQS_WIDTH ==> 8
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DQS_CNT_WIDTH ==> 3
+MIG: 18:05:38 :  Invalid Param: DDR3_DRAM_WIDTH ==> 8
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: ECC ==> OFF
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DATA_WIDTH ==> 64
+MIG: 18:05:38 :  Invalid Param: ECC_TEST ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_PAYLOAD_WIDTH ==> (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH
+MIG: 18:05:38 :  Invalid Param: DDR3_MEM_ADDR_ORDER ==> "BANK_ROW_COLUMN"
+MIG: 18:05:38 :  Invalid Param: DDR3_nBANK_MACHS ==> 4
+MIG: 18:05:38 :  Invalid Param: DDR3_RANKS ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_ODT_WIDTH ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_ROW_WIDTH ==> 16
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_ADDR_WIDTH ==> 30
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_USE_CS_PORT ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_USE_DM_PORT ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_USE_ODT_PORT ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_IS_CLK_SHARED ==> "FALSE"
+MIG: 18:05:38 :  Invalid Param: DDR3_PHY_CONTROL_MASTER_BANK ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_MEM_DENSITY ==> "4Gb"
+MIG: 18:05:38 :  Invalid Param: DDR3_MEM_SPEEDGRADE ==> "125"
+MIG: 18:05:38 :  Invalid Param: DDR3_MEM_DEVICE_WIDTH ==> 8
+MIG: 18:05:38 :  Invalid Param: DDR3_AL ==> "0"
+MIG: 18:05:38 :  Invalid Param: DDR3_nAL ==> 0
+MIG: 18:05:38 :  Invalid Param: DDR3_BURST_MODE ==> "8"
+MIG: 18:05:38 :  Invalid Param: DDR3_BURST_TYPE ==> "SEQ"
+MIG: 18:05:38 :  Invalid Param: DDR3_CL ==> 6
+MIG: 18:05:38 :  Invalid Param: DDR3_CWL ==> 5
+MIG: 18:05:38 :  Invalid Param: DDR3_OUTPUT_DRV ==> "HIGH"
+MIG: 18:05:38 :  Invalid Param: DDR3_RTT_NOM ==> "60"
+MIG: 18:05:38 :  Invalid Param: DDR3_RTT_WR ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_ADDR_CMD_MODE ==> "1T"
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_REG_CTRL ==> OFF
+MIG: 18:05:38 :  Invalid Param: DDR3_CA_MIRROR ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_VDD_OP_VOLT ==> "150"
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKIN_PERIOD ==> 2500
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKFBOUT_MULT ==> 2
+MIG: 18:05:38 :  Invalid Param: DDR3_DIVCLK_DIVIDE ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKOUT0_PHASE ==> 337.5
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKOUT0_DIVIDE ==> 2
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKOUT1_DIVIDE ==> 2
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKOUT2_DIVIDE ==> 32
+MIG: 18:05:38 :  Invalid Param: DDR3_CLKOUT3_DIVIDE ==> 4
+MIG: 18:05:38 :  Invalid Param: DDR3_tCKE ==> 5000
+MIG: 18:05:38 :  Invalid Param: DDR3_tFAW ==> 32000
+MIG: 18:05:38 :  Invalid Param: DDR3_tPRDI ==> 1_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_tRAS ==> 35000
+MIG: 18:05:38 :  Invalid Param: DDR3_tRCD ==> 13125
+MIG: 18:05:38 :  Invalid Param: DDR3_tREFI ==> 7800000
+MIG: 18:05:38 :  Invalid Param: DDR3_tRFC ==> 260000
+MIG: 18:05:38 :  Invalid Param: DDR3_tRP ==> 13125
+MIG: 18:05:38 :  Invalid Param: DDR3_tRRD ==> 6000
+MIG: 18:05:38 :  Invalid Param: DDR3_tRTP ==> 7500
+MIG: 18:05:38 :  Invalid Param: DDR3_tWTR ==> 7500
+MIG: 18:05:38 :  Invalid Param: DDR3_tZQI ==> 128_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_tZQCS ==> 64
+MIG: 18:05:38 :  Invalid Param: DDR3_SIM_BYPASS_INIT_CAL ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_SIMULATION ==> "FALSE"
+MIG: 18:05:38 :  Invalid Param: DDR3_BYTE_LANES_B0 ==> 4'b1111
+MIG: 18:05:38 :  Invalid Param: DDR3_BYTE_LANES_B1 ==> 4'b1111
+MIG: 18:05:38 :  Invalid Param: DDR3_BYTE_LANES_B2 ==> 4'b1111
+MIG: 18:05:38 :  Invalid Param: DDR3_BYTE_LANES_B3 ==> 4'b0000
+MIG: 18:05:38 :  Invalid Param: DDR3_BYTE_LANES_B4 ==> 4'b0000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_CTL_B0 ==> 4'b1111
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_CTL_B1 ==> 4'b0000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_CTL_B2 ==> 4'b1111
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_CTL_B3 ==> 4'b0000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_CTL_B4 ==> 4'b0000
+MIG: 18:05:38 :  Invalid Param: DDR3_PHY_0_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 18:05:38 :  Invalid Param: DDR3_PHY_1_BITLANES ==> 48'h1FF_1FC_CF5_200
+MIG: 18:05:38 :  Invalid Param: DDR3_PHY_2_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 18:05:38 :  Invalid Param: DDR3_CK_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13
+MIG: 18:05:38 :  Invalid Param: DDR3_ADDR_MAP ==> 192'h131_11B_136_112_122_114_123_137_124_109_115_134_132_11A_127_135
+MIG: 18:05:38 :  Invalid Param: DDR3_BANK_MAP ==> 36'h130_126_128
+MIG: 18:05:38 :  Invalid Param: DDR3_CAS_MAP ==> 12'h110
+MIG: 18:05:38 :  Invalid Param: DDR3_CKE_ODT_BYTE_MAP ==> 8'h00
+MIG: 18:05:38 :  Invalid Param: DDR3_CKE_MAP ==> 96'h000_000_000_000_000_000_000_125
+MIG: 18:05:38 :  Invalid Param: DDR3_ODT_MAP ==> 96'h000_000_000_000_000_000_000_133
+MIG: 18:05:38 :  Invalid Param: DDR3_CS_MAP ==> 120'h000_000_000_000_000_000_000_000_000_138
+MIG: 18:05:38 :  Invalid Param: DDR3_PARITY_MAP ==> 12'h000
+MIG: 18:05:38 :  Invalid Param: DDR3_RAS_MAP ==> 12'h117
+MIG: 18:05:38 :  Invalid Param: DDR3_WE_MAP ==> 12'h116
+MIG: 18:05:38 :  Invalid Param: DDR3_DQS_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_03_00_02_01_21_22_20_23
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA0_MAP ==> 96'h236_233_231_234_232_238_237_235
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA1_MAP ==> 96'h203_202_205_204_200_201_206_207
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA2_MAP ==> 96'h226_228_225_227_221_224_222_223
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA3_MAP ==> 96'h216_211_212_218_219_214_217_213
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA4_MAP ==> 96'h014_018_013_012_017_016_011_019
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA5_MAP ==> 96'h024_025_022_021_028_023_027_026
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA6_MAP ==> 96'h002_003_006_004_007_005_000_001
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA7_MAP ==> 96'h036_037_032_033_035_031_038_034
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA8_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA9_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA10_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA11_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA12_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA13_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA14_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA15_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA16_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA17_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_MASK0_MAP ==> 108'h000_039_009_029_015_215_229_209_239
+MIG: 18:05:38 :  Invalid Param: DDR3_MASK1_MAP ==> 108'h000_000_000_000_000_000_000_000_000
+MIG: 18:05:38 :  Invalid Param: DDR3_SLOT_0_CONFIG ==> 8'b0000_0001
+MIG: 18:05:38 :  Invalid Param: DDR3_SLOT_1_CONFIG ==> 8'b0000_0000
+MIG: 18:05:38 :  Invalid Param: DDR3_IBUF_LPWR_MODE ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_IO_IDLE_PWRDWN ==> "ON"
+MIG: 18:05:38 :  Invalid Param: DDR3_BANK_TYPE ==> "HP_IO"
+MIG: 18:05:38 :  Invalid Param: DDR3_DATA_IO_PRIM_TYPE ==> "HP_LP"
+MIG: 18:05:38 :  Invalid Param: DDR3_CKE_ODT_AUX ==> "FALSE"
+MIG: 18:05:38 :  Invalid Param: DDR3_USER_REFRESH ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_WRLVL ==> "ON"
+MIG: 18:05:38 :  Invalid Param: DDR3_ORDERING ==> "NORM"
+MIG: 18:05:38 :  Invalid Param: DDR3_CALIB_ROW_ADD ==> 16'h0000
+MIG: 18:05:38 :  Invalid Param: DDR3_CALIB_COL_ADD ==> 12'h000
+MIG: 18:05:38 :  Invalid Param: DDR3_CALIB_BA_ADD ==> 3'h0
+MIG: 18:05:38 :  Invalid Param: DDR3_TCQ ==> 100
+MIG: 18:05:38 :  Invalid Param: DDR3_IDELAY_ADJ ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_FINE_PER_BIT ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_CENTER_COMP_MODE ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_PI_VAL_ADJ ==> "OFF"
+MIG: 18:05:38 :  Invalid Param: DDR3_IODELAY_GRP0 ==> "DDR3_CTRL_IP_IODELAY_MIG0"
+MIG: 18:05:38 :  Invalid Param: DDR3_IODELAY_GRP1 ==> "DDR3_CTRL_IP_IODELAY_MIG1"
+MIG: 18:05:38 :  Invalid Param: DDR3_SYSCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 18:05:38 :  Invalid Param: DDR3_REFCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 18:05:38 :  Invalid Param: DDR3_SYS_RST_PORT ==> "FALSE"
+MIG: 18:05:38 :  Invalid Param: DDR3_FPGA_SPEED_GRADE ==> 1
+MIG: 18:05:38 :  Invalid Param: DDR3_CMD_PIPE_PLUS1 ==> "ON"
+MIG: 18:05:38 :  Invalid Param: DDR3_DRAM_TYPE ==> "DDR3"
+MIG: 18:05:38 :  Invalid Param: DDR3_CAL_WIDTH ==> "HALF"
+MIG: 18:05:38 :  Invalid Param: DDR3_STARVE_LIMIT ==> 2
+MIG: 18:05:38 :  Invalid Param: DDR3_REF_CLK_MMCM_IODELAY_CTRL ==> "FALSE"
+MIG: 18:05:38 :  Invalid Param: DDR3_REFCLK_FREQ ==> 200.0
+MIG: 18:05:38 :  Invalid Param: DDR3_DIFF_TERM_REFCLK ==> "TRUE"
+MIG: 18:05:38 :  Invalid Param: DDR3_tCK ==> 2500
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_nCK_PER_CLK ==> 2
+MIG: 18:05:38 :  Invalid Param: DDR3_DIFF_TERM_SYSCLK ==> "TRUE"
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Valid Param: DDR3_DEBUG_PORT ==> OFF
+MIG: 18:05:38 : 
+MIG: 18:05:38 :  Invalid Param: DDR3_TEMP_MON_CONTROL ==> "INTERNAL"
+MIG: 18:05:38 :  Invalid Param: DDR3_RST_ACT_LOW ==> 1
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 : 
+MIG: 18:05:38 : Same Interface
+MIG: 18:05:44 : Running customizer.xit
+MIG: 18:05:44 : ################# RUNNING MIG INTERACTIVE ###################
+MIG: 18:05:44 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-6272-FL-PC/coregen/ddr3_ctrl_ip
+MIG: 18:05:44 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:05:44 : outputDirectory: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-6272-FL-PC/coregen/ddr3_ctrl_ip/_tmp/
+MIG: 18:05:44 : vivado_mode: xpg_pa
+MIG: 18:05:44 :  locked false  
+MIG: 18:05:44 : HDL Language: Verilog
+MIG: 18:05:44 : compInfo: false
+MIG: 18:05:44 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:05:44 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:05:44 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:05:44 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:05:44 : I am in catch area
+MIG: 18:05:44 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-6272-FL-PC/coregen/ddr3_ctrl_ip/xil_txt.in -cg_exc_out d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-6272-FL-PC/coregen/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:11:56 : Prasad before: xmlPropertyPrj -- mig_a.prj
+MIG: 18:11:56 : Prasad After: xmlPropertyPrj -- mig_b.prj
+MIG: 18:11:56 : XML_INPUT_FILE: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-6272-FL-PC/coregen/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:11:56 : Component_Name: ddr3_ctrl_ip
+MIG: 18:11:56 : Moving ddr3_ctrl_ip ...
+MIG: 18:11:56 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:11:56 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:11:56 : Sending back 0
+MIG: 18:11:57 : xml_input_file: mig_b.prj
+MIG: 18:11:57 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:11:57 : xml_input_file: mig_b.prj
+MIG: 18:11:57 : Absolute path of xml_input_file: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:11:57 : In updateAllModelParams
+MIG: 18:11:57 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 18:11:57 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:11:57 : XGUI hdlLanguage: Verilog
+MIG: 18:11:57 : xgui vivado_mode: xpg_pa
+MIG: 18:11:57 : xgui hdlLanguage: Verilog -- hdlExt: v
+MIG: 18:11:57 : Reading F:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/ddr3_ctrl_ip/user_design/rtl/ddr3_ctrl_ip_mig.v ...
+MIG: 18:11:58 : 
+MIG: 18:11:58 : Inside fn mem: DDR3
+MIG: 18:11:58 : QDRII+ Inside fn ui: 200000000
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  polarity_value: 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_BANK_WIDTH ==> 3
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_CK_WIDTH ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_COL_WIDTH ==> 10
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_CS_WIDTH ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_nCS_PER_RANK ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_CKE_WIDTH ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_BUF_ADDR_WIDTH ==> 4
+MIG: 18:11:58 :  Invalid Param: DDR3_DQ_CNT_WIDTH ==> 6
+MIG: 18:11:58 :  Invalid Param: DDR3_DQ_PER_DM ==> 8
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DM_WIDTH ==> 8
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DQ_WIDTH ==> 64
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DQS_WIDTH ==> 8
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DQS_CNT_WIDTH ==> 3
+MIG: 18:11:58 :  Invalid Param: DDR3_DRAM_WIDTH ==> 8
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: ECC ==> OFF
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DATA_WIDTH ==> 64
+MIG: 18:11:58 :  Invalid Param: ECC_TEST ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_PAYLOAD_WIDTH ==> (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH
+MIG: 18:11:58 :  Invalid Param: DDR3_MEM_ADDR_ORDER ==> "BANK_ROW_COLUMN"
+MIG: 18:11:58 :  Invalid Param: DDR3_nBANK_MACHS ==> 4
+MIG: 18:11:58 :  Invalid Param: DDR3_RANKS ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_ODT_WIDTH ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_ROW_WIDTH ==> 16
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_ADDR_WIDTH ==> 30
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_USE_CS_PORT ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_USE_DM_PORT ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_USE_ODT_PORT ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_IS_CLK_SHARED ==> "FALSE"
+MIG: 18:11:58 :  Invalid Param: DDR3_PHY_CONTROL_MASTER_BANK ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_MEM_DENSITY ==> "4Gb"
+MIG: 18:11:58 :  Invalid Param: DDR3_MEM_SPEEDGRADE ==> "125"
+MIG: 18:11:58 :  Invalid Param: DDR3_MEM_DEVICE_WIDTH ==> 8
+MIG: 18:11:58 :  Invalid Param: DDR3_AL ==> "0"
+MIG: 18:11:58 :  Invalid Param: DDR3_nAL ==> 0
+MIG: 18:11:58 :  Invalid Param: DDR3_BURST_MODE ==> "8"
+MIG: 18:11:58 :  Invalid Param: DDR3_BURST_TYPE ==> "SEQ"
+MIG: 18:11:58 :  Invalid Param: DDR3_CL ==> 6
+MIG: 18:11:58 :  Invalid Param: DDR3_CWL ==> 5
+MIG: 18:11:58 :  Invalid Param: DDR3_OUTPUT_DRV ==> "HIGH"
+MIG: 18:11:58 :  Invalid Param: DDR3_RTT_NOM ==> "60"
+MIG: 18:11:58 :  Invalid Param: DDR3_RTT_WR ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_ADDR_CMD_MODE ==> "1T"
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_REG_CTRL ==> OFF
+MIG: 18:11:58 :  Invalid Param: DDR3_CA_MIRROR ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_VDD_OP_VOLT ==> "150"
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKIN_PERIOD ==> 2500
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKFBOUT_MULT ==> 2
+MIG: 18:11:58 :  Invalid Param: DDR3_DIVCLK_DIVIDE ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKOUT0_PHASE ==> 337.5
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKOUT0_DIVIDE ==> 2
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKOUT1_DIVIDE ==> 2
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKOUT2_DIVIDE ==> 32
+MIG: 18:11:58 :  Invalid Param: DDR3_CLKOUT3_DIVIDE ==> 4
+MIG: 18:11:58 :  Invalid Param: DDR3_tCKE ==> 5000
+MIG: 18:11:58 :  Invalid Param: DDR3_tFAW ==> 32000
+MIG: 18:11:58 :  Invalid Param: DDR3_tPRDI ==> 1_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_tRAS ==> 35000
+MIG: 18:11:58 :  Invalid Param: DDR3_tRCD ==> 13125
+MIG: 18:11:58 :  Invalid Param: DDR3_tREFI ==> 7800000
+MIG: 18:11:58 :  Invalid Param: DDR3_tRFC ==> 260000
+MIG: 18:11:58 :  Invalid Param: DDR3_tRP ==> 13125
+MIG: 18:11:58 :  Invalid Param: DDR3_tRRD ==> 6000
+MIG: 18:11:58 :  Invalid Param: DDR3_tRTP ==> 7500
+MIG: 18:11:58 :  Invalid Param: DDR3_tWTR ==> 7500
+MIG: 18:11:58 :  Invalid Param: DDR3_tZQI ==> 128_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_tZQCS ==> 64
+MIG: 18:11:58 :  Invalid Param: DDR3_SIM_BYPASS_INIT_CAL ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_SIMULATION ==> "FALSE"
+MIG: 18:11:58 :  Invalid Param: DDR3_BYTE_LANES_B0 ==> 4'b1111
+MIG: 18:11:58 :  Invalid Param: DDR3_BYTE_LANES_B1 ==> 4'b1111
+MIG: 18:11:58 :  Invalid Param: DDR3_BYTE_LANES_B2 ==> 4'b1111
+MIG: 18:11:58 :  Invalid Param: DDR3_BYTE_LANES_B3 ==> 4'b0000
+MIG: 18:11:58 :  Invalid Param: DDR3_BYTE_LANES_B4 ==> 4'b0000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_CTL_B0 ==> 4'b1111
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_CTL_B1 ==> 4'b0000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_CTL_B2 ==> 4'b1111
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_CTL_B3 ==> 4'b0000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_CTL_B4 ==> 4'b0000
+MIG: 18:11:58 :  Invalid Param: DDR3_PHY_0_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 18:11:58 :  Invalid Param: DDR3_PHY_1_BITLANES ==> 48'h335_3FC_CFF_200
+MIG: 18:11:58 :  Invalid Param: DDR3_PHY_2_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 18:11:58 :  Invalid Param: DDR3_CK_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13
+MIG: 18:11:58 :  Invalid Param: DDR3_ADDR_MAP ==> 192'h11B_11A_109_123_132_126_116_124_139_114_117_113_128_112_134_127
+MIG: 18:11:58 :  Invalid Param: DDR3_BANK_MAP ==> 36'h125_138_129
+MIG: 18:11:58 :  Invalid Param: DDR3_CAS_MAP ==> 12'h122
+MIG: 18:11:58 :  Invalid Param: DDR3_CKE_ODT_BYTE_MAP ==> 8'h00
+MIG: 18:11:58 :  Invalid Param: DDR3_CKE_MAP ==> 96'h000_000_000_000_000_000_000_130
+MIG: 18:11:58 :  Invalid Param: DDR3_ODT_MAP ==> 96'h000_000_000_000_000_000_000_110
+MIG: 18:11:58 :  Invalid Param: DDR3_CS_MAP ==> 120'h000_000_000_000_000_000_000_000_000_115
+MIG: 18:11:58 :  Invalid Param: DDR3_PARITY_MAP ==> 12'h000
+MIG: 18:11:58 :  Invalid Param: DDR3_RAS_MAP ==> 12'h111
+MIG: 18:11:58 :  Invalid Param: DDR3_WE_MAP ==> 12'h135
+MIG: 18:11:58 :  Invalid Param: DDR3_DQS_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_20_21_22_23_00_01_03_02
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA0_MAP ==> 96'h027_026_023_021_028_022_024_025
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA1_MAP ==> 96'h033_032_036_034_035_038_037_031
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA2_MAP ==> 96'h017_013_019_016_011_014_012_018
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA3_MAP ==> 96'h005_001_002_003_007_006_004_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA4_MAP ==> 96'h235_238_236_234_233_231_237_232
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA5_MAP ==> 96'h226_228_224_225_227_221_223_222
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA6_MAP ==> 96'h216_217_218_214_212_211_219_213
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA7_MAP ==> 96'h201_200_205_204_203_202_206_207
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA8_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA9_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA10_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA11_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA12_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA13_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA14_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA15_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA16_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA17_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_MASK0_MAP ==> 108'h000_209_215_229_239_009_015_039_029
+MIG: 18:11:58 :  Invalid Param: DDR3_MASK1_MAP ==> 108'h000_000_000_000_000_000_000_000_000
+MIG: 18:11:58 :  Invalid Param: DDR3_SLOT_0_CONFIG ==> 8'b0000_0001
+MIG: 18:11:58 :  Invalid Param: DDR3_SLOT_1_CONFIG ==> 8'b0000_0000
+MIG: 18:11:58 :  Invalid Param: DDR3_IBUF_LPWR_MODE ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_IO_IDLE_PWRDWN ==> "ON"
+MIG: 18:11:58 :  Invalid Param: DDR3_BANK_TYPE ==> "HP_IO"
+MIG: 18:11:58 :  Invalid Param: DDR3_DATA_IO_PRIM_TYPE ==> "HP_LP"
+MIG: 18:11:58 :  Invalid Param: DDR3_CKE_ODT_AUX ==> "FALSE"
+MIG: 18:11:58 :  Invalid Param: DDR3_USER_REFRESH ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_WRLVL ==> "ON"
+MIG: 18:11:58 :  Invalid Param: DDR3_ORDERING ==> "NORM"
+MIG: 18:11:58 :  Invalid Param: DDR3_CALIB_ROW_ADD ==> 16'h0000
+MIG: 18:11:58 :  Invalid Param: DDR3_CALIB_COL_ADD ==> 12'h000
+MIG: 18:11:58 :  Invalid Param: DDR3_CALIB_BA_ADD ==> 3'h0
+MIG: 18:11:58 :  Invalid Param: DDR3_TCQ ==> 100
+MIG: 18:11:58 :  Invalid Param: DDR3_IDELAY_ADJ ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_FINE_PER_BIT ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_CENTER_COMP_MODE ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_PI_VAL_ADJ ==> "OFF"
+MIG: 18:11:58 :  Invalid Param: DDR3_IODELAY_GRP0 ==> "DDR3_CTRL_IP_IODELAY_MIG0"
+MIG: 18:11:58 :  Invalid Param: DDR3_IODELAY_GRP1 ==> "DDR3_CTRL_IP_IODELAY_MIG1"
+MIG: 18:11:58 :  Invalid Param: DDR3_SYSCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 18:11:58 :  Invalid Param: DDR3_REFCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 18:11:58 :  Invalid Param: DDR3_SYS_RST_PORT ==> "FALSE"
+MIG: 18:11:58 :  Invalid Param: DDR3_FPGA_SPEED_GRADE ==> 1
+MIG: 18:11:58 :  Invalid Param: DDR3_CMD_PIPE_PLUS1 ==> "ON"
+MIG: 18:11:58 :  Invalid Param: DDR3_DRAM_TYPE ==> "DDR3"
+MIG: 18:11:58 :  Invalid Param: DDR3_CAL_WIDTH ==> "HALF"
+MIG: 18:11:58 :  Invalid Param: DDR3_STARVE_LIMIT ==> 2
+MIG: 18:11:58 :  Invalid Param: DDR3_REF_CLK_MMCM_IODELAY_CTRL ==> "FALSE"
+MIG: 18:11:58 :  Invalid Param: DDR3_REFCLK_FREQ ==> 200.0
+MIG: 18:11:58 :  Invalid Param: DDR3_DIFF_TERM_REFCLK ==> "TRUE"
+MIG: 18:11:58 :  Invalid Param: DDR3_tCK ==> 2500
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_nCK_PER_CLK ==> 2
+MIG: 18:11:58 :  Invalid Param: DDR3_DIFF_TERM_SYSCLK ==> "TRUE"
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Valid Param: DDR3_DEBUG_PORT ==> OFF
+MIG: 18:11:58 : 
+MIG: 18:11:58 :  Invalid Param: DDR3_TEMP_MON_CONTROL ==> "INTERNAL"
+MIG: 18:11:58 :  Invalid Param: DDR3_RST_ACT_LOW ==> 1
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 : 
+MIG: 18:11:58 : Same Interface
+MIG: 18:12:03 : ################# RUNNING MIG BATCH ###################
+MIG: 18:12:03 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:12:03 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:12:03 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:12:03 : vivado_mode: xpg_pa
+MIG: 18:12:03 :  locked false  
+MIG: 18:12:03 : HDL Language: Verilog
+MIG: 18:12:03 : compInfo: false
+MIG: 18:12:03 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:12:03 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:12:03 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:12:03 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:12:03 : I am in catch area
+MIG: 18:12:03 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:12:28 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:12:28 : Component_Name: ddr3_ctrl_ip
+MIG: 18:12:28 : Moving ddr3_ctrl_ip ...
+MIG: 18:12:28 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:12:28 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:12:36 : Running synthesis.xit
+MIG: 18:12:36 : ################# RUNNING MIG BATCH ###################
+MIG: 18:12:36 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:12:36 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:12:36 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:12:36 : vivado_mode: xpg_pa
+MIG: 18:12:36 :  locked false  
+MIG: 18:12:36 : HDL Language: Verilog
+MIG: 18:12:36 : compInfo: false
+MIG: 18:12:36 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:12:36 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:12:36 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:12:36 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:12:36 : I am in catch area
+MIG: 18:12:36 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:13:01 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:13:01 : Component_Name: ddr3_ctrl_ip
+MIG: 18:13:01 : Moving ddr3_ctrl_ip ...
+MIG: 18:13:01 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:13:01 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:13:02 : Running vlog_synth_rpr.xit
+MIG: 18:13:02 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 18:13:02 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:13:02 : ERR:             <Pin PADName="D20(MRCC_P)" Bank="40" name="clk_ref_i" /> <==>             <Pin PADName="D20" Bank="40" name="clk_ref_i" /> 
+MIG: 18:13:02 : ################# RUNNING MIG BATCH ###################
+MIG: 18:13:02 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:13:02 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:13:02 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:13:02 : vivado_mode: xpg_pa
+MIG: 18:13:02 :  locked false  
+MIG: 18:13:02 : HDL Language: Verilog
+MIG: 18:13:02 : compInfo: false
+MIG: 18:13:02 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:13:02 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:13:02 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:13:02 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:13:02 : I am in catch area
+MIG: 18:13:02 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:13:27 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:13:27 : Component_Name: ddr3_ctrl_ip
+MIG: 18:13:27 : Moving ddr3_ctrl_ip ...
+MIG: 18:13:27 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:13:27 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:13:28 : Running simulation.xit
+MIG: 18:13:28 : ################# RUNNING MIG BATCH ###################
+MIG: 18:13:28 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:13:28 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:13:28 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:13:28 : vivado_mode: xpg_pa
+MIG: 18:13:28 :  locked false  
+MIG: 18:13:28 : HDL Language: Verilog
+MIG: 18:13:28 : compInfo: false
+MIG: 18:13:28 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:13:28 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:13:28 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:13:28 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:13:28 : I am in catch area
+MIG: 18:13:28 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:13:53 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:13:53 : Component_Name: ddr3_ctrl_ip
+MIG: 18:13:53 : Moving ddr3_ctrl_ip ...
+MIG: 18:13:53 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:13:53 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:13:54 : Running vlog_sim_rpr.xit .. PRASAD DBG1
+MIG: 18:13:54 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 18:13:54 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:13:54 : ERR:             <Pin PADName="D20(MRCC_P)" Bank="40" name="clk_ref_i" /> <==>             <Pin PADName="D20" Bank="40" name="clk_ref_i" /> 
+MIG: 18:13:54 : ################# RUNNING MIG BATCH ###################
+MIG: 18:13:54 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:13:54 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:13:54 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:13:54 : vivado_mode: xpg_pa
+MIG: 18:13:54 :  locked false  
+MIG: 18:13:54 : HDL Language: Verilog
+MIG: 18:13:54 : compInfo: false
+MIG: 18:13:54 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:13:54 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:13:54 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:13:54 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:13:54 : I am in catch area
+MIG: 18:13:54 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:14:21 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:14:21 : Component_Name: ddr3_ctrl_ip
+MIG: 18:14:21 : Moving ddr3_ctrl_ip ...
+MIG: 18:14:21 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:14:21 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 18:14:22 : Running implementation.xit
+MIG: 18:14:22 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 18:14:22 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 18:14:22 : ERR:             <Pin PADName="D20(MRCC_P)" Bank="40" name="clk_ref_i" /> <==>             <Pin PADName="D20" Bank="40" name="clk_ref_i" /> 
+MIG: 18:14:22 : ################# RUNNING MIG BATCH ###################
+MIG: 18:14:22 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip
+MIG: 18:14:22 : synp_flow:  -- synthesis_mode: Other
+MIG: 18:14:22 : outputDirectory: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/_tmp/
+MIG: 18:14:22 : vivado_mode: xpg_pa
+MIG: 18:14:22 :  locked false  
+MIG: 18:14:22 : HDL Language: Verilog
+MIG: 18:14:22 : compInfo: false
+MIG: 18:14:22 : Vivado Options xc7v2000t flg1925 -1
+MIG: 18:14:22 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 18:14:22 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 18:14:22 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 18:14:22 : I am in catch area
+MIG: 18:14:22 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.in -cg_exc_out f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 18:14:47 : XML_INPUT_FILE: f:/v7_2000_oldchip/ddr3_4g_seven_u34/ddr3_4g_five.srcs/sources_1/ip/ddr3_ctrl_ip/mig_b.prj
+MIG: 18:14:47 : Component_Name: ddr3_ctrl_ip
+MIG: 18:14:47 : Moving ddr3_ctrl_ip ...
+MIG: 18:14:47 : Moving ddr3_ctrl_ip.veo ...
+MIG: 18:14:47 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:03:28 : xml_input_file: mig_b.prj
+MIG: 10:03:28 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:28 : xml_input_file: mig_b.prj
+MIG: 10:03:28 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:31 : xml_input_file: mig_b.prj
+MIG: 10:03:31 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:03:31 : xml_input_file: mig_b.prj
+MIG: 10:03:31 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:03:31 : xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:31 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:31 : xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:31 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:03:31 : In updateAllModelParams
+MIG: 10:03:31 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:03:31 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 10:03:31 : ERR:             <Pin PADName="D20(MRCC_P)" Bank="40" name="clk_ref_i" /> <==>             <Pin PADName="D20" Bank="40" name="clk_ref_i" /> 
+MIG: 10:03:31 : ################# RUNNING MIG BATCH ###################
+MIG: 10:03:31 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip
+MIG: 10:03:31 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:03:31 : outputDirectory: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/_tmp/
+MIG: 10:03:31 : vivado_mode: xpg_pa
+MIG: 10:03:31 :  locked false  
+MIG: 10:03:31 : HDL Language: Verilog
+MIG: 10:03:31 : compInfo: true
+MIG: 10:03:31 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:03:31 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:03:31 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:03:31 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:03:31 : I am in catch area
+MIG: 10:03:31 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.in -cg_exc_out e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:04:04 : xml_input_file: mig_b.prj
+MIG: 10:04:04 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:04:04 : xml_input_file: mig_b.prj
+MIG: 10:04:04 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:17:59 : xml_input_file: mig_b.prj
+MIG: 10:17:59 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:17:59 : xml_input_file: mig_b.prj
+MIG: 10:17:59 : Absolute path of xml_input_file: mig_b.prj
+MIG: 10:17:59 : xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:17:59 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:17:59 : xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:17:59 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:17:59 : In updateAllModelParams
+MIG: 10:17:59 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:17:59 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 10:17:59 : ERR:             <Pin PADName="D20(MRCC_P)" Bank="40" name="clk_ref_i" /> <==>             <Pin PADName="D20" Bank="40" name="clk_ref_i" /> 
+MIG: 10:17:59 : ################# RUNNING MIG BATCH ###################
+MIG: 10:17:59 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip
+MIG: 10:17:59 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:17:59 : outputDirectory: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/_tmp/
+MIG: 10:17:59 : vivado_mode: xpg_pa
+MIG: 10:17:59 :  locked false  
+MIG: 10:17:59 : HDL Language: Verilog
+MIG: 10:17:59 : compInfo: true
+MIG: 10:17:59 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:17:59 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:17:59 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:17:59 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:17:59 : I am in catch area
+MIG: 10:17:59 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.in -cg_exc_out e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:18:24 : XML_INPUT_FILE: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_b.prj
+MIG: 10:18:24 : Component_Name: ddr3_ctrl_ip
+MIG: 10:18:24 : Moving ddr3_ctrl_ip ...
+MIG: 10:18:24 : Moving ddr3_ctrl_ip.veo ...
+MIG: 10:18:24 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:18:24 : XGUI hdlLanguage: Verilog
+MIG: 10:18:24 : xgui vivado_mode: xpg_pa
+MIG: 10:18:24 : xgui hdlLanguage: Verilog -- hdlExt: v
+MIG: 10:18:24 : Reading E:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/ddr3_ctrl_ip/user_design/rtl/ddr3_ctrl_ip_mig.v ...
+MIG: 10:18:25 : 
+MIG: 10:18:25 : Inside fn mem: DDR3
+MIG: 10:18:25 : QDRII+ Inside fn ui: 200000000
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  polarity_value: 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_BANK_WIDTH ==> 3
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_CK_WIDTH ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_COL_WIDTH ==> 10
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_CS_WIDTH ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_nCS_PER_RANK ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_CKE_WIDTH ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_BUF_ADDR_WIDTH ==> 4
+MIG: 10:18:25 :  Invalid Param: DDR3_DQ_CNT_WIDTH ==> 6
+MIG: 10:18:25 :  Invalid Param: DDR3_DQ_PER_DM ==> 8
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DM_WIDTH ==> 8
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DQ_WIDTH ==> 64
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DQS_WIDTH ==> 8
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DQS_CNT_WIDTH ==> 3
+MIG: 10:18:25 :  Invalid Param: DDR3_DRAM_WIDTH ==> 8
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: ECC ==> OFF
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DATA_WIDTH ==> 64
+MIG: 10:18:25 :  Invalid Param: ECC_TEST ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_PAYLOAD_WIDTH ==> (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH
+MIG: 10:18:25 :  Invalid Param: DDR3_MEM_ADDR_ORDER ==> "BANK_ROW_COLUMN"
+MIG: 10:18:25 :  Invalid Param: DDR3_nBANK_MACHS ==> 4
+MIG: 10:18:25 :  Invalid Param: DDR3_RANKS ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_ODT_WIDTH ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_ROW_WIDTH ==> 16
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_ADDR_WIDTH ==> 30
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_USE_CS_PORT ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_USE_DM_PORT ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_USE_ODT_PORT ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_IS_CLK_SHARED ==> "FALSE"
+MIG: 10:18:25 :  Invalid Param: DDR3_PHY_CONTROL_MASTER_BANK ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_MEM_DENSITY ==> "4Gb"
+MIG: 10:18:25 :  Invalid Param: DDR3_MEM_SPEEDGRADE ==> "125"
+MIG: 10:18:25 :  Invalid Param: DDR3_MEM_DEVICE_WIDTH ==> 8
+MIG: 10:18:25 :  Invalid Param: DDR3_AL ==> "0"
+MIG: 10:18:25 :  Invalid Param: DDR3_nAL ==> 0
+MIG: 10:18:25 :  Invalid Param: DDR3_BURST_MODE ==> "8"
+MIG: 10:18:25 :  Invalid Param: DDR3_BURST_TYPE ==> "SEQ"
+MIG: 10:18:25 :  Invalid Param: DDR3_CL ==> 6
+MIG: 10:18:25 :  Invalid Param: DDR3_CWL ==> 5
+MIG: 10:18:25 :  Invalid Param: DDR3_OUTPUT_DRV ==> "HIGH"
+MIG: 10:18:25 :  Invalid Param: DDR3_RTT_NOM ==> "60"
+MIG: 10:18:25 :  Invalid Param: DDR3_RTT_WR ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_ADDR_CMD_MODE ==> "1T"
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_REG_CTRL ==> OFF
+MIG: 10:18:25 :  Invalid Param: DDR3_CA_MIRROR ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_VDD_OP_VOLT ==> "150"
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKIN_PERIOD ==> 2500
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKFBOUT_MULT ==> 2
+MIG: 10:18:25 :  Invalid Param: DDR3_DIVCLK_DIVIDE ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKOUT0_PHASE ==> 337.5
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKOUT0_DIVIDE ==> 2
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKOUT1_DIVIDE ==> 2
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKOUT2_DIVIDE ==> 32
+MIG: 10:18:25 :  Invalid Param: DDR3_CLKOUT3_DIVIDE ==> 4
+MIG: 10:18:25 :  Invalid Param: DDR3_tCKE ==> 5000
+MIG: 10:18:25 :  Invalid Param: DDR3_tFAW ==> 32000
+MIG: 10:18:25 :  Invalid Param: DDR3_tPRDI ==> 1_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_tRAS ==> 35000
+MIG: 10:18:25 :  Invalid Param: DDR3_tRCD ==> 13125
+MIG: 10:18:25 :  Invalid Param: DDR3_tREFI ==> 7800000
+MIG: 10:18:25 :  Invalid Param: DDR3_tRFC ==> 260000
+MIG: 10:18:25 :  Invalid Param: DDR3_tRP ==> 13125
+MIG: 10:18:25 :  Invalid Param: DDR3_tRRD ==> 6000
+MIG: 10:18:25 :  Invalid Param: DDR3_tRTP ==> 7500
+MIG: 10:18:25 :  Invalid Param: DDR3_tWTR ==> 7500
+MIG: 10:18:25 :  Invalid Param: DDR3_tZQI ==> 128_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_tZQCS ==> 64
+MIG: 10:18:25 :  Invalid Param: DDR3_SIM_BYPASS_INIT_CAL ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_SIMULATION ==> "FALSE"
+MIG: 10:18:25 :  Invalid Param: DDR3_BYTE_LANES_B0 ==> 4'b1111
+MIG: 10:18:25 :  Invalid Param: DDR3_BYTE_LANES_B1 ==> 4'b1111
+MIG: 10:18:25 :  Invalid Param: DDR3_BYTE_LANES_B2 ==> 4'b1111
+MIG: 10:18:25 :  Invalid Param: DDR3_BYTE_LANES_B3 ==> 4'b0000
+MIG: 10:18:25 :  Invalid Param: DDR3_BYTE_LANES_B4 ==> 4'b0000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_CTL_B0 ==> 4'b1111
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_CTL_B1 ==> 4'b0000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_CTL_B2 ==> 4'b1111
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_CTL_B3 ==> 4'b0000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_CTL_B4 ==> 4'b0000
+MIG: 10:18:25 :  Invalid Param: DDR3_PHY_0_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 10:18:25 :  Invalid Param: DDR3_PHY_1_BITLANES ==> 48'h335_3FC_CFF_200
+MIG: 10:18:25 :  Invalid Param: DDR3_PHY_2_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 10:18:25 :  Invalid Param: DDR3_CK_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13
+MIG: 10:18:25 :  Invalid Param: DDR3_ADDR_MAP ==> 192'h11B_11A_109_123_132_126_116_124_139_114_117_113_128_112_134_127
+MIG: 10:18:25 :  Invalid Param: DDR3_BANK_MAP ==> 36'h125_138_129
+MIG: 10:18:25 :  Invalid Param: DDR3_CAS_MAP ==> 12'h122
+MIG: 10:18:25 :  Invalid Param: DDR3_CKE_ODT_BYTE_MAP ==> 8'h00
+MIG: 10:18:25 :  Invalid Param: DDR3_CKE_MAP ==> 96'h000_000_000_000_000_000_000_130
+MIG: 10:18:25 :  Invalid Param: DDR3_ODT_MAP ==> 96'h000_000_000_000_000_000_000_110
+MIG: 10:18:25 :  Invalid Param: DDR3_CS_MAP ==> 120'h000_000_000_000_000_000_000_000_000_115
+MIG: 10:18:25 :  Invalid Param: DDR3_PARITY_MAP ==> 12'h000
+MIG: 10:18:25 :  Invalid Param: DDR3_RAS_MAP ==> 12'h111
+MIG: 10:18:25 :  Invalid Param: DDR3_WE_MAP ==> 12'h135
+MIG: 10:18:25 :  Invalid Param: DDR3_DQS_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_20_21_22_23_00_01_03_02
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA0_MAP ==> 96'h027_026_023_021_028_022_024_025
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA1_MAP ==> 96'h033_032_036_034_035_038_037_031
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA2_MAP ==> 96'h017_013_019_016_011_014_012_018
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA3_MAP ==> 96'h005_001_002_003_007_006_004_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA4_MAP ==> 96'h235_238_236_234_233_231_237_232
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA5_MAP ==> 96'h226_228_224_225_227_221_223_222
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA6_MAP ==> 96'h216_217_218_214_212_211_219_213
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA7_MAP ==> 96'h201_200_205_204_203_202_206_207
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA8_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA9_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA10_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA11_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA12_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA13_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA14_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA15_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA16_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA17_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_MASK0_MAP ==> 108'h000_209_215_229_239_009_015_039_029
+MIG: 10:18:25 :  Invalid Param: DDR3_MASK1_MAP ==> 108'h000_000_000_000_000_000_000_000_000
+MIG: 10:18:25 :  Invalid Param: DDR3_SLOT_0_CONFIG ==> 8'b0000_0001
+MIG: 10:18:25 :  Invalid Param: DDR3_SLOT_1_CONFIG ==> 8'b0000_0000
+MIG: 10:18:25 :  Invalid Param: DDR3_IBUF_LPWR_MODE ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_IO_IDLE_PWRDWN ==> "ON"
+MIG: 10:18:25 :  Invalid Param: DDR3_BANK_TYPE ==> "HP_IO"
+MIG: 10:18:25 :  Invalid Param: DDR3_DATA_IO_PRIM_TYPE ==> "HP_LP"
+MIG: 10:18:25 :  Invalid Param: DDR3_CKE_ODT_AUX ==> "FALSE"
+MIG: 10:18:25 :  Invalid Param: DDR3_USER_REFRESH ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_WRLVL ==> "ON"
+MIG: 10:18:25 :  Invalid Param: DDR3_ORDERING ==> "NORM"
+MIG: 10:18:25 :  Invalid Param: DDR3_CALIB_ROW_ADD ==> 16'h0000
+MIG: 10:18:25 :  Invalid Param: DDR3_CALIB_COL_ADD ==> 12'h000
+MIG: 10:18:25 :  Invalid Param: DDR3_CALIB_BA_ADD ==> 3'h0
+MIG: 10:18:25 :  Invalid Param: DDR3_TCQ ==> 100
+MIG: 10:18:25 :  Invalid Param: DDR3_IDELAY_ADJ ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_FINE_PER_BIT ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_CENTER_COMP_MODE ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_PI_VAL_ADJ ==> "OFF"
+MIG: 10:18:25 :  Invalid Param: DDR3_IODELAY_GRP0 ==> "DDR3_CTRL_IP_IODELAY_MIG0"
+MIG: 10:18:25 :  Invalid Param: DDR3_IODELAY_GRP1 ==> "DDR3_CTRL_IP_IODELAY_MIG1"
+MIG: 10:18:25 :  Invalid Param: DDR3_SYSCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 10:18:25 :  Invalid Param: DDR3_REFCLK_TYPE ==> "SINGLE_ENDED"
+MIG: 10:18:25 :  Invalid Param: DDR3_SYS_RST_PORT ==> "FALSE"
+MIG: 10:18:25 :  Invalid Param: DDR3_FPGA_SPEED_GRADE ==> 1
+MIG: 10:18:25 :  Invalid Param: DDR3_CMD_PIPE_PLUS1 ==> "ON"
+MIG: 10:18:25 :  Invalid Param: DDR3_DRAM_TYPE ==> "DDR3"
+MIG: 10:18:25 :  Invalid Param: DDR3_CAL_WIDTH ==> "HALF"
+MIG: 10:18:25 :  Invalid Param: DDR3_STARVE_LIMIT ==> 2
+MIG: 10:18:25 :  Invalid Param: DDR3_REF_CLK_MMCM_IODELAY_CTRL ==> "FALSE"
+MIG: 10:18:25 :  Invalid Param: DDR3_REFCLK_FREQ ==> 200.0
+MIG: 10:18:25 :  Invalid Param: DDR3_DIFF_TERM_REFCLK ==> "TRUE"
+MIG: 10:18:25 :  Invalid Param: DDR3_tCK ==> 2500
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_nCK_PER_CLK ==> 2
+MIG: 10:18:25 :  Invalid Param: DDR3_DIFF_TERM_SYSCLK ==> "TRUE"
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Valid Param: DDR3_DEBUG_PORT ==> OFF
+MIG: 10:18:25 : 
+MIG: 10:18:25 :  Invalid Param: DDR3_TEMP_MON_CONTROL ==> "INTERNAL"
+MIG: 10:18:25 :  Invalid Param: DDR3_RST_ACT_LOW ==> 1
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 : 
+MIG: 10:18:25 : Same Interface
+MIG: 10:18:31 : Running customizer.xit
+MIG: 10:18:31 : ################# RUNNING MIG INTERACTIVE ###################
+MIG: 10:18:31 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-4696-FL-PC/coregen/ddr3_ctrl_ip
+MIG: 10:18:31 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:18:31 : outputDirectory: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-4696-FL-PC/coregen/ddr3_ctrl_ip/_tmp/
+MIG: 10:18:31 : vivado_mode: xpg_pa
+MIG: 10:18:31 :  locked false  
+MIG: 10:18:31 : HDL Language: Verilog
+MIG: 10:18:31 : compInfo: false
+MIG: 10:18:31 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:18:31 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:18:31 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:18:31 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:18:31 : I am in catch area
+MIG: 10:18:31 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-4696-FL-PC/coregen/ddr3_ctrl_ip/xil_txt.in -cg_exc_out d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-4696-FL-PC/coregen/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:21:38 : Prasad before: xmlPropertyPrj -- mig_b.prj
+MIG: 10:21:38 : Prasad After: xmlPropertyPrj -- mig_a.prj
+MIG: 10:21:38 : XML_INPUT_FILE: d:/Xilinx/Vivado/2014.3/bin/.Xil/Vivado-4696-FL-PC/coregen/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:21:38 : Component_Name: ddr3_ctrl_ip
+MIG: 10:21:38 : Moving ddr3_ctrl_ip ...
+MIG: 10:21:38 : Moving ddr3_ctrl_ip.veo ...
+MIG: 10:21:38 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:21:38 : Sending back 0
+MIG: 10:21:39 : xml_input_file: mig_a.prj
+MIG: 10:21:39 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:21:39 : xml_input_file: mig_a.prj
+MIG: 10:21:39 : Absolute path of xml_input_file: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:21:39 : In updateAllModelParams
+MIG: 10:21:39 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:21:39 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 10:21:39 : XGUI hdlLanguage: Verilog
+MIG: 10:21:39 : xgui vivado_mode: xpg_pa
+MIG: 10:21:39 : xgui hdlLanguage: Verilog -- hdlExt: v
+MIG: 10:21:39 : Reading E:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/ddr3_ctrl_ip/user_design/rtl/ddr3_ctrl_ip_mig.v ...
+MIG: 10:21:40 : 
+MIG: 10:21:40 : Inside fn mem: DDR3
+MIG: 10:21:40 : QDRII+ Inside fn ui: 200000000
+MIG: 10:21:40 : 
+MIG: 10:21:40 : 
+MIG: 10:21:40 : 
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  polarity_value: 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 : 
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_BANK_WIDTH ==> 3
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_CK_WIDTH ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_COL_WIDTH ==> 10
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_CS_WIDTH ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_nCS_PER_RANK ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_CKE_WIDTH ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_BUF_ADDR_WIDTH ==> 4
+MIG: 10:21:40 :  Invalid Param: DDR3_DQ_CNT_WIDTH ==> 6
+MIG: 10:21:40 :  Invalid Param: DDR3_DQ_PER_DM ==> 8
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DM_WIDTH ==> 8
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DQ_WIDTH ==> 64
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DQS_WIDTH ==> 8
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DQS_CNT_WIDTH ==> 3
+MIG: 10:21:40 :  Invalid Param: DDR3_DRAM_WIDTH ==> 8
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: ECC ==> OFF
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DATA_WIDTH ==> 64
+MIG: 10:21:40 :  Invalid Param: ECC_TEST ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_PAYLOAD_WIDTH ==> (ECC_TEST == "OFF") ? DATA_WIDTH : DQ_WIDTH
+MIG: 10:21:40 :  Invalid Param: DDR3_MEM_ADDR_ORDER ==> "BANK_ROW_COLUMN"
+MIG: 10:21:40 :  Invalid Param: DDR3_nBANK_MACHS ==> 4
+MIG: 10:21:40 :  Invalid Param: DDR3_RANKS ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_ODT_WIDTH ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_ROW_WIDTH ==> 16
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_ADDR_WIDTH ==> 30
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_USE_CS_PORT ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_USE_DM_PORT ==> 1
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_USE_ODT_PORT ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_IS_CLK_SHARED ==> "FALSE"
+MIG: 10:21:40 :  Invalid Param: DDR3_PHY_CONTROL_MASTER_BANK ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_MEM_DENSITY ==> "4Gb"
+MIG: 10:21:40 :  Invalid Param: DDR3_MEM_SPEEDGRADE ==> "125"
+MIG: 10:21:40 :  Invalid Param: DDR3_MEM_DEVICE_WIDTH ==> 8
+MIG: 10:21:40 :  Invalid Param: DDR3_AL ==> "0"
+MIG: 10:21:40 :  Invalid Param: DDR3_nAL ==> 0
+MIG: 10:21:40 :  Invalid Param: DDR3_BURST_MODE ==> "8"
+MIG: 10:21:40 :  Invalid Param: DDR3_BURST_TYPE ==> "SEQ"
+MIG: 10:21:40 :  Invalid Param: DDR3_CL ==> 6
+MIG: 10:21:40 :  Invalid Param: DDR3_CWL ==> 5
+MIG: 10:21:40 :  Invalid Param: DDR3_OUTPUT_DRV ==> "HIGH"
+MIG: 10:21:40 :  Invalid Param: DDR3_RTT_NOM ==> "60"
+MIG: 10:21:40 :  Invalid Param: DDR3_RTT_WR ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_ADDR_CMD_MODE ==> "1T"
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_REG_CTRL ==> OFF
+MIG: 10:21:40 :  Invalid Param: DDR3_CA_MIRROR ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_VDD_OP_VOLT ==> "150"
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKIN_PERIOD ==> 2500
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKFBOUT_MULT ==> 2
+MIG: 10:21:40 :  Invalid Param: DDR3_DIVCLK_DIVIDE ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKOUT0_PHASE ==> 337.5
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKOUT0_DIVIDE ==> 2
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKOUT1_DIVIDE ==> 2
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKOUT2_DIVIDE ==> 32
+MIG: 10:21:40 :  Invalid Param: DDR3_CLKOUT3_DIVIDE ==> 4
+MIG: 10:21:40 :  Invalid Param: DDR3_tCKE ==> 5000
+MIG: 10:21:40 :  Invalid Param: DDR3_tFAW ==> 32000
+MIG: 10:21:40 :  Invalid Param: DDR3_tPRDI ==> 1_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_tRAS ==> 35000
+MIG: 10:21:40 :  Invalid Param: DDR3_tRCD ==> 13125
+MIG: 10:21:40 :  Invalid Param: DDR3_tREFI ==> 7800000
+MIG: 10:21:40 :  Invalid Param: DDR3_tRFC ==> 260000
+MIG: 10:21:40 :  Invalid Param: DDR3_tRP ==> 13125
+MIG: 10:21:40 :  Invalid Param: DDR3_tRRD ==> 6000
+MIG: 10:21:40 :  Invalid Param: DDR3_tRTP ==> 7500
+MIG: 10:21:40 :  Invalid Param: DDR3_tWTR ==> 7500
+MIG: 10:21:40 :  Invalid Param: DDR3_tZQI ==> 128_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_tZQCS ==> 64
+MIG: 10:21:40 :  Invalid Param: DDR3_SIM_BYPASS_INIT_CAL ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_SIMULATION ==> "FALSE"
+MIG: 10:21:40 :  Invalid Param: DDR3_BYTE_LANES_B0 ==> 4'b1111
+MIG: 10:21:40 :  Invalid Param: DDR3_BYTE_LANES_B1 ==> 4'b1111
+MIG: 10:21:40 :  Invalid Param: DDR3_BYTE_LANES_B2 ==> 4'b1111
+MIG: 10:21:40 :  Invalid Param: DDR3_BYTE_LANES_B3 ==> 4'b0000
+MIG: 10:21:40 :  Invalid Param: DDR3_BYTE_LANES_B4 ==> 4'b0000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_CTL_B0 ==> 4'b1111
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_CTL_B1 ==> 4'b0000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_CTL_B2 ==> 4'b1111
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_CTL_B3 ==> 4'b0000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_CTL_B4 ==> 4'b0000
+MIG: 10:21:40 :  Invalid Param: DDR3_PHY_0_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 10:21:40 :  Invalid Param: DDR3_PHY_1_BITLANES ==> 48'hC3E_FFF_A26_200
+MIG: 10:21:40 :  Invalid Param: DDR3_PHY_2_BITLANES ==> 48'h3FE_3FE_3FE_2FF
+MIG: 10:21:40 :  Invalid Param: DDR3_CK_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_13
+MIG: 10:21:40 :  Invalid Param: DDR3_ADDR_MAP ==> 192'h111_112_13B_13A_12B_12A_135_134_133_132_131_109_129_128_127_126
+MIG: 10:21:40 :  Invalid Param: DDR3_BANK_MAP ==> 36'h125_124_123
+MIG: 10:21:40 :  Invalid Param: DDR3_CAS_MAP ==> 12'h121
+MIG: 10:21:40 :  Invalid Param: DDR3_CKE_ODT_BYTE_MAP ==> 8'h00
+MIG: 10:21:40 :  Invalid Param: DDR3_CKE_MAP ==> 96'h000_000_000_000_000_000_000_11B
+MIG: 10:21:40 :  Invalid Param: DDR3_ODT_MAP ==> 96'h000_000_000_000_000_000_000_115
+MIG: 10:21:40 :  Invalid Param: DDR3_CS_MAP ==> 120'h000_000_000_000_000_000_000_000_000_119
+MIG: 10:21:40 :  Invalid Param: DDR3_PARITY_MAP ==> 12'h000
+MIG: 10:21:40 :  Invalid Param: DDR3_RAS_MAP ==> 12'h122
+MIG: 10:21:40 :  Invalid Param: DDR3_WE_MAP ==> 12'h120
+MIG: 10:21:40 :  Invalid Param: DDR3_DQS_BYTE_MAP ==> 144'h00_00_00_00_00_00_00_00_00_00_03_02_01_00_23_22_21_20
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA0_MAP ==> 96'h200_201_202_203_204_205_206_207
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA1_MAP ==> 96'h211_212_213_214_215_216_217_218
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA2_MAP ==> 96'h221_222_223_224_225_226_227_228
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA3_MAP ==> 96'h231_232_233_234_235_236_237_238
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA4_MAP ==> 96'h002_007_005_004_006_003_000_001
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA5_MAP ==> 96'h011_012_013_014_015_016_017_018
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA6_MAP ==> 96'h025_026_024_028_023_022_027_021
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA7_MAP ==> 96'h034_035_031_038_036_037_032_033
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA8_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA9_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA10_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA11_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA12_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA13_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA14_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA15_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA16_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA17_MAP ==> 96'h000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_MASK0_MAP ==> 108'h000_039_029_019_009_239_229_219_209
+MIG: 10:21:40 :  Invalid Param: DDR3_MASK1_MAP ==> 108'h000_000_000_000_000_000_000_000_000
+MIG: 10:21:40 :  Invalid Param: DDR3_SLOT_0_CONFIG ==> 8'b0000_0001
+MIG: 10:21:40 :  Invalid Param: DDR3_SLOT_1_CONFIG ==> 8'b0000_0000
+MIG: 10:21:40 :  Invalid Param: DDR3_IBUF_LPWR_MODE ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_IO_IDLE_PWRDWN ==> "ON"
+MIG: 10:21:40 :  Invalid Param: DDR3_BANK_TYPE ==> "HP_IO"
+MIG: 10:21:40 :  Invalid Param: DDR3_DATA_IO_PRIM_TYPE ==> "HP_LP"
+MIG: 10:21:40 :  Invalid Param: DDR3_CKE_ODT_AUX ==> "FALSE"
+MIG: 10:21:40 :  Invalid Param: DDR3_USER_REFRESH ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_WRLVL ==> "ON"
+MIG: 10:21:40 :  Invalid Param: DDR3_ORDERING ==> "NORM"
+MIG: 10:21:40 :  Invalid Param: DDR3_CALIB_ROW_ADD ==> 16'h0000
+MIG: 10:21:40 :  Invalid Param: DDR3_CALIB_COL_ADD ==> 12'h000
+MIG: 10:21:40 :  Invalid Param: DDR3_CALIB_BA_ADD ==> 3'h0
+MIG: 10:21:40 :  Invalid Param: DDR3_TCQ ==> 100
+MIG: 10:21:40 :  Invalid Param: DDR3_IDELAY_ADJ ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_FINE_PER_BIT ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_CENTER_COMP_MODE ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_PI_VAL_ADJ ==> "OFF"
+MIG: 10:21:40 :  Invalid Param: DDR3_IODELAY_GRP0 ==> "DDR3_CTRL_IP_IODELAY_MIG0"
+MIG: 10:21:40 :  Invalid Param: DDR3_IODELAY_GRP1 ==> "DDR3_CTRL_IP_IODELAY_MIG1"
+MIG: 10:21:40 :  Invalid Param: DDR3_SYSCLK_TYPE ==> "NO_BUFFER"
+MIG: 10:21:40 :  Invalid Param: DDR3_REFCLK_TYPE ==> "NO_BUFFER"
+MIG: 10:21:40 :  Invalid Param: DDR3_SYS_RST_PORT ==> "FALSE"
+MIG: 10:21:40 :  Invalid Param: DDR3_FPGA_SPEED_GRADE ==> 1
+MIG: 10:21:40 :  Invalid Param: DDR3_CMD_PIPE_PLUS1 ==> "ON"
+MIG: 10:21:40 :  Invalid Param: DDR3_DRAM_TYPE ==> "DDR3"
+MIG: 10:21:40 :  Invalid Param: DDR3_CAL_WIDTH ==> "HALF"
+MIG: 10:21:40 :  Invalid Param: DDR3_STARVE_LIMIT ==> 2
+MIG: 10:21:40 :  Invalid Param: DDR3_REF_CLK_MMCM_IODELAY_CTRL ==> "FALSE"
+MIG: 10:21:40 :  Invalid Param: DDR3_REFCLK_FREQ ==> 200.0
+MIG: 10:21:40 :  Invalid Param: DDR3_DIFF_TERM_REFCLK ==> "TRUE"
+MIG: 10:21:40 :  Invalid Param: DDR3_tCK ==> 2500
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_nCK_PER_CLK ==> 2
+MIG: 10:21:40 :  Invalid Param: DDR3_DIFF_TERM_SYSCLK ==> "TRUE"
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Valid Param: DDR3_DEBUG_PORT ==> OFF
+MIG: 10:21:40 : 
+MIG: 10:21:40 :  Invalid Param: DDR3_TEMP_MON_CONTROL ==> "INTERNAL"
+MIG: 10:21:40 :  Invalid Param: DDR3_RST_ACT_LOW ==> 1
+MIG: 10:21:40 : NOBUF
+MIG: 10:21:40 : NOBUF
+MIG: 10:21:40 : 
+MIG: 10:21:40 : Same Interface
+MIG: 10:21:45 : ################# RUNNING MIG BATCH ###################
+MIG: 10:21:45 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip
+MIG: 10:21:45 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:21:45 : outputDirectory: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/_tmp/
+MIG: 10:21:45 : vivado_mode: xpg_pa
+MIG: 10:21:45 :  locked false  
+MIG: 10:21:45 : HDL Language: Verilog
+MIG: 10:21:45 : compInfo: false
+MIG: 10:21:45 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:21:45 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:21:45 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:21:45 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:21:45 : I am in catch area
+MIG: 10:21:45 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.in -cg_exc_out e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:22:10 : XML_INPUT_FILE: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:22:10 : Component_Name: ddr3_ctrl_ip
+MIG: 10:22:10 : Moving ddr3_ctrl_ip ...
+MIG: 10:22:10 : Moving ddr3_ctrl_ip.veo ...
+MIG: 10:22:10 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:22:18 : Running synthesis.xit
+MIG: 10:22:18 : ################# RUNNING MIG BATCH ###################
+MIG: 10:22:18 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip
+MIG: 10:22:18 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:22:18 : outputDirectory: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/_tmp/
+MIG: 10:22:18 : vivado_mode: xpg_pa
+MIG: 10:22:18 :  locked false  
+MIG: 10:22:18 : HDL Language: Verilog
+MIG: 10:22:18 : compInfo: false
+MIG: 10:22:18 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:22:18 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:22:18 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:22:18 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:22:18 : I am in catch area
+MIG: 10:22:18 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.in -cg_exc_out e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:22:43 : XML_INPUT_FILE: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:22:43 : Component_Name: ddr3_ctrl_ip
+MIG: 10:22:43 : Moving ddr3_ctrl_ip ...
+MIG: 10:22:43 : Moving ddr3_ctrl_ip.veo ...
+MIG: 10:22:43 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:22:44 : Running vlog_synth_rpr.xit
+MIG: 10:22:44 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:22:44 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 10:22:45 : Running simulation.xit
+MIG: 10:22:45 : ################# RUNNING MIG BATCH ###################
+MIG: 10:22:45 : Writing IN file for 'ddr3_ctrl_ip'...compDirPath: d:/Xilinx/Vivado/2014.3/data/ip/xilinx/mig_7series_v2_2... instDirPath: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip
+MIG: 10:22:45 : synp_flow:  -- synthesis_mode: Other
+MIG: 10:22:45 : outputDirectory: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/_tmp/
+MIG: 10:22:45 : vivado_mode: xpg_pa
+MIG: 10:22:45 :  locked false  
+MIG: 10:22:45 : HDL Language: Verilog
+MIG: 10:22:45 : compInfo: false
+MIG: 10:22:45 : Vivado Options xc7v2000t flg1925 -1
+MIG: 10:22:45 : 1: xc7v2000t 2: flg1925 3: -1
+MIG: 10:22:45 : relative mig path: coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe
+MIG: 10:22:45 : xilinx_path: D:/Xilinx/Vivado/2014.3/ids_lite/ISE
+MIG: 10:22:45 : I am in catch area
+MIG: 10:22:45 : Running D:/Xilinx/Vivado/2014.3/ids_lite/ISE/coregen/ip/xilinx/other/com/xilinx/ip/mig_7series_v2_2/bin/nt64/mig.exe -cg_exc_inp e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.in -cg_exc_out e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/xil_txt.out ... 
+MIG: 10:23:10 : XML_INPUT_FILE: e:/v7_2000/DDR_broad__s1/src/DDR/ip_floder/ddr3_4g_ctrl/ddr3_ctrl_ip/mig_a.prj
+MIG: 10:23:10 : Component_Name: ddr3_ctrl_ip
+MIG: 10:23:10 : Moving ddr3_ctrl_ip ...
+MIG: 10:23:10 : Moving ddr3_ctrl_ip.veo ...
+MIG: 10:23:10 : Moving ddr3_ctrl_ip_xmdf.tcl ...
+MIG: 10:23:11 : Running vlog_sim_rpr.xit .. PRASAD DBG1
+MIG: 10:23:11 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:23:11 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 
+MIG: 10:23:12 : Running implementation.xit
+MIG: 10:23:12 : IGN:     <ModuleName>ddr3_ctrl_ip</ModuleName> <==>     <ModuleName>ddr3_ctrl_ip</ModuleName> 
+MIG: 10:23:12 : IGN:         <InputClkFreq>400</InputClkFreq> <==>         <InputClkFreq>400</InputClkFreq> 

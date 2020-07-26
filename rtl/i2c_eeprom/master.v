@@ -6,14 +6,16 @@ output      scl,
 input       rd_req,
 input       wd_req,
 input  [7:0]wr_reg_addr,
+input  [7:0]wr_reg_addr_h,
 input  [7:0]rd_reg_addr,
+input  [7:0]rd_reg_addr_h,
 input  [7:0]wr_data,
 output reg[7:0]rd_data,
 output      wr_ack,
 output      rd_ack
 );
 
-parameter [9:0]CLK_IS_MAX     = 500;
+parameter [9:0]CLK_IS_MAX     = 400;
 parameter [7:0]WR_DEV_ADDR    = 8'ha0;
 parameter [7:0]RD_DEV_ADDR    = 8'ha1;
 
@@ -21,12 +23,14 @@ parameter [3:0]ST_IDLE        = 4'd0;
 parameter [3:0]ST_START       = 4'd1;
 parameter [3:0]ST_DEV_ADDR    = 4'd2;
 parameter [3:0]ST_WD_REG_ADDR = 4'd3;
-parameter [3:0]ST_RD_REG_ADDR = 4'd4;
-parameter [3:0]ST_WD_DATA     = 4'd5;
-parameter [3:0]ST_STOP        = 4'd6;
-parameter [3:0]ST_RESTART     = 4'd7;
-parameter [3:0]ST_RD_DEV_ADDR = 4'd8;
-parameter [3:0]ST_RD_DATA     = 4'd9;
+parameter [3:0]ST_WD_REG_ADDR2 = 4'd4;
+parameter [3:0]ST_RD_REG_ADDR = 4'd5;
+parameter [3:0]ST_RD_REG_ADDR2 = 4'd6;
+parameter [3:0]ST_WD_DATA     = 4'd7;
+parameter [3:0]ST_STOP        = 4'd8;
+parameter [3:0]ST_RESTART     = 4'd9;
+parameter [3:0]ST_RD_DEV_ADDR = 4'd10;
+parameter [3:0]ST_RD_DATA     = 4'd11;
 reg [3:0]state;
 reg [3:0]next_state;
 wire flag;
@@ -41,7 +45,7 @@ reg [3:0]byte_cnt;
 assign scl       = mt_scl;
 assign flag      = (clk_cnt[9:0]==CLK_IS_MAX-1);
 assign byte_flag = (byte_cnt==4'd8);
-assign en        = (((state==ST_DEV_ADDR)||(state==ST_WD_REG_ADDR)||(state==ST_WD_DATA)||(state==ST_RD_REG_ADDR))&&(byte_cnt==4'd8))||
+assign en        = (((state==ST_DEV_ADDR)||(state==ST_WD_REG_ADDR)||(state==ST_WD_REG_ADDR2)||(state==ST_WD_DATA)||(state==ST_RD_REG_ADDR)||(state==ST_RD_REG_ADDR2)||(state==ST_RD_DEV_ADDR))&&(byte_cnt==4'd8))||
 		   ((state==ST_RD_DATA)&&(byte_cnt!=4'd8));
 
 assign sl_sda = sda;
@@ -77,10 +81,14 @@ always @ (*)begin
 		end else begin
 			mt_sda = 1'b0;
 		end
-	end else if(state==ST_DEV_ADDR && (byte_cnt<8)) begin
+	end else if((state==ST_DEV_ADDR) && (byte_cnt<8)) begin
 		mt_sda =WR_DEV_ADDR[7-byte_cnt];
+	end else if(state==ST_WD_REG_ADDR2)begin
+		mt_sda =wr_reg_addr_h[7-byte_cnt];
 	end else if(state==ST_WD_REG_ADDR)begin
 		mt_sda =wr_reg_addr[7-byte_cnt];
+	end else if(state==ST_RD_REG_ADDR2)begin
+		mt_sda =rd_reg_addr_h[7-byte_cnt];
 	end else if(state==ST_RD_REG_ADDR)begin
 		mt_sda =rd_reg_addr[7-byte_cnt];
 	end else if(state==ST_WD_DATA)begin
@@ -102,7 +110,7 @@ end
 always @ (posedge clk or negedge reset_n)begin
 	if(!reset_n)begin
 		rd_data[7:0] <= {8{1'b0}};
-	end else if((clk_cnt==CLK_IS_MAX<<1)&&state==ST_RD_DATA && byte_cnt!=8)begin
+	end else if((clk_cnt==(CLK_IS_MAX/2))&&state==ST_RD_DATA && byte_cnt!=8)begin
 		rd_data[7-byte_cnt] <= sda;
 	end
 end
@@ -154,10 +162,15 @@ always @ (*)begin
 		ST_DEV_ADDR[3:0]:begin
 			if((byte_flag)&&(!sda)&&flag)begin
 				if(wd_req)begin
-					next_state[3:0] = ST_WD_REG_ADDR[3:0];
+					next_state[3:0] = ST_WD_REG_ADDR2[3:0];
 				end else if(rd_req) begin
-					next_state[3:0] = ST_RD_REG_ADDR[3:0];
+					next_state[3:0] = ST_RD_REG_ADDR2[3:0];
 				end
+			end
+		end
+		ST_WD_REG_ADDR2[3:0]:begin
+			if((byte_flag)&&(!sda)&&flag)begin
+				next_state[3:0] = ST_WD_REG_ADDR[3:0];
 			end
 		end
 		ST_WD_REG_ADDR[3:0]:begin
@@ -168,6 +181,11 @@ always @ (*)begin
 		ST_WD_DATA[3:0]:begin
 			if((byte_flag)&&(!sda)&&flag)begin
 				next_state[3:0] = ST_STOP[3:0];
+			end
+		end
+		ST_RD_REG_ADDR2[3:0]:begin
+			if((byte_flag)&&(!sda)&&flag)begin
+				next_state[3:0] = ST_RD_REG_ADDR[3:0];
 			end
 		end
 		ST_RD_REG_ADDR[3:0]:begin
@@ -181,7 +199,7 @@ always @ (*)begin
 			end
 		end
 		ST_RD_DEV_ADDR[3:0]:begin
-			if((byte_cnt==4'd7) && flag)begin
+			if((byte_flag) && flag)begin
 				next_state[3:0] = ST_RD_DATA[3:0];
 			end
 		end

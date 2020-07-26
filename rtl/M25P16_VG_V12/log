@@ -1,0 +1,20 @@
+acdc_check.v:239:                if ((t_C_fall - t_C_rise) < TCH)
+acdc_check.v:212:            if ( ($time - t_D_change) < TDVCH) 
+acdc_check.v:204:            if ( ($time - t_C_rise) < TCHDX)
+acdc_check.v:123:            if ( ($time - t_C_rise) < TCHSH)
+acdc_check.v:131:                if ( ($time - t_S_rise) < TSHCH )
+acdc_check.v:139:                if ( ($time - t_S_rise) < TSHCH )
+acdc_check.v:68:            if ((t_S_fall - t_S_rise) < TSHSL)
+acdc_check.v:165:            if( ($time - t_H_fall) < THLCH)
+acdc_check.v:178:            if ( (t_H_rise - t_C_rise) < TCHHH)
+acdc_check.v:183:            if( ($time - t_H_fall) < THHCH)
+acdc_check.v:159:            if ( (t_H_fall - t_C_rise) < TCHHL)
+acdc_check.v:326:   // This process checks the TWHSL parameter  
+acdc_check.v:332:                if ((t_S_fall - t_write_protect_fall) < TWHSL)
+acdc_check.v:334:                     $display("%d",t_write_protect_fall, ": ERROR : TWHSL condition violated"); 
+acdc_check.v:351:                if (((t_write_protect_rise-t_S_rise) < TSHWL) && wrsr)
+acdc_check.v:353:                    $display("%t : ERROR : TSHWL condition violated",$realtime); 
+internal_logic.v:1246:              for(j = 1; j <= `TSE; j = j + 1) // Sector erase duration = TSE x Tbase = TSE x 1s (to avoid number wider thab 32 bit)
+internal_logic.v:1185:              for(j = 1; j <= `TBE; j = j + 1) // Bulk erase duration = TBExTbase = TBE x 1s (to avoid number wider thab 32 bit)
+internal_logic.v:1185:              for(j = 1; j <= `TBE; j = j + 1) // Bulk erase duration = TBExTbase = TBE x 1s (to avoid number wider thab 32 bit)
+internal_logic.v:1246:              for(j = 1; j <= `TSE; j = j + 1) // Sector erase duration = TSE x Tbase = TSE x 1s (to avoid number wider thab 32 bit)
